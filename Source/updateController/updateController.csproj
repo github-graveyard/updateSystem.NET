@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2D791D65-5EC1-4259-B65C-4102323AD6A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>updateSystemDotNet</RootNamespace>
+    <AssemblyName>updateSystemDotNet.Controller</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>UpdateSystem.snk</AssemblyOriginatorKeyFile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\updateSystemDotNet.Controller.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\updateSystemDotNet.Controller.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Administration\UI\Controls\buttonArea.cs">
+      <Link>Internal\UI\buttonArea.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\Shared\sharedAssemblyInfo.cs">
+      <Link>sharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="appEventArgs\changeUpdateViewEventArgs.cs" />
+    <Compile Include="appEventArgs\closeDialogEventArgs.cs" />
+    <Compile Include="appEventArgs\confirmUpdatePackageEventArgs.cs" />
+    <Compile Include="appEventArgs\updateInstallerStartedEventArgs.cs" />
+    <Compile Include="appExceptions\corruptUpdateInstallerException.cs" />
+    <Compile Include="appExceptions\invalidSignatureException.cs" />
+    <Compile Include="Core\Helper.cs" />
+    <Compile Include="Core\Serializer.cs" />
+    <Compile Include="Core\RSA.cs" />
+    <Compile Include="Core\Types\changelogDictionary.cs" />
+    <Compile Include="Core\Types\changelogDocument.cs" />
+    <Compile Include="Core\Types\changelogDocumentItem.cs" />
+    <Compile Include="Core\Types\Directories.cs" />
+    <Compile Include="Core\Types\enhancedVersion.cs" />
+    <Compile Include="Core\Types\FileType.cs" />
+    <Compile Include="Core\Types\releaseFilterType.cs" />
+    <Compile Include="Core\Types\releaseInfo.cs" />
+    <Compile Include="Core\Types\SecureContainer.cs" />
+    <Compile Include="Core\Types\SerializableDictionary.cs" />
+    <Compile Include="Core\Types\statisticServerType.cs" />
+    <Compile Include="Core\Types\updateLogLinkedAccount.cs" />
+    <Compile Include="Core\Types\updatePackage.cs" />
+    <Compile Include="Core\Types\updateConfiguration.cs" />
+    <Compile Include="Core\Types\VersionEx.cs" />
+    <Compile Include="Core\updateActions\actionBase.cs" />
+    <Compile Include="Core\updateActions\addRegistryKeyAction.cs" />
+    <Compile Include="Core\updateActions\addRegistryValueAction.cs" />
+    <Compile Include="Core\updateActions\administrationEditorAttribute.cs" />
+    <Compile Include="Core\updateActions\cleanupAction.cs" />
+    <Compile Include="Core\updateActions\closeProcessAction.cs" />
+    <Compile Include="Core\updateActions\deleteFilesAction.cs" />
+    <Compile Include="Core\updateActions\fileCopyAction.cs" />
+    <Compile Include="Core\updateActions\registryActionBase.cs" />
+    <Compile Include="Core\updateActions\removeRegistryKeyAction.cs" />
+    <Compile Include="Core\updateActions\removeRegistryValuesAction.cs" />
+    <Compile Include="Core\updateActions\renameFileAction.cs" />
+    <Compile Include="Core\updateActions\startProcessAction.cs" />
+    <Compile Include="Core\updateActions\startServiceAction.cs" />
+    <Compile Include="Core\updateActions\stopServiceAction.cs" />
+    <Compile Include="Core\ImpersonateUser.cs" />
+    <Compile Include="Core\updateActions\updateRegistryAction.cs" />
+    <Compile Include="Core\updateActions\userInteractionAction.cs" />
+    <Compile Include="Core\updateActions\validatePackageAction.cs" />
+    <Compile Include="appEventArgs\checkForUpdatesCompletedEventArgs.cs" />
+    <Compile Include="appEventArgs\downloadUpdatesProgressChangedEventArgs.cs" />
+    <Compile Include="appEventArgs\updateFoundEventArgs.cs" />
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="eventHandler.cs" />
+    <Compile Include="Internal\Designer\largeTextEditor.cs" />
+    <Compile Include="Internal\Designer\releaseFilter.cs" />
+    <Compile Include="Internal\Designer\updateLocationEditor.cs" />
+    <Compile Include="Internal\Designer\versionEditor.cs" />
+    <Compile Include="Internal\Designer\ControllerActionList.cs" />
+    <Compile Include="Internal\Designer\SmartTag.cs" />
+    <Compile Include="Internal\internalHelper.cs" />
+    <Compile Include="Internal\resourceHelper.cs" />
+    <Compile Include="Internal\searchProvider.cs" />
+    <Compile Include="Internal\Strings.cs" />
+    <Compile Include="Internal\Language.cs" />
+    <Compile Include="Internal\Log.cs" />
+    <Compile Include="Internal\taskBarManager.cs" />
+    <Compile Include="Internal\taskBarProgressStateEnum.cs" />
+    <Compile Include="Internal\UI\releaseFilterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Internal\UI\releaseFilterControl.Designer.cs">
+      <DependentUpon>releaseFilterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\UI\updateLocationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Internal\UI\updateLocationControl.Designer.cs">
+      <DependentUpon>updateLocationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\UI\versionEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Internal\UI\versionEditorControl.Designer.cs">
+      <DependentUpon>versionEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\updateLogRequest.cs" />
+    <Compile Include="Internal\updateUI\Controls\statusLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Internal\updateUI\updateBaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Internal\updateUI\updateViewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Internal\updateUI\Views\viewUpdateCheck.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Internal\updateUI\Views\viewUpdateDownloadAndApply.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Internal\updateUI\Views\viewUpdatesAvailable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Internal\WinTrust.cs" />
+    <Compile Include="Internal\ScheduledStart.cs" />
+    <Compile Include="Internal\UI\updateSearchDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Internal\UI\updateSearchDialog.Designer.cs">
+      <DependentUpon>updateSearchDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\UI\updatePreviewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Internal\UI\updatePreviewDialog.Designer.cs">
+      <DependentUpon>updatePreviewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\Designer\ControllerDesigner.cs" />
+    <Compile Include="updateController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="updateDownloadBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Internal\updateDownloader.cs" />
+    <Compile Include="UpdateResult.cs" />
+    <Compile Include="UpdateSettings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\UI\updateDownloadDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Internal\UI\updateDownloadDialog.Designer.cs">
+      <DependentUpon>updateDownloadDialog.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UpdateSystem.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Internal\UI\updateDownloadDialog.resx">
+      <DependentUpon>updateDownloadDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Internal\Localization\language.eng.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Internal\Localization\language.deu.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Internal\UI\versionEditorControl.resx">
+      <DependentUpon>versionEditorControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Internal\UI\updateSearchDialog.resx">
+      <DependentUpon>updateSearchDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Internal\UI\updatePreviewDialog.resx">
+      <DependentUpon>updatePreviewDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Internal\UI\releaseFilterControl.resx">
+      <DependentUpon>releaseFilterControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateController.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\toolboxImages\file_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolboxImages\file_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolboxImages\file_rename.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolboxImages\key_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolboxImages\key_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolboxImages\start_process.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolboxImages\start_service.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolboxImages\stop_process.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolboxImages\stop_service.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolboxImages\userInteraction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolboxImages\value_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolboxImages\value_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\statuslabel_error.png" />
+    <EmbeddedResource Include="Images\statuslabel_success.png" />
+    <EmbeddedResource Include="Images\statuslabel_progress.png" />
+    <EmbeddedResource Include="Internal\UI\updateLocationControl.resx">
+      <DependentUpon>updateLocationControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Reactor_Enabled="0" Reactor_Lib="0" Reactor_Automatic="1" Reactor_Commands="" Reactor_Project="" Reactor_Output="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

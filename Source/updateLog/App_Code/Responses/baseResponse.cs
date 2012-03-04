@@ -1,0 +1,105 @@
+﻿using System.IO.Compression;
+using System.Xml.Serialization;
+using System.Web;
+using System.Xml;
+using System.Security.Cryptography.Xml;
+using System.Security.Cryptography;
+using System.IO;
+using System.Text;
+using System;
+
+namespace App_Code.Responses {
+
+	public enum responseCodes {
+		OK = 0,
+		Error = 2
+	}
+	
+	[XmlRoot("serverResponse")]
+	[XmlInclude(typeof(defaultResponse))]
+	[XmlInclude(typeof(loginResponse))]
+	[XmlInclude(typeof(getUserResponse))]
+	public abstract class baseResponse : IDisposable {
+		protected baseResponse() {
+			attachSignature = false;
+			compressResponse = true;
+		}
+
+		public responseCodes responseCode { get; set; }
+
+		public string responseMessage { get; set; }
+
+		/// <summary>Gets or Sets if the Response should be signed or not.</summary>
+		[XmlIgnore]
+		protected bool attachSignature { get; set; }
+
+		/// <summary>Gets or Sets if the Response should be compressed using gzip.</summary>
+		[XmlIgnore]
+		protected bool compressResponse { get; set; }
+
+		//Debug pvk: <RSAKeyValue><Modulus>uemZseH/yr5Ryn0ZQ8cOxxk0oLjt7+L2ILhNoE3wEuF+PhPRvFeOQw90402ywUUm3xd3no3+QRIeBYOyCxNBvkhenErTTCZ9sfc4c+BNFT75vLgvJ5fXGdVA/StOvvgMTKFdAYJNZ4AFXPYDGMcrTWkHfPwPmmv6zfbIoR018mTyTvdKmML6WWwOwShsMlbM9/SNyA0ieO8ckoqmRUDvSy0SMH+HNEbouwH533fKhgGXFqHnM6eeoIPW37l5DRiSJ0FNN3hN9XEsBymX8ncekxBWzXaLknTK+gJx3GUO9rIWB4P2o50NUhH/s3NBg33CdejjPO2YuGYhNISG2qSDMXaRNYMfJmHLR24DMjPDd4EhFSpg/8/5XeTJsUR89NSkPRciMPP4t2dg0Pwr/gq0134JrVaXBDkZW173MINmsoRnopLkPGPLM1b4cKzpIYg9l16UBgGyNoJgmiOjcpK5gHexQorhpk9pwdpJ3A5fPc43ma2yP70xXK7nqMGusMYuoasedSdQIJtgn03ZBaOPKwDX9hCDb4/UqAKIB97QhoxZKmd6pyqhl9o2VxC7jCrHlTDzu06a+S3bTXaERNYVk8vK40BgTDq0Ioq62QMgcMZwff89hnGxuqHMJ2A3Yd7hpbtGWu6AD5q0z2gjiLZzREQNgY5EeYS013yR/97iPGc2SgLPp0aAvQQoQzYpHB7Msa1Diocgm6aChps+HhnyLc6DRoszFfMhJIRz6Z6Iq80fK7nx9XYnjPCoo8aYDdvSpmZdy/QFKJH/dFbbiEeNwV9lsXwT4vEtyE7nSpLAZ0ZAujMAI50HFeu3Th3lRS8mj4idjuBae7eDFyzMy7QVUEKeFFU0340w2Rq8PiHQyNc1ERSAG3mQJRCRJXGUXbTnht4Gl02jbD+7NFy5B2lIEQqEhuwWAMzcT9itM139MKwBWL3OY9IuzNJbauXN6n3zyP/+p53g27UAExIhaQlTdaVeY0X6dGGaUwEiS6M9BtO1OiWShV1c6E4PlyW9V31+t9p4/IeEvGGNsP5eqPwK5ChRjOZ56iBVw7FQBpEdq13kwrbp71tT+AAWylFRAqTmEV1zwnudZCp3qBiesG4tplA3ykD+W6NCSjQlwSrEqRy6hN+aV3cfQ6QxDQNW9E4kwcWTG7NtIl/oLe/zx3hM+bKuEtkwdansmXxQvckQx637oa00ZS1Cu9x8yyCWNkB9Hv8HoWvIzkFguTrW0jll25+2c0ZAur048HwTs8WWPtqdx+PWuEKVI14wsE+vAeJFK5VU/+ujlYywvJZGXXIqCI2iHZx5uAzIVmvjxDB1qvrmXqcCntIDRjwUGFPoMubJkLAdMoyEPwczSlg991sj5w==</Modulus><Exponent>AQAB</Exponent><P>8slZtBBPOgDg1StsioXLz4VQNfzKi9SIWQfy8hoGTCKrQi/jUWuVmiadvXKNFlpDSrlE02wjtLu4gHEKIAuMuwUkksWg0Lk0Dx5ZXE18ldwCXmolTaQ0aju+avwmGlZJC6kK054p1ysskqLH79oQBMyVmaT9eQwG90UvFnOaesWcWVULe6HB637JAfxq9VoqjNyxkU0yush8mkzjEenA7n7ioxtL7yJI9wU6St4LnqHdC6q5gpQi74e+dfyKE0FgNrc1QGOIVgUwUB9SidPV0qKJgfsrMh6CVScEN36EQmPHWGDBQSXQzYpH/p5WGEtzs56bAMhdccq1QK1O8aywAdod8cmkmsk4zZyEojgFBbNoA9aGh7FUL8A8i6qALciqwvxoGLvCAhsJXagcmvWcQI6cMLidt1pxPI6iuK/AQ/wHwT9CE0tHTo/xa/QIRhkMo2xL7xP0szYPvSAc69D9/XJ4gum3vyHztO5td+3+DnsCUh1NEm5Csm1ir9Ms0j1Qs2ZcP43bPXuN8S8v7e4Wmei8f5Y8Lx1ZAWx+Q2+se37LXXTqmYz4rOi3hrh/9tJDfVnua2nHpGbHKIsHwo2vHLGi2stGeBHZBfb1yYXKwoyP09XgxcqOmX0HLx5Ve8+ZnzMY9Kegho3kVgoOYYfKsGSlfUfGMlu2UjyDGYKmGGc=</P><Q>xAfYsdwLSO8MmZovKg5vuGFyLYu1ew2haAV3CN++e+9gQLTYv9Ysar80gQpe3fTv7Qbs6WwBc8WUpc6KjsYWc9apakiqS1jP6ULaINGlj9/KOMVZ0hNjp4VZRt5BJDjFeVqGngzLbGLsMICvD2df0Uc2HbsEHkpBZMl7CAct2Z3p7pVK5J4GQqcih8PjxnrEEIxzBkGGnC7pXmdMboGQ8rctsP2QdtMrhA8g5zYuTX2lDEgWNfYi15jJ10JxxbSPTVHtrRLPFE4vhrI0u9bQV4jX1HZ1KFLIp01+X8CufelpBPAfIeQceQ3DML6g5ArNoVbKhEYp1Mo5W1HBneszHY20dn5i+ZzcN2PxqY6LdlpFl0qspkwvxzeKFUvpSgktMc4TF3G8wkraaaLZntBiOUy+hC/QYfHJNANazO3cUrf9qMctp218rUj4kqkRmIJ024YVzDzGn1c+KnwT7Ajh++TjTu9xoRy5EZ8YMuFF86h4iSfa5EyiSHQAtBLrcerE9z4vKh2VJQgaOmpJMYUYV9lsJ3rg4TkufujT3JPtweDlWCalaBrg+36a9QltBbawK9ludaOhBU1mgIrL0jAtD0xu6amuqxj2RdKO49HsJxxaKtAchETiUKrUvAwNoZ24iTzcDikDpqq9gQA3DiY9O6JdJVpnF64nrX57Yb7paIE=</Q><DP>Sqtah2Ksuy4h9+3PCBt2P3DE5pXExZSsCpXDRmpynV/cRBLuWtA3xp0xzl44vjMslwK8BDoyERfa+sXJU2m58pr2UJ2vhAIx3KR830KFmqF7qQYESwjBhhqxyb2bCmaXOJrY1ZTDUYXZw4+E5mOuoYs6R3LS8jOcwNfqT4FmdXPpTiA10+Q/++mWcKHtU2BTzdbiVcnkXEXk7J/RBmVaDP/BPGDczcNBpZdaAkSgVj15+mibfWmKBRk+npL49EsbCDj4i8EQ4UPfRAUeIX2hOZL7r5pMArIXa5EAXwDuNGzzll7LkPnMaiqpUcnouLgb8ZZKHceB1cl+TVIAAZwW1br7kq1tjp1sdvA4apvID6TJzMRhw8HqHnWFKX9axLn+qtFuQo0ccgFWtBNMGOyJDeHOb72X5BhQ00sbCKok+8O7rteBvuVcHPFwUr9O/CAgHvLjt7fvfl6WIJiLzIsOUrCuF7VB6erLRU4/JK9xf4qdgBu65Hw8zxuNSn4sPszU0RgeLv21/AbP9OmKWCbtlJBbyPGvuN3RzfpMKvlhlum8KhYXQPp2UNeR+kEsOgEY+Kh8B1UVLZ7eib2YuWFSBgUsDRaPqcXzdT4rAbvATG1mnsQcyTgu+03Us80khVun56qTdktHt5pUK5IUMjLNR8rsisdUUZCbVld+Co5//uk=</DP><DQ>H799kuCmWzuL+NyFwvPvmBcAHOxBihpdB7HK438JJJ1SI2imqfsP2oH5COUbFCt1KBg1CmDZo1xehLP8sL7YKA6eBX6bRfSuR4LyPNp3S+PcpnEf6OwG+byZBuc7+ZfQM6U7pCFCWN10jy5oK8B8PjKgSxRcyGMSUDZpXJV9EX+HwYIgTQJi1SyoZQCOxThgxKVag6rdGDJozUdBk6wcQ5LzLXUDjpsIsyyYEZouyZINxv1ty3N/lRdDqT8zmedyRf181sjzDMDU5aW68KkLuQGKovhEZTFzGdVtICjembnRrmENSbnd+qUF9cEJ4aT2RKj/x4htge72dxm4l9DdyG2IyqARe4eyCq5/Fwzk/VgFaUlIyO4R1tvh2y0eLUVrMmPDp8pd3cGtueoMALKTFeCeAl6UCyjTgz7/16y2QBdYV5tag4Ex7gaha29CUEbgkiUXJqq5KFlC0jKiL1oI73jUb5ZL+uHh/z6a9rKRV7LzQpNX2h2nMsDG1GM0CpERMVG65cFAxGyZgthv3jtGBARMheBax18xbpBar6Ctova/bhVkOIYR5elNQ14xb/l0csWWJCtKCsfMUAkqlXID+jRQyjsW9NLoH8rIJZF8A6GN4N0voSRe2t2v8nypQIGAv4lBwnFWDAofAuN8ByieRig3mbMYezdTab/QT7ZRqwE=</DQ><InverseQ>vpQ1mb8rFGBlu4BLTzD/Qt9dhOG6A8ETEnh/tUxrMICKeTtZOg876y7hQkaSMGGGELxU2GPnCwUW6jDmSZjKsG1rcjkq0ugcP0HgYenxxhMm/DEX6iun/dckksAaKSZXczqogFl2JSRbHHGZz/2eycZ6xO46kDGgEHxTwq9W+1jjOu0P8VKEKrXHrNKZhlbeNzVUvLTO8lU0U4Ux0l6CJem3QV75swaAb4ss1UPH6C9FqZGCEGsmC5aBKLiFlFjzI4rLkOdY8EqHn/f+G9ZzWQJZBaPRFwEELemUHmsrH/8AcxDS8ssv8kLWjnjPQ3Dk8r6rY6DtIK+cX3wg5LAfD/MzzBUckGEeqWRZs4UzDkt3y45Fg+C1A+qURXiZ7jq9fsi2gw0EtE5OhvJXwu1FH46V9+dyrtDBIcJ38FRHmbOEymx0B9YUo0jrV6cn0Fcx2usyj+dOwxnbpjPTg8bH45LOJ6he4L6ZQqCvAZ1KgY6hZQbhgJpnvYfUfQEptKjjTpWqdcNUnfK5pEobrD+feq8/CJHLxSoyUwkV3fLe70XS4Z3PGZ5x0L/fPzQuhIH3TH8s6JRKDqIGGwyEND1AGa9M7cV3oQU1YZiNJtGRgetE5bNMTToeuBj6OmxJHJzxs+CCJzaQ4O45h5FceNw25BohgUMGYAO8NWIIFwA2444=</InverseQ><D>eJ8o2jIQvWF4PdGmx8PqQaGH9NOnhSIToS0TKHQI1Kc7OlmvleyU38uyghwSY7VTQCHAub3U/jEcC2Xj6a2n1SatQ+iEaX77xLDrDru0J5nBfQFfjufEZv1m+hvULrFPgZScfHMnd4SndiYj4jqvTL1dX2lHUmDGzEVW7LnAG7IFSNjHrI+s0MH8XLS2Zn7M4//m0ao7+IzjU+zjbkFwQK1QhOjpNzDepR7mGWhmnUWA2u1WzbvufqSrkGKNOML9aLzEtb23jwzLjSYecPF6g95xA0Pr0K04WLenWmCzMbpf8qZbKtKmJt6IscyQ8BhzR/8/GHPrx5Bz8NgfitJ8UGZmVnrphgSjWIf3SOYu52V/qnThlHhCifn8JqiSDmO83+oXg/13HL/VICLNBDm8Faiv7KgmuVW2rwLRjMdkpWSkvOVjcg8pcvj1nl2BsQDtPT3e+nq1PwqeVMPUs2yhMMn31322ZCpYKq9PhphIkRgwGOSKpzJASastoN9xUT50WO5mh4pnQZCuQw3GRhNVu4gDlqImNQbz6cIiskCNuQ5sd8fF25ocWCL7aMfxd0L2VUT6jke04wEurXa84NCqFUd/LqzBDhR0dYjfLBgMPz9xEz68k3NG5hk+FTonFLgAXYBBaJQfwIAW2g7uJzCBXwRsYueEY/eHQdyP+ZyJ2rfb2e4W+3FMLXmWBfllrBj3tFRp3MbwmNlpyhD9SCB9fp+pqswyXbMzaTZE1W6UNfShIrKwC4JWyB1hZ1K+yhTRqIvvEH78JGcoDfG/uqbLc/pJRCtz3IAnYEMgx9Ninn+iqh7uCjiG86QaSWYaDMpfFLl9+2EK6knQ4IOxR81+UdrsaLjvCW5QjyOLNfnzOUFqzEoq7s91Cb0KxUkjGfvHyDt9mO4t+9ppk5qKDVRn6jEiiYJR3apNQ3J5n1zhtr4+65xIXaxut4FmqP+dlRaTuFGNP+JrCLYZ/RGSigyvU+t+M4p4kFhDTyVuZg6atjVygoi886J5v8RJgp4THaKyPoHNHN95dvSXJzpSTleMyHm7y+r70tut4c41oVyoDZcKGFvf7PkGqbz2k2HtlKtBwFVNsLpePw27+0q/nOchcbi5AljO8mi9EpoTBSJ1sNRL9YL3Zi4I5zDa23mnf+WFA7jz7BEXxdCee68aAvgiqhR0EILxOs23K0P4vwT17oJr4aDAIHx8WdsP5xCJTI0gh66L3nVE2GFgRlJh8XNwV+C9Ajg7eiztxSCYdhCbwlrDy245DI3xZCXvhXsJq6LtSQt4h8Dhlt+lFNQRHZfdb3ADioRc7p+aq0k7+cYyf2bxPGJ+3y38GL0+6dTXuxXCVSaaQ/uVD5LY4iRR4ZPrAQ==</D></RSAKeyValue>
+		//Debug pbk: <RSAKeyValue><Modulus>uemZseH/yr5Ryn0ZQ8cOxxk0oLjt7+L2ILhNoE3wEuF+PhPRvFeOQw90402ywUUm3xd3no3+QRIeBYOyCxNBvkhenErTTCZ9sfc4c+BNFT75vLgvJ5fXGdVA/StOvvgMTKFdAYJNZ4AFXPYDGMcrTWkHfPwPmmv6zfbIoR018mTyTvdKmML6WWwOwShsMlbM9/SNyA0ieO8ckoqmRUDvSy0SMH+HNEbouwH533fKhgGXFqHnM6eeoIPW37l5DRiSJ0FNN3hN9XEsBymX8ncekxBWzXaLknTK+gJx3GUO9rIWB4P2o50NUhH/s3NBg33CdejjPO2YuGYhNISG2qSDMXaRNYMfJmHLR24DMjPDd4EhFSpg/8/5XeTJsUR89NSkPRciMPP4t2dg0Pwr/gq0134JrVaXBDkZW173MINmsoRnopLkPGPLM1b4cKzpIYg9l16UBgGyNoJgmiOjcpK5gHexQorhpk9pwdpJ3A5fPc43ma2yP70xXK7nqMGusMYuoasedSdQIJtgn03ZBaOPKwDX9hCDb4/UqAKIB97QhoxZKmd6pyqhl9o2VxC7jCrHlTDzu06a+S3bTXaERNYVk8vK40BgTDq0Ioq62QMgcMZwff89hnGxuqHMJ2A3Yd7hpbtGWu6AD5q0z2gjiLZzREQNgY5EeYS013yR/97iPGc2SgLPp0aAvQQoQzYpHB7Msa1Diocgm6aChps+HhnyLc6DRoszFfMhJIRz6Z6Iq80fK7nx9XYnjPCoo8aYDdvSpmZdy/QFKJH/dFbbiEeNwV9lsXwT4vEtyE7nSpLAZ0ZAujMAI50HFeu3Th3lRS8mj4idjuBae7eDFyzMy7QVUEKeFFU0340w2Rq8PiHQyNc1ERSAG3mQJRCRJXGUXbTnht4Gl02jbD+7NFy5B2lIEQqEhuwWAMzcT9itM139MKwBWL3OY9IuzNJbauXN6n3zyP/+p53g27UAExIhaQlTdaVeY0X6dGGaUwEiS6M9BtO1OiWShV1c6E4PlyW9V31+t9p4/IeEvGGNsP5eqPwK5ChRjOZ56iBVw7FQBpEdq13kwrbp71tT+AAWylFRAqTmEV1zwnudZCp3qBiesG4tplA3ykD+W6NCSjQlwSrEqRy6hN+aV3cfQ6QxDQNW9E4kwcWTG7NtIl/oLe/zx3hM+bKuEtkwdansmXxQvckQx637oa00ZS1Cu9x8yyCWNkB9Hv8HoWvIzkFguTrW0jll25+2c0ZAur048HwTs8WWPtqdx+PWuEKVI14wsE+vAeJFK5VU/+ujlYywvJZGXXIqCI2iHZx5uAzIVmvjxDB1qvrmXqcCntIDRjwUGFPoMubJkLAdMoyEPwczSlg991sj5w==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+
+		/// <summary>Returns the PrivateKey which is used for signing the Response</summary>
+		[XmlIgnore]
+		protected string signatureKey {
+			get { return "<RSAKeyValue><Modulus>ww0BFd1ejrwZDCXbRVop9soKLx+LMYlhwNFZEnu41Ahew+bZq/MwW2ENduFe6dDYNl9oqNMbxXZrW6wg9htw7ctFgjorxbmMW4Z4XW2DgKGqZsGJD8AxI6r6y/4jGINLaF/dJDW5kJD9JLkY4L8OSHaVDtFnbBK+50eyrHBGVl7/zSAueW4TVNz5tosPoery2UfhR+162KdJ63vN+E9hkMNTuS91dCQGp3BPGZSuvsMXFtgMSC1D0WbZMQJzesuR2OaKE80cX4miKH+BNte1TVg+kkKfTYBePNprF+cJwJkWaf0Ie5eP2wMNPRDa4fLuYiFnhLJdlQcCcIToFSfk8w==</Modulus><Exponent>AQAB</Exponent><P>5233ZgqFlvDzXPSFI+fFzo2eCYzCQyhl5OFY2JtE6sat6M/Y1s7Kqu+E773C1+5dtWf5Q1qpfYhbA8158F8qjy2jKVNPk/o2lZmkC6DfFtOJRTJOcTws1cECoZ9wZV0IXw4CZdkc8/F/BPlXIzByIzAM8l9IgHJEbb86gS3stas=</P><Q>18JMTF4l6O+xHQ2IBjK4fGajEqG9+PkaQmhTubVf3SOC9nG3sQdKUQ5/uJ875yIr7xsLCPMy8E8FV6Tr4RUXScFVFr6WQ+NBp9GRAx8JTGLAp90zu7P9cbQ9MapX7RL3pm44m59J/lv9yRd0Z3oMPSExeFQRgXmvO12uWDEwtdk=</Q><DP>AJ8a+vssQKuE+8rsUJxeu59FvWDTZLrHC0ZPpsVD+h1ueiGUw37qrGrYQIyR6WKKfeI5mSS1L9Ed7XSvzyVyR9AnkATZQdx6KQywlBdqgfUveTAZZdRzil9qUmTLOHp3e0neV8etfDo5zRmeUknfBJksb7oxx6aG6ISK863b5OE=</DP><DQ>DamaF0Pm9qcm+gX/VRUlJYuCTA297+QmS4o7swjPNzumcWCmFym1BQj8AX7j1jENwyhdPIXZ9emrFu+0mB4zyVHax4PuFAJyB+R3YFE4z4N5W6fgPMSbCfY14c09oB+RWxKjtwcRMnA00+UOU/cgi0Zs0YfRS/eepw25mpAS25E=</DQ><InverseQ>YhmjwqwXHvqQMON78oRgpy0JRTC2YVIScUGV/fKhBjtQ2J4683xMeHV8p7UMeUsWCS9Ore/xLvaKG4JGITO8d63AgyvtqgV8S070y6ZyratltNFUTVSdKcc4DVuhN9cxY/4AoAhhGwWLyyjGwyTGTp71EuGJfZD0z1DVi0p+lkA=</InverseQ><D>psw8HWKNNiqMkOLevFP6ht0IEHw9IEOHoMhmD3RV/pyZzZVgl7cDp2E7jmn0LKc3/mdgrN67ZQV7kY2FMnENBY1LB66POCsQaER6Mgsw5ZNakTz35MxKOWJBzqipgpDkr4ErL4fyBDq4/+p559f6cuVVWrKgar8tGcMqfGQXAkwEsR+ryPlb94tJSiRPYJv+h9BeRPwzIZUJ/K2nKh6t/tBHYPQ752qdh3xTvfnKWYcvAFOYXIs8MO/UIGj59fVYeFQaXb5Ty5bsOyOq9yJ5ZNYNxm6kXkT8ff0pzE5gHUCIRYojTQsJ8LjY1RcBHitCQhaadLvGxrORM/rEadBTQQ==</D></RSAKeyValue>"; }
+		}
+
+		public virtual void sendResponse(HttpResponse response) {
+			response.ContentType = "text/xml";
+			if (compressResponse) {
+				response.Filter = new GZipStream(response.Filter, CompressionMode.Compress, true);
+				response.AppendHeader("Content-encoding", "gzip");
+			}
+
+			using(StreamWriter responseWriter = new StreamWriter(response.OutputStream, Encoding.UTF8)) {
+				XmlDocument responseDocument = createResponseDocument();
+				if (attachSignature)
+					signDocument(responseDocument);
+
+				responseDocument.Save(responseWriter);
+				responseDocument = null;
+			}
+		}
+
+		private XmlDocument createResponseDocument() {
+			
+			using(MemoryStream msXml = new MemoryStream()) {
+				
+				//Serialize me
+				XmlSerializer serializer = new XmlSerializer(GetType());
+				serializer.Serialize(msXml, this);
+
+				//Reset Stream
+				msXml.Position = 0;
+				XmlDocument responseDocument = new XmlDocument();
+				responseDocument.PreserveWhitespace = true;
+				responseDocument.Load(msXml);
+				return responseDocument;
+			}
+		}
+
+		private void signDocument(XmlDocument document) {
+
+			RSACryptoServiceProvider.UseMachineKeyStore = true;
+			CspParameters cspParams = new CspParameters
+			                          {KeyContainerName = "XML_DSIG_RSA_KEY", Flags = CspProviderFlags.UseMachineKeyStore};
+			RSACryptoServiceProvider rsaKey = new RSACryptoServiceProvider(cspParams);
+			rsaKey.FromXmlString(signatureKey);
+
+			SignedXml signedXml = new SignedXml(document) {SigningKey = rsaKey};
+			Reference reference = new Reference {Uri = ""};
+			XmlDsigEnvelopedSignatureTransform env = new XmlDsigEnvelopedSignatureTransform();
+			reference.AddTransform(env);
+			signedXml.AddReference(reference);
+			signedXml.ComputeSignature();
+			XmlElement xmlDigitalSignature = signedXml.GetXml();
+			document.DocumentElement.AppendChild(document.ImportNode(xmlDigitalSignature, true));
+
+		}
+
+		public virtual void Dispose() {
+		}
+	}
+}

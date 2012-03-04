@@ -1,0 +1,413 @@
+/*[fmt]1A90-1A0B-1*/
+/*----------------------------------------------
+updateSystem.NET - Websitedesign
+Copyright (c) Maximilian Krauss http://maximiliankrauss.net
+----------------------------------------------*/
+BODY {
+	font-family: "Segoe UI", Arial;
+	background-color: #EFF2F4;
+	cursor: default;
+}
+
+IMG {
+	border: none;
+}
+
+H1 {
+	color: #006E12;
+	font-size: 24px;
+	font-family: "Century Gothic", Verdana;
+	font-weight: inherit;
+}
+
+H2 {
+	color: #006E12;
+	font-size: 20px;
+	font-family: "Century Gothic", Verdana;
+	font-weight: normal;
+}
+
+H3 {
+	font-size: 17px;
+	font-family: "Century Gothic", Verdana;
+	margin: 0px 0px -5px;
+	padding: 0px;
+	font-weight: normal;
+}
+
+A, A:Visited {
+	color: #1160CD;
+	text-decoration: none;
+}
+
+A:Hover {
+	color: #006E12;
+}
+
+DIV#content A.download_zip {
+	background: url(/Images/download_zip.png) no-repeat left center;
+	padding-left: 18px;
+}
+
+DIV#header {
+	width: 900px;
+	margin: 0px auto 0;
+	padding-bottom: 20px;
+}
+
+DIV#content {
+	width: 900px;
+	min-height: 300px;
+	color: #000;
+	background-color: #FFF;
+	margin: 0px auto 0;
+	border: 1px solid #C6CFD7;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/*### Navigation Begin*/
+DIV#content DIV#navigation {
+	margin: 0;
+	padding: 0px 0 0;
+	min-height: 17px;
+}
+
+DIV#content DIV#navigation UL {
+	display: block;
+	float: left;
+	list-style: none;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	background-color: #E2E2E2;
+	width: 900px;
+	border-bottom: 1px solid #C6CFD7;
+}
+
+DIV#content DIV#navigation UL LI {
+	float: left;
+	width: auto;
+	height: auto;
+	margin: 3px;
+	padding: 3px 12px 3px 3px;
+	border-right: 1px solid #C6CFD7;
+	font-size: 90%;
+}
+
+DIV#content DIV#navigation UL LI A {
+	color: #1160CD;
+	text-decoration: none;
+}
+
+DIV#content DIV#navigation UL LI A:HOVER {
+	color: #339;
+}
+
+/*Navigation End ###
+### GlobalNotification Begin*/
+DIV#globalNotification {
+	border-bottom: 1px solid #C6CFD7;
+	font-size: 80%;
+	background-color: #F7DC83;
+}
+
+DIV#globalNotification P {
+	padding-top: 7px;
+	margin-bottom: 4px;
+	margin-left: 9px;
+}
+
+/*Global Notification End ###
+### MainContent Begin*/
+DIV#content #bodyContent {
+	margin: 21px 10px 30px;
+	font-size: 80%;
+}
+
+DIV#bodyContent DIV.errormessage {
+	padding: 0px 10px;
+	background-color: #EAEAEA;
+	border-right: 1px solid #CACACA;
+	border-bottom: 1px solid #CACACA;
+	border-top: 1px solid #CACACA;
+	border-left: 4px solid #F10E0E;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	font-family: "Courier New", monospace;
+	font-size: 90%;
+	margin-bottom: 10px;
+}
+
+DIV#helpContents PRE {
+	background-color: #FFFEF8;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #C0C0C0;
+	font-family: "Courier New", monospace;
+	font-size: 10pt;
+	text-align: left;
+	display: inline-block;
+	overflow: auto;
+	width: 99.5%;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+DIV#bodyContent SPAN.property {
+	font-family: teletyper;
+	color: #0E28B1;
+}
+
+DIV#content DIV#bodyContent UL LI {
+	margin: 3px 0px;
+}
+
+DIV#bodyContent P.content_center {
+	text-align: center;
+}
+
+DIV#bodyContent DIV.sbs_diff {
+	background-color: #F2F2F2;
+	padding: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+
+DIV#bodyContent DIV.sbs_diff2 {
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+/*MainContent End ###
+FEATURES*/
+DIV#features DIV.featureBox {
+	opacity: 0.6;
+	margin-bottom: 20px;
+	margin-left: 5px;
+	border-bottom: 1px dashed #CFCFCF;
+}
+
+DIV#features DIV.featureBox:HOVER {
+	opacity: 1;
+}
+
+DIV#features #statistics {
+	background: url(/Images/Features/statistics.png) no-repeat left center;
+	height: 185px;
+	padding-top: 5px;
+	padding-left: 310px;
+	padding-bottom: 5px;
+}
+
+DIV#features #releaseChannel {
+	padding-left: 310px;
+	background: url(/Images/Features/release_channel.png) no-repeat left center;
+	height: 208px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+DIV#features #designTime {
+	padding-left: 310px;
+	background: url(/Images/Features/controller_designer.png) no-repeat left center;
+	height: 208px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+DIV#features #builtInUi {
+	padding-left: 310px;
+	background: url(/Images/Features/update_dialog.png) no-repeat left center;
+	height: 208px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/*FEATURES
+### dotNET Begin*/
+DIV#bodyContent SPAN.dotnetMethod {
+	padding-left: 18px;
+	background: url('/Images/dotNET/method.png') no-repeat left center;
+	font-family: "Courier New", monospace;
+}
+
+DIV#bodyContent SPAN.dotnetClass {
+	padding-left: 18px;
+	background: url('/Images/dotNET/class.png') no-repeat left center;
+	font-family: "Courier New", monospace;
+}
+
+DIV#bodyContent SPAN.dotnetEvent {
+	padding-left: 18px;
+	background: url('/Images/dotNET/event.png') no-repeat left center;
+	font-family: "Courier New", monospace;
+}
+
+DIV#bodyContent SPAN.dotnetProperty {
+	padding-left: 18px;
+	background: url('/Images/dotNET/property.png') no-repeat left center;
+	font-family: "Courier New", monospace;
+}
+
+DIV#bodyContent SPAN.dotnetComponent {
+	padding-left: 18px;
+	background: url('/Images/dotNET/component.png') no-repeat left center;
+	font-family: "Courier New", monospace;
+}
+
+DIV#bodyContent SPAN.dotnetAssembly {
+	padding-left: 18px;
+	background: url('/Images/dotNET/assembly.png') no-repeat left center;
+	font-family: "Courier New", monospace;
+}
+
+/*dotNET End ###
+### FAQ Begin*/
+DIV#faq P SPAN.q {
+	color: #083C7D;
+	font-size: 110%;
+	font-family: "Century Gothic", Verdana;
+}
+
+DIV#faq UL.faqs {
+	list-style: decimal;
+}
+
+/*FAQ End ###
+### Feature Begin*/
+DIV#features P.Left IMG {
+	float: left;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+DIV#features H3 {
+	border-bottom: 1px solid #E7E7E7;
+}
+
+/*Features End ###
+### Download Begin*/
+DIV.download TD.Text P {
+	margin: 7px 0px 5px;
+}
+
+DIV.download TABLE {
+	/*[disabled]border:1px solid #E2E2E2;*/
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+DIV.download H3 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #E2E2E2;
+}
+
+/*Download End ###
+### Release Notes Begin*/
+DIV#releasenotes UL.changes {
+	list-style-type: none;
+	margin: 10px 0 15px;
+	padding: 0 0 8px 10px;
+}
+
+DIV#releasenotes UL.changes LI {
+	padding: 1px 0 1px 24px;
+}
+
+DIV#releasenotes UL.changes LI.bug {
+	background: url(/Images/Download/Bug.png) no-repeat left center;
+}
+
+DIV#releasenotes UL.changes LI.feature {
+	background: url(/Images/Download/feature.png) no-repeat left center;
+}
+
+DIV#releasenotes UL.changes LI:HOVER {
+	background-color: #EAEAEA;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+DIV#releasenotes H3 {
+	border-bottom: 1px solid #E4E4E4;
+	font-size: 15px;
+	font-family: Verdana;
+	padding-bottom: 4px;
+}
+
+/*Release Notes End ###
+### Roadmap begin*/
+DIV#roadmap H3 {
+	border-bottom: 1px solid #E4E4E4;
+	font-size: 15px;
+	font-family: Verdana;
+	padding-bottom: 4px;
+}
+
+DIV#roadmap UL.roadmapEntries {
+	list-style-type: none;
+	margin: 10px 0 15px;
+	padding: 0 0 8px 10px;
+}
+
+DIV#roadmap UL.roadmapEntries LI {
+	padding: 1px 0 1px 24px;
+}
+
+DIV#roadmap UL.roadmapEntries LI.roadmapCompleted {
+	background: url(/Images/Download/roadmapCompleted.png) no-repeat left center;
+}
+
+DIV#roadmap UL.roadmapEntries LI.roadmapInProgress {
+	background: url(/Images/Download/roadmapInProgress.png) no-repeat left center;
+	font-weight: bold;
+}
+
+DIV#roadmap UL.roadmapEntries LI.roadmapPlannend {
+	background: url(/Images/Download/roadmapPlannend.png) no-repeat left center;
+}
+
+DIV#roadmap UL.roadmapEntries LI.roadmapDisposed {
+	background: url(/Images/Download/roadmapDisposed.png) no-repeat left center;
+	text-decoration: line-through;
+}
+
+DIV#roadmap UL.roadmapEntries LI:HOVER {
+	background-color: #EAEAEA;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/*Roadmap end ###
+### Footer Begin*/
+#footer {
+	width: 900px;
+	margin: 0 auto;
+	font-size: 70%;
+	margin-top: 10px;
+	text-align: right;
+	color: #6D6D6D;
+}
+
+/*Footer End ###*/
+.clear {
+	clear: both;
+	margin: 0px;
+	padding: 0px;
+}
+

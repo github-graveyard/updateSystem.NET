@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B28A993E-F092-4F47-8B66-5CF498604D2B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>updateSystemDotNet.Updater</RootNamespace>
+    <AssemblyName>Updater</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>UpdateSystem.snk</AssemblyOriginatorKeyFile>
+    <StartupObject>updateSystemDotNet.Updater.Program</StartupObject>
+    <ApplicationIcon>Resources\FormIcon.ico</ApplicationIcon>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.4.369, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Administration\UI\Controls\buttonArea.cs">
+      <Link>UI\Components\buttonArea.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\Shared\sharedAssemblyInfo.cs">
+      <Link>sharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Helper.cs">
+      <Link>Core\Helper.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\RSA.cs">
+      <Link>Core\RSA.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Serializer.cs">
+      <Link>Core\Serializer.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Types\changelogDocument.cs">
+      <Link>Core\Types\changelogDocument.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Types\changelogDocumentItem.cs">
+      <Link>Core\Types\changelogDocumentItem.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Types\Directories.cs">
+      <Link>Core\Types\Directories.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Types\enhancedVersion.cs">
+      <Link>Core\Types\enhancedVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Types\FileType.cs">
+      <Link>Core\Types\FileType.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Types\releaseFilterType.cs">
+      <Link>Core\Types\releaseFilterType.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Types\releaseInfo.cs">
+      <Link>Core\Types\releaseInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Types\SecureContainer.cs">
+      <Link>Core\Types\SecureContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Types\SerializableDictionary.cs">
+      <Link>Core\Types\SerializableDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Types\statisticServerType.cs">
+      <Link>Core\Types\statisticServerType.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Types\updateConfiguration.cs">
+      <Link>Core\Types\updateConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Types\updateLogLinkedAccount.cs">
+      <Link>Core\Types\updateLogLinkedAccount.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Types\updatePackage.cs">
+      <Link>Core\Types\updatePackage.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\Types\VersionEx.cs">
+      <Link>Core\Types\VersionEx.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\actionBase.cs">
+      <Link>Core\updateActions\actionBase.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\addRegistryKeyAction.cs">
+      <Link>Core\updateActions\addRegistryKeyAction.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\addRegistryValueAction.cs">
+      <Link>Core\updateActions\addRegistryValueAction.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\administrationEditorAttribute.cs">
+      <Link>Core\updateActions\administrationEditorAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\cleanupAction.cs">
+      <Link>Core\updateActions\cleanupAction.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\closeProcessAction.cs">
+      <Link>Core\updateActions\closeProcessAction.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\deleteFilesAction.cs">
+      <Link>Core\updateActions\deleteFilesAction.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\fileCopyAction.cs">
+      <Link>Core\updateActions\fileCopyAction.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\registryActionBase.cs">
+      <Link>Core\updateActions\registryActionBase.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\removeRegistryKeyAction.cs">
+      <Link>Core\updateActions\removeRegistryKeyAction.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\removeRegistryValuesAction.cs">
+      <Link>Core\updateActions\removeRegistryValuesAction.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\renameFileAction.cs">
+      <Link>Core\updateActions\renameFileAction.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\startProcessAction.cs">
+      <Link>Core\updateActions\startProcessAction.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\startServiceAction.cs">
+      <Link>Core\updateActions\startServiceAction.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\stopServiceAction.cs">
+      <Link>Core\updateActions\stopServiceAction.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\updateRegistryAction.cs">
+      <Link>Core\updateActions\updateRegistryAction.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\userInteractionAction.cs">
+      <Link>Core\updateActions\userInteractionAction.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Core\updateActions\validatePackageAction.cs">
+      <Link>Core\updateActions\validatePackageAction.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\Enumerations.cs">
+      <Link>Core\Enumerations.cs</Link>
+    </Compile>
+    <Compile Include="..\updateController\UpdateSettings.cs">
+      <Link>Core\UpdateSettings.cs</Link>
+    </Compile>
+    <Compile Include="applyUpdate\applyAddRegistryValueAction.cs" />
+    <Compile Include="applyUpdate\applyAddRegistryKeyAction.cs" />
+    <Compile Include="applyUpdate\applyCleanupAction.cs" />
+    <Compile Include="applyUpdate\applyCloseProcessAction.cs" />
+    <Compile Include="applyUpdate\applyDeleteFileAction.cs" />
+    <Compile Include="applyUpdate\applyFileCopyAction.cs" />
+    <Compile Include="applyUpdate\applyRemoveRegistryKeyAction.cs" />
+    <Compile Include="applyUpdate\applyRemoveRegistryValueAction.cs" />
+    <Compile Include="applyUpdate\applyRenameFileAction.cs" />
+    <Compile Include="applyUpdate\applyStartProcessAction.cs" />
+    <Compile Include="applyUpdate\applyStartServiceAction.cs" />
+    <Compile Include="applyUpdate\applyStopServiceAction.cs" />
+    <Compile Include="applyUpdate\applyUpdateActionFinishedEventArgs.cs" />
+    <Compile Include="applyUpdate\applyUpdateBase.cs" />
+    <Compile Include="applyUpdate\applyUpdateInterfaceInteractionEventArgs.cs" />
+    <Compile Include="applyUpdate\applyUpdateManager.cs" />
+    <Compile Include="applyUpdate\applyUpdateProgressChangedEventArgs.cs" />
+    <Compile Include="applyUpdate\applyUpdateRegistryAction.cs" />
+    <Compile Include="applyUpdate\applyUserInteractionAction.cs" />
+    <Compile Include="applyUpdate\applyValidatePackageSignature.cs" />
+    <Compile Include="applyUpdate\startServiceException.cs" />
+    <Compile Include="applyUpdate\stopServiceException.cs" />
+    <Compile Include="assemblyInfo.cs" />
+    <Compile Include="InternalConfig.cs" />
+    <Compile Include="InvalidSignatureException.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="limitedProcess.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\dlgOpenProcesses.resx">
+      <DependentUpon>dlgOpenProcesses.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="UpdateSystem.snk" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\Components\dlgTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Components\statusLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Windows7ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\dlgOpenProcesses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\dlgOpenProcesses.Designer.cs">
+      <DependentUpon>dlgOpenProcesses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Forms\fileAccessDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\fileAccessDialog.Designer.cs">
+      <DependentUpon>fileAccessDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Forms\interactionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\interactionDialog.Designer.cs">
+      <DependentUpon>interactionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userCancelledException.cs" />
+    <Compile Include="Win32\NativeConstants.cs" />
+    <Compile Include="Win32\NativeErrors.cs" />
+    <Compile Include="Win32\NativeMethods.cs" />
+    <Compile Include="Win32\NativeStructs.cs" />
+    <Compile Include="Win32\SafeNativeMethods.cs" />
+    <Compile Include="Win32\Security.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FormIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\language.eng.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\language.deu.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\fileAccessDialog.resx">
+      <DependentUpon>fileAccessDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\interactionDialog.resx">
+      <DependentUpon>interactionDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICSharpCode.SharpZipLib.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\statuslabel_error.png" />
+    <EmbeddedResource Include="Images\statuslabel_progress.png" />
+    <EmbeddedResource Include="Images\statuslabel_success.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,860 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9FC359D7-FA35-41C2-AD21-1D86B71BD1F3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>updateSystemDotNet.Administration</RootNamespace>
+    <AssemblyName>updateSystemDotNet.Administration</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>UpdateSystem.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>appIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\Libs\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.FtpClient, Version=1.0.4277.17345, Culture=neutral, PublicKeyToken=2aebd9cf3ddd1ff5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\System.Net.FtpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared\sharedAssemblyInfo.cs">
+      <Link>sharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Core\aesEncryption.cs" />
+    <Compile Include="Core\appEventArgs\changeActionLabelStateEventArgs.cs" />
+    <Compile Include="Core\appEventArgs\downloadConfigurationCompletedEventArgs.cs" />
+    <Compile Include="Core\appEventArgs\hideBottomProgressEventArgs.cs" />
+    <Compile Include="Core\appEventArgs\hideNotificationEventArgs.cs" />
+    <Compile Include="Core\appEventArgs\removeUpdatePackagesCompletedEventArgs.cs" />
+    <Compile Include="Core\appEventArgs\setupStatisticServerCompletedEventArgs.cs" />
+    <Compile Include="Core\appEventArgs\showBottomProgressEventArgs.cs" />
+    <Compile Include="Core\appEventArgs\showHelpEventArgs.cs" />
+    <Compile Include="Core\appEventArgs\showNotificationEventArgs.cs" />
+    <Compile Include="Core\appEventArgs\statisticDownloadCompletedEventArgs.cs" />
+    <Compile Include="Core\appEventArgs\updatePackageBuiltEventArgs.cs" />
+    <Compile Include="Core\appEventArgs\updateStateEventArgs.cs" />
+    <Compile Include="Core\appEventArgs\uploadConfigurationCompletedEventArgs.cs" />
+    <Compile Include="Core\appEventArgs\uploadConfigurationStartedEventArgs.cs" />
+    <Compile Include="Core\Application\applicationLog.cs" />
+    <Compile Include="Core\Application\applicationSession.cs" />
+    <Compile Include="Core\Application\applicationSession.Helpers.cs" />
+    <Compile Include="Core\Application\applicationSettings.cs" />
+    <Compile Include="Core\Application\applicationSession.Messages.cs" />
+    <Compile Include="Core\Application\onlineServices.cs" />
+    <Compile Include="Core\Application\proxySettings.cs" />
+    <Compile Include="Core\Application\updateReleaseChannel.cs" />
+    <Compile Include="Core\dataContainer.cs" />
+    <Compile Include="Core\DataValidation\validationEntry.cs" />
+    <Compile Include="Core\DataValidation\validationManager.cs" />
+    <Compile Include="Core\DataValidation\validationResult.cs" />
+    <Compile Include="Core\DataValidation\validationTypes.cs" />
+    <Compile Include="Core\DragDrop\DataObject.cs" />
+    <Compile Include="Core\DragDrop\DataObjectExtensions.cs" />
+    <Compile Include="Core\DragDrop\DragDropHelper.cs" />
+    <Compile Include="Core\DragDrop\ExtensionAttribute.cs" />
+    <Compile Include="Core\DragDrop\IDragSourceHelper.cs" />
+    <Compile Include="Core\DragDrop\IDropTargetHelper.cs" />
+    <Compile Include="Core\DragDrop\NativeStructures.cs" />
+    <Compile Include="Core\DragDrop\SwfDataObjectExtensions.cs" />
+    <Compile Include="Core\DragDrop\SwfDragDropLibExtensions.cs" />
+    <Compile Include="Core\DragDrop\SwfDragSourceHelper.cs" />
+    <Compile Include="Core\DragDrop\SwfDropTargetHelper.cs" />
+    <Compile Include="Core\DragDrop\SwfDropTargetHelperExtensions.cs" />
+    <Compile Include="Core\graphicUtils.cs" />
+    <Compile Include="Core\projectConverter.cs" />
+    <Compile Include="Core\Publishing\FileSystem\pbsFileSystem.cs" />
+    <Compile Include="Core\Publishing\FileSystem\pbsfsSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Publishing\FileSystem\pbsfsSettingsControl.Designer.cs">
+      <DependentUpon>pbsfsSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Publishing\FTP\pbsFtp.cs" />
+    <Compile Include="Core\Publishing\FTP\pbsftpSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Publishing\FTP\pbsftpSettingsControl.Designer.cs">
+      <DependentUpon>pbsftpSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Publishing\IPublishProvider.cs" />
+    <Compile Include="Core\Publishing\publishBase.cs" />
+    <Compile Include="Core\Publishing\publishException.cs" />
+    <Compile Include="Core\Publishing\publishFactory.cs" />
+    <Compile Include="Core\Publishing\publishFactoryException.cs" />
+    <Compile Include="Core\Publishing\publishProviderDescriptionAttribute.cs" />
+    <Compile Include="Core\Publishing\publishResult.cs" />
+    <Compile Include="Core\Publishing\publishResultList.cs" />
+    <Compile Include="Core\Publishing\publishSettings.cs" />
+    <Compile Include="Core\Publishing\publishSettingsBaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Publishing\publishUpdateProgressChangedEventArgs.cs" />
+    <Compile Include="Core\redPill.cs" />
+    <Compile Include="Core\resourceHelper.cs" />
+    <Compile Include="Core\updateLog\Requests\addProjectRequest.cs" />
+    <Compile Include="Core\updateLog\Requests\addUserRequest.cs" />
+    <Compile Include="Core\updateLog\Requests\authenticatedRequest.cs" />
+    <Compile Include="Core\updateLog\Requests\baseRequest.cs" />
+    <Compile Include="Core\updateLog\Requests\cleanupLogRequest.cs" />
+    <Compile Include="Core\updateLog\Requests\deleteProjectRequest.cs" />
+    <Compile Include="Core\updateLog\Requests\deleteUserRequest.cs" />
+    <Compile Include="Core\updateLog\Requests\editProjectRequest.cs" />
+    <Compile Include="Core\updateLog\Requests\editUserRequest.cs" />
+    <Compile Include="Core\updateLog\Requests\getLogRequest.cs" />
+    <Compile Include="Core\updateLog\Requests\getProjectRequest.cs" />
+    <Compile Include="Core\updateLog\Requests\getProjectsRequest.cs" />
+    <Compile Include="Core\updateLog\Requests\getUserRequest.cs" />
+    <Compile Include="Core\updateLog\Requests\loginRequest.cs" />
+    <Compile Include="Core\updateLog\Responses\cleanupLogResponse.cs" />
+    <Compile Include="Core\updateLog\Responses\defaultResponse.cs" />
+    <Compile Include="Core\updateLog\Responses\getLogResponse.cs" />
+    <Compile Include="Core\updateLog\Responses\getProjectResponse.cs" />
+    <Compile Include="Core\updateLog\Responses\getProjectsResponse.cs" />
+    <Compile Include="Core\updateLog\Responses\getUserResponse.cs" />
+    <Compile Include="Core\updateLog\Responses\loginResponse.cs" />
+    <Compile Include="Core\updateLog\updateLogEntry.cs" />
+    <Compile Include="Core\updateLog\updateLogException.cs" />
+    <Compile Include="Core\updateLog\updateLogFactory.cs" />
+    <Compile Include="Core\updateLog\updateLogProject.cs" />
+    <Compile Include="Core\updateLog\userAccount.cs" />
+    <Compile Include="Core\Updates\prepareEditPackageResult.cs" />
+    <Compile Include="Core\Updates\rsaKeyPair.cs" />
+    <Compile Include="Core\secureSerializer.cs" />
+    <Compile Include="Core\serializableDictionary.cs" />
+    <Compile Include="Core\OldupdateProject.cs" />
+    <Compile Include="Core\Strings.cs" />
+    <Compile Include="Core\Updates\updateFactory.cs" />
+    <Compile Include="Core\Updates\updatePackageViewFilter.cs" />
+    <Compile Include="Core\Updates\updateProject.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Controls\actionLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\buttonArea.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\buttonEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\explorerTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\extendedListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\flatButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\groupBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\linkLabelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\mainInstructionsLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\nativeRenderer.cs" />
+    <Compile Include="UI\Controls\seperatorLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\textBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\updateStatisticChart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\aboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\aboutDialog.Designer.cs">
+      <DependentUpon>aboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\addFolderDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\addFolderDialog.Designer.cs">
+      <DependentUpon>addFolderDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\applicationErrorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\applicationErrorDialog.Designer.cs">
+      <DependentUpon>applicationErrorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\applicationSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\applicationSettingsDialog.Designer.cs">
+      <DependentUpon>applicationSettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\authorizeUpdateLogDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\authorizeUpdateLogDialog.Designer.cs">
+      <DependentUpon>authorizeUpdateLogDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\chooseNewPublishProviderDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\chooseNewPublishProviderDialog.Designer.cs">
+      <DependentUpon>chooseNewPublishProviderDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\copySettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\copySettingsDialog.Designer.cs">
+      <DependentUpon>copySettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\dialogBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\eapLoginDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\eapLoginDialog.Designer.cs">
+      <DependentUpon>eapLoginDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\manageUpdateLogProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\manageUpdateLogProjectDialog.Designer.cs">
+      <DependentUpon>manageUpdateLogProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\manageUpdateLogUserDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\manageUpdateLogUserDialog.Designer.cs">
+      <DependentUpon>manageUpdateLogUserDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\proxySettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\proxySettingsDialog.Designer.cs">
+      <DependentUpon>proxySettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\publishProviderSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\publishProviderSettingsDialog.Designer.cs">
+      <DependentUpon>publishProviderSettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\publishUpdatesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\publishUpdatesDialog.Designer.cs">
+      <DependentUpon>publishUpdatesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\publishUpdatesResultDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\publishUpdatesResultDialog.Designer.cs">
+      <DependentUpon>publishUpdatesResultDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\saveProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\saveProjectDialog.Designer.cs">
+      <DependentUpon>saveProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\updatePackageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\updatePackageDialog.Designer.cs">
+      <DependentUpon>updatePackageDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\upgradeProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\upgradeProjectDialog.Designer.cs">
+      <DependentUpon>upgradeProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\basePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\baseSubPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\feedbackPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\feedbackPage.Designer.cs">
+      <DependentUpon>feedbackPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\publishPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\publishPage.Designer.cs">
+      <DependentUpon>publishPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\settingPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\settingPage.Designer.cs">
+      <DependentUpon>settingPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\settingSubPages\settingSubBasePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\settingSubPages\sspArguments.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\settingSubPages\sspArguments.Designer.cs">
+      <DependentUpon>sspArguments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\settingSubPages\sspGeneral.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\settingSubPages\sspGeneral.Designer.cs">
+      <DependentUpon>sspGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\settingSubPages\sspImproveApp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\settingSubPages\sspImproveApp.Designer.cs">
+      <DependentUpon>sspImproveApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\settingSubPages\sspLinkedAssemblyVersion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\settingSubPages\sspLinkedAssemblyVersion.Designer.cs">
+      <DependentUpon>sspLinkedAssemblyVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\settingSubPages\sspSetupId.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\settingSubPages\sspSetupId.Designer.cs">
+      <DependentUpon>sspSetupId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\startPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\startPage.Designer.cs">
+      <DependentUpon>startPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\startSubPages\startSecuritySubPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\startSubPages\startSecuritySubPage.Designer.cs">
+      <DependentUpon>startSecuritySubPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\startSubPages\startVSIntegrationSubPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\startSubPages\startVSIntegrationSubPage.Designer.cs">
+      <DependentUpon>startVSIntegrationSubPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\statisticPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\statisticPage.Designer.cs">
+      <DependentUpon>statisticPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\statisticSubPages\statisticProjectsSubPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\statisticSubPages\statisticProjectsSubPage.Designer.cs">
+      <DependentUpon>statisticProjectsSubPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\statisticSubPages\statisticSettingsSubPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\statisticSubPages\statisticSettingsSubPage.Designer.cs">
+      <DependentUpon>statisticSettingsSubPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\statisticSubPages\statisticSubBasePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\statisticSubPages\statisticUsersSubPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\statisticSubPages\statisticUsersSubPage.Designer.cs">
+      <DependentUpon>statisticUsersSubPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\updatePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\updatePage.Designer.cs">
+      <DependentUpon>updatePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\mainFormPages\updateSubPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\mainFormPages\updateSubPage.Designer.cs">
+      <DependentUpon>updateSubPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Popups\popupBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Popups\popupClosedEventArgs.cs" />
+    <Compile Include="UI\Popups\statisticFilterPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Popups\statisticFilterPopup.Designer.cs">
+      <DependentUpon>statisticFilterPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Popups\updateVersionPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Popups\updateVersionPopup.Designer.cs">
+      <DependentUpon>updateVersionPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\actionEditorBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\actionEditorBase.Designer.cs">
+      <DependentUpon>actionEditorBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\addRegistryKeyActionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\addRegistryKeyActionEditor.Designer.cs">
+      <DependentUpon>addRegistryKeyActionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\addRegistryValueActionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\addRegistryValueActionEditor.Designer.cs">
+      <DependentUpon>addRegistryValueActionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\deleteFilesActionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\deleteFilesActionEditor.Designer.cs">
+      <DependentUpon>deleteFilesActionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\fileCopyActionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\fileCopyActionEditor.Designer.cs">
+      <DependentUpon>fileCopyActionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\defaultActionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\defaultActionEditor.Designer.cs">
+      <DependentUpon>defaultActionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\registryActionEditorBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\registryActionEditorBase.Designer.cs">
+      <DependentUpon>registryActionEditorBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\removeRegistryKeyActionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\removeRegistryKeyActionEditor.Designer.cs">
+      <DependentUpon>removeRegistryKeyActionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\removeRegistryValuesActionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\removeRegistryValuesActionEditor.Designer.cs">
+      <DependentUpon>removeRegistryValuesActionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\renameFileActionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\renameFileActionEditor.Designer.cs">
+      <DependentUpon>renameFileActionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\startProcessActionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\startProcessActionEditor.Designer.cs">
+      <DependentUpon>startProcessActionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\closeProcessActionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\closeProcessActionEditor.Designer.cs">
+      <DependentUpon>closeProcessActionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\startServiceActionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\startServiceActionEditor.Designer.cs">
+      <DependentUpon>startServiceActionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\stopServiceActionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\updateActionEditor\stopServiceActionEditor.Designer.cs">
+      <DependentUpon>stopServiceActionEditor.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\Dialogs\aboutDialog.resx">
+      <DependentUpon>aboutDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\addFolderDialog.resx">
+      <DependentUpon>addFolderDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\applicationSettingsDialog.resx">
+      <DependentUpon>applicationSettingsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\copySettingsDialog.resx">
+      <DependentUpon>copySettingsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\updatePackageDialog.resx">
+      <DependentUpon>updatePackageDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\updateActionEditor\actionEditorBase.resx">
+      <DependentUpon>actionEditorBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\updateActionEditor\addRegistryValueActionEditor.resx">
+      <DependentUpon>addRegistryValueActionEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\updateActionEditor\defaultActionEditor.resx">
+      <DependentUpon>defaultActionEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\updateActionEditor\deleteFilesActionEditor.resx">
+      <DependentUpon>deleteFilesActionEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\updateActionEditor\fileCopyActionEditor.resx">
+      <DependentUpon>fileCopyActionEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\updateActionEditor\registryActionEditorBase.resx">
+      <DependentUpon>registryActionEditorBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\updateActionEditor\removeRegistryValuesActionEditor.resx">
+      <DependentUpon>removeRegistryValuesActionEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\updateActionEditor\renameFileActionEditor.resx">
+      <DependentUpon>renameFileActionEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\updateActionEditor\startProcessActionEditor.resx">
+      <DependentUpon>startProcessActionEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\updateActionEditor\closeProcessActionEditor.resx">
+      <DependentUpon>closeProcessActionEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\updateActionEditor\startServiceActionEditor.resx">
+      <DependentUpon>startServiceActionEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\updateActionEditor\stopServiceActionEditor.resx">
+      <DependentUpon>stopServiceActionEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="UpdateSystem.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newProject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openProject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\server_install.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\server_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ftpSymbols\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ftpSymbols\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ftpSymbols\server.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ftpSymbols\ssl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\updateController\updateController.csproj">
+      <Project>{2D791D65-5EC1-4259-B65C-4102323AD6A5}</Project>
+      <Name>updateController</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actionlabel_error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actionlabel_success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle.png" />
+    <None Include="Resources\defaultUpdateAction.png" />
+    <None Include="Resources\actions.png" />
+    <None Include="Resources\changes.png" />
+    <None Include="Resources\general.png" />
+    <None Include="Resources\availability.png" />
+    <None Include="Resources\add_file.png" />
+    <None Include="Resources\add_folder.png" />
+    <None Include="Resources\add_16px.png" />
+    <None Include="Resources\removePackage.png" />
+    <None Include="Resources\editPackage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appIcon.ico" />
+    <EmbeddedResource Include="Images\security.png" />
+    <EmbeddedResource Include="Images\vs_ide.png" />
+    <EmbeddedResource Include="Images\projectEdit.png" />
+    <EmbeddedResource Include="Images\projects.png" />
+    <EmbeddedResource Include="Images\usermgmt.png" />
+    <EmbeddedResource Include="Images\app_logo_big.png" />
+    <EmbeddedResource Include="Images\feedback.png" />
+    <EmbeddedResource Include="Core\Publishing\FileSystem\pbsfsSettingsControl.resx">
+      <DependentUpon>pbsfsSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Publishing\FTP\pbsftpSettingsControl.resx">
+      <DependentUpon>pbsftpSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\settings.png" />
+    <EmbeddedResource Include="Images\updates.png" />
+    <EmbeddedResource Include="Images\publish.png" />
+    <EmbeddedResource Include="Images\statistics.png" />
+    <EmbeddedResource Include="Images\home.png" />
+    <EmbeddedResource Include="Images\paypalDonate.gif" />
+    <EmbeddedResource Include="Images\statisticserver_mgmt.png" />
+    <EmbeddedResource Include="Images\updateFTPCredentials.png" />
+    <EmbeddedResource Include="Images\about.png" />
+    <EmbeddedResource Include="Images\copyProjectSettings.png" />
+    <EmbeddedResource Include="Images\customFields.png" />
+    <EmbeddedResource Include="Images\newProject.png" />
+    <EmbeddedResource Include="Images\openProject.png" />
+    <EmbeddedResource Include="UI\Dialogs\applicationErrorDialog.resx">
+      <DependentUpon>applicationErrorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\authorizeUpdateLogDialog.resx">
+      <DependentUpon>authorizeUpdateLogDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\chooseNewPublishProviderDialog.resx">
+      <DependentUpon>chooseNewPublishProviderDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\eapLoginDialog.resx">
+      <DependentUpon>eapLoginDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\manageUpdateLogProjectDialog.resx">
+      <DependentUpon>manageUpdateLogProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\manageUpdateLogUserDialog.resx">
+      <DependentUpon>manageUpdateLogUserDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\proxySettingsDialog.resx">
+      <DependentUpon>proxySettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\publishProviderSettingsDialog.resx">
+      <DependentUpon>publishProviderSettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\publishUpdatesDialog.resx">
+      <DependentUpon>publishUpdatesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\publishUpdatesResultDialog.resx">
+      <DependentUpon>publishUpdatesResultDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\saveProjectDialog.resx">
+      <DependentUpon>saveProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\upgradeProjectDialog.resx">
+      <DependentUpon>upgradeProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\feedbackPage.resx">
+      <DependentUpon>feedbackPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\publishPage.resx">
+      <DependentUpon>publishPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\settingPage.resx">
+      <DependentUpon>settingPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\settingSubPages\sspArguments.resx">
+      <DependentUpon>sspArguments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\settingSubPages\sspGeneral.resx">
+      <DependentUpon>sspGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\settingSubPages\sspImproveApp.resx">
+      <DependentUpon>sspImproveApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\settingSubPages\sspLinkedAssemblyVersion.resx">
+      <DependentUpon>sspLinkedAssemblyVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\settingSubPages\sspSetupId.resx">
+      <DependentUpon>sspSetupId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\startPage.resx">
+      <DependentUpon>startPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\startSubPages\startVSIntegrationSubPage.resx">
+      <DependentUpon>startVSIntegrationSubPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\statisticPage.resx">
+      <DependentUpon>statisticPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\statisticSubPages\statisticProjectsSubPage.resx">
+      <DependentUpon>statisticProjectsSubPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\statisticSubPages\statisticSettingsSubPage.resx">
+      <DependentUpon>statisticSettingsSubPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\statisticSubPages\statisticUsersSubPage.resx">
+      <DependentUpon>statisticUsersSubPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\updatePage.resx">
+      <DependentUpon>updatePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\mainFormPages\updateSubPage.resx">
+      <DependentUpon>updateSubPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Popups\statisticFilterPopup.resx">
+      <DependentUpon>statisticFilterPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Popups\updateVersionPopup.resx">
+      <DependentUpon>updateVersionPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\projectImage.png" />
+    <None Include="Resources\appSettings.png" />
+    <None Include="Resources\importProjectSettings.png" />
+    <None Include="Resources\copyProjectSettings.png" />
+    <None Include="Resources\BarTexture.png" />
+    <None Include="Resources\collExButtons.png" />
+    <None Include="Resources\staServerPhp.png" />
+    <None Include="Resources\staServerDotNet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\commandLine\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
