@@ -34,14 +34,14 @@ namespace updateSystemDotNet.Administration.Core.Application {
 
 		public string logDirectory { get { return _logDirectory; } }
 
-		/// <summary>Initialisiert die Logdatei und schreibt in diese Informationen über Version und Betriebssystem.</summary>
+		/// <summary>Initializes the Log and Write some basic Computerinformation.</summary>
 		private void initializeLogSession() {
-			writeLogInternal(logLevel.Info, "Anwendung gestartet");
+			writeLogInternal(logLevel.Info, "Application started");
 			logDepthIncrease();
 
-			//Umgebungsinformationen
-			writeKeyValue("Version (Anwendung)", Assembly.GetExecutingAssembly().GetName().Version.ToString());
-			writeKeyValue("Version (Betriebssystem)", Environment.OSVersion.VersionString);
+			//Environmentvariables
+			writeKeyValue("Version (Application)", Assembly.GetExecutingAssembly().GetName().Version.ToString());
+			writeKeyValue("Version (OS)", Environment.OSVersion.VersionString);
 			writeKeyValue("Plattform",
 			              ((Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE") ?? string.Empty).Contains("64")
 			               	? "64-Bit"
@@ -69,27 +69,27 @@ namespace updateSystemDotNet.Administration.Core.Application {
 			writeLogInternal(logLevel.Error, sbExceptionStack.ToString());
 		}
 
-		/// <summary>Beendet die Logsession</summary>
+		/// <summary>Exists the Logsession</summary>
 		public void finalizeLogSession() {
 			logDepthReset();
-			writeLogInternal(logLevel.Info, string.Format("Anwendung beendet\r\n{0}", _seperator));
+			writeLogInternal(logLevel.Info, string.Format("Application exited\r\n{0}", _seperator));
 		}
 
-		/// <summary>Erhöht die Einrückung der Logeinträge.</summary>
+		/// <summary>Increases Indentation.</summary>
 		public void logDepthIncrease() {
 			_logDepth++;
 		}
-		/// <summary>Verringert die Einrückung der Logeinträge.</summary>
+		/// <summary>Decreases Indentation.</summary>
 		public void logDepthDecrease() {
 			if (_logDepth > 0)
 				_logDepth--;
 		}
-		/// <summary>Setzt die Einrückung der Logeinträge wieder auf 0 zurück.</summary>
+		/// <summary>Resets the Indentation.</summary>
 		public void logDepthReset() {
 			_logDepth = 0;
 		}
 
-		/// <summary>Erstellt abhängig aus der Logtiefe einen String aus Tabs.</summary>
+		/// <summary>Create Tabs based on Indentation.</summary>
 		private string logDepthSpace {
 			get {
 				if (_logDepth == 0)
@@ -104,11 +104,11 @@ namespace updateSystemDotNet.Administration.Core.Application {
 
 		private void writeLogInternal(logLevel level, string message) {
 
-			//Nichts machen wenn die Logfunktion ausgestellt ist
+			//Do nothing if logging is turned off
 			if (!_session.Settings.enableLogging)
 				return;
 
-			//Logverzeichnis erstellen
+			//Create Logdirectory
 			if (!Directory.Exists(_logDirectory))
 				Directory.CreateDirectory(_logDirectory);
 
