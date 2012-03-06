@@ -9,5 +9,5 @@ Homepage: http://updatesystem.net
 Copyright 2008 - 2012 Maximilian Krauss - All rights reserved.
 
 ##Licensing
-* updateController and updateController: Licensed under the LGPL.
+* updateController and updateInstaller: Licensed under the LGPL.
 * Everything else is licensed under the terms and conditions of the GPL.
