@@ -5,6 +5,9 @@ Hi there! Most of this Stuff (including the Website) is still in German. I'll tr
 
 Homepage: http://updatesystem.net
 
+You wanna join the dev-team? Join our Wunderkit-Page and see what's need to be done :)
+https://www.wunderkit.com/#/updatesystem-net/profile
+
 ##Copyright
 Copyright 2008 - 2012 Maximilian Krauss - All rights reserved.
 
