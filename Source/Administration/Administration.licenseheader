@@ -1,4 +1,6 @@
-﻿#region License
+extensions: designer.cs
+extensions: .cs
+#region License
 /*
 	updateSystem.NET - Easy to use Autoupdatesolution for .NET Apps
 	Copyright (C) 2012  Maximilian Krauss <max@kraussz.com>
@@ -17,10 +19,3 @@
 */
 #endregion
 
-namespace updateSystemDotNet.Administration.Core.updateLog.Requests {
-	internal sealed class loginRequest : authenticatedRequest {
-		protected override string actionName {
-			get { return "login"; }
-		}
-	}
-}
