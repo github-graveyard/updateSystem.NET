@@ -220,6 +220,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="updateController.licenseheader" />
     <None Include="UpdateSystem.snk" />
   </ItemGroup>
   <ItemGroup>
@@ -332,7 +333,7 @@
   -->
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties Reactor_Enabled="0" Reactor_Lib="0" Reactor_Automatic="1" Reactor_Commands="" Reactor_Project="" Reactor_Output="" />
+      <UserProperties Reactor_Output="" Reactor_Project="" Reactor_Commands="" Reactor_Automatic="1" Reactor_Lib="0" Reactor_Enabled="0" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

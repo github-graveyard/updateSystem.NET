@@ -19,29 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "updateInstaller", "updateIn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Administration", "Administration\Administration.csproj", "{9FC359D7-FA35-41C2-AD21-1D86B71BD1F3}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "Website\", "{7641BE9B-1EBB-4573-9997-7C5D7A31B618}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
-		Debug.AspNetCompiler.VirtualPath = "/Website"
-		Debug.AspNetCompiler.PhysicalPath = "Website\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Website\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/Website"
-		Release.AspNetCompiler.PhysicalPath = "Website\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Website\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "63806"
-		VWDVirtualPath = "/"
-		DefaultWebSiteLanguage = "Visual C#"
-		StartServerOnDebug = "false"
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Setup", "Setup\Setup.csproj", "{3E085A14-AF4D-4A17-AF87-54CCD7A31786}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "setupDataBuilder", "Tools\setupDataBuilder\setupDataBuilder.csproj", "{2535BEE4-799F-470E-BB6C-447E59BB5646}"
@@ -73,6 +50,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "updateLog", "updateLog\", "
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Debug.updateLog", "Tools\Debug.updateLog\Debug.updateLog.csproj", "{3F9962BC-6CD0-4D17-922F-48D3D2248E12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{BEE33A84-4945-43C7-8D45-C15595C7DE9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -125,15 +104,6 @@ Global
 		{9FC359D7-FA35-41C2-AD21-1D86B71BD1F3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{9FC359D7-FA35-41C2-AD21-1D86B71BD1F3}.Release|x86.ActiveCfg = Release|x86
 		{9FC359D7-FA35-41C2-AD21-1D86B71BD1F3}.Release|x86.Build.0 = Release|x86
-		{7641BE9B-1EBB-4573-9997-7C5D7A31B618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7641BE9B-1EBB-4573-9997-7C5D7A31B618}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7641BE9B-1EBB-4573-9997-7C5D7A31B618}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{7641BE9B-1EBB-4573-9997-7C5D7A31B618}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{7641BE9B-1EBB-4573-9997-7C5D7A31B618}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{7641BE9B-1EBB-4573-9997-7C5D7A31B618}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{7641BE9B-1EBB-4573-9997-7C5D7A31B618}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{7641BE9B-1EBB-4573-9997-7C5D7A31B618}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
-		{7641BE9B-1EBB-4573-9997-7C5D7A31B618}.Release|x86.ActiveCfg = Debug|Any CPU
 		{3E085A14-AF4D-4A17-AF87-54CCD7A31786}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{3E085A14-AF4D-4A17-AF87-54CCD7A31786}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{3E085A14-AF4D-4A17-AF87-54CCD7A31786}.Debug|Mixed Platforms.Build.0 = Debug|x86
@@ -196,6 +166,16 @@ Global
 		{3F9962BC-6CD0-4D17-922F-48D3D2248E12}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{3F9962BC-6CD0-4D17-922F-48D3D2248E12}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{3F9962BC-6CD0-4D17-922F-48D3D2248E12}.Release|x86.ActiveCfg = Release|Any CPU
+		{BEE33A84-4945-43C7-8D45-C15595C7DE9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE33A84-4945-43C7-8D45-C15595C7DE9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE33A84-4945-43C7-8D45-C15595C7DE9E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BEE33A84-4945-43C7-8D45-C15595C7DE9E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BEE33A84-4945-43C7-8D45-C15595C7DE9E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BEE33A84-4945-43C7-8D45-C15595C7DE9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE33A84-4945-43C7-8D45-C15595C7DE9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEE33A84-4945-43C7-8D45-C15595C7DE9E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BEE33A84-4945-43C7-8D45-C15595C7DE9E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BEE33A84-4945-43C7-8D45-C15595C7DE9E}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -207,12 +187,12 @@ Global
 		{C28B5C52-8466-4112-94A0-A3923480893D} = {91976E7F-6070-40E5-A243-EFDE9E84BB13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		BuildVersion_ConfigurationName = Any
-		BuildVersion_BuildAction = Both
-		VisualSVNWorkingCopyRoot = ..
-		BuildVersion_UpdateAssemblyVersion = True
-		BuildVersion_UpdateFileVersion = True
-		BuildVersion_AssemblyInfoFilename = Shared\sharedAssemblyInfo.cs
 		BuildVersion_BuildVersioningStyle = None.None.None.MonthAndDayStamp
+		BuildVersion_AssemblyInfoFilename = Shared\sharedAssemblyInfo.cs
+		BuildVersion_UpdateFileVersion = True
+		BuildVersion_UpdateAssemblyVersion = True
+		VisualSVNWorkingCopyRoot = ..
+		BuildVersion_BuildAction = Both
+		BuildVersion_ConfigurationName = Any
 	EndGlobalSection
 EndGlobal

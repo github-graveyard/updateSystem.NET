@@ -1,22 +1,22 @@
-﻿#region License
-/*
-	updateSystem.NET - Easy to use Autoupdatesolution for .NET Apps
-	Copyright (C) 2012  Maximilian Krauss <max@kraussz.com>
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
-
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-#endregion
-
+﻿/**
+ * updateSystem.NET
+ * Copyright (c) 2008-2012 Maximilian Krauss <http://kraussz.com> eMail: max@kraussz.com
+ *
+ * This library is licened under The Code Project Open License (CPOL) 1.02
+ * which can be found online at <http://www.codeproject.com/info/cpol10.aspx>
+ * 
+ * THIS WORK IS PROVIDED "AS IS", "WHERE IS" AND "AS AVAILABLE", WITHOUT
+ * ANY EXPRESS OR IMPLIED WARRANTIES OR CONDITIONS OR GUARANTEES. YOU,
+ * THE USER, ASSUME ALL RISK IN ITS USE, INCLUDING COPYRIGHT INFRINGEMENT,
+ * PATENT INFRINGEMENT, SUITABILITY, ETC. AUTHOR EXPRESSLY DISCLAIMS ALL
+ * EXPRESS, IMPLIED OR STATUTORY WARRANTIES OR CONDITIONS, INCLUDING
+ * WITHOUT LIMITATION, WARRANTIES OR CONDITIONS OF MERCHANTABILITY,
+ * MERCHANTABLE QUALITY OR FITNESS FOR A PARTICULAR PURPOSE, OR ANY
+ * WARRANTY OF TITLE OR NON-INFRINGEMENT, OR THAT THE WORK (OR ANY
+ * PORTION THEREOF) IS CORRECT, USEFUL, BUG-FREE OR FREE OF VIRUSES.
+ * YOU MUST PASS THIS DISCLAIMER ON WHENEVER YOU DISTRIBUTE THE WORK OR
+ * DERIVATIVE WORKS.
+ */
 using System;
 using System.Windows.Forms;
 using updateSystemDotNet.Core.updateActions;

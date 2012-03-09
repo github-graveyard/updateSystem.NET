@@ -250,6 +250,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="setup.package" />
+    <None Include="Setup.licenseheader" />
     <None Include="UpdateSystem.snk" />
   </ItemGroup>
   <ItemGroup>
