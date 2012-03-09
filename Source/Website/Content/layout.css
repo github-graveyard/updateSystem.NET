@@ -1,0 +1,78 @@
+﻿body {
+	font-family: 'Segoe UI';
+	font-size: 14px;
+}
+
+header {
+	margin: 0 auto;
+	width: 940px;
+	height: 55px;
+	border-bottom: 1px solid #ededed;
+}
+/*Navigation*/
+header ul {
+	list-style: none;
+	float: right;
+}
+header ul li {
+	float: left;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+header ul li a {
+	color: inherit;
+	font-size: 120%;
+	text-decoration: none;
+}
+header ul li .active {
+	border-bottom: 3px solid #3079cb;
+}
+header ul li:hover {
+	border-bottom: 3px solid #3079cb;
+}
+/*Applicationimage*/
+header #application-logo {
+	width: 239px;
+	height: 50px;
+	background: url('Images/Layout/application-logo.png') no-repeat center left;
+	float: left;
+}
+
+footer {
+	font-size: 90%;
+	color: #C0C0C0;
+}
+
+/*Baseclasses*/
+a {
+	text-decoration: none;
+	color: #3079cb;
+}
+.center {
+	text-align: center;
+}
+
+
+/*Content*/
+.body-content {
+	width: 940px;
+	margin: 0 auto;
+}
+
+
+/*
+/Index
+*/
+.index-hero-wrapper {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 823px;
+	height: 489px;
+	margin: 0 auto;
+}
+.index-hero {
+	width: inherit;
+	height: inherit;
+	background: url('Images/Index/index-hero.png') center center no-repeat;
+}
