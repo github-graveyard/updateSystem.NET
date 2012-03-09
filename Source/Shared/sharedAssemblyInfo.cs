@@ -1,4 +1,4 @@
-/**
+/*
  * updateSystem.NET
  * Copyright (c) 2008-2012 Maximilian Krauss <http://kraussz.com> eMail: max@kraussz.com
  *
