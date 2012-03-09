@@ -12,5 +12,4 @@ https://www.wunderkit.com/#/updatesystem-net/profile
 Copyright 2008 - 2012 Maximilian Krauss - All rights reserved.
 
 ##Licensing
-* updateController and updateInstaller: Licensed under the LGPL.
-* Everything else is licensed under the terms and conditions of the GPL.
+This Project is licensed under the Terms and Conditions of the Code Project Open License. See the LICENSE.md File for more Information.
