@@ -1,6 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
-
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -120,14 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="server_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\server_add.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="add_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_folder.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="server_install" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\server_install.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="actions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actions.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -165,9 +157,6 @@
   <data name="main_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\main_logo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="openProject" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\openProject.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="availability" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\availability.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -180,20 +169,11 @@
   <data name="general" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\general.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="newProject" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\newProject.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="changes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\changes.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="collExButtons" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\collExButtons.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="staServerPhp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\staServerPhp.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="staServerDotNet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\staServerDotNet.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BarTexture" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BarTexture.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -207,10 +187,6 @@
   <data name="info_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info_16px.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appSettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appSettings.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="projectImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\projectImage.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

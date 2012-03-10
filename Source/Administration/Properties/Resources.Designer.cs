@@ -102,13 +102,6 @@ namespace updateSystemDotNet.Administration.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap appSettings {
-            get {
-                object obj = ResourceManager.GetObject("appSettings", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap availability {
             get {
                 object obj = ResourceManager.GetObject("availability", resourceCulture);
@@ -207,20 +200,6 @@ namespace updateSystemDotNet.Administration.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap newProject {
-            get {
-                object obj = ResourceManager.GetObject("newProject", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap openProject {
-            get {
-                object obj = ResourceManager.GetObject("openProject", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap projectImage {
             get {
                 object obj = ResourceManager.GetObject("projectImage", resourceCulture);
@@ -242,37 +221,9 @@ namespace updateSystemDotNet.Administration.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap server_add {
-            get {
-                object obj = ResourceManager.GetObject("server_add", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap server_install {
-            get {
-                object obj = ResourceManager.GetObject("server_install", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap ssl {
             get {
                 object obj = ResourceManager.GetObject("ssl", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap staServerDotNet {
-            get {
-                object obj = ResourceManager.GetObject("staServerDotNet", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap staServerPhp {
-            get {
-                object obj = ResourceManager.GetObject("staServerPhp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

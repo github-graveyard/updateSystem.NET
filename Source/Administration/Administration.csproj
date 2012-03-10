@@ -649,12 +649,6 @@
     <None Include="Resources\openProject.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\server_install.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\server_add.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\main_logo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -827,8 +821,6 @@
     <None Include="Resources\copyProjectSettings.png" />
     <None Include="Resources\BarTexture.png" />
     <None Include="Resources\collExButtons.png" />
-    <None Include="Resources\staServerPhp.png" />
-    <None Include="Resources\staServerDotNet.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\commandLine\" />
