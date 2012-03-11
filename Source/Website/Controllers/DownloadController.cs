@@ -6,15 +6,18 @@ using System.Web.Mvc;
 
 namespace Website.Controllers
 {
-    public class DownloadController : Controller
-    {
-        //
-        // GET: /Download/
+	public class DownloadController : Controller
+	{
+		public ActionResult Index() {
+			return View();
+		}
 
-        public ActionResult Index(string id)
-        {
-            return View();
-        }
+		public ActionResult Detail(string id) {
+			if (string.IsNullOrEmpty(id))
+				return RedirectToAction("Index");
 
-    }
+			return View();
+		}
+
+	}
 }
