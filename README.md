@@ -19,3 +19,6 @@ If you're new to git and/or don't want to be an Commandline-Guerilla use SmartGi
 For security reasons I've excluded any Strongname Keys from this Repository. In order to build this Solution you have to generate your own Key. You can do this by typing the following command in a Visual Studio Command Prompt:
 
     sn.exe -k 4096 <myRepoPath>\UpdateSystem.snk
+    
+##Roadmap
+* Better Localization
