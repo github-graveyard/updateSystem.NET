@@ -44,7 +44,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "updateLog", "updateLog\", "
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "49343"
+		VWDPort = "49345"
 		DefaultWebSiteLanguage = "Visual C#"
 		StartServerOnDebug = "false"
 	EndProjectSection
@@ -187,12 +187,12 @@ Global
 		{C28B5C52-8466-4112-94A0-A3923480893D} = {91976E7F-6070-40E5-A243-EFDE9E84BB13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		BuildVersion_BuildVersioningStyle = None.None.None.MonthAndDayStamp
-		BuildVersion_AssemblyInfoFilename = Shared\sharedAssemblyInfo.cs
-		BuildVersion_UpdateFileVersion = True
-		BuildVersion_UpdateAssemblyVersion = True
-		VisualSVNWorkingCopyRoot = ..
-		BuildVersion_BuildAction = Both
 		BuildVersion_ConfigurationName = Any
+		BuildVersion_BuildAction = Both
+		VisualSVNWorkingCopyRoot = ..
+		BuildVersion_UpdateAssemblyVersion = True
+		BuildVersion_UpdateFileVersion = True
+		BuildVersion_AssemblyInfoFilename = Shared\sharedAssemblyInfo.cs
+		BuildVersion_BuildVersioningStyle = None.None.None.MonthAndDayStamp
 	EndGlobalSection
 EndGlobal
