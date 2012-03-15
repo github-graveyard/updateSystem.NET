@@ -2,7 +2,7 @@ Localization
 =====
 
 In this Folder you'll find the Localizationfiles used by the updateSystem.NET.<br />
-Do not edit these Files manually. Use instead the "Location Editor" from here: http://locedit.devs-on.net/
+Do not edit these Files manually. Use the "Localization Editor" instead which you can download for free from here: http://locedit.devs-on.net/
 
 
 ##Translations
