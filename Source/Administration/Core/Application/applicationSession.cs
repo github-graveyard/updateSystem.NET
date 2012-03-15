@@ -31,6 +31,7 @@ using System.IO;
 using updateSystemDotNet.Administration.UI.Popups;
 using System.Threading;
 using Microsoft.Win32;
+using updateSystemDotNet.Localization;
 
 namespace updateSystemDotNet.Administration.Core.Application {
 	internal sealed partial class applicationSession {
@@ -110,6 +111,7 @@ namespace updateSystemDotNet.Administration.Core.Application {
 			webServices = new onlineServices(this);
 			Log = new applicationLog(this);
 			updateLogFactory = new updateLogFactory(this);
+			localizationFile = new localizationFile();
 
 			//Initialize Updatechannel
 			updateReleaseChannels = new List<updateReleaseChannel>(new[] {
@@ -147,13 +149,13 @@ namespace updateSystemDotNet.Administration.Core.Application {
 			return showDialog<T>(owner, null);
 		}
 
-		/// <summary>Zeigt einen Dialog an.</summary>
-		/// <typeparam name="T">Der Type des Dialogs von dem eine Instanz erzeugt werden soll.</typeparam>
+		/// <summary>Shows an Dialog.</summary>
+		/// <typeparam name="T">The Type of the Dialog which should be displayed.</typeparam>
 		public DialogResult showDialog<T>(IWin32Window owner, object argument) where T : dialogBase {
 
-			//Überprüfen ob dieser Dialog bereits geöffnet ist
+			//Check if this Dialog isn't already oben
 			if (_openDialogs.ContainsKey(typeof (T))) {
-				//Die aktuelle Form nach vorn bringen
+				//Bring that instance to front
 				_openDialogs[typeof (T)].Focus();
 				return DialogResult.None;
 			}
@@ -162,16 +164,16 @@ namespace updateSystemDotNet.Administration.Core.Application {
 				dialogInstance.Session = this;
 				dialogInstance.Argument = argument;
 
-				//Resultcache für diesen Type säubern
+				//Clear Resultcache
 				if (dialogResultCache.ContainsKey(typeof (T)))
 					dialogResultCache.Remove(typeof (T));
 
-				//Fenstergröße aus den Einstellungen ermitteln)
+				//Load saved Windowsize
 				if (Settings.windowSizes.ContainsKey(dialogInstance.Name) &&
 					dialogInstance.FormBorderStyle != FormBorderStyle.FixedDialog)
 					dialogInstance.Size = Settings.windowSizes[dialogInstance.Name];
 
-				//Fensterposition aus den Einstellungen ermitteln
+				//Load saved Windowlocation
 				if (Settings.windowPositions.ContainsKey(dialogInstance.Name) && owner == null) {
 					dialogInstance.StartPosition = FormStartPosition.Manual;
 					dialogInstance.Location = Settings.windowPositions[dialogInstance.Name];
@@ -179,34 +181,37 @@ namespace updateSystemDotNet.Administration.Core.Application {
 				else
 					dialogInstance.StartPosition = FormStartPosition.CenterParent;
 
-				//Dialogelemente initialisieren
+				//Try to automatically Localize the 
+				localizeForm(dialogInstance);
+
+				//Initialize Dialogspecific stuff
 				dialogInstance.initializeData();               
-				
-				//Titelplatzhalter durch Anwendungsnamen ersetzen
+
+				//Replace [appname] with the current Applicationtitle
 				dialogInstance.Text = dialogInstance.Text.Replace("[appname]", Strings.applicationName);
 
-				//Log schreiben
+				//Write to log
 				Log.writeKeyValue(logLevel.Info, "applicationSession.showDialog", dialogInstance.GetType().ToString());
 
-				//Dialog anzeigen
+				//Display the Dialog and wait until it's closed
 				DialogResult dlgResult = dialogInstance.ShowDialog(owner);
 
-				//Result ins Log schreiben
+				//Write DialogResult to log
 				Log.writeKeyValue(logLevel.Info, string.Format("application.showDialog.{0}.DialogResult", dialogInstance.GetType()),
 								  dlgResult.ToString());
 
-				//Erweitertes Resultat speichern
+				//Save the extended Dialogresult (custom data etc.)
 				if (dialogInstance.Result != null)
 					dialogResultCache.Add(typeof (T), dialogInstance.Result);
 
 
-				//Größe speichern);
+				//Save size
 				if (Settings.windowSizes.ContainsKey(dialogInstance.Name))
 					Settings.windowSizes[dialogInstance.Name] = dialogInstance.Size;
 				else
 					Settings.windowSizes.Add(dialogInstance.Name, dialogInstance.Size);
 
-				//Position sichern
+				//Save position
 				if (Settings.windowPositions.ContainsKey(dialogInstance.Name))
 					Settings.windowPositions[dialogInstance.Name] = dialogInstance.Location;
 				else
@@ -216,7 +221,7 @@ namespace updateSystemDotNet.Administration.Core.Application {
 				return dlgResult;
 			}
 			finally {
-				//Sicherstellen das immer der Dialog aus dem Cache geworfen wird, sonst kann der nach einem Fehler evtl. nicht mehr angezeigt werden.
+				//Make sure the Dialogs is removed from the "Open Dialogs"-List
 				if (_openDialogs.ContainsKey(typeof (T)))
 					_openDialogs.Remove(typeof (T));
 			}
@@ -287,7 +292,7 @@ namespace updateSystemDotNet.Administration.Core.Application {
 
 		#region Runtime
 		
-		/// <summary>Wird beim Start der Anwendung aufgerufen.</summary>
+		/// <summary>Initializes the Main Applicationfeatures.</summary>
 		public void initializeApplication(string[] arguments) {
 
 			AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
@@ -295,7 +300,7 @@ namespace updateSystemDotNet.Administration.Core.Application {
 
 			currentProject = updateFactory.createNewProject();
 
-			//updateController Objekt erstellen
+			initializeLocalization();
 			initializeUpdateController();
 		}
 

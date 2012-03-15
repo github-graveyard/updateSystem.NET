@@ -4,6 +4,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{5ED3947E-4CC9-4A2F-AA0B-124E86BF10C0}"
 	ProjectSection(SolutionItems) = preProject
 		Changelog.markdown = Changelog.markdown
+		Shared\localizationFile.cs = Shared\localizationFile.cs
 		Shared\sharedAssemblyInfo.cs = Shared\sharedAssemblyInfo.cs
 	EndProjectSection
 EndProject
@@ -187,12 +188,12 @@ Global
 		{C28B5C52-8466-4112-94A0-A3923480893D} = {91976E7F-6070-40E5-A243-EFDE9E84BB13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		BuildVersion_ConfigurationName = Any
-		BuildVersion_BuildAction = Both
-		VisualSVNWorkingCopyRoot = ..
-		BuildVersion_UpdateAssemblyVersion = True
-		BuildVersion_UpdateFileVersion = True
-		BuildVersion_AssemblyInfoFilename = Shared\sharedAssemblyInfo.cs
 		BuildVersion_BuildVersioningStyle = None.None.None.MonthAndDayStamp
+		BuildVersion_AssemblyInfoFilename = Shared\sharedAssemblyInfo.cs
+		BuildVersion_UpdateFileVersion = True
+		BuildVersion_UpdateAssemblyVersion = True
+		VisualSVNWorkingCopyRoot = ..
+		BuildVersion_BuildAction = Both
+		BuildVersion_ConfigurationName = Any
 	EndGlobalSection
 EndGlobal

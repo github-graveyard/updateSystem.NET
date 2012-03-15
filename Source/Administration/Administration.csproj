@@ -79,6 +79,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Shared\localizationFile.cs">
+      <Link>Core\Application\localizationFile.cs</Link>
+    </Compile>
     <Compile Include="..\Shared\sharedAssemblyInfo.cs">
       <Link>sharedAssemblyInfo.cs</Link>
     </Compile>
@@ -100,6 +103,7 @@
     <Compile Include="Core\Application\applicationLog.cs" />
     <Compile Include="Core\Application\applicationSession.cs" />
     <Compile Include="Core\Application\applicationSession.Helpers.cs" />
+    <Compile Include="Core\Application\applicationSession.Localization.cs" />
     <Compile Include="Core\Application\applicationSettings.cs" />
     <Compile Include="Core\Application\applicationSession.Messages.cs" />
     <Compile Include="Core\Application\onlineServices.cs" />
@@ -629,6 +633,9 @@
     <EmbeddedResource Include="UI\updateActionEditor\stopServiceActionEditor.resx">
       <DependentUpon>stopServiceActionEditor.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Localization\Administration.loc">
+      <Link>Administration.loc</Link>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

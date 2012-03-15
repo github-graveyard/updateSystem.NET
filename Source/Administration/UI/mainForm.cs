@@ -402,6 +402,7 @@ namespace updateSystemDotNet.Administration.UI {
 			}
 
 			//Knoten initialisieren und der View hinzufügen
+			_session.localizeControl(page);
 			page.initializeData();
 			pnlContentView.Controls.Add(page);
 			page.Dock = DockStyle.Fill;

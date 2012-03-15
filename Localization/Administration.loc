@@ -1,1 +1,4 @@
-﻿.Dialogs.Global.btnOk.Text	OK
+﻿.Dialogs.aboutDialog.Title	About this Application
+.Dialogs.Global.btnCancel.Text	Cancel
+.Dialogs.Global.btnClose.Text	Close
+.Dialogs.Global.btnOk.Text	OK
