@@ -5,6 +5,10 @@
 	<script src="@Url.Content("~/Scripts/jController-index.js")" type="text/javascript"></script>
 }
 
-<div class="index-hero-wrapper">
-	<div class="index-hero"></div>
+<div class="index-hero-wrapper"><div class="index-hero"></div></div>
+<div class="download-hero">
+	<button class="xbutton blue" onclick="document.location.href='@Url.Action("Index", "Download")'" id="btn-download-binaries" title="Download the latest stable Release">Download</button>
+	<button class="xbutton green" onclick="redirdctToGitHub();" id="btn-download-sourcecode" title="Grab the Sourcecode from GitHub">Get Sourcecode</button>
 </div>
+<div style="clear: both;"></div>
+<script type="text/javascript"> addToolTips();</script>

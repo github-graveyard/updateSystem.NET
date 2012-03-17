@@ -69,6 +69,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\buttons.css" />
     <Content Include="Content\Images\Index\index-hero.png" />
     <Content Include="Content\Images\Layout\application-logo.png" />
     <Content Include="Content\layout.css" />

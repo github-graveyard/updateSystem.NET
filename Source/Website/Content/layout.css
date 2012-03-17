@@ -40,8 +40,12 @@ header #application-logo {
 }
 
 footer {
+	border-top: 1px solid #ededed;
 	font-size: 90%;
 	color: #C0C0C0;
+	width: 940px;
+	margin: 0 auto;
+	margin-top: 20px;
 }
 
 /*Baseclasses*/
@@ -75,4 +79,8 @@ a {
 	width: inherit;
 	height: inherit;
 	background: url('Images/Index/index-hero.png') center center no-repeat;
+}
+.download-hero {
+	text-align: center;
+	margin: 0 auto;
 }

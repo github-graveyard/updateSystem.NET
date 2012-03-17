@@ -1,0 +1,43 @@
+﻿.xbutton {
+	text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
+	font-size: 1.0em;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	text-align: center;
+	padding: 5px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
+	color: #FFF;
+	width: 181px;
+	cursor: pointer;
+	font-weight: bold;
+	/*display: block;
+	float: left;*/
+}
+
+.xbutton.green {
+	background-color: rgb(150, 186, 72);
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.15, rgb(128,163,52)), color-stop(0.8, rgb(150,186,72)) );
+	background-image: -moz-linear-gradient( center bottom, rgb(128,163,52) 15%, rgb(150,186,72) 80% );
+	border: 1px solid #6F8F2B;
+}
+
+.xbutton.green:hover {
+	background-color: #ABD159;
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.15, rgb(134,168,61)), color-stop(0.8, #abd159) );
+	background-image: -moz-linear-gradient( center bottom, rgb(134,168,61) 15%, #abd159 80% );
+	border-color: #86A83D;
+}
+
+.xbutton.blue {
+	background-color: #3195C8;
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.15, #217dac), color-stop(0.8, #3195c8) );
+	background-image: -moz-linear-gradient( center bottom, #217dac 15%, #3195c8 80% );
+	border: 1px solid #217DAC;
+}
+.xbutton.blue:hover {
+	background-color: #3EA7DC;
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.15, #2b8ec0), color-stop(0.8, #3ea7dc) );
+	background-image: -moz-linear-gradient( center bottom, #2b8ec0 15%, #3ea7dc 80% );
+	border-color: #2B8EC0;	
+}
