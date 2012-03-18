@@ -88,5 +88,13 @@ namespace updateSystemDotNet.Administration.Core.Application {
 			return client;
 		}
 
+		/// <summary>Checks if a Type inherits from another Type.</summary>
+		public bool derivesFrom<T>(Type type) {
+			for (Type baseType = type.BaseType; baseType != null; baseType = baseType.BaseType)
+				if (baseType == typeof(T))
+					return true;
+			return false;
+		}
+
 	}
 }

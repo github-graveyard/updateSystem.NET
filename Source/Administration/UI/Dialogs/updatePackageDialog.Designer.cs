@@ -249,7 +249,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs
 			this.label10.Size = new System.Drawing.Size(308, 53);
 			this.label10.TabIndex = 83;
 			this.label10.Text = "Aktivieren Sie diese Option, wenn das Updatepaket als verfügbar gekennzeichnet we" +
-				"rden- und damit allen Clients zum Download bereitstehen soll.";
+    "rden- und damit allen Clients zum Download bereitstehen soll.";
 			// 
 			// nmPreviewState
 			// 
@@ -583,7 +583,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs
 			this.label13.Size = new System.Drawing.Size(404, 30);
 			this.label13.TabIndex = 13;
 			this.label13.Text = "Dieses Updatepaket steht allen kleineren Versionen zur Verfügung welche zusätzlic" +
-				"h auf folgender Liste aufgeführt sein müssen:";
+    "h auf folgender Liste aufgeführt sein müssen:";
 			// 
 			// label12
 			// 
@@ -730,8 +730,8 @@ namespace updateSystemDotNet.Administration.UI.Dialogs
 			this.label18.Size = new System.Drawing.Size(429, 48);
 			this.label18.TabIndex = 8;
 			this.label18.Text = "Hier können Sie beliebige Werte definieren, auf welche Sie über die Eigenschaft \'" +
-				"customFields\' des entsprechenden Updatepakets und dem festgelegten Namen zugreif" +
-				"en können.";
+    "customFields\' des entsprechenden Updatepakets und dem festgelegten Namen zugreif" +
+    "en können.";
 			// 
 			// btnRemoveCustomField
 			// 
@@ -852,9 +852,9 @@ namespace updateSystemDotNet.Administration.UI.Dialogs
 			// 
 			// lvwPublishWith
 			// 
-			this.lvwPublishWith.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.lvwPublishWith.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.lvwPublishWith.CheckBoxes = true;
 			this.lvwPublishWith.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clmDummy});
@@ -873,14 +873,14 @@ namespace updateSystemDotNet.Administration.UI.Dialogs
 			// 
 			// label19
 			// 
-			this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label19.Location = new System.Drawing.Point(3, 3);
 			this.label19.Name = "label19";
 			this.label19.Size = new System.Drawing.Size(423, 37);
 			this.label19.TabIndex = 0;
 			this.label19.Text = "Wählen Sie hier die Quellen aus, über diese Sie dieses Updatepaket verteilen möch" +
-				"ten:";
+    "ten:";
 			// 
 			// updatePackageDialog
 			// 

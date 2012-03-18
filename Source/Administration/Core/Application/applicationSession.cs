@@ -21,7 +21,6 @@ using System;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using updateSystemDotNet.Administration.Core.appEventArgs;
 using updateSystemDotNet.Administration.Core.Publishing;
 using updateSystemDotNet.Administration.Core.Updates;
 using updateSystemDotNet.Administration.Core.updateLog;
@@ -181,8 +180,8 @@ namespace updateSystemDotNet.Administration.Core.Application {
 				else
 					dialogInstance.StartPosition = FormStartPosition.CenterParent;
 
-				//Try to automatically Localize the 
-				localizeForm(dialogInstance);
+				//Execute Localization
+				dialogInstance.localizeDialog();
 
 				//Initialize Dialogspecific stuff
 				dialogInstance.initializeData();               

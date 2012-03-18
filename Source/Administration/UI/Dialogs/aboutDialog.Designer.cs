@@ -26,8 +26,8 @@
 			this.btnClose = new System.Windows.Forms.Button();
 			this.imgAppLogo = new System.Windows.Forms.PictureBox();
 			this.lblVersion = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
+			this.lblDescriptionIcons = new System.Windows.Forms.Label();
+			this.lblDescriptionCompression = new System.Windows.Forms.Label();
 			this.linkLabelEx1 = new updateSystemDotNet.Administration.UI.Controls.linkLabelEx();
 			this.lnkZipCredits = new updateSystemDotNet.Administration.UI.Controls.linkLabelEx();
 			this.lnkIcons = new updateSystemDotNet.Administration.UI.Controls.linkLabelEx();
@@ -71,25 +71,25 @@
 			this.lblVersion.TabIndex = 4;
 			this.lblVersion.Text = "Version: {0} Codename \"{1}\"";
 			// 
-			// label1
+			// lblDescriptionIcons
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(275, 95);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(55, 13);
-			this.label1.TabIndex = 7;
-			this.label1.Text = "Symbole:";
+			this.lblDescriptionIcons.AutoSize = true;
+			this.lblDescriptionIcons.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblDescriptionIcons.Location = new System.Drawing.Point(275, 95);
+			this.lblDescriptionIcons.Name = "lblDescriptionIcons";
+			this.lblDescriptionIcons.Size = new System.Drawing.Size(55, 13);
+			this.lblDescriptionIcons.TabIndex = 7;
+			this.lblDescriptionIcons.Text = "Symbole:";
 			// 
-			// label2
+			// lblDescriptionCompression
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(275, 115);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(78, 13);
-			this.label2.TabIndex = 9;
-			this.label2.Text = "Kompression:";
+			this.lblDescriptionCompression.AutoSize = true;
+			this.lblDescriptionCompression.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblDescriptionCompression.Location = new System.Drawing.Point(275, 115);
+			this.lblDescriptionCompression.Name = "lblDescriptionCompression";
+			this.lblDescriptionCompression.Size = new System.Drawing.Size(78, 13);
+			this.lblDescriptionCompression.TabIndex = 9;
+			this.lblDescriptionCompression.Text = "Kompression:";
 			// 
 			// linkLabelEx1
 			// 
@@ -100,7 +100,7 @@
 			this.linkLabelEx1.LinkColor = System.Drawing.SystemColors.HotTrack;
 			this.linkLabelEx1.Location = new System.Drawing.Point(278, 147);
 			this.linkLabelEx1.Name = "linkLabelEx1";
-			this.linkLabelEx1.Size = new System.Drawing.Size(406, 31);
+			this.linkLabelEx1.Size = new System.Drawing.Size(383, 71);
 			this.linkLabelEx1.TabIndex = 11;
 			this.linkLabelEx1.TabStop = true;
 			this.linkLabelEx1.Text = "Ein besonderer Dank geht auch an Thomas Baumann für die Bereitstellung des Statis" +
@@ -160,7 +160,7 @@
 			// imgDonate
 			// 
 			this.imgDonate.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.imgDonate.Location = new System.Drawing.Point(418, 198);
+			this.imgDonate.Location = new System.Drawing.Point(420, 221);
 			this.imgDonate.Name = "imgDonate";
 			this.imgDonate.Size = new System.Drawing.Size(126, 47);
 			this.imgDonate.TabIndex = 12;
@@ -200,9 +200,9 @@
 			this.Controls.Add(this.imgDonate);
 			this.Controls.Add(this.linkLabelEx1);
 			this.Controls.Add(this.lnkZipCredits);
-			this.Controls.Add(this.label2);
+			this.Controls.Add(this.lblDescriptionCompression);
 			this.Controls.Add(this.lnkIcons);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.lblDescriptionIcons);
 			this.Controls.Add(this.lblCopyright);
 			this.Controls.Add(this.lblVersion);
 			this.Controls.Add(this.imgAppLogo);
@@ -223,9 +223,9 @@
 		private System.Windows.Forms.PictureBox imgAppLogo;
 		private System.Windows.Forms.Label lblVersion;
 		private Controls.linkLabelEx lblCopyright;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblDescriptionIcons;
 		private Controls.linkLabelEx lnkIcons;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label lblDescriptionCompression;
 		private Controls.linkLabelEx lnkZipCredits;
 		private Controls.linkLabelEx linkLabelEx1;
 		private System.Windows.Forms.PictureBox imgDonate;

@@ -54,9 +54,19 @@ namespace updateSystemDotNet.Administration.Core.Application {
 			return getLocalizedString(key, _currentCulture);
 		}
 		public string getLocalizedString(string key, string language) {
-			string localizedString = localizationFile[key, language];
+			var localizedString = localizationFile[key, language];
 			return string.IsNullOrEmpty(localizedString) ? string.Format(LOCALIZATION_NOT_FOUND, key) : localizedString;
 		}
+		public string getLocalizedString(Control control) {
+			var parent = getParent(control);
+			return getLocalizedString(string.Format("{0}.{1}.{2}.Text",
+			                                        derivesFrom<Form>(parent.GetType())
+			                                        	? SECTION_NAME_DIALOGS
+			                                        	: SECTION_NAME_PAGES,
+			                                        parent.Name,
+			                                        control.Name));
+		}
+
 		public void localizeForm(Form form) {
 			//TODO: Remove this check if the localization is final
 			if (!isDevEnvironment)
@@ -76,15 +86,13 @@ namespace updateSystemDotNet.Administration.Core.Application {
 			if (isLocalizable(control) && isDevEnvironment) {
 
 				//Determine ParentControl (Form/Usercontrol/WhatEver)
-				Control parentContainer = null;
-				for (Control parent = control.Parent; parent != null; parent = parent.Parent)
-					parentContainer = parent;
+				Control parentContainer = getParent(control);
 
 				if (parentContainer == null)
 					throw new InvalidOperationException("Could not determine Parent which is required for Localization.");
 
 				string localizedText = localizationFile[string.Format("{0}.{1}.{2}.Text",
-				                                                      parentContainer.GetType() == typeof (Form)
+				                                                      derivesFrom<Form>(parentContainer.GetType())
 				                                                      	? SECTION_NAME_DIALOGS
 				                                                      	: SECTION_NAME_PAGES,
 				                                                      parentContainer.Name,
@@ -103,6 +111,7 @@ namespace updateSystemDotNet.Administration.Core.Application {
 			if (control.Controls.Count > 0)
 				localizeControls(control.Controls);
 		}
+
 		private bool isLocalizable(Control control) {
 			for (Type ctrlType = control.GetType(); ctrlType != null; ctrlType = ctrlType.BaseType)
 				if (_localizableControls.Contains(ctrlType))
@@ -110,5 +119,13 @@ namespace updateSystemDotNet.Administration.Core.Application {
 
 			return false;
 		}
+
+		private Control getParent(Control control) {
+			Control parentContainer = null;
+			for (Control parent = control.Parent; parent != null; parent = parent.Parent)
+				parentContainer = parent;
+			return parentContainer;
+		}
+
 	}
 }

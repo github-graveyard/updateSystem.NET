@@ -50,6 +50,11 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 		public virtual void initializeData() {
 		}
 
+		/// <summary>Method which performs the Localization. It can be overwritten if custom Localization is necessary.</summary>
+		public virtual void localizeDialog() {
+			Session.localizeForm(this);
+		}
+
 		public applicationSession Session { get; set; }
 
 		protected validationManager validationManager { get; private set; }

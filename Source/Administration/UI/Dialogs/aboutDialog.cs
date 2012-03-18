@@ -37,8 +37,11 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			lblCopyright.LinkArea = new LinkArea(lblCopyright.Text.IndexOf("Maximilian"), 16);
 		}
 
-		public override void initializeData() {
-			lblVersion.Text = string.Format(lblVersion.Text, Assembly.GetExecutingAssembly().GetName().Version, Session.applicationCodeName);
+		public override void localizeDialog() {
+			base.localizeDialog();
+			lblVersion.Text = string.Format(Session.getLocalizedString(lblVersion),
+			                                Assembly.GetExecutingAssembly().GetName().Version, Session.applicationCodeName);
+			lblAppName.Text = Session.applicationName;
 		}
 
 		private void btnClose_Click(object sender, EventArgs e) {

@@ -228,7 +228,7 @@ namespace updateSystemDotNet.Administration.UI {
 		void tvwContentNodes_AfterSelect(object sender, TreeViewEventArgs e) {
 			if (e.Node.Level == 0) //Level 0 Nodes können immer nur basePages sein.
 				showNode(e.Node.Tag as Type);
-			else if (e.Node.Tag != null && derivesFrom<baseSubPage>(e.Node.Tag.GetType()))
+			else if (e.Node.Tag != null && _session.derivesFrom<baseSubPage>(e.Node.Tag.GetType()))
 				showSubNode(e.Node.Tag as baseSubPage);
 		}
 
@@ -331,7 +331,7 @@ namespace updateSystemDotNet.Administration.UI {
 
 			foreach (var type in Assembly.GetExecutingAssembly().GetTypes()) {
 
-				if (!derivesFrom<basePage>(type) || derivesFrom<baseSubPage>(type) || type == typeof (baseSubPage) ||
+				if (!_session.derivesFrom<basePage>(type) || _session.derivesFrom<baseSubPage>(type) || type == typeof (baseSubPage) ||
 				    type == typeof (basePage))
 					continue;
 
@@ -344,14 +344,6 @@ namespace updateSystemDotNet.Administration.UI {
 			}
 			foreach (var sortedPage in sortedPages)
 				_contentCache.Add(sortedPage.Value.GetType(), sortedPage.Value);
-		}
-
-		/// <summary>Überprüft ob ein bestimmter Type von einem anderen Type erbt.</summary>
-		private bool derivesFrom<T>(Type type) {
-			for (Type baseType = type.BaseType; baseType != null; baseType = baseType.BaseType)
-				if (baseType == typeof(T))
-					return true;
-			return false;
 		}
 
 		/// <summary>Aktualisiert die Sichtbarkeit der Knoten je nach Programmstatus.</summary>
@@ -373,7 +365,7 @@ namespace updateSystemDotNet.Administration.UI {
 		}
 		private void showPageCore(basePage page) {
 			if (tvwContentNodes.SelectedNode != null && (tvwContentNodes.SelectedNode.Tag as Type) != page.GetType() &&
-			    !derivesFrom<baseSubPage>(page.GetType())) {
+			    !_session.derivesFrom<baseSubPage>(page.GetType())) {
 				foreach (TreeNode node in tvwContentNodes.Nodes)
 					if ((node.Tag as Type) == page.GetType()) {
 						tvwContentNodes.SelectedNode = node;
