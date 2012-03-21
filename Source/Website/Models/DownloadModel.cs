@@ -6,10 +6,13 @@ using System.Web;
 namespace Website.Models {
 	public class DownloadModel {
 
-		public string Id { get; set; }
+		public int Id { get; set; }
 		public string Filename { get; set; }
 		public int Hits { get; set; }
 		public long Size { get; set; }
-
+		public Version Version { get; set; }
+		public string completePath { get; set; }
+		public string friendlyName { get; set; }
+		public string Description { get; set; }
 	}
 }

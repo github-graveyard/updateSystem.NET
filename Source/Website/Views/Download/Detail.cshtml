@@ -1,7 +1,10 @@
 ﻿@model Website.Models.DownloadModel
 
 @{
-    ViewBag.Title = "Detail";
+	ViewBag.Title = "Detail";
 }
 
-<h2>Detail</h2>
+<h2>@Model.friendlyName</h2>
+<p>
+	@Model.Description
+</p>

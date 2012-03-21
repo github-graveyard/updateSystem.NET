@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="net.updatesystem" Class="WebModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=net.updatesystem;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="net_updatesystemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Downloads" Member="Downloads">
+    <Type Name="Download">
+      <Column Name="PKdld_id" Member="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dld_alias" Member="Alias" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dld_filename" Member="Filename" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="dld_hits" Member="Hits" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dld_is_private" Member="isPrivate" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="dld_friendly_name" Member="friendlyName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="dld_description" Member="Description" Type="System.String" DbType="VARCHAR(8000)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
