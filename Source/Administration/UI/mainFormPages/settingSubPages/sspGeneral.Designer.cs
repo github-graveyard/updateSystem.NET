@@ -53,7 +53,6 @@
 			this.lnkGoToMsdn.TabStop = true;
 			this.lnkGoToMsdn.Text = "Mehr Informationen";
 			this.lnkGoToMsdn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.lnkGoToMsdn.Url = "http://msdn.microsoft.com/de-de/library/6t9t5wcf(v=vs.80).aspx";
 			// 
 			// chkServicePackIsDefault
 			// 

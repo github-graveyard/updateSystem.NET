@@ -27,17 +27,17 @@
 			this.btnClose = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.btnConvert = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.prgConvert = new System.Windows.Forms.ProgressBar();
-			this.mainInstructionsLabel1 = new updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel();
+			this.lblTitle = new updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel();
 			this.grpProjectFile = new updateSystemDotNet.Administration.UI.Controls.groupBoxEx();
 			this.txtUpdateUrl = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
+			this.lblUpdateUrl = new System.Windows.Forms.Label();
 			this.txtProjectFile = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblProjectFile = new System.Windows.Forms.Label();
 			this.btnBrowseProjectFile = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.grpDestination = new updateSystemDotNet.Administration.UI.Controls.groupBoxEx();
 			this.txtDestination = new System.Windows.Forms.TextBox();
-			this.btnBrowseDestination = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
-			this.label3 = new System.Windows.Forms.Label();
+			this.btnBrowse = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
+			this.lblNewDestinationFolder = new System.Windows.Forms.Label();
 			this.bgwConvert = new System.ComponentModel.BackgroundWorker();
 			this.buttonArea1.SuspendLayout();
 			this.grpProjectFile.SuspendLayout();
@@ -91,25 +91,25 @@
 			this.prgConvert.TabIndex = 2;
 			this.prgConvert.Visible = false;
 			// 
-			// mainInstructionsLabel1
+			// lblTitle
 			// 
-			this.mainInstructionsLabel1.AutoSize = true;
-			this.mainInstructionsLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.mainInstructionsLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(153)))));
-			this.mainInstructionsLabel1.Location = new System.Drawing.Point(12, 9);
-			this.mainInstructionsLabel1.Name = "mainInstructionsLabel1";
-			this.mainInstructionsLabel1.Size = new System.Drawing.Size(117, 21);
-			this.mainInstructionsLabel1.TabIndex = 1;
-			this.mainInstructionsLabel1.Text = "Projektupgrade";
+			this.lblTitle.AutoSize = true;
+			this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(153)))));
+			this.lblTitle.Location = new System.Drawing.Point(12, 9);
+			this.lblTitle.Name = "lblTitle";
+			this.lblTitle.Size = new System.Drawing.Size(117, 21);
+			this.lblTitle.TabIndex = 1;
+			this.lblTitle.Text = "Projektupgrade";
 			// 
 			// grpProjectFile
 			// 
-			this.grpProjectFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.grpProjectFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.grpProjectFile.Controls.Add(this.txtUpdateUrl);
-			this.grpProjectFile.Controls.Add(this.label2);
+			this.grpProjectFile.Controls.Add(this.lblUpdateUrl);
 			this.grpProjectFile.Controls.Add(this.txtProjectFile);
-			this.grpProjectFile.Controls.Add(this.label1);
+			this.grpProjectFile.Controls.Add(this.lblProjectFile);
 			this.grpProjectFile.Controls.Add(this.btnBrowseProjectFile);
 			this.grpProjectFile.Location = new System.Drawing.Point(16, 38);
 			this.grpProjectFile.Name = "grpProjectFile";
@@ -120,39 +120,39 @@
 			// 
 			// txtUpdateUrl
 			// 
-			this.txtUpdateUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.txtUpdateUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtUpdateUrl.Location = new System.Drawing.Point(94, 52);
 			this.txtUpdateUrl.Name = "txtUpdateUrl";
 			this.txtUpdateUrl.Size = new System.Drawing.Size(406, 23);
 			this.txtUpdateUrl.TabIndex = 4;
 			// 
-			// label2
+			// lblUpdateUrl
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(15, 55);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(66, 15);
-			this.label2.TabIndex = 3;
-			this.label2.Text = "Update Url:";
+			this.lblUpdateUrl.AutoSize = true;
+			this.lblUpdateUrl.Location = new System.Drawing.Point(15, 55);
+			this.lblUpdateUrl.Name = "lblUpdateUrl";
+			this.lblUpdateUrl.Size = new System.Drawing.Size(66, 15);
+			this.lblUpdateUrl.TabIndex = 3;
+			this.lblUpdateUrl.Text = "Update Url:";
 			// 
 			// txtProjectFile
 			// 
-			this.txtProjectFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.txtProjectFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtProjectFile.Location = new System.Drawing.Point(94, 19);
 			this.txtProjectFile.Name = "txtProjectFile";
 			this.txtProjectFile.Size = new System.Drawing.Size(406, 23);
 			this.txtProjectFile.TabIndex = 2;
 			// 
-			// label1
+			// lblProjectFile
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(15, 22);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(73, 15);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "Projektdatei:";
+			this.lblProjectFile.AutoSize = true;
+			this.lblProjectFile.Location = new System.Drawing.Point(15, 22);
+			this.lblProjectFile.Name = "lblProjectFile";
+			this.lblProjectFile.Size = new System.Drawing.Size(73, 15);
+			this.lblProjectFile.TabIndex = 1;
+			this.lblProjectFile.Text = "Projektdatei:";
 			// 
 			// btnBrowseProjectFile
 			// 
@@ -170,11 +170,11 @@
 			// 
 			// grpDestination
 			// 
-			this.grpDestination.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.grpDestination.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.grpDestination.Controls.Add(this.txtDestination);
-			this.grpDestination.Controls.Add(this.btnBrowseDestination);
-			this.grpDestination.Controls.Add(this.label3);
+			this.grpDestination.Controls.Add(this.btnBrowse);
+			this.grpDestination.Controls.Add(this.lblNewDestinationFolder);
 			this.grpDestination.Location = new System.Drawing.Point(16, 129);
 			this.grpDestination.Name = "grpDestination";
 			this.grpDestination.Size = new System.Drawing.Size(536, 76);
@@ -184,35 +184,35 @@
 			// 
 			// txtDestination
 			// 
-			this.txtDestination.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.txtDestination.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtDestination.Location = new System.Drawing.Point(18, 40);
 			this.txtDestination.Name = "txtDestination";
 			this.txtDestination.Size = new System.Drawing.Size(421, 23);
 			this.txtDestination.TabIndex = 4;
 			// 
-			// btnBrowseDestination
+			// btnBrowse
 			// 
-			this.btnBrowseDestination.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnBrowseDestination.AutoSize = true;
-			this.btnBrowseDestination.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.btnBrowseDestination.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this.btnBrowseDestination.Location = new System.Drawing.Point(451, 40);
-			this.btnBrowseDestination.Name = "btnBrowseDestination";
-			this.btnBrowseDestination.Size = new System.Drawing.Size(85, 22);
-			this.btnBrowseDestination.TabIndex = 3;
-			this.btnBrowseDestination.Text = "Durchsuchen";
-			this.btnBrowseDestination.UseVisualStyleBackColor = true;
-			this.btnBrowseDestination.Click += new System.EventHandler(this.btnBrowseDestination_Click);
+			this.btnBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnBrowse.AutoSize = true;
+			this.btnBrowse.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this.btnBrowse.Location = new System.Drawing.Point(451, 40);
+			this.btnBrowse.Name = "btnBrowse";
+			this.btnBrowse.Size = new System.Drawing.Size(85, 22);
+			this.btnBrowse.TabIndex = 3;
+			this.btnBrowse.Text = "Durchsuchen";
+			this.btnBrowse.UseVisualStyleBackColor = true;
+			this.btnBrowse.Click += new System.EventHandler(this.btnBrowseDestination_Click);
 			// 
-			// label3
+			// lblNewDestinationFolder
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(15, 22);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(141, 15);
-			this.label3.TabIndex = 0;
-			this.label3.Text = "Neues Projektverzeichnis:";
+			this.lblNewDestinationFolder.AutoSize = true;
+			this.lblNewDestinationFolder.Location = new System.Drawing.Point(15, 22);
+			this.lblNewDestinationFolder.Name = "lblNewDestinationFolder";
+			this.lblNewDestinationFolder.Size = new System.Drawing.Size(141, 15);
+			this.lblNewDestinationFolder.TabIndex = 0;
+			this.lblNewDestinationFolder.Text = "Neues Projektverzeichnis:";
 			// 
 			// bgwConvert
 			// 
@@ -225,7 +225,7 @@
 			this.ClientSize = new System.Drawing.Size(567, 279);
 			this.Controls.Add(this.grpDestination);
 			this.Controls.Add(this.grpProjectFile);
-			this.Controls.Add(this.mainInstructionsLabel1);
+			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.buttonArea1);
 			this.Name = "upgradeProjectDialog";
 			this.Text = "[appname]";
@@ -244,18 +244,18 @@
 
 		private updateSystemDotNet.Administration.UI.Controls.buttonArea buttonArea1;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnClose;
-		private updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel mainInstructionsLabel1;
+		private updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel lblTitle;
 		private updateSystemDotNet.Administration.UI.Controls.groupBoxEx grpProjectFile;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblProjectFile;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnBrowseProjectFile;
 		private System.Windows.Forms.TextBox txtProjectFile;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnConvert;
 		private System.Windows.Forms.TextBox txtUpdateUrl;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label lblUpdateUrl;
 		private updateSystemDotNet.Administration.UI.Controls.groupBoxEx grpDestination;
-		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label lblNewDestinationFolder;
 		private System.Windows.Forms.TextBox txtDestination;
-		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnBrowseDestination;
+		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnBrowse;
 		private System.Windows.Forms.ProgressBar prgConvert;
 		private System.ComponentModel.BackgroundWorker bgwConvert;
 	}

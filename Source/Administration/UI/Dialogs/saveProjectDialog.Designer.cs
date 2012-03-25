@@ -23,10 +23,10 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblProjectName = new System.Windows.Forms.Label();
 			this.txtProjectName = new System.Windows.Forms.TextBox();
 			this.txtProjectLocation = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
+			this.lblDestination = new System.Windows.Forms.Label();
 			this.btnBrowse = new System.Windows.Forms.Button();
 			this.buttonArea1 = new updateSystemDotNet.Administration.UI.Controls.buttonArea();
 			this.btnCancel = new System.Windows.Forms.Button();
@@ -34,14 +34,14 @@
 			this.buttonArea1.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// label1
+			// lblProjectName
 			// 
-			this.label1.Location = new System.Drawing.Point(13, 18);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(97, 21);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Projektname:";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblProjectName.Location = new System.Drawing.Point(13, 18);
+			this.lblProjectName.Name = "lblProjectName";
+			this.lblProjectName.Size = new System.Drawing.Size(97, 21);
+			this.lblProjectName.TabIndex = 0;
+			this.lblProjectName.Text = "Projektname:";
+			this.lblProjectName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// txtProjectName
 			// 
@@ -58,14 +58,14 @@
 			this.txtProjectLocation.Size = new System.Drawing.Size(294, 23);
 			this.txtProjectLocation.TabIndex = 3;
 			// 
-			// label2
+			// lblDestination
 			// 
-			this.label2.Location = new System.Drawing.Point(13, 54);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(97, 21);
-			this.label2.TabIndex = 2;
-			this.label2.Text = "Speicherort:";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblDestination.Location = new System.Drawing.Point(13, 54);
+			this.lblDestination.Name = "lblDestination";
+			this.lblDestination.Size = new System.Drawing.Size(97, 21);
+			this.lblDestination.TabIndex = 2;
+			this.lblDestination.Text = "Speicherort:";
+			this.lblDestination.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// btnBrowse
 			// 
@@ -123,9 +123,9 @@
 			this.Controls.Add(this.buttonArea1);
 			this.Controls.Add(this.btnBrowse);
 			this.Controls.Add(this.txtProjectLocation);
-			this.Controls.Add(this.label2);
+			this.Controls.Add(this.lblDestination);
 			this.Controls.Add(this.txtProjectName);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.lblProjectName);
 			this.Name = "saveProjectDialog";
 			this.Text = "Projekt speichern - [appname]";
 			this.buttonArea1.ResumeLayout(false);
@@ -137,10 +137,10 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblProjectName;
 		private System.Windows.Forms.TextBox txtProjectName;
 		private System.Windows.Forms.TextBox txtProjectLocation;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label lblDestination;
 		private System.Windows.Forms.Button btnBrowse;
 		private updateSystemDotNet.Administration.UI.Controls.buttonArea buttonArea1;
 		private System.Windows.Forms.Button btnOk;

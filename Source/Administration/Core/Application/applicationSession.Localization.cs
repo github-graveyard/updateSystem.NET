@@ -29,6 +29,7 @@ namespace updateSystemDotNet.Administration.Core.Application {
 		private const string LOCALIZATION_NOT_FOUND = "TRANSLATION FOR {0} NOT FOUND!";
 		private const string SECTION_NAME_DIALOGS = "Dialogs";
 		private const string SECTION_NAME_PAGES = "Pages";
+		private const string DEFAULT_LOCALIZATION_PROPERTY_NAME = "Text";
 		
 		private string _currentCulture;
 		private string _dialogTitleAppendix;
@@ -102,10 +103,15 @@ namespace updateSystemDotNet.Administration.Core.Application {
 				if (string.IsNullOrEmpty(localizedText))
 					localizedText = localizationFile[string.Format("Dialogs.Global.{0}.Text", control.Name)];
 
-				control.Text = string.IsNullOrEmpty(localizedText)
-				               	? string.Format(LOCALIZATION_NOT_FOUND, control.Name)
-				               	: localizedText;
+				string defaultLocalizationProperty = getDefaultLocalizationProperty(control);
+				localizedText = string.IsNullOrEmpty(localizedText)
+				                	? string.Format(LOCALIZATION_NOT_FOUND, control.Name)
+				                	: localizedText;
 
+				if (defaultLocalizationProperty == DEFAULT_LOCALIZATION_PROPERTY_NAME)
+					control.Text = localizedText;
+				else
+					control.GetType().GetProperty(defaultLocalizationProperty).SetValue(control, localizedText, null);
 			}
 			//Localize Childcontrols
 			if (control.Controls.Count > 0)
@@ -125,6 +131,13 @@ namespace updateSystemDotNet.Administration.Core.Application {
 			for (Control parent = control.Parent; parent != null; parent = parent.Parent)
 				parentContainer = parent;
 			return parentContainer;
+		}
+
+		private string getDefaultLocalizationProperty(Control control) {
+			object[] attributes = control.GetType().GetCustomAttributes(typeof (redirectDefaultLocalizationAttribute), true);
+			return attributes.Length > 0
+			       	? (attributes[0] as redirectDefaultLocalizationAttribute).propertyName
+			       	: DEFAULT_LOCALIZATION_PROPERTY_NAME;
 		}
 
 	}

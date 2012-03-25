@@ -1,4 +1,4 @@
-/*
+﻿/*
  * updateSystem.NET
  * Copyright (c) 2008-2012 Maximilian Krauss <http://kraussz.com> eMail: max@kraussz.com
  *
@@ -17,15 +17,11 @@
  * YOU MUST PASS THIS DISCLAIMER ON WHENEVER YOU DISTRIBUTE THE WORK OR
  * DERIVATIVE WORKS.
  */
-using System.Reflection;
-using System.Runtime.CompilerServices;
+using System;
 
-[assembly: AssemblyCompany("Maximilian Krauss")]
-[assembly: AssemblyProduct("updateSystem.NET")]
-[assembly: AssemblyCopyright("Copyright (c) 2011 Maximilian Krauss")]
-[assembly: AssemblyTrademark("updateSystem.NET")]
-//[assembly: CLSCompliant(true)]
-
-[assembly: SuppressIldasm]
-[assembly: AssemblyVersion("1.6.0.325")]
-[assembly: AssemblyFileVersion("1.6.0.325")]
+namespace updateSystemDotNet {
+	[AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = false)]
+	internal sealed class redirectDefaultLocalizationAttribute : Attribute {
+		public string propertyName { get; set; }
+	}
+}

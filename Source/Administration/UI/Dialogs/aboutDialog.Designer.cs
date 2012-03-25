@@ -28,7 +28,7 @@
 			this.lblVersion = new System.Windows.Forms.Label();
 			this.lblDescriptionIcons = new System.Windows.Forms.Label();
 			this.lblDescriptionCompression = new System.Windows.Forms.Label();
-			this.linkLabelEx1 = new updateSystemDotNet.Administration.UI.Controls.linkLabelEx();
+			this.lnkForkMe = new updateSystemDotNet.Administration.UI.Controls.linkLabelEx();
 			this.lnkZipCredits = new updateSystemDotNet.Administration.UI.Controls.linkLabelEx();
 			this.lnkIcons = new updateSystemDotNet.Administration.UI.Controls.linkLabelEx();
 			this.lblCopyright = new updateSystemDotNet.Administration.UI.Controls.linkLabelEx();
@@ -91,71 +91,74 @@
 			this.lblDescriptionCompression.TabIndex = 9;
 			this.lblDescriptionCompression.Text = "Kompression:";
 			// 
-			// linkLabelEx1
+			// lnkForkMe
 			// 
-			this.linkLabelEx1.ActiveLinkColor = System.Drawing.SystemColors.Highlight;
-			this.linkLabelEx1.Font = new System.Drawing.Font("Segoe UI", 9F);
-			this.linkLabelEx1.LinkArea = new System.Windows.Forms.LinkArea(33, 14);
-			this.linkLabelEx1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-			this.linkLabelEx1.LinkColor = System.Drawing.SystemColors.HotTrack;
-			this.linkLabelEx1.Location = new System.Drawing.Point(278, 147);
-			this.linkLabelEx1.Name = "linkLabelEx1";
-			this.linkLabelEx1.Size = new System.Drawing.Size(383, 71);
-			this.linkLabelEx1.TabIndex = 11;
-			this.linkLabelEx1.TabStop = true;
-			this.linkLabelEx1.Text = "Ein besonderer Dank geht auch an Thomas Baumann für die Bereitstellung des Statis" +
-    "tikcharts sowie diversen anderen Tipps und Tricks.";
-			this.linkLabelEx1.Url = "http://shotty.devs-on.net";
-			this.linkLabelEx1.UseCompatibleTextRendering = true;
+			this.lnkForkMe.ActiveLinkColor = System.Drawing.SystemColors.Highlight;
+			this.lnkForkMe.autoOpenLinks = true;
+			this.lnkForkMe.Font = new System.Drawing.Font("Segoe UI", 9F);
+			this.lnkForkMe.LinkArea = new System.Windows.Forms.LinkArea(33, 14);
+			this.lnkForkMe.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+			this.lnkForkMe.LinkColor = System.Drawing.SystemColors.HotTrack;
+			this.lnkForkMe.linkText = "translate me";
+			this.lnkForkMe.Location = new System.Drawing.Point(278, 147);
+			this.lnkForkMe.Name = "lnkForkMe";
+			this.lnkForkMe.Size = new System.Drawing.Size(383, 71);
+			this.lnkForkMe.TabIndex = 11;
+			this.lnkForkMe.Text = "translate me";
+			this.lnkForkMe.UseCompatibleTextRendering = true;
 			// 
 			// lnkZipCredits
 			// 
 			this.lnkZipCredits.ActiveLinkColor = System.Drawing.SystemColors.Highlight;
+			this.lnkZipCredits.autoOpenLinks = true;
 			this.lnkZipCredits.AutoSize = true;
 			this.lnkZipCredits.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.lnkZipCredits.LinkArea = new System.Windows.Forms.LinkArea(9, 8);
 			this.lnkZipCredits.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
 			this.lnkZipCredits.LinkColor = System.Drawing.SystemColors.HotTrack;
+			this.lnkZipCredits.linkText = null;
 			this.lnkZipCredits.Location = new System.Drawing.Point(358, 115);
 			this.lnkZipCredits.Name = "lnkZipCredits";
 			this.lnkZipCredits.Size = new System.Drawing.Size(112, 21);
 			this.lnkZipCredits.TabIndex = 10;
 			this.lnkZipCredits.TabStop = true;
 			this.lnkZipCredits.Text = "#ziplib (Homepage)";
-			this.lnkZipCredits.Url = "http://www.icsharpcode.net/opensource/sharpziplib/";
 			this.lnkZipCredits.UseCompatibleTextRendering = true;
 			// 
 			// lnkIcons
 			// 
 			this.lnkIcons.ActiveLinkColor = System.Drawing.SystemColors.Highlight;
+			this.lnkIcons.autoOpenLinks = true;
 			this.lnkIcons.AutoSize = true;
 			this.lnkIcons.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.lnkIcons.LinkArea = new System.Windows.Forms.LinkArea(24, 17);
 			this.lnkIcons.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
 			this.lnkIcons.LinkColor = System.Drawing.SystemColors.HotTrack;
-			this.lnkIcons.Location = new System.Drawing.Point(358, 95);
+			this.lnkIcons.linkText = null;
+			this.lnkIcons.Location = new System.Drawing.Point(358, 94);
 			this.lnkIcons.Name = "lnkIcons";
-			this.lnkIcons.Size = new System.Drawing.Size(257, 21);
+			this.lnkIcons.Size = new System.Drawing.Size(72, 21);
 			this.lnkIcons.TabIndex = 8;
 			this.lnkIcons.TabStop = true;
-			this.lnkIcons.Text = "Fugue Icons Package von Yusuke Kamiyamane";
-			this.lnkIcons.Url = "http://p.yusukekamiyamane.com/";
+			this.lnkIcons.Text = "translate me";
 			this.lnkIcons.UseCompatibleTextRendering = true;
 			// 
 			// lblCopyright
 			// 
 			this.lblCopyright.ActiveLinkColor = System.Drawing.SystemColors.Highlight;
+			this.lblCopyright.autoOpenLinks = true;
 			this.lblCopyright.AutoSize = true;
 			this.lblCopyright.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.lblCopyright.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
 			this.lblCopyright.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
 			this.lblCopyright.LinkColor = System.Drawing.SystemColors.HotTrack;
+			this.lblCopyright.linkText = null;
 			this.lblCopyright.Location = new System.Drawing.Point(275, 63);
 			this.lblCopyright.Name = "lblCopyright";
 			this.lblCopyright.Size = new System.Drawing.Size(224, 15);
 			this.lblCopyright.TabIndex = 6;
+			this.lblCopyright.TabStop = true;
 			this.lblCopyright.Text = "Copyright (c) 2008 - {0} Maximilian Krauß";
-			this.lblCopyright.Url = "http://kraussz.com";
 			// 
 			// imgDonate
 			// 
@@ -198,7 +201,7 @@
 			this.Controls.Add(this.lblAppName);
 			this.Controls.Add(this.buttonArea1);
 			this.Controls.Add(this.imgDonate);
-			this.Controls.Add(this.linkLabelEx1);
+			this.Controls.Add(this.lnkForkMe);
 			this.Controls.Add(this.lnkZipCredits);
 			this.Controls.Add(this.lblDescriptionCompression);
 			this.Controls.Add(this.lnkIcons);
@@ -227,7 +230,7 @@
 		private Controls.linkLabelEx lnkIcons;
 		private System.Windows.Forms.Label lblDescriptionCompression;
 		private Controls.linkLabelEx lnkZipCredits;
-		private Controls.linkLabelEx linkLabelEx1;
+		private Controls.linkLabelEx lnkForkMe;
 		private System.Windows.Forms.PictureBox imgDonate;
 		private updateSystemDotNet.Administration.UI.Controls.buttonArea buttonArea1;
 		private updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel lblAppName;

@@ -17,52 +17,98 @@
  * YOU MUST PASS THIS DISCLAIMER ON WHENEVER YOU DISTRIBUTE THE WORK OR
  * DERIVATIVE WORKS.
  */
+
+using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
-using System.Threading;
+using System.Drawing.Design;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace updateSystemDotNet.Administration.UI.Controls {
+	[redirectDefaultLocalization(propertyName = "linkText")]
 	internal sealed class linkLabelEx : LinkLabel {
+
+		private string _originalText;
+		private readonly Regex _urlEx;
+
 		public linkLabelEx() {
-			LinkColor = SystemColors.HotTrack;
-			Font = SystemFonts.MessageBoxFont; // Core.Fonts.defaultFont;
-			ActiveLinkColor = SystemColors.Highlight;
-			LinkBehavior = LinkBehavior.NeverUnderline;
+			_urlEx = new Regex(@"\[url=([^\]]+)\]([^\]]+)\[\/url\]");
+			base.Text = "LinkLabelEx";
+			LinkArea = new LinkArea(0, 0);
+			autoOpenLinks = true;
 		}
 
-		public string Url { get; set; }
+		//Hide Properties which are now only internal available
+		[Browsable(false)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public override string Text {
+			get {
+				return base.Text;
+			}
+			set {
+				base.Text = value;
+			}
+		}
+		[Browsable(false)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public new LinkArea LinkArea {
+			get;
+			set;
+		}
 
-		private void openFailed() {
-			MessageBox.Show(
-				"Die Adresse konnte wegen eines Fehlers nicht geöffnet werden:\r\n" + Url,
-				"assemblyCompressor",
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Exclamation);
+		[Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
+		[Category("Appearance")]
+		[Description("The Text associated with the Control.")]
+		[Bindable(true)]
+		[DefaultValue("")]
+		public string linkText {
+			get { return _originalText; }
+			set {
+				_originalText = value;
+				if(!string.IsNullOrEmpty(value))
+					parseText();
+			}
+		}
+
+		[Category("Behavior")]
+		[Description("Auto open Links with the default Browser")]
+		[DefaultValue(false)]
+		public bool autoOpenLinks {
+			get;
+			set;
+		}
+
+		private void parseText() {
+			MatchCollection matches = _urlEx.Matches(_originalText);
+			Text = _originalText;
+			Links.Clear();
+			foreach (Match match in matches) {
+
+				if (match.Groups.Count < 3)
+					continue;
+
+				string link = match.Groups[1].Value;
+				string linkText = match.Groups[2].Value;
+
+				Text = Text.Replace(match.Value, match.Groups[2].Value);
+
+				int linkIndex = Text.IndexOf(linkText, System.StringComparison.Ordinal);
+				if (linkIndex == -1)
+					continue;
+
+				Links.Add(linkIndex, linkText.Length, link);
+			}
+
 		}
 
 		protected override void OnLinkClicked(LinkLabelLinkClickedEventArgs e) {
-			if (!string.IsNullOrEmpty(Url)) {
-				new Thread(openUrl).Start(Url);
+			base.OnLinkClicked(e);
+
+			if (autoOpenLinks && !string.IsNullOrEmpty((string)e.Link.LinkData)) {
+				Process.Start((string)e.Link.LinkData);
 			}
-			else {
-				base.OnLinkClicked(e);
-			}
+
 		}
 
-		private void openUrl(object argument) {
-			try {
-				Process.Start((argument as string));
-			}
-			catch {
-				Invoke(new delOpenFailed(openFailed));
-			}
-		}
-
-		#region Nested type: delOpenFailed
-
-		private delegate void delOpenFailed();
-
-		#endregion
 	}
 }

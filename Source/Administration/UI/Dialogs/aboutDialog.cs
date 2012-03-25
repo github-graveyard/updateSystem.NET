@@ -20,7 +20,6 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using System.Windows.Forms;
 using updateSystemDotNet.Administration.Core;
 
 namespace updateSystemDotNet.Administration.UI.Dialogs {
@@ -30,11 +29,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			btnClose.Click += btnClose_Click;
 			imgAppLogo.Image = resourceHelper.getImage("app_logo_big.png");
 			imgDonate.Image = resourceHelper.getImage("paypalDonate.gif");
-
-			base.Text = string.Format("Über {0}", Strings.applicationName);
 			lblAppName.Text = Strings.applicationInternalName;
-			lblCopyright.Text = string.Format(lblCopyright.Text, DateTime.Now.Year);
-			lblCopyright.LinkArea = new LinkArea(lblCopyright.Text.IndexOf("Maximilian"), 16);
 		}
 
 		public override void localizeDialog() {
@@ -42,6 +37,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			lblVersion.Text = string.Format(Session.getLocalizedString(lblVersion),
 			                                Assembly.GetExecutingAssembly().GetName().Version, Session.applicationCodeName);
 			lblAppName.Text = Session.applicationName;
+			lblCopyright.linkText = string.Format(Session.getLocalizedString(lblCopyright), DateTime.Now.Year);
 		}
 
 		private void btnClose_Click(object sender, EventArgs e) {

@@ -145,7 +145,6 @@ namespace updateSystemDotNet.Administration.UI.updateActionEditor
 			this.lnkVarInfo.TabIndex = 16;
 			this.lnkVarInfo.TabStop = true;
 			this.lnkVarInfo.Text = "Informationen zu den Pfadvariablen";
-			this.lnkVarInfo.Url = null;
 			this.lnkVarInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkVarInfo_LinkClicked);
 			// 
 			// deleteFilesActionEditor

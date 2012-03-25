@@ -1,4 +1,26 @@
-﻿.Dialogs.aboutDialog.Title	About this Application
+﻿.Dialogs.aboutDialog.lblCopyright.Text	Copyright (c) {0} Maximilian Krauss <kraussz.com>
+.Dialogs.aboutDialog.lblDescriptionCompression.Text	Compression:
+.Dialogs.aboutDialog.lblDescriptionIcons.Text	Icons:
+.Dialogs.aboutDialog.lblVersion.Text	Version: {0} Codename "{1}"
+.Dialogs.aboutDialog.lnkForkMe.Text	This Project is Opensource. You can get it via [url=https://github.com/maximilian-krauss/updateSystem.NET]GitHub[/url]. Contribution is highly appreciated.
+.Dialogs.aboutDialog.lnkIcons.Text	Fugue Icons Package by [url=http://p.yusukekamiyamane.com/]Yusuke Kamiyamane[/url]
+.Dialogs.aboutDialog.lnkZipCredits.Text	#ziplib by [url=http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx]ic#code[/url].
+.Dialogs.aboutDialog.Title	About this Application
+.Dialogs.Global.btnBrowse.Text	Browse...
 .Dialogs.Global.btnCancel.Text	Cancel
 .Dialogs.Global.btnClose.Text	Close
 .Dialogs.Global.btnOk.Text	OK
+.Dialogs.saveProjectDialog.btnOk.Text	Save Project
+.Dialogs.saveProjectDialog.lblDestination.Text	Destination:
+.Dialogs.saveProjectDialog.lblProjectName.Text	Projectname:
+.Dialogs.saveProjectDialog.Title	Save Project
+.Dialogs.upgradeProjectDialog.btnBrowseProjectFile.Text	...
+.Dialogs.upgradeProjectDialog.btnConvert.Text	Convert Project
+.Dialogs.upgradeProjectDialog.grpDestination.Text	New Destination
+.Dialogs.upgradeProjectDialog.grpProjectFile.Text	Projectinformation
+.Dialogs.upgradeProjectDialog.lblNewDestinationFolder.Text	New Projectdirectory:
+.Dialogs.upgradeProjectDialog.lblProjectFile.Text	Projectfile:
+.Dialogs.upgradeProjectDialog.lblTitle.Text	Projectupgrade
+.Dialogs.upgradeProjectDialog.lblUpdateUrl.Text	Update Url:
+.Dialogs.upgradeProjectDialog.Title	[appname]
+de.Dialogs.Global.btnClose.Text	Schließen
