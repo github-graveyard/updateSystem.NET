@@ -1,4 +1,4 @@
-﻿/**
+﻿/*
  * updateSystem.NET
  * Copyright (c) 2008-2012 Maximilian Krauss <http://kraussz.com> eMail: max@kraussz.com
  *
@@ -106,16 +106,27 @@ namespace updateSystemDotNet.Localization {
 		}
 
 		public void Load(string resourcePath) {
+#pragma warning disable 162
 			string resourceName = string.Format( "{0}.{1}", resourcePath ,  USE_COMPRESSED_LANGUAGE_FILE ? "loc.gz" : "loc");
+#pragma warning restore 162
 			Stream locStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
 			if (locStream == null)
 				throw new InvalidOperationException(string.Format("Could not load Localizationfile! \"{0}\"", resourcePath));
 
 			if (USE_COMPRESSED_LANGUAGE_FILE)
+#pragma warning disable 162
 				locStream = new GZipStream(locStream, CompressionMode.Decompress);
+#pragma warning restore 162
 
 			Load(locStream);
 			locStream.Dispose();
+		}
+		public void Load() {
+			object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof (localizationFilenameAttribute), true);
+			if(attributes.Length>0)
+				Load((attributes[0] as localizationFilenameAttribute).Filename);
+			else
+				throw new Exception("Could not find localizationFilenameAttribute");
 		}
 
 		/* Backup. Maybe I need this in the future...

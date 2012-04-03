@@ -29,7 +29,7 @@ namespace updateSystemDotNet.appExceptions {
 		/// Gibt eine Nachricht zurück welche den Fehler näher beschreibt.
 		/// </summary>
 		public override string Message {
-			get { return Language.GetString("exception_corruptUpdateInstaller"); }
+			get { return Localization.localizationHelper.Instance.exceptionMessage("correuptUpdateInstaller"); }
 		}
 	}
 }

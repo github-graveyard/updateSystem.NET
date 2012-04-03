@@ -82,6 +82,9 @@
     <Compile Include="..\Shared\localizationFile.cs">
       <Link>Core\Application\localizationFile.cs</Link>
     </Compile>
+    <Compile Include="..\Shared\localizationFilenameAttribute.cs">
+      <Link>Core\Application\localizationFilenameAttribute.cs</Link>
+    </Compile>
     <Compile Include="..\Shared\redirectDefaultLocalizationAttribute.cs">
       <Link>Core\Application\redirectDefaultLocalizationAttribute.cs</Link>
     </Compile>

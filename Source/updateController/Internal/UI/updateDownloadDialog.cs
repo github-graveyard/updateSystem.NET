@@ -23,6 +23,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using updateSystemDotNet.Internal.updateUI.Controls;
 using updateSystemDotNet.appEventArgs;
+using updateSystemDotNet.Localization;
 
 namespace updateSystemDotNet.Internal.UI {
 	internal partial class updateDownloadDialog : updateDownloadBaseForm {
@@ -30,15 +31,15 @@ namespace updateSystemDotNet.Internal.UI {
 			InitializeComponent();
 			//Systemschriftart ermitteln
 			base.Font = SystemFonts.MessageBoxFont;
-			base.Text = string.Format("{0} Updateinstaller", string.Empty);
+			base.Text = string.Format("{0} updateinstaller", string.Empty);
 
-			lblInfo.Text = Language.GetString("DownloadDialog_lblInfo_text");
-			btnCancel.Text = Language.GetString("general_button_cancel");
-			lblTop.Text = Language.GetString("DownloadDialog_lblTop_text");
+			lblInfo.Text = localizationHelper.Instance.controlText(lblInfo);
+			btnCancel.Text = localizationHelper.Instance.controlText(btnCancel);
+			lblTop.Text = localizationHelper.Instance.controlText(lblTop);
 
 			aclDownload.State = statusLabelStates.Progress;
-			aclDownload.Text = string.Format(Language.GetString("updateDownloadDialog_aclDownload"), "0");
-			aclApply.Text = Language.GetString("updateDownloadDialog_aclApply");
+			aclDownload.Text = string.Format(localizationHelper.Instance.controlText(aclDownload), "0");
+			aclApply.Text = localizationHelper.Instance.controlText(aclApply);
 
 			downloadUpdatesCompleted += DownloadDialog_downloadUpdatesCompleted;
 			downloadUpdatesProgressChanged += DownloadDialog_downloadUpdatesProgressChanged;
@@ -48,7 +49,7 @@ namespace updateSystemDotNet.Internal.UI {
 
 		private void DownloadDialog_downloadUpdatesProgressChanged(object sender, downloadUpdatesProgressChangedEventArgs e) {
 			prgGlobal.Value = e.ProgressPercentage;
-			aclDownload.Text = string.Format(Language.GetString("updateDownloadDialog_aclDownload"), e.ProgressPercentage);
+			aclDownload.Text = string.Format(localizationHelper.Instance.controlText(aclDownload), e.ProgressPercentage);
 		}
 
 		private void DownloadDialog_downloadUpdatesCompleted(object sender, AsyncCompletedEventArgs e) {
@@ -59,8 +60,8 @@ namespace updateSystemDotNet.Internal.UI {
 			else if (e.Error != null) {
 				if (!e.Cancelled) {
 					MessageBox.Show(this,
-					                string.Format(Language.GetString("DownloadDialog_exception_text"), e.Error.Message)
-					                , "updateSystem.Net", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					                string.Format(localizationHelper.Instance.exceptionMessage("updateDownloadFailed"), e.Error.Message)
+					                , "updateSystem.NET", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 				DialogResult = DialogResult.Cancel;
 				Close();

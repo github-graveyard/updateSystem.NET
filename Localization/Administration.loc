@@ -6,6 +6,18 @@
 .Dialogs.aboutDialog.lnkIcons.Text	Fugue Icons Package by [url=http://p.yusukekamiyamane.com/]Yusuke Kamiyamane[/url]
 .Dialogs.aboutDialog.lnkZipCredits.Text	#ziplib by [url=http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx]ic#code[/url].
 .Dialogs.aboutDialog.Title	About this Application
+.Dialogs.applicationSettingsDialog.btnOpenLogDirectory.Text	Open Logdirectory
+.Dialogs.applicationSettingsDialog.btnProxySettings.Text	Open Proxyconfiguration
+.Dialogs.applicationSettingsDialog.chkCheckForUpdates.Text	Check for Updates at Startup
+.Dialogs.applicationSettingsDialog.chkEnableApplicationLog.Text	Write Applicationevents into a Logfile
+.Dialogs.applicationSettingsDialog.chkLogFtp.Text	Log FTP Responses (This may contain sensitive Information)
+.Dialogs.applicationSettingsDialog.chkLogUpdateLog.Text	Log Statistic Requests and Responses
+.Dialogs.applicationSettingsDialog.grpLog.Text	Applicationlog
+.Dialogs.applicationSettingsDialog.grpProxy.Text	Proxy
+.Dialogs.applicationSettingsDialog.grpUpdates.Text	Updates
+.Dialogs.applicationSettingsDialog.lblTitle.Text	Applicationsettings
+.Dialogs.applicationSettingsDialog.lblUpdateChannel.Text	Updatechannel:
+.Dialogs.applicationSettingsDialog.Title	Applicationsettings
 .Dialogs.Global.btnBrowse.Text	Browse...
 .Dialogs.Global.btnCancel.Text	Cancel
 .Dialogs.Global.btnClose.Text	Close

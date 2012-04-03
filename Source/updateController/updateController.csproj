@@ -80,6 +80,15 @@
       <Link>Internal\UI\buttonArea.cs</Link>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="..\Shared\localizationFile.cs">
+      <Link>Internal\localizationFile.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared\localizationFilenameAttribute.cs">
+      <Link>Internal\localizationFilenameAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared\localizationHelper.cs">
+      <Link>Internal\localizationHelper.cs</Link>
+    </Compile>
     <Compile Include="..\Shared\sharedAssemblyInfo.cs">
       <Link>sharedAssemblyInfo.cs</Link>
     </Compile>
@@ -141,7 +150,6 @@
     <Compile Include="Internal\resourceHelper.cs" />
     <Compile Include="Internal\searchProvider.cs" />
     <Compile Include="Internal\Strings.cs" />
-    <Compile Include="Internal\Language.cs" />
     <Compile Include="Internal\Log.cs" />
     <Compile Include="Internal\taskBarManager.cs" />
     <Compile Include="Internal\taskBarProgressStateEnum.cs" />
@@ -220,6 +228,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="..\..\Localization\updateController.loc">
+      <Link>updateController.loc</Link>
+    </EmbeddedResource>
     <None Include="updateController.licenseheader" />
     <None Include="UpdateSystem.snk" />
   </ItemGroup>
@@ -235,12 +246,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Internal\Localization\language.eng.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Internal\Localization\language.deu.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Internal\UI\versionEditorControl.resx">
       <DependentUpon>versionEditorControl.cs</DependentUpon>
       <SubType>Designer</SubType>

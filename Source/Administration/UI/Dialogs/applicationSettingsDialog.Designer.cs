@@ -23,7 +23,7 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			this.mainInstructionsLabel1 = new updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel();
+			this.lblTitle = new updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel();
 			this.buttonArea1 = new updateSystemDotNet.Administration.UI.Controls.buttonArea();
 			this.btnCancel = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.btnOk = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
@@ -33,29 +33,29 @@
 			this.chkLogUpdateLog = new System.Windows.Forms.CheckBox();
 			this.btnOpenLogDirectory = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.chkEnableApplicationLog = new System.Windows.Forms.CheckBox();
-			this.groupBoxEx2 = new updateSystemDotNet.Administration.UI.Controls.groupBoxEx();
+			this.grpUpdates = new updateSystemDotNet.Administration.UI.Controls.groupBoxEx();
 			this.chkCheckForUpdates = new System.Windows.Forms.CheckBox();
 			this.cboUpdateChannel = new System.Windows.Forms.ComboBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.groupBoxEx3 = new updateSystemDotNet.Administration.UI.Controls.groupBoxEx();
+			this.lblUpdateChannel = new System.Windows.Forms.Label();
+			this.grpProxy = new updateSystemDotNet.Administration.UI.Controls.groupBoxEx();
 			this.btnProxySettings = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.buttonArea1.SuspendLayout();
 			this.grpLog.SuspendLayout();
 			this.pnlLogSettings.SuspendLayout();
-			this.groupBoxEx2.SuspendLayout();
-			this.groupBoxEx3.SuspendLayout();
+			this.grpUpdates.SuspendLayout();
+			this.grpProxy.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// mainInstructionsLabel1
+			// lblTitle
 			// 
-			this.mainInstructionsLabel1.AutoSize = true;
-			this.mainInstructionsLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.mainInstructionsLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(153)))));
-			this.mainInstructionsLabel1.Location = new System.Drawing.Point(12, 9);
-			this.mainInstructionsLabel1.Name = "mainInstructionsLabel1";
-			this.mainInstructionsLabel1.Size = new System.Drawing.Size(194, 21);
-			this.mainInstructionsLabel1.TabIndex = 0;
-			this.mainInstructionsLabel1.Text = "Anwendungseinstellungen";
+			this.lblTitle.AutoSize = true;
+			this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(153)))));
+			this.lblTitle.Location = new System.Drawing.Point(12, 9);
+			this.lblTitle.Name = "lblTitle";
+			this.lblTitle.Size = new System.Drawing.Size(194, 21);
+			this.lblTitle.TabIndex = 0;
+			this.lblTitle.Text = "Anwendungseinstellungen";
 			// 
 			// buttonArea1
 			// 
@@ -147,7 +147,7 @@
 			this.btnOpenLogDirectory.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.btnOpenLogDirectory.Location = new System.Drawing.Point(19, 107);
 			this.btnOpenLogDirectory.Name = "btnOpenLogDirectory";
-			this.btnOpenLogDirectory.Size = new System.Drawing.Size(137, 24);
+			this.btnOpenLogDirectory.Size = new System.Drawing.Size(125, 22);
 			this.btnOpenLogDirectory.TabIndex = 1;
 			this.btnOpenLogDirectory.Text = "Logverzeichnis öffnen";
 			this.btnOpenLogDirectory.UseVisualStyleBackColor = true;
@@ -159,23 +159,23 @@
 			this.chkEnableApplicationLog.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.chkEnableApplicationLog.Location = new System.Drawing.Point(16, 26);
 			this.chkEnableApplicationLog.Name = "chkEnableApplicationLog";
-			this.chkEnableApplicationLog.Size = new System.Drawing.Size(295, 20);
+			this.chkEnableApplicationLog.Size = new System.Drawing.Size(268, 18);
 			this.chkEnableApplicationLog.TabIndex = 0;
 			this.chkEnableApplicationLog.Text = "Anwendungsereignisse in eine Logdatei schreiben";
 			this.chkEnableApplicationLog.UseVisualStyleBackColor = true;
 			this.chkEnableApplicationLog.CheckedChanged += new System.EventHandler(this.chkEnableApplicationLog_CheckedChanged);
 			// 
-			// groupBoxEx2
+			// grpUpdates
 			// 
-			this.groupBoxEx2.Controls.Add(this.chkCheckForUpdates);
-			this.groupBoxEx2.Controls.Add(this.cboUpdateChannel);
-			this.groupBoxEx2.Controls.Add(this.label1);
-			this.groupBoxEx2.Location = new System.Drawing.Point(16, 183);
-			this.groupBoxEx2.Name = "groupBoxEx2";
-			this.groupBoxEx2.Size = new System.Drawing.Size(426, 79);
-			this.groupBoxEx2.TabIndex = 3;
-			this.groupBoxEx2.TabStop = false;
-			this.groupBoxEx2.Text = "Aktualisierungen";
+			this.grpUpdates.Controls.Add(this.chkCheckForUpdates);
+			this.grpUpdates.Controls.Add(this.cboUpdateChannel);
+			this.grpUpdates.Controls.Add(this.lblUpdateChannel);
+			this.grpUpdates.Location = new System.Drawing.Point(16, 183);
+			this.grpUpdates.Name = "grpUpdates";
+			this.grpUpdates.Size = new System.Drawing.Size(426, 79);
+			this.grpUpdates.TabIndex = 3;
+			this.grpUpdates.TabStop = false;
+			this.grpUpdates.Text = "Aktualisierungen";
 			// 
 			// chkCheckForUpdates
 			// 
@@ -183,7 +183,7 @@
 			this.chkCheckForUpdates.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.chkCheckForUpdates.Location = new System.Drawing.Point(19, 56);
 			this.chkCheckForUpdates.Name = "chkCheckForUpdates";
-			this.chkCheckForUpdates.Size = new System.Drawing.Size(319, 20);
+			this.chkCheckForUpdates.Size = new System.Drawing.Size(292, 18);
 			this.chkCheckForUpdates.TabIndex = 2;
 			this.chkCheckForUpdates.Text = "Während dem Start automatisch nach Updates suchen";
 			this.chkCheckForUpdates.UseVisualStyleBackColor = true;
@@ -197,24 +197,24 @@
 			this.cboUpdateChannel.Size = new System.Drawing.Size(199, 23);
 			this.cboUpdateChannel.TabIndex = 1;
 			// 
-			// label1
+			// lblUpdateChannel
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(16, 26);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(76, 15);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Updatekanal:";
+			this.lblUpdateChannel.AutoSize = true;
+			this.lblUpdateChannel.Location = new System.Drawing.Point(16, 26);
+			this.lblUpdateChannel.Name = "lblUpdateChannel";
+			this.lblUpdateChannel.Size = new System.Drawing.Size(76, 15);
+			this.lblUpdateChannel.TabIndex = 0;
+			this.lblUpdateChannel.Text = "Updatekanal:";
 			// 
-			// groupBoxEx3
+			// grpProxy
 			// 
-			this.groupBoxEx3.Controls.Add(this.btnProxySettings);
-			this.groupBoxEx3.Location = new System.Drawing.Point(16, 268);
-			this.groupBoxEx3.Name = "groupBoxEx3";
-			this.groupBoxEx3.Size = new System.Drawing.Size(426, 64);
-			this.groupBoxEx3.TabIndex = 4;
-			this.groupBoxEx3.TabStop = false;
-			this.groupBoxEx3.Text = "Proxy";
+			this.grpProxy.Controls.Add(this.btnProxySettings);
+			this.grpProxy.Location = new System.Drawing.Point(16, 268);
+			this.grpProxy.Name = "grpProxy";
+			this.grpProxy.Size = new System.Drawing.Size(426, 64);
+			this.grpProxy.TabIndex = 4;
+			this.grpProxy.TabStop = false;
+			this.grpProxy.Text = "Proxy";
 			// 
 			// btnProxySettings
 			// 
@@ -223,7 +223,7 @@
 			this.btnProxySettings.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.btnProxySettings.Location = new System.Drawing.Point(16, 25);
 			this.btnProxySettings.Name = "btnProxySettings";
-			this.btnProxySettings.Size = new System.Drawing.Size(171, 24);
+			this.btnProxySettings.Size = new System.Drawing.Size(155, 22);
 			this.btnProxySettings.TabIndex = 0;
 			this.btnProxySettings.Text = "Proxyeinstellungen anzeigen";
 			this.btnProxySettings.UseVisualStyleBackColor = true;
@@ -235,11 +235,11 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(457, 388);
-			this.Controls.Add(this.groupBoxEx3);
-			this.Controls.Add(this.groupBoxEx2);
+			this.Controls.Add(this.grpProxy);
+			this.Controls.Add(this.grpUpdates);
 			this.Controls.Add(this.grpLog);
 			this.Controls.Add(this.buttonArea1);
-			this.Controls.Add(this.mainInstructionsLabel1);
+			this.Controls.Add(this.lblTitle);
 			this.Name = "applicationSettingsDialog";
 			this.Text = "Anwendungseinstellungen - [appname]";
 			this.buttonArea1.ResumeLayout(false);
@@ -248,10 +248,10 @@
 			this.grpLog.PerformLayout();
 			this.pnlLogSettings.ResumeLayout(false);
 			this.pnlLogSettings.PerformLayout();
-			this.groupBoxEx2.ResumeLayout(false);
-			this.groupBoxEx2.PerformLayout();
-			this.groupBoxEx3.ResumeLayout(false);
-			this.groupBoxEx3.PerformLayout();
+			this.grpUpdates.ResumeLayout(false);
+			this.grpUpdates.PerformLayout();
+			this.grpProxy.ResumeLayout(false);
+			this.grpProxy.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -259,18 +259,18 @@
 
 		#endregion
 
-		private updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel mainInstructionsLabel1;
+		private updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel lblTitle;
 		private updateSystemDotNet.Administration.UI.Controls.buttonArea buttonArea1;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnCancel;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnOk;
 		private updateSystemDotNet.Administration.UI.Controls.groupBoxEx grpLog;
 		private System.Windows.Forms.CheckBox chkEnableApplicationLog;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnOpenLogDirectory;
-		private updateSystemDotNet.Administration.UI.Controls.groupBoxEx groupBoxEx2;
-		private System.Windows.Forms.Label label1;
+		private updateSystemDotNet.Administration.UI.Controls.groupBoxEx grpUpdates;
+		private System.Windows.Forms.Label lblUpdateChannel;
 		private System.Windows.Forms.CheckBox chkCheckForUpdates;
 		private System.Windows.Forms.ComboBox cboUpdateChannel;
-		private updateSystemDotNet.Administration.UI.Controls.groupBoxEx groupBoxEx3;
+		private updateSystemDotNet.Administration.UI.Controls.groupBoxEx grpProxy;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnProxySettings;
 		private System.Windows.Forms.Panel pnlLogSettings;
 		private System.Windows.Forms.CheckBox chkLogFtp;

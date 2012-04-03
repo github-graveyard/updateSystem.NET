@@ -21,10 +21,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.Reflection;
 using System.Windows.Forms;
 using updateSystemDotNet.Core.Types;
 using updateSystemDotNet.Internal.updateUI.Controls;
+using updateSystemDotNet.Localization;
 
 namespace updateSystemDotNet.Internal.UI {
 	internal partial class updateSearchDialog : Form {
@@ -37,27 +39,23 @@ namespace updateSystemDotNet.Internal.UI {
 		public updateSearchDialog(updateController controller) {
 			InitializeComponent();
 
-			//Systemschriftart ermitteln
 			base.Font = SystemFonts.MessageBoxFont;
 			lblStatus.Font = new Font(SystemFonts.MessageBoxFont.FontFamily, 12);
 
-			//Initialisiere Strings
-			lblStatus.Text = Language.GetString("SearchDialog_lblStatus_search");
+			//Localization
+			lblStatus.Text = localizationHelper.Instance.controlText(lblStatus, "search");
 			aclSearch.State = statusLabelStates.Progress;
-			aclSearch.Text = lblStatus.Text = Language.GetString("SearchDialog_lblStatus_search");
-			lblCurrentVersion.Text = string.Format(Language.GetString("SearchDialog_lblCurrentVersion_text"),
+			aclSearch.Text = lblStatus.Text = localizationHelper.Instance.controlText(aclSearch, "search");
+			lblCurrentVersion.Text = string.Format(localizationHelper.Instance.controlText(lblCurrentVersion),
 			                                       controller.releaseInfo.Version);
 			if (controller.releaseInfo.Type != releaseTypes.Final) {
 				lblCurrentVersion.Text += string.Format(" ({0} {1})", controller.releaseInfo.Type.ToString(),
-				                                        controller.releaseInfo.Step.ToString());
+				                                        controller.releaseInfo.Step.ToString(CultureInfo.InvariantCulture));
 			}
 
-			btnCancel.Text = Language.GetString("general_button_cancel");
+			btnCancel.Text = localizationHelper.Instance.controlText(btnCancel);
 
-			//Setze private Variable
 			_controller = controller;
-
-			//Initialisiere Events
 			Shown += SearchDialog_Shown;
 			bgwSearch.RunWorkerCompleted += bgwSearch_RunWorkerCompleted;
 		}
@@ -109,7 +107,7 @@ namespace updateSystemDotNet.Internal.UI {
 				}
 				else {
 					MessageBox.Show(this,
-					                string.Format(Language.GetString("SearchDialog_exception_text"), (e.Result as Exception).Message),
+					                string.Format(localizationHelper.Instance.exceptionMessage("updateSearchFailed"), (e.Result as Exception).Message),
 					                "updateSystem.NET",
 					                MessageBoxButtons.OK,
 					                MessageBoxIcon.Error);
@@ -119,10 +117,10 @@ namespace updateSystemDotNet.Internal.UI {
 				}
 			}
 
-			lblStatus.Text = Language.GetString("SearchDialog_lblStatus_noNewUpdates");
-			aclSearch.Text = Language.GetString("SearchDialog_lblNoUpdates_text");
+			lblStatus.Text = localizationHelper.Instance.controlText(lblStatus, "noNewUpdates");
+			aclSearch.Text = localizationHelper.Instance.controlText(aclSearch, "noNewUpdates");
 			aclSearch.State = statusLabelStates.Success;
-			btnCancel.Text = Language.GetString("general_button_close");
+			btnCancel.Text = localizationHelper.Instance.controlText(btnCancel, "close");
 
 			if (m_config != null)
 				Text = m_config.applicationName;

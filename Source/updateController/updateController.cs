@@ -40,6 +40,7 @@ using updateSystemDotNet.Internal.updateUI;
 using updateSystemDotNet.Internal.updateUI.Views;
 using updateSystemDotNet.appEventArgs;
 using updateSystemDotNet.appExceptions;
+using updateSystemDotNet.Localization;
 
 namespace updateSystemDotNet {
 	/// <summary>
@@ -384,7 +385,7 @@ namespace updateSystemDotNet {
 			//Überprüfe ob der bereits läuft
 			if (_updateDownloader != null) {
 				if (_updateDownloader.isBusy) {
-					throw new InvalidOperationException("Es läuft bereits ein Updatedownload.");
+					throw new InvalidOperationException(localizationHelper.Instance.exceptionMessage("updateDownloadBusy"));
 				}
 			}
 
@@ -407,7 +408,7 @@ namespace updateSystemDotNet {
 				_updateDownloader.cancelDownload();
 			}
 			else {
-				throw new InvalidOperationException("Es läuft bereits ein Updatedownload.");
+				throw new InvalidOperationException(localizationHelper.Instance.exceptionMessage("updateDownloadBusy"));
 			}
 		}
 
@@ -1028,7 +1029,7 @@ namespace updateSystemDotNet {
 			Log.Instance.writeEntry("Initializing Updatecheck.", "updateController");
 			//Updateresultat auf null setzen
 			currentUpdateResult = null;
-			Internal.Language.Set_Language(_updateSettings.Language);
+			localizationHelper.Instance.setLanguage(_updateSettings.Language);
 
 			if (string.IsNullOrEmpty(releaseInfo.Version) ||
 			    retrieveHostVersion) {
@@ -1046,10 +1047,10 @@ namespace updateSystemDotNet {
 		private void prepareShowUpdateDialog() {
 			if (currentUpdateResult == null) {
 				throw new InvalidOperationException(
-					"Sie müssen erst nach Updates suchen bevor Sie die Updateinformationen anzeigen lassen können.");
+					localizationHelper.Instance.exceptionMessage("checkForUpdatesFirst"));
 			}
 			if (!currentUpdateResult.UpdatesAvailable) {
-				throw new InvalidOperationException("Es gibt keine Updates die angezeigt werden können");
+				throw new InvalidOperationException(localizationHelper.Instance.exceptionMessage("noUpdatesAvailable"));
 			}
 		}
 
@@ -1060,10 +1061,10 @@ namespace updateSystemDotNet {
 			//Überprüfe ob es Aktualisierungen gibt
 			if (currentUpdateResult == null) {
 				throw new InvalidOperationException(
-					"Der Updatedownload kann nicht aufgerufen werden, da dass Objekt 'currentUpdateResult' null ist");
+					localizationHelper.Instance.exceptionMessage("checkForUpdatesFirst"));
 			}
 			if (!currentUpdateResult.UpdatesAvailable) {
-				throw new InvalidOperationException("Es gibt keine Updates die herunter geladen werden könnten");
+				throw new InvalidOperationException(localizationHelper.Instance.exceptionMessage("noUpdatesAvailable"));
 			}
 
 			//Neue SessionId für den Updatedownload erstellen
@@ -1078,10 +1079,10 @@ namespace updateSystemDotNet {
 		private string prepareUpdate() {
 			//Überprüfe ob es Aktualisierungen gibt die heruntergeladen werden könnten
 			if (currentUpdateResult == null) {
-				throw new InvalidOperationException("Das Update kann nicht installiert werden, da es keine Updates gibt");
+				throw new InvalidOperationException(localizationHelper.Instance.exceptionMessage("checkForUpdatesFirst"));
 			}
 			if (!currentUpdateResult.UpdatesAvailable) {
-				throw new InvalidOperationException("Es gibt keine Updates die installiert werden könnten");
+				throw new InvalidOperationException(localizationHelper.Instance.exceptionMessage("noUpdatesAvailable"));
 			}
 
 			Log.Instance.writeEntry("Initializing Update", "updateController");
@@ -1092,7 +1093,7 @@ namespace updateSystemDotNet {
 
 			//Überprüfen ob das Downloadverzeichnis existiert
 			if (!Directory.Exists(downloadDirectory)) {
-				throw new DirectoryNotFoundException("Das Downloadverzeichnis konnte nicht gefunden werden.");
+				throw new DirectoryNotFoundException(localizationHelper.Instance.exceptionMessage("downloadDirectoryNotFound"));
 			}
 
 			//Öffentlichen Schlüssel erstellen
@@ -1107,7 +1108,7 @@ namespace updateSystemDotNet {
 
 				//Überprüfe ob das Updatepaket existiert
 				if (!File.Exists(packagePath)) {
-					throw new FileNotFoundException("Ein Updatepaket konnte nicht gefunden werden", packagePath);
+					throw new FileNotFoundException(localizationHelper.Instance.exceptionMessage("updatePackageNotFound"), packagePath);
 				}
 
 				//string packageHash = Convert.ToBase64String(SHA512Managed.Create().ComputeHash(File.ReadAllBytes(packagePath)));
@@ -1124,7 +1125,7 @@ namespace updateSystemDotNet {
 			string updateInstallerPath = Path.Combine(downloadDirectory, "updateInstaller.zip");
 			string updateInstallerExecutablePath = Path.Combine(downloadDirectory, "updateInstaller.exe");
 			if (!File.Exists(updateInstallerPath) && !File.Exists(updateInstallerExecutablePath)) {
-				throw new FileNotFoundException("Der updateInstaller konnte nicht gefunden werden.", updateInstallerPath);
+				throw new FileNotFoundException(localizationHelper.Instance.exceptionMessage("updateInstallerNotFound"), updateInstallerPath);
 			}
 
 			//updateInstaller umbenennen

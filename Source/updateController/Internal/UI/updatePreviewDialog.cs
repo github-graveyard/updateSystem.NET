@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
@@ -27,9 +28,14 @@ using System.Text;
 using System.Windows.Forms;
 using updateSystemDotNet.Core;
 using updateSystemDotNet.Core.Types;
+using updateSystemDotNet.Localization;
 
 namespace updateSystemDotNet.Internal.UI {
 	internal sealed partial class updatePreviewDialog : Form {
+
+		[DllImport("user32.dll", CharSet = CharSet.Unicode)]
+		private static extern IntPtr SendMessage(HandleRef hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
+
 		private readonly changelogDictionary m_changelogs;
 
 		/// <summary>
@@ -58,11 +64,7 @@ namespace updateSystemDotNet.Internal.UI {
 		public updatePreviewDialog(UpdateSettings Settings, List<updatePackage> Result, updateConfiguration Config,
 		                           changelogDictionary changelogs, bool requestElevation) {
 			InitializeComponent();
-
-			//Systemschriftart ermitteln
 			Font = SystemFonts.MessageBoxFont;
-
-			//Initialisiere Events
 			SizeChanged += UpdateDialog_SizeChanged;
 
 			//Setze private Variablen
@@ -72,22 +74,22 @@ namespace updateSystemDotNet.Internal.UI {
 			m_changelogs = changelogs;
 
 			//Setze Sprachstrings
-			lblStatus.Text = Language.GetString("UpdateForm_lblStatus_text");
-			btnCancel.Text = Language.GetString("general_button_cancel");
-			btnStartUpdate.Text = Language.GetString("UpdateForm_btnStartUpdate_text");
-			lblCurrentVersion.Text = string.Format(Language.GetString("UpdateForm_lblCurrentVersion_text"),
+			lblStatus.Text = localizationHelper.Instance.controlText(lblStatus);
+			btnCancel.Text = localizationHelper.Instance.controlText(btnCancel);
+			btnStartUpdate.Text = localizationHelper.Instance.controlText(btnStartUpdate);
+			lblCurrentVersion.Text = string.Format(localizationHelper.Instance.controlText(lblCurrentVersion),
 			                                       Settings.releaseInfo.Version);
 
 			if (Settings.releaseInfo.Type != releaseTypes.Final)
 				lblCurrentVersion.Text += string.Format(" ({0} {1})", Settings.releaseInfo.Type.ToString(),
-				                                        Settings.releaseInfo.Step.ToString());
+				                                        Settings.releaseInfo.Step.ToString(CultureInfo.InvariantCulture));
 
 			if (Result.Count > 0) {
-				lblNewestVersion.Text = string.Format(Language.GetString("UpdateForm_lblNewestVersion_text"),
+				lblNewestVersion.Text = string.Format(localizationHelper.Instance.controlText(lblNewestVersion),
 				                                      Result[Result.Count - 1].releaseInfo.Version);
 				if (Result[Result.Count - 1].releaseInfo.Type != releaseTypes.Final) {
 					lblNewestVersion.Text += string.Format(" ({0} {1})", Result[Result.Count - 1].releaseInfo.Type.ToString(),
-					                                       Result[Result.Count - 1].releaseInfo.Step.ToString());
+					                                       Result[Result.Count - 1].releaseInfo.Step.ToString(CultureInfo.InvariantCulture));
 				}
 			}
 
@@ -113,9 +115,6 @@ namespace updateSystemDotNet.Internal.UI {
 				imgApp.Image = SystemIcons.Application.ToBitmap();
 			}
 		}
-
-		[DllImport("user32.dll", CharSet = CharSet.Unicode)]
-		public static extern IntPtr SendMessage(HandleRef hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
 
 		private void UpdateDialog_SizeChanged(object sender, EventArgs e) {
 			pnlExtended.Invalidate();
@@ -146,27 +145,20 @@ namespace updateSystemDotNet.Internal.UI {
 			foreach (updatePackage package in m_result) {
 				completeSize += package.packageSize;
 			}
-			lblSize.Text = string.Format(Language.GetString("UpdateForm_lblSize_text"), Helper.GetFileSize(completeSize));
+			lblSize.Text = string.Format(localizationHelper.Instance.controlText(lblSize), Helper.GetFileSize(completeSize));
 
 			foreach (var changelog in m_changelogs) {
-				sbDetails.AppendLine(string.Format(Language.GetString("UpdateForm_Changelog_title"),
-				                                   new[] {
+				sbDetails.AppendLine(string.Format(localizationHelper.Instance.controlText(txtDetails),
+				                                   new [] {
 				                                         	changelog.Key.releaseInfo.Version +
-				                                         	(changelog.Key.releaseInfo.Type !=
-				                                         	 releaseTypes.Final
-				                                         	 	? string.Format(
-				                                         	 		" ({0} {1})",
-				                                         	 		changelog.Key.releaseInfo.Type,
-				                                         	 		changelog.Key.releaseInfo.Step)
-				                                         	 	: ""),
-				                                         	getReleaseDateByVersion(
-				                                         		changelog.Key.releaseInfo,
-				                                         		changelog.Key.Architecture)
+				                                         	(changelog.Key.releaseInfo.Type != releaseTypes.Final
+				                                         	 	? string.Format(" ({0} {1})",changelog.Key.releaseInfo.Type,changelog.Key.releaseInfo.Step)
+				                                         	 	: ""), getReleaseDateByVersion(changelog.Key.releaseInfo,changelog.Key.Architecture)
 				                                         }));
 
 				sbDetails.AppendLine(seperator);
 
-				sbDetails.AppendLine(Language.getLanguageId(m_settings.Language) == "Deutsch"
+				sbDetails.AppendLine(localizationHelper.Instance.cultureId == "de"
 				                     	? changelog.Value.germanChanges
 				                     	: changelog.Value.englishChanges);
 

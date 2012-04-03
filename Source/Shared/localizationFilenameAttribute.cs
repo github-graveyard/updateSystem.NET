@@ -17,15 +17,19 @@
  * YOU MUST PASS THIS DISCLAIMER ON WHENEVER YOU DISTRIBUTE THE WORK OR
  * DERIVATIVE WORKS.
  */
-using System.Reflection;
-using System.Runtime.CompilerServices;
+using System;
 
-[assembly: AssemblyCompany("Maximilian Krauss")]
-[assembly: AssemblyProduct("updateSystem.NET")]
-[assembly: AssemblyCopyright("Copyright (c) 2011 Maximilian Krauss")]
-[assembly: AssemblyTrademark("updateSystem.NET")]
-//[assembly: CLSCompliant(true)]
+namespace updateSystemDotNet.Localization {
+	
+	/// <summary>Attribute that defines the Filename of the Localizationfile individually for each Assembly.</summary>
+	[AttributeUsage(AttributeTargets.Assembly, AllowMultiple = false)]
+	public sealed class localizationFilenameAttribute:Attribute {
 
-[assembly: SuppressIldasm]
-[assembly: AssemblyVersion("1.6.0.403")]
-[assembly: AssemblyFileVersion("1.6.0.403")]
+		/// <summary>Initializes a new Instance of <see cref="localizationFilenameAttribute"/></summary>
+		public localizationFilenameAttribute(string filename) {
+			Filename = filename;
+		}
+		/// <summary>Returns the Name of the File which contains the Localization.</summary>
+		public string Filename { get; set; }
+	}
+}
