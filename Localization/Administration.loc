@@ -53,5 +53,9 @@
 .Menus.mnsMain.mnuUnlinkStatisticServer.Text	Unlink Statisticserver
 .Menus.mnsMain.mnuUpgradeProject.Text	Convert old Project
 .Menus.mnsMain.mnuView.Text	View
+.Menus.tosMain.tsBtnNewProject.Text	New Project
+.Menus.tosMain.tsBtnOpenProject.Text	Open Project
+.Menus.tosMain.tsBtnPublish.Text	Publish
+.Menus.tosMain.tsBtnSaveProject.Text	Save
 de.Dialogs.Global.btnClose.Text	Schließen
 lobal.btnClose.Text	Schließen

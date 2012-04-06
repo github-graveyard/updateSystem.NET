@@ -85,6 +85,7 @@ namespace updateSystemDotNet.Administration.UI {
 		/// <summary>Applies Localization on all UI-Elements which are not automatically Localized.</summary>
 		private void initalizeLocalization() {
 			_session.localizeMenuStrip(mnsMain);
+			_session.localizeMenuStrip(tosMain);
 		}
 
 		/// <summary>Aboniert alle während der Ausführung benötigten Events.</summary>

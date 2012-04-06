@@ -122,7 +122,7 @@ namespace updateSystemDotNet.Administration.Core.Application {
 				localizeControls(control.Controls);
 		}
 
-		public void localizeMenuStrip(MenuStrip menu) {
+		public void localizeMenuStrip(ToolStrip menu) {
 			foreach (ToolStripItem item in menu.Items)
 				localizeMenuItem(item, menu.Name);
 		}
