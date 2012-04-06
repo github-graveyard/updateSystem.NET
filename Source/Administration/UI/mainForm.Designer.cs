@@ -26,23 +26,24 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
 			this.mnsMain = new System.Windows.Forms.MenuStrip();
-			this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuNewProject = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuOpen = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
 			this.mnuSave = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.mnuClose = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuView = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuShowToolbar = new System.Windows.Forms.ToolStripMenuItem();
-			this.extrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuTools = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuUpgradeProject = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuSettings = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.mnuLinkStatisticServer = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuUnlinkStatisticServer = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.mnuPublish = new System.Windows.Forms.ToolStripMenuItem();
-			this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuCheckForUpdates = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuSendFeedback = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuThrowDebugException = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +60,6 @@
 			this.tsBtnPublish = new System.Windows.Forms.ToolStripButton();
 			this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
 			this.tvwContentNodes = new updateSystemDotNet.Administration.UI.Controls.explorerTreeView();
-			this.mnuUpgradeProject = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnsMain.SuspendLayout();
 			this.tosMain.SuspendLayout();
 			this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -71,27 +71,27 @@
 			// 
 			this.mnsMain.Dock = System.Windows.Forms.DockStyle.None;
 			this.mnsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dateiToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.extrasToolStripMenuItem,
-            this.hilfeToolStripMenuItem});
+            this.mnuFile,
+            this.mnuView,
+            this.mnuTools,
+            this.mnuHelp});
 			this.mnsMain.Location = new System.Drawing.Point(0, 0);
 			this.mnsMain.Name = "mnsMain";
 			this.mnsMain.Size = new System.Drawing.Size(651, 24);
 			this.mnsMain.TabIndex = 0;
 			// 
-			// dateiToolStripMenuItem
+			// mnuFile
 			// 
-			this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuNewProject,
             this.mnuOpen,
             this.toolStripSeparator,
             this.mnuSave,
             this.toolStripSeparator1,
             this.mnuClose});
-			this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
-			this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-			this.dateiToolStripMenuItem.Text = "&Datei";
+			this.mnuFile.Name = "mnuFile";
+			this.mnuFile.Size = new System.Drawing.Size(46, 20);
+			this.mnuFile.Text = "&Datei";
 			// 
 			// mnuNewProject
 			// 
@@ -99,7 +99,7 @@
 			this.mnuNewProject.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.mnuNewProject.Name = "mnuNewProject";
 			this.mnuNewProject.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-			this.mnuNewProject.Size = new System.Drawing.Size(168, 22);
+			this.mnuNewProject.Size = new System.Drawing.Size(166, 22);
 			this.mnuNewProject.Text = "&Neu";
 			this.mnuNewProject.Click += new System.EventHandler(this.mnuNewProject_Click);
 			// 
@@ -109,14 +109,14 @@
 			this.mnuOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.mnuOpen.Name = "mnuOpen";
 			this.mnuOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-			this.mnuOpen.Size = new System.Drawing.Size(168, 22);
+			this.mnuOpen.Size = new System.Drawing.Size(166, 22);
 			this.mnuOpen.Text = "Ö&ffnen";
 			this.mnuOpen.Click += new System.EventHandler(this.mnuOpen_Click);
 			// 
 			// toolStripSeparator
 			// 
 			this.toolStripSeparator.Name = "toolStripSeparator";
-			this.toolStripSeparator.Size = new System.Drawing.Size(165, 6);
+			this.toolStripSeparator.Size = new System.Drawing.Size(163, 6);
 			// 
 			// mnuSave
 			// 
@@ -124,30 +124,30 @@
 			this.mnuSave.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.mnuSave.Name = "mnuSave";
 			this.mnuSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-			this.mnuSave.Size = new System.Drawing.Size(168, 22);
+			this.mnuSave.Size = new System.Drawing.Size(166, 22);
 			this.mnuSave.Text = "&Speichern";
 			this.mnuSave.Click += new System.EventHandler(this.mnuSave_Click);
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(165, 6);
+			this.toolStripSeparator1.Size = new System.Drawing.Size(163, 6);
 			// 
 			// mnuClose
 			// 
 			this.mnuClose.Name = "mnuClose";
 			this.mnuClose.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-			this.mnuClose.Size = new System.Drawing.Size(168, 22);
+			this.mnuClose.Size = new System.Drawing.Size(166, 22);
 			this.mnuClose.Text = "&Beenden";
 			this.mnuClose.Click += new System.EventHandler(this.mnuClose_Click);
 			// 
-			// toolStripMenuItem1
+			// mnuView
 			// 
-			this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.mnuView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuShowToolbar});
-			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(59, 20);
-			this.toolStripMenuItem1.Text = "Ansicht";
+			this.mnuView.Name = "mnuView";
+			this.mnuView.Size = new System.Drawing.Size(59, 20);
+			this.mnuView.Text = "Ansicht";
 			// 
 			// mnuShowToolbar
 			// 
@@ -158,9 +158,9 @@
 			this.mnuShowToolbar.Text = "Toolbar anzeigen";
 			this.mnuShowToolbar.Click += new System.EventHandler(this.mnuShowToolbar_Click);
 			// 
-			// extrasToolStripMenuItem
+			// mnuTools
 			// 
-			this.extrasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.mnuTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuUpgradeProject,
             this.mnuSettings,
             this.toolStripSeparator2,
@@ -168,9 +168,16 @@
             this.mnuUnlinkStatisticServer,
             this.toolStripSeparator3,
             this.mnuPublish});
-			this.extrasToolStripMenuItem.Name = "extrasToolStripMenuItem";
-			this.extrasToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-			this.extrasToolStripMenuItem.Text = "E&xtras";
+			this.mnuTools.Name = "mnuTools";
+			this.mnuTools.Size = new System.Drawing.Size(49, 20);
+			this.mnuTools.Text = "E&xtras";
+			// 
+			// mnuUpgradeProject
+			// 
+			this.mnuUpgradeProject.Name = "mnuUpgradeProject";
+			this.mnuUpgradeProject.Size = new System.Drawing.Size(243, 22);
+			this.mnuUpgradeProject.Text = "Altes Projekt konvertieren";
+			this.mnuUpgradeProject.Click += new System.EventHandler(this.mnuUpgradeProject_Click);
 			// 
 			// mnuSettings
 			// 
@@ -212,17 +219,17 @@
 			this.mnuPublish.Text = "Projekt veröffentlichen";
 			this.mnuPublish.Click += new System.EventHandler(this.mnuPublish_Click);
 			// 
-			// hilfeToolStripMenuItem
+			// mnuHelp
 			// 
-			this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.mnuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuCheckForUpdates,
             this.mnuSendFeedback,
             this.mnuThrowDebugException,
             this.toolStripSeparator5,
             this.mnuAbout});
-			this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
-			this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-			this.hilfeToolStripMenuItem.Text = "&Hilfe";
+			this.mnuHelp.Name = "mnuHelp";
+			this.mnuHelp.Size = new System.Drawing.Size(44, 20);
+			this.mnuHelp.Text = "&Hilfe";
 			// 
 			// mnuCheckForUpdates
 			// 
@@ -265,9 +272,9 @@
 			// 
 			// pnlContentView
 			// 
-			this.pnlContentView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.pnlContentView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.pnlContentView.Location = new System.Drawing.Point(193, 12);
 			this.pnlContentView.Name = "pnlContentView";
 			this.pnlContentView.Size = new System.Drawing.Size(446, 288);
@@ -360,8 +367,8 @@
 			// 
 			// tvwContentNodes
 			// 
-			this.tvwContentNodes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)));
+			this.tvwContentNodes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this.tvwContentNodes.BackColor = System.Drawing.SystemColors.Control;
 			this.tvwContentNodes.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.tvwContentNodes.HideSelection = false;
@@ -375,13 +382,6 @@
 			this.tvwContentNodes.ShowLines = false;
 			this.tvwContentNodes.Size = new System.Drawing.Size(184, 288);
 			this.tvwContentNodes.TabIndex = 1;
-			// 
-			// mnuUpgradeProject
-			// 
-			this.mnuUpgradeProject.Name = "mnuUpgradeProject";
-			this.mnuUpgradeProject.Size = new System.Drawing.Size(243, 22);
-			this.mnuUpgradeProject.Text = "Altes Projekt konvertieren";
-			this.mnuUpgradeProject.Click += new System.EventHandler(this.mnuUpgradeProject_Click);
 			// 
 			// mainForm
 			// 
@@ -408,16 +408,16 @@
 		#endregion
 
 		private System.Windows.Forms.MenuStrip mnsMain;
-		private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem mnuFile;
 		private System.Windows.Forms.ToolStripMenuItem mnuNewProject;
 		private System.Windows.Forms.ToolStripMenuItem mnuOpen;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
 		private System.Windows.Forms.ToolStripMenuItem mnuSave;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripMenuItem mnuClose;
-		private System.Windows.Forms.ToolStripMenuItem extrasToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem mnuTools;
 		private System.Windows.Forms.ToolStripMenuItem mnuSettings;
-		private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem mnuHelp;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
 		private System.Windows.Forms.ToolStripMenuItem mnuAbout;
 		private updateSystemDotNet.Administration.UI.Controls.explorerTreeView tvwContentNodes;
@@ -439,7 +439,7 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
 		private System.Windows.Forms.ToolStripContainer toolStripContainer1;
 		private System.Windows.Forms.ToolStripButton tsBtnPublish;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem mnuView;
 		private System.Windows.Forms.ToolStripMenuItem mnuShowToolbar;
 		private System.Windows.Forms.ToolStripMenuItem mnuUpgradeProject;
 	}

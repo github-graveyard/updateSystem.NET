@@ -35,4 +35,23 @@
 .Dialogs.upgradeProjectDialog.lblTitle.Text	Projectupgrade
 .Dialogs.upgradeProjectDialog.lblUpdateUrl.Text	Update Url:
 .Dialogs.upgradeProjectDialog.Title	[appname]
+.Menus.mnsMain.mnuAbout.Text	About...
+.Menus.mnsMain.mnuCheckForUpdates.Text	Check for Updates...
+.Menus.mnsMain.mnuClose.Text	Exit
+.Menus.mnsMain.mnuFile.Text	File
+.Menus.mnsMain.mnuHelp.Text	Help
+.Menus.mnsMain.mnuLinkStatisticServer.Text	Connect with Statisticserver...
+.Menus.mnsMain.mnuNewProject.Text	New Project
+.Menus.mnsMain.mnuOpen.Text	Open
+.Menus.mnsMain.mnuPublish.Text	Publish Project
+.Menus.mnsMain.mnuSave.Text	Save
+.Menus.mnsMain.mnuSendFeedback.Text	Send Feedback...
+.Menus.mnsMain.mnuSettings.Text	Options...
+.Menus.mnsMain.mnuShowToolbar.Text	Show Toolbar
+.Menus.mnsMain.mnuThrowDebugException.Text	[Debug] Throw Exception
+.Menus.mnsMain.mnuTools.Text	Tools
+.Menus.mnsMain.mnuUnlinkStatisticServer.Text	Unlink Statisticserver
+.Menus.mnsMain.mnuUpgradeProject.Text	Convert old Project
+.Menus.mnsMain.mnuView.Text	View
 de.Dialogs.Global.btnClose.Text	Schließen
+lobal.btnClose.Text	Schließen

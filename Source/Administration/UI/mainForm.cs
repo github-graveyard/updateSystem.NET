@@ -48,6 +48,7 @@ namespace updateSystemDotNet.Administration.UI {
 
 			InitializeComponent();
 			initializeUI();
+			initalizeLocalization();
 
 			loadContentNodes();
 			updateNodes();
@@ -55,7 +56,7 @@ namespace updateSystemDotNet.Administration.UI {
 			_session.onProjectTitleChanged(EventArgs.Empty);
 		}
 
-		/// <summary>Initialisiert alle UI Elemente.</summary>
+		/// <summary>Initializes all UI Elements.</summary>
 		private void initializeUI() {
 			base.Font = SystemFonts.MessageBoxFont;
 			Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
@@ -65,7 +66,7 @@ namespace updateSystemDotNet.Administration.UI {
 			try { 
 				mnuPublish.Image = resourceHelper.getImage("publish.png");
 
-				//TODO: Unter XP fliegt hier eine OutOfMemory-Exception, dass muss noch gefixed werden.
+				//TODO: Prevent OutOfMemoryException on XP
 				if(Environment.OSVersion.Version.Major >= 6)
 					tsBtnPublish.Image = resourceHelper.getImage("publish.png");
 			}
@@ -79,6 +80,11 @@ namespace updateSystemDotNet.Administration.UI {
 
 			tosMain.Visible = _session.Settings.showToolBar;
 			mnuShowToolbar.Checked = _session.Settings.showToolBar;
+		}
+
+		/// <summary>Applies Localization on all UI-Elements which are not automatically Localized.</summary>
+		private void initalizeLocalization() {
+			_session.localizeMenuStrip(mnsMain);
 		}
 
 		/// <summary>Aboniert alle während der Ausführung benötigten Events.</summary>

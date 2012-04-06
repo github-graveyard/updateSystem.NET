@@ -29,6 +29,7 @@ namespace updateSystemDotNet.Administration.Core.Application {
 		private const string LOCALIZATION_NOT_FOUND = "TRANSLATION FOR {0} NOT FOUND!";
 		private const string SECTION_NAME_DIALOGS = "Dialogs";
 		private const string SECTION_NAME_PAGES = "Pages";
+		private const string SECTION_NAME_MENUS = "Menus";
 		private const string DEFAULT_LOCALIZATION_PROPERTY_NAME = "Text";
 		
 		private string _currentCulture;
@@ -51,13 +52,16 @@ namespace updateSystemDotNet.Administration.Core.Application {
 			                                            });
 		}
 
+		/// <summary>Returns a localized String based on the selected Language.</summary>
 		public string getLocalizedString(string key) {
 			return getLocalizedString(key, _currentCulture);
 		}
+		/// <summary>Returns a localized String based on the language specified in <param name="language">language</param></summary>
 		public string getLocalizedString(string key, string language) {
 			var localizedString = localizationFile[key, language];
 			return string.IsNullOrEmpty(localizedString) ? string.Format(LOCALIZATION_NOT_FOUND, key) : localizedString;
 		}
+		/// <summary>Returns a localized String for a specific Control</summary>
 		public string getLocalizedString(Control control) {
 			var parent = getParent(control);
 			return getLocalizedString(string.Format("{0}.{1}.{2}.Text",
@@ -116,6 +120,18 @@ namespace updateSystemDotNet.Administration.Core.Application {
 			//Localize Childcontrols
 			if (control.Controls.Count > 0)
 				localizeControls(control.Controls);
+		}
+
+		public void localizeMenuStrip(MenuStrip menu) {
+			foreach (ToolStripItem item in menu.Items)
+				localizeMenuItem(item, menu.Name);
+		}
+		private void localizeMenuItem(ToolStripItem item, string menuName) {
+			item.Text =
+				localizationFile[string.Format("{0}.{1}.{2}.Text", SECTION_NAME_MENUS, menuName, item.Name), _currentCulture];
+			if(item is ToolStripMenuItem)
+				foreach(ToolStripItem subitem in (item as ToolStripMenuItem).DropDownItems)
+					localizeMenuItem(subitem, menuName);
 		}
 
 		private bool isLocalizable(Control control) {
