@@ -29,9 +29,6 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.startSubPages {
 			pageSymbol = resourceHelper.getImage("vs_ide.png");
 			Id = "66dfbd81-6d84-4b5a-bbd4-750cb218bae2";
 
-			Title = "Visual Studio Integration";
-			pageName = Title;
-
 			imgImportSettings.Image = graphicUtils.shrinkImage(resourceHelper.getImage("copyProjectSettings.png"),
 															   new Size(350, 70));
 			MinimumSize = Size;

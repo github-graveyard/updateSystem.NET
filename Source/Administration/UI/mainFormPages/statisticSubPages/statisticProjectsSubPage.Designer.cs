@@ -94,9 +94,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.pnlProjectsBase);
 			this.Name = "statisticProjectsSubPage";
-			this.pageName = "Projekte";
 			this.Size = new System.Drawing.Size(451, 155);
-			this.Title = "Statistikserver Projekte";
 			this.Controls.SetChildIndex(this.pnlProjectsBase, 0);
 			this.pnlProjectsBase.ResumeLayout(false);
 			this.ResumeLayout(false);

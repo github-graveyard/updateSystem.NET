@@ -45,9 +45,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.flpSettings);
 			this.Name = "settingPage";
-			this.pageName = "Einstellungen";
 			this.Size = new System.Drawing.Size(502, 248);
-			this.Title = "Einstellungen";
 			this.Controls.SetChildIndex(this.flpSettings, 0);
 			this.ResumeLayout(false);
 			this.PerformLayout();

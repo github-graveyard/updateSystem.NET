@@ -41,8 +41,6 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 		public override void initializeData() {
 			lvwPublishWith.ItemChecked -= lvwPublishWith_ItemChecked;
 			_package = (updatePackage)Argument;
-			pageName = _package.ToString();
-			Title = string.Format("Updatepaket Version {0}", _package);
 			lblSize.Text = string.Format("Größe: {0}", updateSystemDotNet.Core.Helper.GetFileSize(_package.packageSize));
 
 			lblLastPublishedDescription.Text = string.Format("{0}{1}", lblLastPublishedBase,
@@ -71,6 +69,11 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 			}
 
 			lvwPublishWith.ItemChecked += lvwPublishWith_ItemChecked;
+		}
+		public override void initializeLocalization() {
+			base.initializeLocalization();
+			Node.Text = _package.ToString();
+			Title = string.Format("Updatepaket Version {0}", _package);
 		}
 
 		protected override void initializeToolStripButtons() {

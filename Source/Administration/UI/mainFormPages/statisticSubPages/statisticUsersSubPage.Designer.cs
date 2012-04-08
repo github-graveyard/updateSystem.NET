@@ -101,9 +101,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.pnlUsrBase);
 			this.Name = "statisticUsersSubPage";
-			this.pageName = "Benutzer";
 			this.Size = new System.Drawing.Size(451, 155);
-			this.Title = "Statistikserver Benutzer";
 			this.Controls.SetChildIndex(this.pnlUsrBase, 0);
 			this.pnlUsrBase.ResumeLayout(false);
 			this.ResumeLayout(false);

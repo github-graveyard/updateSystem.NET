@@ -57,9 +57,19 @@
 .Menus.tosMain.tsBtnOpenProject.Text	Open Project
 .Menus.tosMain.tsBtnPublish.Text	Publish
 .Menus.tosMain.tsBtnSaveProject.Text	Save
+.Messages.feedbackPage.feedbackSent	Thanks! Your Feedback has been successfully sent.
+.Pages.feedbackPage.btnSendFeedback.Text	Submit Feedback
+.Pages.feedbackPage.lblFeedback.Text	Your Feedback is important to us. Please use this Form in order to Report missing Features or Bugs.
+.Pages.feedbackPage.lblMail.Text	Mailaddress (optional)
+.Pages.feedbackPage.lblMessage.Text	Your Message:
+.Pages.feedbackPage.lblName.Text	Your Name:
+.Pages.feedbackPage.lblTitle.Text	Send Feedback
 .Pages.feedbackPage.nodeName.Text	Feedback
 .Pages.publishPage.nodeName.Text	Publishing
 .Pages.settingPage.nodeName.Text	Settings
+.Pages.startPage.lblProjectId.Text	Project-Id:
+.Pages.startPage.lblProjectName.Text	Projectname:
+.Pages.startPage.lblTitle.Text	General Information
 .Pages.startPage.nodeName.Text	General Information
 .Pages.startSecuritySubPage.nodeName.Text	Security
 .Pages.startVSIntegrationSubPage.nodeName.Text	Visual Studio Integration

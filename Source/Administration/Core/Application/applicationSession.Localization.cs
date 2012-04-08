@@ -30,6 +30,7 @@ namespace updateSystemDotNet.Administration.Core.Application {
 		private const string SECTION_NAME_DIALOGS = "Dialogs";
 		internal const string SECTION_NAME_PAGES = "Pages";
 		private const string SECTION_NAME_MENUS = "Menus";
+		private const string SECTION_NAME_MESSAGES = "Messages";
 		private const string DEFAULT_LOCALIZATION_PROPERTY_NAME = "Text";
 		
 		private string _currentCulture;
@@ -132,6 +133,16 @@ namespace updateSystemDotNet.Administration.Core.Application {
 			if(item is ToolStripMenuItem)
 				foreach(ToolStripItem subitem in (item as ToolStripMenuItem).DropDownItems)
 					localizeMenuItem(subitem, menuName);
+		}
+
+		public string localizeMessage(string key) {
+			return localizeMessage(key, null);
+		}
+		public string localizeMessage(string key, Control parent) {
+			return localizationFile[string.Format("{0}.{1}.{2}",
+			                                      SECTION_NAME_MESSAGES,
+			                                      parent == null ? "Global" : parent.Name,
+			                                      key), _currentCulture];
 		}
 
 		private bool isLocalizable(Control control) {

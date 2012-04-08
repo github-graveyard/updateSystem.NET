@@ -37,7 +37,7 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 		#region Private Fields
 
 		private TreeNode _node;
-		private Controls.mainInstructionsLabel _lblTitle;
+		private mainInstructionsLabel lblTitle;
 
 		#endregion
 
@@ -48,12 +48,13 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 		}
 
 		private void initializeComponents() {
-			_lblTitle = new mainInstructionsLabel() {
+			lblTitle = new mainInstructionsLabel() {
 			                      	Location = new Point(0, 0),
-			                      	Text = "#no title set#"
+			                      	Text = "#no title set#",
+									Name = "lblTitle"
 			                      };
-			Controls.Add(_lblTitle);
-			_lblTitle.AutoSize = true;
+			Controls.Add(lblTitle);
+			lblTitle.AutoSize = true;
 			subPages = new List<baseSubPage>();
 		}
 
@@ -65,9 +66,6 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 		/// <summary>Gibt das Symbolzurück welches im TreeView angezeigt werden soll oder legt dieses fest.</summary>
 		public Image pageSymbol { get; protected set; }
 
-		/// <summary>Gibt den Namen zurück der im TreeView für diese Seite angezeigt werden soll oder legt diesen fest.</summary>
-		public string pageName { get; set; }
-
 		/// <summary>Gibt eine GUID zurück welche die Page eindeutig identifiziert oder legt diese fest.</summary>
 		public string Id { get; protected set; }
 
@@ -77,11 +75,10 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 		/// <summary>Gibt die Anzeigereihenfolge wieder oder legt diese fest.</summary>
 		public int displayOrder { get; protected set; }
 
-		/// <summary>Gibt den Titel zurück der auf der Seite angezeigt werden soll.</summary>
-		public string Title { get { return _lblTitle.Text; } set { _lblTitle.Text = value; } }
-
 		/// <summary>Gibt zurück ob die Seite in der Navigation verborgen werden soll.</summary>
 		public virtual bool hideFromNavigation { get { return false; } }
+
+		protected string Title { get { return lblTitle.Text; } set { lblTitle.Text = value; } }
 
 		//ToolStrip
 		/// <summary>Gibt an oder legt fest, ob diese Seite den ToolStrip der Hauptseite erweitert.</summary>

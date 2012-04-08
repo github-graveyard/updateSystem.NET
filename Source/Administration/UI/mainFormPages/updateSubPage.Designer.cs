@@ -120,7 +120,6 @@
 			this.Controls.Add(this.lblSize);
 			this.Controls.Add(this.grpPublish);
 			this.Name = "updateSubPage";
-			this.pageName = "#no name set#";
 			this.Size = new System.Drawing.Size(439, 234);
 			this.Controls.SetChildIndex(this.grpPublish, 0);
 			this.Controls.SetChildIndex(this.lblSize, 0);

@@ -80,9 +80,7 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 			this.Controls.Add(this.btnPublishNow);
 			this.Controls.Add(this.lvwPublish);
 			this.Name = "publishPage";
-			this.pageName = "Veröffentlichen";
 			this.Size = new System.Drawing.Size(482, 213);
-			this.Title = "Veröffentlichen";
 			this.Controls.SetChildIndex(this.lvwPublish, 0);
 			this.Controls.SetChildIndex(this.btnPublishNow, 0);
 			this.ResumeLayout(false);

@@ -85,9 +85,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.grpFilter);
 			this.Name = "updatePage";
-			this.pageName = "Updatepakete";
 			this.Size = new System.Drawing.Size(417, 219);
-			this.Title = "Updatepakete";
 			this.Controls.SetChildIndex(this.grpFilter, 0);
 			this.grpFilter.ResumeLayout(false);
 			this.grpFilter.PerformLayout();

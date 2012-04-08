@@ -57,10 +57,10 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 		private void bgwSendFeedback_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e) {
 			btnSendFeedback.Enabled = true;
 
-			//Versenden hat geklappt, Felder leeren
+			//Clear fields if the Feedback has been successfully sent
 			if (e.Result == null) {
 				txtMessage.Text = string.Empty;
-				Session.showMessage("Vielen Dank! Ihr Feedback wurde erfolgreich versendet.");
+				Session.showMessage(Session.localizeMessage("feedbackSent", this));
 			}
 			//TODO: Exception anzeigen (e.Result...)
 

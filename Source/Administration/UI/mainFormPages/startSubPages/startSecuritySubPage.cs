@@ -31,8 +31,6 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.startSubPages {
 			InitializeComponent();
 			pageSymbol = resourceHelper.getImage("security.png");
 			Id = "c74f5aaf-6a5f-4b17-baef-f08911d7fea7";
-			Title = "Sicherheit";
-			pageName = Title;
 			Name = "startSecuritySubPage";
 		}
 	}

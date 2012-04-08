@@ -218,9 +218,7 @@
 			this.Controls.Add(this.grpState);
 			this.Controls.Add(this.grpMaintenance);
 			this.Name = "statisticSettingsSubPage";
-			this.pageName = "Einstellungen";
 			this.Size = new System.Drawing.Size(478, 287);
-			this.Title = "Statistikserver Einstellungen";
 			this.Controls.SetChildIndex(this.grpMaintenance, 0);
 			this.Controls.SetChildIndex(this.grpState, 0);
 			this.grpMaintenance.ResumeLayout(false);

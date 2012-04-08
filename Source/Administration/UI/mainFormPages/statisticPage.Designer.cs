@@ -98,9 +98,7 @@
 			this.Controls.Add(this.flpControl);
 			this.Controls.Add(this.uscMain);
 			this.Name = "statisticPage";
-			this.pageName = "Statistiken";
 			this.Size = new System.Drawing.Size(441, 219);
-			this.Title = "Statistiken";
 			this.Controls.SetChildIndex(this.uscMain, 0);
 			this.Controls.SetChildIndex(this.flpControl, 0);
 			this.flpControl.ResumeLayout(false);
