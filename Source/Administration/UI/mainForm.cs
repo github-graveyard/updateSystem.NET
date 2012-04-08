@@ -104,7 +104,7 @@ namespace updateSystemDotNet.Administration.UI {
 			Resize += mainForm2_Resize;
 
 			//TreeView
-			tvwContentNodes.AfterSelect += tvwContentNodes_AfterSelect;			
+			tvwContentNodes.AfterSelect += tvwContentNodes_AfterSelect;
 
 			//UpdateController
 			_session.updateController.updateInstallerStarted += updateController_updateInstallerStarted;
@@ -331,7 +331,7 @@ namespace updateSystemDotNet.Administration.UI {
 
 		#region Content
 
-		/// <summary>Lädt alle verfügbaren Einstellungsknoten in den Cache.</summary>
+		/// <summary>Loads all available Nodes in the Nodecache.</summary>
 		private void loadContentNodes() {
 			_contentCache = new Dictionary<Type, basePage>();
 			var sortedPages = new SortedList<int, basePage>();
@@ -353,7 +353,7 @@ namespace updateSystemDotNet.Administration.UI {
 				_contentCache.Add(sortedPage.Value.GetType(), sortedPage.Value);
 		}
 
-		/// <summary>Aktualisiert die Sichtbarkeit der Knoten je nach Programmstatus.</summary>
+		/// <summary>Refreshes the visibillity off all nodes depending on the current projectstate.</summary>
 		private void updateNodes() {
 			tvwContentNodes.Nodes.Clear();
 			foreach (var page in _contentCache) {
@@ -363,7 +363,7 @@ namespace updateSystemDotNet.Administration.UI {
 			}
 		}
 
-		/// <summary>Zeigt einen bestimmten Knoten in der Contentarea an.</summary>
+		/// <summary>Displays an specific Node in ContentView.</summary>
 		private void showNode(Type nodeType) {
 			showPageCore(_contentCache[nodeType]);
 		}
@@ -381,18 +381,18 @@ namespace updateSystemDotNet.Administration.UI {
 				tvwContentNodes.SelectedNode = null;
 			}
 
-			//ContentView leeren
+			//Clear View
 			pnlContentView.Controls.Clear();
 
-			//ToolStripButtons die von dieser Seite angeboten werden sind laden
-			//Aber vorher die alten Entfernen
+			//Load ToolStripButtons from this Page
+			//Remove old ones
 			int seperatorIndex = tosMain.Items.IndexOf(sepPageControls)+1;
 			for (int i = tosMain.Items.Count - 1; i >=0 ; i--) {
 				if (tosMain.Items[i].Tag != null)
 					tosMain.Items.RemoveAt(i);
 			}
 
-			//Neue hinzufügen
+			//add new ones
 			sepPageControls.Visible = page.extendsToolStrip;
 			if (page.extendsToolStrip && page.toolStripButtons.Count > 0) {
 				for (int i = page.toolStripButtons.Count - 1; i >= 0; i--) {
@@ -400,23 +400,23 @@ namespace updateSystemDotNet.Administration.UI {
 				}
 			}
 
-			//Knoten initialisieren und der View hinzufügen
-			_session.localizeControl(page);
+			//Initialize and Localize Node
 			page.initializeData();
+			page.initializeLocalization();
 			pnlContentView.Controls.Add(page);
 			page.Dock = DockStyle.Fill;
 		}
 
 		#endregion
 
-		#region Projekt speichern/laden/schließen
+		#region Save/Open/Close Project
 		
 		private string chooseProjectPath() {
 			if(_session.showDialog<Dialogs.saveProjectDialog>(this)== DialogResult.OK) {
 				if (_session.dialogResultCache.ContainsKey(typeof(Dialogs.saveProjectDialog))) {
 					string path = _session.dialogResultCache[typeof (Dialogs.saveProjectDialog)].ToString();
 					
-					//Projektname aktualisieren
+					//Refresh Projectname
 					_session.currentProject.projectName = Path.GetFileNameWithoutExtension(path);
 					
 					return path;

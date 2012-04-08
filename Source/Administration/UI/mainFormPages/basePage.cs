@@ -93,11 +93,14 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 		/// <summary>Gibt den Node zurück um die Seite im TreeView der Hauptnavigation darstellen zu können.</summary>
 		public virtual TreeNode Node {
 			get {
-				return _node ?? (_node = new TreeNode(pageName) {
-				                                                	ImageKey = Id,
-				                                                	SelectedImageKey = Id,
-																	Tag = GetType()
-				                                                });
+				return _node ?? (_node = new TreeNode {
+				                                      	Text =
+				                                      		Session.getLocalizedString(string.Format("{0}.{1}.nodeName.Text",
+				                                      		                                         applicationSession.SECTION_NAME_PAGES, Name)),
+				                                      	ImageKey = Id,
+				                                      	SelectedImageKey = Id,
+				                                      	Tag = GetType()
+				                                      });
 			}
 		}
 
@@ -107,23 +110,28 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 
 		#region Virtual Methods
 
-		/// <summary>Gibt an ob die Seite zu diesem Zeitpunkt im TreeView angezeigt werden soll.</summary>
-		/// <returns>True wenn die Seite angezeigt werden soll, andernfalls False.</returns>
+		/// <summary>Indicates if that Page should display in the Main-TreeView.</summary>
+		/// <returns>Returns true if the Page should display, otherwise false.</returns>
 		public virtual bool canShowPage() {
 			return true;
 		}
 
-		/// <summary>Methode zum initialisieren der Daten auf der Seite.</summary>
-		/// <remarks>Hier kann auch auf die Session zugegriffen werden, im Gegensatz zum Konstruktor wie diese null ist.</remarks>
+		/// <summary>Initializes all the Content on this Page.</summary>
+		/// <remarks>You can use the Session-Object, at this Point it is already assigned to the Session-Property.</remarks>
 		public virtual void initializeData() {
 		}
 
-		/// <summary>Initialisiert evtl. vorhandene Unterseiten.</summary>
+		/// <summary>Initializes Subpages, if there are any..</summary>
 		public virtual void initializeSubPages() {
 		}
 
-		/// <summary>Methode zum initialisieren der ToolStripButtons</summary>
+		/// <summary>Initializes additional Buttons that should display in the Toolbar of MainForm.</summary>
 		protected virtual void initializeToolStripButtons() {
+		}
+
+		/// <summary>Performs basic Localization and can be overwritten to localize specific Controls</summary>
+		public virtual void initializeLocalization() {
+			Session.localizeControl(this);
 		}
 
 		#endregion

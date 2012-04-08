@@ -49,7 +49,7 @@ namespace updateSystemDotNet.Administration.Core.Updates {
 		/// <summary>Erstellt ein neues Updateprojekt.</summary>
 		public updateProject createNewProject() {
 			var project = new updateProject {
-			                                  	projectName = "Neues Updateprojekt",
+			                                  	projectName = "New Updateproject",
 			                                  	keyPair = rsaKeyPair.Create(),
 			                                  	projectId = Guid.NewGuid().ToString(),
 			                                  	publishProviderSettings = new List<publishSettings>()

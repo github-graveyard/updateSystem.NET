@@ -57,5 +57,13 @@
 .Menus.tosMain.tsBtnOpenProject.Text	Open Project
 .Menus.tosMain.tsBtnPublish.Text	Publish
 .Menus.tosMain.tsBtnSaveProject.Text	Save
+.Pages.feedbackPage.nodeName.Text	Feedback
+.Pages.publishPage.nodeName.Text	Publishing
+.Pages.settingPage.nodeName.Text	Settings
+.Pages.startPage.nodeName.Text	General Information
+.Pages.startSecuritySubPage.nodeName.Text	Security
+.Pages.startVSIntegrationSubPage.nodeName.Text	Visual Studio Integration
+.Pages.statisticPage.nodeName.Text	Statistics
+.Pages.updatePage.nodeName.Text	Updates
 de.Dialogs.Global.btnClose.Text	Schließen
 lobal.btnClose.Text	Schließen
