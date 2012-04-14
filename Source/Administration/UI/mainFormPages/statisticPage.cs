@@ -73,7 +73,7 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 		void Session_popupClosed(Popups.popupBase sender, Popups.popupClosedEventArgs e) {
 			//Event deregistrieren
 			Session.popupClosed -= Session_popupClosed;
-                       
+					   
 			//Veränderte Daten setzen
 			_dateFrom = (DateTime) e.Result[Popups.statisticFilterPopup.DCKEY_DATE_FROM];
 			_dateTo = (DateTime) e.Result[Popups.statisticFilterPopup.DCKEY_DATE_TO];

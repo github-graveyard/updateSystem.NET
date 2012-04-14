@@ -31,7 +31,6 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 			pageSymbol = Core.resourceHelper.getImage("updates.png");
 			displayOrder = 300;
 			extendsToolStrip = true;
-			initializeToolStripButtons();
 		}
 
 		public override void initializeData() {
@@ -40,8 +39,8 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 			chkShowServicePacksOnly.Checked = Session.currentProject.viewFilter.showOnlyServicePacks;
 		}
 
-		protected override void initializeToolStripButtons() {
-			_tsBtnNewUpdatePackage = createToolStripButton("Neues Updatepaket");
+		public override void initializeToolStripButtons() {
+			_tsBtnNewUpdatePackage = createToolStripButton("tsBtnNewUpdatePackage");
 			_tsBtnNewUpdatePackage.Click += _tsBtnNewUpdatePackage_Click;
 		}
 

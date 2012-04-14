@@ -385,6 +385,11 @@ namespace updateSystemDotNet.Administration.UI {
 			pnlContentView.Controls.Clear();
 
 			//Load ToolStripButtons from this Page
+			if (!page.toolStripButtonsInitialized) {
+				page.initializeToolStripButtons();
+				page.toolStripButtonsInitialized = true;
+			}
+
 			//Remove old ones
 			int seperatorIndex = tosMain.Items.IndexOf(sepPageControls)+1;
 			for (int i = tosMain.Items.Count - 1; i >=0 ; i--) {

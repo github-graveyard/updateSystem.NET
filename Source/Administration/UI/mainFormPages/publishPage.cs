@@ -34,20 +34,16 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 			Id = Guid.NewGuid().ToString();
 			displayOrder = 500;
 			extendsToolStrip = true;
-			initializeToolStripButtons();
+			
 		}
 		void lvwPublish_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e) {
 			saveColumnHeaderSizes(lvwPublish);
 		}
 
-		protected override void initializeToolStripButtons() {
-			_tsBtnAddProvider = createToolStripButton("Veröffentlichungsquelle hinzufügen",
-			                                          "Fügt eine neue Veröffentlichungsschnittstelle dem Projekt hinzu.");
-			_tsBtnEditProvider = createToolStripButton("Bearbeiten",
-			                                           "Öffnet einen Dialog zum bearbeiten der aktuell ausgewählten Veröffentlichungsschnittstelle.");
-			_tsBtnRemoveProvider = createToolStripButton("Entfernen",
-			                                             "Entfernt alle aktuell ausgewählten Veröffentlichungsschnittstellen aus dem Projekt.");
-
+		public override void initializeToolStripButtons() {
+			_tsBtnAddProvider = createToolStripButton("tsBtnAddProvider");
+			_tsBtnEditProvider = createToolStripButton("tsBtnEditProvider");
+			_tsBtnRemoveProvider = createToolStripButton("tsBtnRemoveProvider");
 			_tsBtnEditProvider.Enabled = false;
 			_tsBtnRemoveProvider.Enabled = false;
 

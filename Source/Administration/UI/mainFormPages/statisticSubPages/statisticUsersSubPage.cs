@@ -37,7 +37,6 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.statisticSubPages {
 			_userCache = new List<userAccount>();
 			InitializeComponent();
 			extendsToolStrip = true;
-			initializeToolStripButtons();
 			lvwUser.ColumnWidthChanged += lvwUser_ColumnWidthChanged;
 			bgwRefreshUser.RunWorkerCompleted += bgwRefreshUser_RunWorkerCompleted;
 			pageSymbol = resourceHelper.getImage("usermgmt.png");
@@ -64,13 +63,11 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.statisticSubPages {
 			loadUser();
 		}
 
-		protected override void initializeToolStripButtons() {
-			_tsBtnRefresh = createToolStripButton("Aktualisieren", "Aktualisiert die Benutzerliste.");
-			_tsBtnAddUser = createToolStripButton("Hinzufügen", "Bietet die Möglichkeit einen neuen Benutzer hinzuzufügen.");
-			_tsBtnEditUser = createToolStripButton("Bearbeiten",
-			                                       "Bietet die Möglichkeit den aktuell ausgewählten Benutzer zu bearbeiten.");
-			_tsBtnRemoveUser = createToolStripButton("Entfernen",
-			                                         "Entfernt den aktuell ausgewählten Benutzer vom Statistikserver");
+		public override void initializeToolStripButtons() {
+			_tsBtnRefresh = createToolStripButton("tsBtnRefresh");
+			_tsBtnAddUser = createToolStripButton("tsBtnAddUser");
+			_tsBtnEditUser = createToolStripButton("tsBtnEditUser");
+			_tsBtnRemoveUser = createToolStripButton("tsBtnRemoveUser");
 
 			_tsBtnEditUser.Enabled = false;
 			_tsBtnRemoveUser.Enabled = false;

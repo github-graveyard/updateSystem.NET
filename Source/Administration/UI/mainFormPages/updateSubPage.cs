@@ -36,7 +36,6 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 			InitializeComponent();
 			lvwPublishWith.Columns[0].Width = lvwPublishWith.ClientRectangle.Width; // - (SystemInformation.VerticalScrollBarWidth);
 			extendsToolStrip = true;
-			initializeToolStripButtons();
 		}
 		public override void initializeData() {
 			lvwPublishWith.ItemChecked -= lvwPublishWith_ItemChecked;
@@ -76,9 +75,9 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 			Title = string.Format("Updatepaket Version {0}", _package);
 		}
 
-		protected override void initializeToolStripButtons() {
-			_tsBtnEditPackage = createToolStripButton("Updatepaket bearbeiten");
-			_tsBtnRemovePackage = createToolStripButton("Entfernen", "Entfernt des Updatepaket aus dem Projekt.");
+		public override void initializeToolStripButtons() {
+			_tsBtnEditPackage = createToolStripButton("tsBtnEditPackage");
+			_tsBtnRemovePackage = createToolStripButton("tsBtnRemovePackage");
 
 			_tsBtnEditPackage.Click += _tsBtnEditPackage_Click;
 			_tsBtnRemovePackage.Click += _tsBtnRemovePackage_Click;

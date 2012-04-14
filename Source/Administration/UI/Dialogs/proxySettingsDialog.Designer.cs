@@ -23,7 +23,7 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			this.mainInstructionsLabel1 = new updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel();
+			this.lblTitle = new updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel();
 			this.buttonArea1 = new updateSystemDotNet.Administration.UI.Controls.buttonArea();
 			this.btnCancel = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.btnSaveSettings = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
@@ -47,16 +47,16 @@
 			this.pnlCredentials.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// mainInstructionsLabel1
+			// lblTitle
 			// 
-			this.mainInstructionsLabel1.AutoSize = true;
-			this.mainInstructionsLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.mainInstructionsLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(153)))));
-			this.mainInstructionsLabel1.Location = new System.Drawing.Point(12, 9);
-			this.mainInstructionsLabel1.Name = "mainInstructionsLabel1";
-			this.mainInstructionsLabel1.Size = new System.Drawing.Size(142, 21);
-			this.mainInstructionsLabel1.TabIndex = 0;
-			this.mainInstructionsLabel1.Text = "Proxyeinstellungen";
+			this.lblTitle.AutoSize = true;
+			this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(153)))));
+			this.lblTitle.Location = new System.Drawing.Point(12, 9);
+			this.lblTitle.Name = "lblTitle";
+			this.lblTitle.Size = new System.Drawing.Size(142, 21);
+			this.lblTitle.TabIndex = 0;
+			this.lblTitle.Text = "Proxyeinstellungen";
 			// 
 			// buttonArea1
 			// 
@@ -102,7 +102,7 @@
 			this.rbCustomAuth.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.rbCustomAuth.Location = new System.Drawing.Point(18, 99);
 			this.rbCustomAuth.Name = "rbCustomAuth";
-			this.rbCustomAuth.Size = new System.Drawing.Size(150, 20);
+			this.rbCustomAuth.Size = new System.Drawing.Size(138, 18);
 			this.rbCustomAuth.TabIndex = 10;
 			this.rbCustomAuth.TabStop = true;
 			this.rbCustomAuth.Text = "Eigene Anmeldedaten:";
@@ -115,7 +115,7 @@
 			this.rbWinAuth.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.rbWinAuth.Location = new System.Drawing.Point(18, 74);
 			this.rbWinAuth.Name = "rbWinAuth";
-			this.rbWinAuth.Size = new System.Drawing.Size(193, 20);
+			this.rbWinAuth.Size = new System.Drawing.Size(174, 18);
 			this.rbWinAuth.TabIndex = 9;
 			this.rbWinAuth.TabStop = true;
 			this.rbWinAuth.Text = "Windowsanmeldung benutzen";
@@ -127,7 +127,7 @@
 			this.rbNoAuth.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.rbNoAuth.Location = new System.Drawing.Point(18, 49);
 			this.rbNoAuth.Name = "rbNoAuth";
-			this.rbNoAuth.Size = new System.Drawing.Size(229, 20);
+			this.rbNoAuth.Size = new System.Drawing.Size(208, 18);
 			this.rbNoAuth.TabIndex = 8;
 			this.rbNoAuth.TabStop = true;
 			this.rbNoAuth.Text = "Der Server benötigt keine Anmeldung";
@@ -265,7 +265,7 @@
 			this.Controls.Add(this.rbCustomProxy);
 			this.Controls.Add(this.rbSystemProxy);
 			this.Controls.Add(this.buttonArea1);
-			this.Controls.Add(this.mainInstructionsLabel1);
+			this.Controls.Add(this.lblTitle);
 			this.Name = "proxySettingsDialog";
 			this.Text = "Proxykonfiguration - [appname]";
 			this.buttonArea1.ResumeLayout(false);
@@ -281,7 +281,7 @@
 
 		#endregion
 
-		private updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel mainInstructionsLabel1;
+		private updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel lblTitle;
 		private updateSystemDotNet.Administration.UI.Controls.buttonArea buttonArea1;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnCancel;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnSaveSettings;

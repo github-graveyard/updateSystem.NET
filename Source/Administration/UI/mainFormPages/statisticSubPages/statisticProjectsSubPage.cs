@@ -37,7 +37,6 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.statisticSubPages {
 			Id = "38020300-5caa-4c9f-ac7e-1f6b595052b4";
 			pageSymbol = resourceHelper.getImage("projects.png");
 			extendsToolStrip = true;
-			initializeToolStripButtons();
 		}
 
 		public override void initializeData() {
@@ -45,10 +44,10 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.statisticSubPages {
 			restoreColumnHeaderSizes(lvwProjects);
 		}
 
-		protected override void initializeToolStripButtons() {
-			_tsBtnRefresh = createToolStripButton("Aktualisieren");
-			_tsBtnEditProject = createToolStripButton("Bearbeiten");
-			_tsBtnRemoveProject = createToolStripButton("Entfernen");
+		public override void initializeToolStripButtons() {
+			_tsBtnRefresh = createToolStripButton("tsBtnRefresh");
+			_tsBtnEditProject = createToolStripButton("tsBtnEditProject");
+			_tsBtnRemoveProject = createToolStripButton("tsBtnRemoveProject");
 
 			_tsBtnEditProject.Enabled = false;
 			_tsBtnRemoveProject.Enabled = false;
@@ -143,13 +142,13 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.statisticSubPages {
 				showServerError(e.Result as Exception);
 			}
 		}
-        
+		
 		private void lvwProjects_SelectedIndexChanged(object sender, EventArgs e) {
 			_tsBtnEditProject.Enabled = lvwProjects.SelectedItems.Count == 1;
 			_tsBtnRemoveProject.Enabled = lvwProjects.SelectedItems.Count == 1;
 		}
 
-	    private void bgwDeleteProject_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) {
+		private void bgwDeleteProject_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) {
 			try {
 				Session.updateLogFactory.deleteProject(((updateLogProject) e.Argument).projectId);
 			}

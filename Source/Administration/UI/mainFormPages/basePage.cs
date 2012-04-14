@@ -41,7 +41,7 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 
 		#endregion
 
-		public basePage() {
+		protected basePage() {
 			base.Font = SystemFonts.MessageBoxFont;
 			toolStripButtons = new List<ToolStripItem>();
 			initializeComponents();
@@ -87,6 +87,9 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 		/// <summary>Gibt eine Auflistung mit Toolstrip-Buttons zurück die in die Toolbar der Hauptform eingefügt werden sollen.</summary>
 		public List<ToolStripItem> toolStripButtons { get; protected set; }
 
+		/// <summary>Returns if the ToolStripButtons are already initialized by <see cref="initializeToolStripButtons"/></summary>
+		public bool toolStripButtonsInitialized { get; set; }
+
 		/// <summary>Gibt den Node zurück um die Seite im TreeView der Hauptnavigation darstellen zu können.</summary>
 		public virtual TreeNode Node {
 			get {
@@ -123,19 +126,13 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 		}
 
 		/// <summary>Initializes additional Buttons that should display in the Toolbar of MainForm.</summary>
-		protected virtual void initializeToolStripButtons() {
+		public virtual void initializeToolStripButtons() {
 		}
 
 		/// <summary>Performs basic Localization and can be overwritten to localize specific Controls</summary>
 		public virtual void initializeLocalization() {
 			Session.localizeControl(this);
 		}
-
-		#endregion
-
-		#region Public Methods
-
-		// still to come...
 
 		#endregion
 
@@ -185,14 +182,13 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 			}
 		}
 
-		/// <summary>Erstellt einen neuen, vorkonfigurierten ToolStripButton.</summary>
-		protected ToolStripButton createToolStripButton(string text) {
-			return createToolStripButton(text, string.Empty);
-		}
-
-		/// <summary>Erstellt einen neuen, vorkonfigurierten ToolStripButton.</summary>
-		protected ToolStripButton createToolStripButton(string text, string tooltip) {
-			var tsBtn = new ToolStripButton(text) {
+		/// <summary>Creates, configures and localizes an ToolStripButton.</summary>
+		/// <param name="name">The Name of the new Button. Should correspond with an Entry in the Localizationfile</param>
+		protected ToolStripButton createToolStripButton(string name) {
+			string localizationPath = string.Format("{0}.{1}.{2}", applicationSession.SECTION_NAME_PAGES, Name, name);
+			string tooltip = Session.getLocalizedString("{0}.Tooltip", true);
+			var tsBtn = new ToolStripButton {
+													Text = Session.getLocalizedString(string.Format("{0}.Text",localizationPath)),
 			                                      	DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
 			                                      	AutoToolTip = (!string.IsNullOrEmpty(tooltip)),
 			                                      	ToolTipText = tooltip,

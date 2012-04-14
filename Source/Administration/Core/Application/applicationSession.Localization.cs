@@ -55,11 +55,25 @@ namespace updateSystemDotNet.Administration.Core.Application {
 
 		/// <summary>Returns a localized String based on the selected Language.</summary>
 		public string getLocalizedString(string key) {
-			return getLocalizedString(key, _currentCulture);
+			return getLocalizedString(key, _currentCulture, false);
 		}
+
+		/// <summary>Returns a localized String based on the selected Language.</summary>
+		/// <param name="key">The Key in the Localizationfile</param>
+		/// <param name="returnEmptyString">If true this Method will return an empty string if the key not exists.</param>
+		public string getLocalizedString(string key, bool returnEmptyString) {
+			return getLocalizedString(key, _currentCulture, returnEmptyString);
+		}
+
 		/// <summary>Returns a localized String based on the language specified in <param name="language">language</param></summary>
-		public string getLocalizedString(string key, string language) {
+		/// <param name="key">The Key in the Localizationfile</param>
+		/// <param name="language">The Culture-Id</param>
+		/// <param name="returnEmptyString">If true this Method will return an empty string if the key not exists.</param>
+		public string getLocalizedString(string key, string language, bool returnEmptyString) {
 			var localizedString = localizationFile[key, language];
+			if (returnEmptyString)
+				return localizedString;
+			
 			return string.IsNullOrEmpty(localizedString) ? string.Format(LOCALIZATION_NOT_FOUND, key) : localizedString;
 		}
 		/// <summary>Returns a localized String for a specific Control</summary>
@@ -74,12 +88,8 @@ namespace updateSystemDotNet.Administration.Core.Application {
 		}
 
 		public void localizeForm(Form form) {
-			//TODO: Remove this check if the localization is final
-			if (!isDevEnvironment)
-				return;
-
 			form.Text = string.Format("{0} - {1}",
-			                          getLocalizedString(string.Format("Dialogs.{0}.Title", form.Name), _currentCulture),
+			                          getLocalizedString(string.Format("{0}.{1}.Title", SECTION_NAME_DIALOGS, form.Name), _currentCulture, false),
 			                          _dialogTitleAppendix);
 			localizeControls(form.Controls);
 		}
@@ -89,7 +99,7 @@ namespace updateSystemDotNet.Administration.Core.Application {
 		}
 		public void localizeControl(Control control) {
 			//Check if the Control is localizable
-			if (isLocalizable(control) && isDevEnvironment) {
+			if (isLocalizable(control)) {
 
 				//Determine ParentControl (Form/Usercontrol/WhatEver)
 				Control parentContainer = getParent(control);

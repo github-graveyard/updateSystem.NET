@@ -22,3 +22,5 @@ For security reasons I've excluded any Strongname Keys from this Repository. In 
     
 ##Roadmap
 * Better Localization
+* Refactoring of updateInstaller
+ * Implement something like a "FS Transaction"

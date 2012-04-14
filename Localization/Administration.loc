@@ -22,6 +22,20 @@
 .Dialogs.Global.btnCancel.Text	Cancel
 .Dialogs.Global.btnClose.Text	Close
 .Dialogs.Global.btnOk.Text	OK
+.Dialogs.Global.btnSave.Text	Save
+.Dialogs.proxySettingsDialog.btnSaveSettings.Text	Save Settings
+.Dialogs.proxySettingsDialog.grpCustomProxy.Text	Custom Proxyconfiguration
+.Dialogs.proxySettingsDialog.lblPassword.Text	Password:
+.Dialogs.proxySettingsDialog.lblProxyPort.Text	Port:
+.Dialogs.proxySettingsDialog.lblProxyServer.Text	Server:
+.Dialogs.proxySettingsDialog.lblTitle.Text	Proxyconfiguration
+.Dialogs.proxySettingsDialog.lblUsername.Text	Username
+.Dialogs.proxySettingsDialog.rbCustomAuth.Text	Use own Credentials:
+.Dialogs.proxySettingsDialog.rbCustomProxy.Text	Use custom Proxyconfiguration
+.Dialogs.proxySettingsDialog.rbNoAuth.Text	The Server doesn't require Authorization
+.Dialogs.proxySettingsDialog.rbSystemProxy.Text	Use Defaultproxy
+.Dialogs.proxySettingsDialog.rbWinAuth.Text	Use Windowsauthentication
+.Dialogs.proxySettingsDialog.Title	Proxyconfiguration
 .Dialogs.saveProjectDialog.btnOk.Text	Save Project
 .Dialogs.saveProjectDialog.lblDestination.Text	Destination:
 .Dialogs.saveProjectDialog.lblProjectName.Text	Projectname:
@@ -65,7 +79,15 @@
 .Pages.feedbackPage.lblName.Text	Your Name:
 .Pages.feedbackPage.lblTitle.Text	Send Feedback
 .Pages.feedbackPage.nodeName.Text	Feedback
+.Pages.publishPage.btnPublishNow.Text	Publish Now
+.Pages.publishPage.lblTitle.Text	Publish Updates
 .Pages.publishPage.nodeName.Text	Publishing
+.Pages.publishPage.tsBtnAddProvider.Text	Add Publishprovider
+.Pages.publishPage.tsBtnAddProvider.Tooltip	Adds a new Publishprovider to your Project.
+.Pages.publishPage.tsBtnEditProvider.Text	Edit
+.Pages.publishPage.tsBtnEditProvider.Tooltip	Opens an Dialog for editing the selected Publishprovider.
+.Pages.publishPage.tsBtnRemoveProvider.Text	Remove
+.Pages.publishPage.tsBtnRemoveProvider.Tooltip	Removes the selected Publishprovider.
 .Pages.settingPage.nodeName.Text	Settings
 .Pages.startPage.lblProjectId.Text	Project-Id:
 .Pages.startPage.lblProjectName.Text	Projectname:
@@ -74,6 +96,24 @@
 .Pages.startSecuritySubPage.nodeName.Text	Security
 .Pages.startVSIntegrationSubPage.nodeName.Text	Visual Studio Integration
 .Pages.statisticPage.nodeName.Text	Statistics
+.Pages.statisticProjectsSubPage.nodeName.Text	Projects
+.Pages.statisticProjectsSubPage.tsBtnEditProject.Text	Edit Project
+.Pages.statisticProjectsSubPage.tsBtnRefresh.Text	Refresh
+.Pages.statisticProjectsSubPage.tsBtnRemoveProject.Text	Remove
+.Pages.statisticSettingsSubPage.nodeName.Text	Configuration
+.Pages.statisticUsersSubPage.nodeName.Text	Statisticusers
+.Pages.statisticUsersSubPage.tsBtnAddUser.Text	Add User
+.Pages.statisticUsersSubPage.tsBtnAddUser.Tooltip	Adds a new Statisticuser.
+.Pages.statisticUsersSubPage.tsBtnEditUser.Text	Edit
+.Pages.statisticUsersSubPage.tsBtnEditUser.Tooltip	Opens an Dialog for editing the selected User.
+.Pages.statisticUsersSubPage.tsBtnRefresh.Text	Refresh
+.Pages.statisticUsersSubPage.tsBtnRefresh.Tooltip	Refreshes the Userlist.
+.Pages.statisticUsersSubPage.tsBtnRemoveUser.Text	Remove
+.Pages.statisticUsersSubPage.tsBtnRemoveUser.Tooltip	Removes the selected User.
 .Pages.updatePage.nodeName.Text	Updates
+.Pages.updatePage.tsBtnNewUpdatePackage.Text	New Updatepackage
+.Pages.updateSubPage.nodeName	I think this is not used.
+.Pages.updateSubPage.tsBtnEditPackage.Text	Edit Updatepackage
+.Pages.updateSubPage.tsBtnRemovePackage.Text	Remove
+.Pages.updateSubPage.tsBtnRemovePackage.Tooltip	Removes the selected Updatepackage.
 de.Dialogs.Global.btnClose.Text	Schließen
-lobal.btnClose.Text	Schließen
