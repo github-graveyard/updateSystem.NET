@@ -55,10 +55,9 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 			//Einstellungsblöcke hinzufügen
 			foreach (var kv in settingSubBasePages) {
 				var settingsGroup = new groupBoxEx {
+													Name = kv.Value.Name,
 				                                   	Size = kv.Value.Size,
-				                                   	Width =
-				                                   		flpSettings.Width -
-				                                   		(SystemInformation.VerticalScrollBarWidth + vertScrollbarWidthAddition),
+				                                   	Width = flpSettings.Width - (SystemInformation.VerticalScrollBarWidth + vertScrollbarWidthAddition),
 				                                   	Text = kv.Value.Title
 				                                   };
 				kv.Value.Location = new Point(12,18);

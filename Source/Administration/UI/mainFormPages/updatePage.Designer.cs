@@ -72,7 +72,7 @@
 			// 
 			this.txtSearchTerm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
 						| System.Windows.Forms.AnchorStyles.Right)));
-			this.txtSearchTerm.cueText = "Suchbegriff ...";
+			this.txtSearchTerm.cueText = "Search term ...";
 			this.txtSearchTerm.Location = new System.Drawing.Point(0, 25);
 			this.txtSearchTerm.Name = "txtSearchTerm";
 			this.txtSearchTerm.Size = new System.Drawing.Size(410, 23);

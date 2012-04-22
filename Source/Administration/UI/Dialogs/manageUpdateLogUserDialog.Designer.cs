@@ -28,14 +28,14 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			this.btnCancel = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.btnOk = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.lblTitle = new updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblUsername = new System.Windows.Forms.Label();
 			this.txtUsername = new System.Windows.Forms.TextBox();
 			this.txtPassword = new updateSystemDotNet.Administration.UI.Controls.textBoxEx();
-			this.label2 = new System.Windows.Forms.Label();
+			this.lblPassword = new System.Windows.Forms.Label();
 			this.txtPasswordRetype = new updateSystemDotNet.Administration.UI.Controls.textBoxEx();
-			this.label3 = new System.Windows.Forms.Label();
+			this.lblRetypePassword = new System.Windows.Forms.Label();
 			this.chkIsAdmin = new System.Windows.Forms.CheckBox();
-			this.label4 = new System.Windows.Forms.Label();
+			this.lblMaxProjects = new System.Windows.Forms.Label();
 			this.nmdMaxProjects = new System.Windows.Forms.NumericUpDown();
 			this.bgwServerRequest = new System.ComponentModel.BackgroundWorker();
 			this.chkIsActive = new System.Windows.Forms.CheckBox();
@@ -92,19 +92,19 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			this.lblTitle.TabIndex = 1;
 			this.lblTitle.Text = "Benutzer anlegen/bearbeiten";
 			// 
-			// label1
+			// lblUsername
 			// 
-			this.label1.Location = new System.Drawing.Point(12, 42);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(126, 23);
-			this.label1.TabIndex = 2;
-			this.label1.Text = "Benutzername:";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblUsername.Location = new System.Drawing.Point(12, 42);
+			this.lblUsername.Name = "lblUsername";
+			this.lblUsername.Size = new System.Drawing.Size(126, 23);
+			this.lblUsername.TabIndex = 2;
+			this.lblUsername.Text = "Benutzername:";
+			this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// txtUsername
 			// 
-			this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtUsername.Location = new System.Drawing.Point(144, 42);
 			this.txtUsername.MaxLength = 200;
 			this.txtUsername.Name = "txtUsername";
@@ -113,8 +113,8 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			// 
 			// txtPassword
 			// 
-			this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtPassword.cueText = "";
 			this.txtPassword.Location = new System.Drawing.Point(144, 76);
 			this.txtPassword.Name = "txtPassword";
@@ -122,19 +122,19 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			this.txtPassword.TabIndex = 5;
 			this.txtPassword.UseSystemPasswordChar = true;
 			// 
-			// label2
+			// lblPassword
 			// 
-			this.label2.Location = new System.Drawing.Point(12, 76);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(126, 23);
-			this.label2.TabIndex = 4;
-			this.label2.Text = "Passwort:";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblPassword.Location = new System.Drawing.Point(12, 76);
+			this.lblPassword.Name = "lblPassword";
+			this.lblPassword.Size = new System.Drawing.Size(126, 23);
+			this.lblPassword.TabIndex = 4;
+			this.lblPassword.Text = "Passwort:";
+			this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// txtPasswordRetype
 			// 
-			this.txtPasswordRetype.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.txtPasswordRetype.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtPasswordRetype.cueText = null;
 			this.txtPasswordRetype.Location = new System.Drawing.Point(144, 105);
 			this.txtPasswordRetype.Name = "txtPasswordRetype";
@@ -142,14 +142,14 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			this.txtPasswordRetype.TabIndex = 7;
 			this.txtPasswordRetype.UseSystemPasswordChar = true;
 			// 
-			// label3
+			// lblRetypePassword
 			// 
-			this.label3.Location = new System.Drawing.Point(12, 105);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(126, 23);
-			this.label3.TabIndex = 6;
-			this.label3.Text = "Wiederholen:";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblRetypePassword.Location = new System.Drawing.Point(12, 105);
+			this.lblRetypePassword.Name = "lblRetypePassword";
+			this.lblRetypePassword.Size = new System.Drawing.Size(126, 23);
+			this.lblRetypePassword.TabIndex = 6;
+			this.lblRetypePassword.Text = "Wiederholen:";
+			this.lblRetypePassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// chkIsAdmin
 			// 
@@ -162,14 +162,14 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			this.chkIsAdmin.Text = "Der Benutzer ist ein Administrator";
 			this.chkIsAdmin.UseVisualStyleBackColor = true;
 			// 
-			// label4
+			// lblMaxProjects
 			// 
-			this.label4.Location = new System.Drawing.Point(12, 139);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(126, 23);
-			this.label4.TabIndex = 9;
-			this.label4.Text = "Max. Updateprojekte:";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblMaxProjects.Location = new System.Drawing.Point(12, 139);
+			this.lblMaxProjects.Name = "lblMaxProjects";
+			this.lblMaxProjects.Size = new System.Drawing.Size(126, 23);
+			this.lblMaxProjects.TabIndex = 9;
+			this.lblMaxProjects.Text = "Max. Updateprojekte:";
+			this.lblMaxProjects.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// nmdMaxProjects
 			// 
@@ -210,14 +210,14 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			this.ClientSize = new System.Drawing.Size(481, 279);
 			this.Controls.Add(this.chkIsActive);
 			this.Controls.Add(this.nmdMaxProjects);
-			this.Controls.Add(this.label4);
+			this.Controls.Add(this.lblMaxProjects);
 			this.Controls.Add(this.chkIsAdmin);
 			this.Controls.Add(this.txtPasswordRetype);
-			this.Controls.Add(this.label3);
+			this.Controls.Add(this.lblRetypePassword);
 			this.Controls.Add(this.txtPassword);
-			this.Controls.Add(this.label2);
+			this.Controls.Add(this.lblPassword);
 			this.Controls.Add(this.txtUsername);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.lblUsername);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.buttonArea1);
 			this.Name = "manageUpdateLogUserDialog";
@@ -236,14 +236,14 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnCancel;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnOk;
 		private updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel lblTitle;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblUsername;
 		private System.Windows.Forms.TextBox txtUsername;
 		private textBoxEx txtPassword;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label lblPassword;
 		private textBoxEx txtPasswordRetype;
-		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label lblRetypePassword;
 		private System.Windows.Forms.CheckBox chkIsAdmin;
-		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label lblMaxProjects;
 		private System.Windows.Forms.NumericUpDown nmdMaxProjects;
 		private System.ComponentModel.BackgroundWorker bgwServerRequest;
 		private System.Windows.Forms.CheckBox chkIsActive;

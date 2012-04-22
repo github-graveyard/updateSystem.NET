@@ -60,8 +60,8 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 			subPages.Clear();
 			Node.Nodes.Clear();
 
-			foreach(var updatePackage in Session.currentProject.updatePackages) {
-				if(!Session.currentProject.viewFilter.appliesFilter(updatePackage))
+			foreach (var updatePackage in Session.currentProject.updatePackages) {
+				if (!Session.currentProject.viewFilter.appliesFilter(updatePackage))
 					continue;
 
 				var subPage = createSubPage<updateSubPage>(updatePackage);

@@ -26,7 +26,7 @@
 			this.buttonArea1 = new updateSystemDotNet.Administration.UI.Controls.buttonArea();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.btnOk = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblNewProvider = new System.Windows.Forms.Label();
 			this.cboPublishProvider = new System.Windows.Forms.ComboBox();
 			this.lblPublishDescription = new System.Windows.Forms.Label();
 			this.buttonArea1.SuspendLayout();
@@ -68,19 +68,19 @@
 			this.btnOk.UseVisualStyleBackColor = true;
 			this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
 			// 
-			// label1
+			// lblNewProvider
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(12, 12);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(327, 15);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "Wählen Sie das Ziel für die neue Veröffentlichungsquelle aus:";
+			this.lblNewProvider.AutoSize = true;
+			this.lblNewProvider.Location = new System.Drawing.Point(12, 12);
+			this.lblNewProvider.Name = "lblNewProvider";
+			this.lblNewProvider.Size = new System.Drawing.Size(327, 15);
+			this.lblNewProvider.TabIndex = 1;
+			this.lblNewProvider.Text = "Wählen Sie das Ziel für die neue Veröffentlichungsquelle aus:";
 			// 
 			// cboPublishProvider
 			// 
-			this.cboPublishProvider.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.cboPublishProvider.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.cboPublishProvider.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cboPublishProvider.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.cboPublishProvider.FormattingEnabled = true;
@@ -91,9 +91,9 @@
 			// 
 			// lblPublishDescription
 			// 
-			this.lblPublishDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.lblPublishDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblPublishDescription.Location = new System.Drawing.Point(12, 73);
 			this.lblPublishDescription.Name = "lblPublishDescription";
 			this.lblPublishDescription.Size = new System.Drawing.Size(416, 77);
@@ -109,7 +109,7 @@
 			this.ClientSize = new System.Drawing.Size(443, 214);
 			this.Controls.Add(this.lblPublishDescription);
 			this.Controls.Add(this.cboPublishProvider);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.lblNewProvider);
 			this.Controls.Add(this.buttonArea1);
 			this.Name = "chooseNewPublishProviderDialog";
 			this.Text = "Veröffentlichungsschnittstelle auswählen";
@@ -125,7 +125,7 @@
 		private updateSystemDotNet.Administration.UI.Controls.buttonArea buttonArea1;
 		private System.Windows.Forms.Button btnOk;
 		private System.Windows.Forms.Button btnCancel;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblNewProvider;
 		private System.Windows.Forms.ComboBox cboPublishProvider;
 		private System.Windows.Forms.Label lblPublishDescription;
 	}

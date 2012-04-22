@@ -26,12 +26,12 @@
 			this.buttonArea1 = new updateSystemDotNet.Administration.UI.Controls.buttonArea();
 			this.btnCancel = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.btnLogin = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblServerAddress = new System.Windows.Forms.Label();
 			this.txtServerUrl = new System.Windows.Forms.TextBox();
 			this.txtUsername = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
+			this.lblUsername = new System.Windows.Forms.Label();
 			this.txtPassword = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
+			this.lblPassword = new System.Windows.Forms.Label();
 			this.lblTitle = new updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel();
 			this.bgwLogin = new System.ComponentModel.BackgroundWorker();
 			this.buttonArea1.SuspendLayout();
@@ -75,14 +75,14 @@
 			this.btnLogin.UseVisualStyleBackColor = true;
 			this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
 			// 
-			// label1
+			// lblServerAddress
 			// 
-			this.label1.Location = new System.Drawing.Point(12, 46);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(113, 23);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "Serveradresse:";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblServerAddress.Location = new System.Drawing.Point(12, 46);
+			this.lblServerAddress.Name = "lblServerAddress";
+			this.lblServerAddress.Size = new System.Drawing.Size(113, 23);
+			this.lblServerAddress.TabIndex = 1;
+			this.lblServerAddress.Text = "Serveradresse:";
+			this.lblServerAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// txtServerUrl
 			// 
@@ -102,14 +102,14 @@
 			this.txtUsername.Size = new System.Drawing.Size(277, 23);
 			this.txtUsername.TabIndex = 4;
 			// 
-			// label2
+			// lblUsername
 			// 
-			this.label2.Location = new System.Drawing.Point(12, 80);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(113, 23);
-			this.label2.TabIndex = 3;
-			this.label2.Text = "Benutzername:";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblUsername.Location = new System.Drawing.Point(12, 80);
+			this.lblUsername.Name = "lblUsername";
+			this.lblUsername.Size = new System.Drawing.Size(113, 23);
+			this.lblUsername.TabIndex = 3;
+			this.lblUsername.Text = "Benutzername:";
+			this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// txtPassword
 			// 
@@ -121,14 +121,14 @@
 			this.txtPassword.TabIndex = 6;
 			this.txtPassword.UseSystemPasswordChar = true;
 			// 
-			// label3
+			// lblPassword
 			// 
-			this.label3.Location = new System.Drawing.Point(12, 114);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(113, 23);
-			this.label3.TabIndex = 5;
-			this.label3.Text = "Passwort:";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblPassword.Location = new System.Drawing.Point(12, 114);
+			this.lblPassword.Name = "lblPassword";
+			this.lblPassword.Size = new System.Drawing.Size(113, 23);
+			this.lblPassword.TabIndex = 5;
+			this.lblPassword.Text = "Passwort:";
+			this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// lblTitle
 			// 
@@ -152,11 +152,11 @@
 			this.ClientSize = new System.Drawing.Size(423, 231);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.txtPassword);
-			this.Controls.Add(this.label3);
+			this.Controls.Add(this.lblPassword);
 			this.Controls.Add(this.txtUsername);
-			this.Controls.Add(this.label2);
+			this.Controls.Add(this.lblUsername);
 			this.Controls.Add(this.txtServerUrl);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.lblServerAddress);
 			this.Controls.Add(this.buttonArea1);
 			this.Name = "authorizeUpdateLogDialog";
 			this.Text = "[appname]";
@@ -172,12 +172,12 @@
 		private updateSystemDotNet.Administration.UI.Controls.buttonArea buttonArea1;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnCancel;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnLogin;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblServerAddress;
 		private System.Windows.Forms.TextBox txtServerUrl;
 		private System.Windows.Forms.TextBox txtUsername;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label lblUsername;
 		private System.Windows.Forms.TextBox txtPassword;
-		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label lblPassword;
 		private updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel lblTitle;
 		private System.ComponentModel.BackgroundWorker bgwLogin;
 	}

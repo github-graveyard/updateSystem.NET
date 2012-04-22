@@ -33,13 +33,13 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			permanentlyDisableControl(txtProjectId);
 
 			if(Argument == null)
-				throw new ArgumentException("Es wurde kein updateLogProject übergeben!");
+				throw new ArgumentException("Your argument is invalid! -> updateProject");
 
 			_project = (updateLogProject) Argument;
 			txtProjectId.Text = _project.projectId;
 			txtProjectName.Text = _project.projectName;
 			chkIsActive.Checked = _project.isActive;
-			registerValidationEntry(txtProjectName, validationTypes.NotNull, "Anzeigename");
+			registerValidationEntry(txtProjectName, validationTypes.NotNull, "Displayname");
 		}
 
 		private void bgwEditProject_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) {
@@ -74,9 +74,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			else {
 				lockUi(true);
 				Session.showMessage(this,
-				                    string.Format(
-				                    	"Das Project konnte aufgrund des folgenden Problems nicht bearbeitet werden:\r\n{0}",
-				                    	((Exception) e.Result).Message), "Während der Serveranfrage ist ein Problem aufgetreten",
+				                    ((Exception) e.Result).Message, Session.localizeMessage("serverError", this),
 				                    MessageBoxIcon.Error, MessageBoxButtons.OK);
 			}
 		}

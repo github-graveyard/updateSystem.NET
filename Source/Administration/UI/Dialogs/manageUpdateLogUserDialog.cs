@@ -35,7 +35,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			if (Argument != null && Argument is userAccount)
 				_userAccount = (Argument as userAccount);
 
-			registerValidationEntry(txtUsername, validationTypes.NotNull, "Benutzername");
+			registerValidationEntry(txtUsername, validationTypes.NotNull, "Username");
 			if (_userAccount != null) {
 				txtUsername.Text = _userAccount.Username;
 
@@ -43,28 +43,26 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 				chkIsAdmin.Checked = _userAccount.userIsAdmin;
 				nmdMaxProjects.Value = _userAccount.maxProjects;
 
-				txtPassword.cueText = "Nur eingeben, wenn Sie Ihr Passwort ändern wollen";
+				txtPassword.cueText = "leave empty if you don't want to change it";
 
 			}
 			else {
 				permanentlyDisableControl(chkIsActive);
 				chkIsActive.Checked = true;
-
-				//Das Passwort darf nur bei neuen Benutzern nicht leer sein
-				registerValidationEntry(txtPassword, validationTypes.NotNull, "Passwort");
+				registerValidationEntry(txtPassword, validationTypes.NotNull, "Password");
 			}
 
 		}
-        
+		
 		private Dictionary<string,object> buildServerData() {
 			var data = new Dictionary<string, object> {
-			                                          	{"new_username", txtUsername.Text},
-			                                          	{"new_password", txtPassword.Text},
-			                                          	{"is_admin", chkIsAdmin.Checked},
-			                                          	{"is_active", chkIsActive.Checked},
-			                                          	{"max_projects", (int) nmdMaxProjects.Value},
-			                                          	{"is_new", Argument == null}
-			                                          };
+														{"new_username", txtUsername.Text},
+														{"new_password", txtPassword.Text},
+														{"is_admin", chkIsAdmin.Checked},
+														{"is_active", chkIsActive.Checked},
+														{"max_projects", (int) nmdMaxProjects.Value},
+														{"is_new", Argument == null}
+													  };
 			if (_userAccount != null)
 				data.Add("old_username", _userAccount.Username);
 
@@ -75,8 +73,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			try {
 				var arguments = (Dictionary<string, object>) e.Argument;
 
-				//Je nachdem ob ein neuer Benutzer angelegt- oder ein bestehender aktualisiert werden soll,
-				//eine andere Aktion benutzen.
+				//Either add a new user or edit an existing one
 				if((bool)arguments["is_new"]) {
 					Session.updateLogFactory.addUser(
 						(string) arguments["new_username"],
@@ -104,9 +101,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 		void bgwServerRequest_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e) {
 			if (e.Result == null) {
 
-				//Wichtig: Neue Benutzerdaten als Result speichern,
-				//damit diese bei einem Update des aktuell angemeldeten Benutzers
-				//übertragen werden können
+				//Import: Save the new Userdata as Result because they need to be updated in the projectconfig
 				Result = new[] {txtUsername.Text, txtPassword.Text};
 
 				DialogResult = DialogResult.OK;
@@ -114,7 +109,8 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			}
 			else {
 				lockUi(true);
-				Session.showMessage(this, ((Exception) e.Result).Message, "Während der Serveranfrage ist ein Problem aufgetreten!",
+
+				Session.showMessage(this, ((Exception) e.Result).Message, Session.localizeMessage("serverError", this),
 				                    MessageBoxIcon.Error, MessageBoxButtons.OK);
 			}
 		}

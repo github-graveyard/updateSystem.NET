@@ -1,4 +1,4 @@
-﻿.Dialogs.aboutDialog.lblCopyright.Text	Copyright (c) {0} Maximilian Krauss <kraussz.com>
+﻿.Dialogs.aboutDialog.lblCopyright.Text	Copyright (c) {0} Maximilian Krauss <coffeeInjection.com>
 .Dialogs.aboutDialog.lblDescriptionCompression.Text	Compression:
 .Dialogs.aboutDialog.lblDescriptionIcons.Text	Icons:
 .Dialogs.aboutDialog.lblVersion.Text	Version: {0} Codename "{1}"
@@ -18,11 +18,31 @@
 .Dialogs.applicationSettingsDialog.lblTitle.Text	Applicationsettings
 .Dialogs.applicationSettingsDialog.lblUpdateChannel.Text	Updatechannel:
 .Dialogs.applicationSettingsDialog.Title	Applicationsettings
+.Dialogs.authorizeUpdateLogDialog.btnLogin.Text	Authorize
+.Dialogs.authorizeUpdateLogDialog.lblPassword.Text	Password:
+.Dialogs.authorizeUpdateLogDialog.lblServerAddress.Text	Serveraddress:
+.Dialogs.authorizeUpdateLogDialog.lblTitle.Text	Connect with a updateLog-Account
+.Dialogs.authorizeUpdateLogDialog.lblUsername.Text	Username:
+.Dialogs.authorizeUpdateLogDialog.Title	updateLog
 .Dialogs.Global.btnBrowse.Text	Browse...
 .Dialogs.Global.btnCancel.Text	Cancel
 .Dialogs.Global.btnClose.Text	Close
 .Dialogs.Global.btnOk.Text	OK
 .Dialogs.Global.btnSave.Text	Save
+.Dialogs.manageUpdateLogProjectDialog.chkIsActive.Text	Active (when inactive, no data will be collected)
+.Dialogs.manageUpdateLogProjectDialog.lblDisplayName.Text	Displayname:
+.Dialogs.manageUpdateLogProjectDialog.lblProjectId.Text	Project-Id:
+.Dialogs.manageUpdateLogProjectDialog.lblTitle.Text	Edit Project
+.Dialogs.manageUpdateLogProjectDialog.Title	Projectmanagement
+.Dialogs.manageUpdateLogUserDialog.btnOk.Text	Save
+.Dialogs.manageUpdateLogUserDialog.chkIsActive.Text	User is active
+.Dialogs.manageUpdateLogUserDialog.chkIsAdmin.Text	User is Administrator
+.Dialogs.manageUpdateLogUserDialog.lblMaxProjects.Text	Max. Projects:
+.Dialogs.manageUpdateLogUserDialog.lblPassword.Text	Password:
+.Dialogs.manageUpdateLogUserDialog.lblRetypePassword.Text	Repeat:
+.Dialogs.manageUpdateLogUserDialog.lblTitle.Text	Add/Edit User
+.Dialogs.manageUpdateLogUserDialog.lblUsername.Text	Username:
+.Dialogs.manageUpdateLogUserDialog.Title	Usermanagement
 .Dialogs.proxySettingsDialog.btnSaveSettings.Text	Save Settings
 .Dialogs.proxySettingsDialog.grpCustomProxy.Text	Custom Proxyconfiguration
 .Dialogs.proxySettingsDialog.lblPassword.Text	Password:
@@ -72,6 +92,8 @@
 .Menus.tosMain.tsBtnPublish.Text	Publish
 .Menus.tosMain.tsBtnSaveProject.Text	Save
 .Messages.feedbackPage.feedbackSent	Thanks! Your Feedback has been successfully sent.
+.Messages.manageUpdateLogProjectDialog.serverError	The Server returned an error while performing your request
+.Messages.manageUpdateLogUserDialog.serverError	The Server returned an error while performing your request
 .Pages.feedbackPage.btnSendFeedback.Text	Submit Feedback
 .Pages.feedbackPage.lblFeedback.Text	Your Feedback is important to us. Please use this Form in order to Report missing Features or Bugs.
 .Pages.feedbackPage.lblMail.Text	Mailaddress (optional)
@@ -88,19 +110,32 @@
 .Pages.publishPage.tsBtnEditProvider.Tooltip	Opens an Dialog for editing the selected Publishprovider.
 .Pages.publishPage.tsBtnRemoveProvider.Text	Remove
 .Pages.publishPage.tsBtnRemoveProvider.Tooltip	Removes the selected Publishprovider.
+.Pages.settingPage.chkNativeImage.Text	Generate native Images of .NET Assemblies
+.Pages.settingPage.chkServicePackIsDefault.Text	Create Service Packs by Default.
+.Pages.settingPage.lblTitle.Text	Updatesettings
 .Pages.settingPage.nodeName.Text	Settings
+.Pages.settingPage.sspGeneral.Text	General
+.Pages.settingPage.sspSetupId.Text	Update Setup-Id
 .Pages.startPage.lblProjectId.Text	Project-Id:
 .Pages.startPage.lblProjectName.Text	Projectname:
 .Pages.startPage.lblTitle.Text	General Information
 .Pages.startPage.nodeName.Text	General Information
+.Pages.startSecuritySubPage.lblTitle.Text	Security
 .Pages.startSecuritySubPage.nodeName.Text	Security
+.Pages.startVSIntegrationSubPage.btnCopyControllerObject.Text	Copy to Clipboard
+.Pages.startVSIntegrationSubPage.lblTitle.Text	Visual Studio Integration
 .Pages.startVSIntegrationSubPage.nodeName.Text	Visual Studio Integration
+.Pages.statisticPage.fbtnRefresh.Text	Refresh
+.Pages.statisticPage.fBtnShowFilter.Text	Filter
+.Pages.statisticPage.lblTitle.Text	Statistics
 .Pages.statisticPage.nodeName.Text	Statistics
+.Pages.statisticProjectsSubPage.lblTitle.Text	Projectmanagement
 .Pages.statisticProjectsSubPage.nodeName.Text	Projects
 .Pages.statisticProjectsSubPage.tsBtnEditProject.Text	Edit Project
 .Pages.statisticProjectsSubPage.tsBtnRefresh.Text	Refresh
 .Pages.statisticProjectsSubPage.tsBtnRemoveProject.Text	Remove
 .Pages.statisticSettingsSubPage.nodeName.Text	Configuration
+.Pages.statisticUsersSubPage.lblTitle.Text	Usermanagement
 .Pages.statisticUsersSubPage.nodeName.Text	Statisticusers
 .Pages.statisticUsersSubPage.tsBtnAddUser.Text	Add User
 .Pages.statisticUsersSubPage.tsBtnAddUser.Tooltip	Adds a new Statisticuser.
@@ -110,6 +145,10 @@
 .Pages.statisticUsersSubPage.tsBtnRefresh.Tooltip	Refreshes the Userlist.
 .Pages.statisticUsersSubPage.tsBtnRemoveUser.Text	Remove
 .Pages.statisticUsersSubPage.tsBtnRemoveUser.Tooltip	Removes the selected User.
+.Pages.updatePage.chkHideUnpublishedUpdates.Text	Hide unpublished Updates
+.Pages.updatePage.chkShowServicePacksOnly.Text	Show Service Packs only
+.Pages.updatePage.grpFilter.Text	Filter Updatepackages
+.Pages.updatePage.lblTitle.Text	Updates
 .Pages.updatePage.nodeName.Text	Updates
 .Pages.updatePage.tsBtnNewUpdatePackage.Text	New Updatepackage
 .Pages.updateSubPage.nodeName	I think this is not used.

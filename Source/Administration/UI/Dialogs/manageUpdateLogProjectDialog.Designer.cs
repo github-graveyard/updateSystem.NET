@@ -23,29 +23,29 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			this.mainInstructionsLabel1 = new updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel();
+			this.lblTitle = new updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel();
 			this.buttonArea1 = new updateSystemDotNet.Administration.UI.Controls.buttonArea();
 			this.btnCancel = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.btnSave = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblProjectId = new System.Windows.Forms.Label();
 			this.txtProjectId = new updateSystemDotNet.Administration.UI.Controls.textBoxEx();
 			this.txtProjectName = new updateSystemDotNet.Administration.UI.Controls.textBoxEx();
-			this.label2 = new System.Windows.Forms.Label();
+			this.lblDisplayName = new System.Windows.Forms.Label();
 			this.chkIsActive = new System.Windows.Forms.CheckBox();
 			this.bgwEditProject = new System.ComponentModel.BackgroundWorker();
 			this.buttonArea1.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// mainInstructionsLabel1
+			// lblTitle
 			// 
-			this.mainInstructionsLabel1.AutoSize = true;
-			this.mainInstructionsLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.mainInstructionsLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(153)))));
-			this.mainInstructionsLabel1.Location = new System.Drawing.Point(12, 9);
-			this.mainInstructionsLabel1.Name = "mainInstructionsLabel1";
-			this.mainInstructionsLabel1.Size = new System.Drawing.Size(137, 21);
-			this.mainInstructionsLabel1.TabIndex = 0;
-			this.mainInstructionsLabel1.Text = "Projekt bearbeiten";
+			this.lblTitle.AutoSize = true;
+			this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(153)))));
+			this.lblTitle.Location = new System.Drawing.Point(12, 9);
+			this.lblTitle.Name = "lblTitle";
+			this.lblTitle.Size = new System.Drawing.Size(137, 21);
+			this.lblTitle.TabIndex = 0;
+			this.lblTitle.Text = "Projekt bearbeiten";
 			// 
 			// buttonArea1
 			// 
@@ -85,14 +85,14 @@
 			this.btnSave.UseVisualStyleBackColor = true;
 			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
-			// label1
+			// lblProjectId
 			// 
-			this.label1.Location = new System.Drawing.Point(13, 42);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(89, 23);
-			this.label1.TabIndex = 2;
-			this.label1.Text = "Projekt-Id:";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblProjectId.Location = new System.Drawing.Point(13, 42);
+			this.lblProjectId.Name = "lblProjectId";
+			this.lblProjectId.Size = new System.Drawing.Size(89, 23);
+			this.lblProjectId.TabIndex = 2;
+			this.lblProjectId.Text = "Projekt-Id:";
+			this.lblProjectId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// txtProjectId
 			// 
@@ -110,14 +110,14 @@
 			this.txtProjectName.Size = new System.Drawing.Size(336, 23);
 			this.txtProjectName.TabIndex = 5;
 			// 
-			// label2
+			// lblDisplayName
 			// 
-			this.label2.Location = new System.Drawing.Point(13, 76);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(89, 23);
-			this.label2.TabIndex = 4;
-			this.label2.Text = "Anzeigename:";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblDisplayName.Location = new System.Drawing.Point(13, 76);
+			this.lblDisplayName.Name = "lblDisplayName";
+			this.lblDisplayName.Size = new System.Drawing.Size(89, 23);
+			this.lblDisplayName.TabIndex = 4;
+			this.lblDisplayName.Text = "Anzeigename:";
+			this.lblDisplayName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// chkIsActive
 			// 
@@ -141,11 +141,11 @@
 			this.ClientSize = new System.Drawing.Size(459, 192);
 			this.Controls.Add(this.chkIsActive);
 			this.Controls.Add(this.txtProjectName);
-			this.Controls.Add(this.label2);
+			this.Controls.Add(this.lblDisplayName);
 			this.Controls.Add(this.txtProjectId);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.lblProjectId);
 			this.Controls.Add(this.buttonArea1);
-			this.Controls.Add(this.mainInstructionsLabel1);
+			this.Controls.Add(this.lblTitle);
 			this.Name = "manageUpdateLogProjectDialog";
 			this.Text = "manageUpdateLogProjectDialog";
 			this.buttonArea1.ResumeLayout(false);
@@ -157,14 +157,14 @@
 
 		#endregion
 
-		private updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel mainInstructionsLabel1;
+		private updateSystemDotNet.Administration.UI.Controls.mainInstructionsLabel lblTitle;
 		private updateSystemDotNet.Administration.UI.Controls.buttonArea buttonArea1;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnSave;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnCancel;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblProjectId;
 		private updateSystemDotNet.Administration.UI.Controls.textBoxEx txtProjectId;
 		private updateSystemDotNet.Administration.UI.Controls.textBoxEx txtProjectName;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label lblDisplayName;
 		private System.Windows.Forms.CheckBox chkIsActive;
 		private System.ComponentModel.BackgroundWorker bgwEditProject;
 	}
