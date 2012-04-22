@@ -96,6 +96,9 @@ namespace updateSystemDotNet.Localization {
 			using (StreamReader reader = new StreamReader(stream, _encoding)) {
 				while (!reader.EndOfStream) {
 					string line = reader.ReadLine();
+					if(string.IsNullOrEmpty(line.Trim()))
+						continue;
+						
 					int keyIx = line.IndexOf(_keyIxSeperator);
 					string key = line.Substring(0, keyIx);
 					string value = line.Substring(keyIx + 1);
