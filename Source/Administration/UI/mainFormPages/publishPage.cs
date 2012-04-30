@@ -93,6 +93,12 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 			lvwPublish.ItemChecked += lvwPublish_ItemChecked;
 		}
 
+		public override void initializeLocalization() {
+			base.initializeLocalization();
+			lvwPublish.Columns[0].Text = localizeListViewColumn(lvwPublish, "clmName");
+			lvwPublish.Columns[1].Text = localizeListViewColumn(lvwPublish, "clmLastPublished");
+		}
+
 		void lvwPublish_ItemChecked(object sender, ItemCheckedEventArgs e) {
 			(e.Item.Tag as IPublishProvider).Settings.isActive = e.Item.Checked;
 		}

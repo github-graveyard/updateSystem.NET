@@ -92,6 +92,20 @@
 .Menus.tosMain.tsBtnPublish.Text	Publish
 .Menus.tosMain.tsBtnSaveProject.Text	Save
 .Messages.feedbackPage.feedbackSent	Thanks! Your Feedback has been successfully sent.
+.Messages.Global.No	No
+.Messages.Global.prettyDate.Day	Yesterday
+.Messages.Global.prettyDate.Days	{0} days ago
+.Messages.Global.prettyDate.Hour	One hour ago
+.Messages.Global.prettyDate.Hours	{0} hours ago
+.Messages.Global.prettyDate.Minute	one Minute ago
+.Messages.Global.prettyDate.Minutes	{0} minutes ago
+.Messages.Global.prettyDate.Month	One month ago
+.Messages.Global.prettyDate.Months	{0} months ago
+.Messages.Global.prettyDate.Second	One second ago
+.Messages.Global.prettyDate.Seconds	{0} seconds ago
+.Messages.Global.prettyDate.Year	One year ago
+.Messages.Global.prettyDate.Years	{0} years ago
+.Messages.Global.Yes	Yes
 .Messages.manageUpdateLogProjectDialog.serverError	The Server returned an error while performing your request
 .Messages.manageUpdateLogUserDialog.serverError	The Server returned an error while performing your request
 .Pages.feedbackPage.btnSendFeedback.Text	Submit Feedback
@@ -103,6 +117,8 @@
 .Pages.feedbackPage.nodeName.Text	Feedback
 .Pages.publishPage.btnPublishNow.Text	Publish Now
 .Pages.publishPage.lblTitle.Text	Publish Updates
+.Pages.publishPage.lvwPublish.Columns.clmLastPublished	Last Published
+.Pages.publishPage.lvwPublish.Columns.clmName	Name
 .Pages.publishPage.nodeName.Text	Publishing
 .Pages.publishPage.tsBtnAddProvider.Text	Add Publishprovider
 .Pages.publishPage.tsBtnAddProvider.Tooltip	Adds a new Publishprovider to your Project.
@@ -130,12 +146,20 @@
 .Pages.statisticPage.lblTitle.Text	Statistics
 .Pages.statisticPage.nodeName.Text	Statistics
 .Pages.statisticProjectsSubPage.lblTitle.Text	Projectmanagement
+.Pages.statisticProjectsSubPage.lvwProjects.Columns.clmActive	Active
+.Pages.statisticProjectsSubPage.lvwProjects.Columns.clmName	Projectname
+.Pages.statisticProjectsSubPage.lvwProjects.Columns.clmProjectId	Project-Id
 .Pages.statisticProjectsSubPage.nodeName.Text	Projects
 .Pages.statisticProjectsSubPage.tsBtnEditProject.Text	Edit Project
 .Pages.statisticProjectsSubPage.tsBtnRefresh.Text	Refresh
 .Pages.statisticProjectsSubPage.tsBtnRemoveProject.Text	Remove
 .Pages.statisticSettingsSubPage.nodeName.Text	Configuration
 .Pages.statisticUsersSubPage.lblTitle.Text	Usermanagement
+.Pages.statisticUsersSubPage.lvwUser.Columns.clmActive	Active
+.Pages.statisticUsersSubPage.lvwUser.Columns.clmMaxProjects	Max. Projects
+.Pages.statisticUsersSubPage.lvwUser.Columns.clmName	Username
+.Pages.statisticUsersSubPage.lvwUser.Columns.grpAdmins	Administrators
+.Pages.statisticUsersSubPage.lvwUser.Columns.grpUser	Users
 .Pages.statisticUsersSubPage.nodeName.Text	Statisticusers
 .Pages.statisticUsersSubPage.tsBtnAddUser.Text	Add User
 .Pages.statisticUsersSubPage.tsBtnAddUser.Tooltip	Adds a new Statisticuser.

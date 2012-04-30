@@ -182,6 +182,11 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 			}
 		}
 
+		protected string localizeListViewColumn(ListView listview, string columnName) {
+			return Session.getLocalizedString(string.Format("{0}.{1}.{2}.Columns.{3}",
+				                                         new object[] {applicationSession.SECTION_NAME_PAGES, Name, listview.Name, columnName}));
+		}
+
 		/// <summary>Creates, configures and localizes an ToolStripButton.</summary>
 		/// <param name="name">The Name of the new Button. Should correspond with an Entry in the Localizationfile</param>
 		protected ToolStripButton createToolStripButton(string name) {

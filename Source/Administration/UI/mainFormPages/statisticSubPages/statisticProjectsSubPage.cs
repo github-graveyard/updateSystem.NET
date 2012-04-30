@@ -57,6 +57,13 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.statisticSubPages {
 			_tsBtnRemoveProject.Click += _tsBtnRemoveProject_Click;
 		}
 
+		public override void initializeLocalization() {
+			base.initializeLocalization();
+			lvwProjects.Columns[0].Text = localizeListViewColumn(lvwProjects, "clmName");
+			lvwProjects.Columns[1].Text = localizeListViewColumn(lvwProjects, "clmProjectId");
+			lvwProjects.Columns[2].Text = localizeListViewColumn(lvwProjects, "clmActive");
+		}
+
 		void _tsBtnRemoveProject_Click(object sender, EventArgs e) {
 			if (bgwDeleteProject.IsBusy || bgwRefreshProjects.IsBusy)
 				return;
@@ -111,7 +118,7 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.statisticSubPages {
 			foreach(var project in _cachedProjects) {
 				var lvi = new ListViewItem(project.projectName);
 				lvi.SubItems.Add(project.projectId);
-				lvi.SubItems.Add(project.isActive ? "Ja" : "Nein");
+				lvi.SubItems.Add(project.isActive ? Session.localizeMessage("Yes") : Session.localizeMessage("No"));
 				lvi.Tag = project;
 
 				if (project.projectId == Session.currentProject.projectId)

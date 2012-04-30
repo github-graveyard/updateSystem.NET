@@ -23,50 +23,43 @@ using System.Net.Cache;
 
 namespace updateSystemDotNet.Administration.Core.Application {
 
-	//Ausgelagerte Hilfsfunktionen für die Session
+	//External and commonly used helper methods
 	internal sealed partial class applicationSession {
 
-		/// <summary>Gibt die relative Zeit von einem bestimmten Daten zurück (z.B. vor 5 Minuten)</summary>
+		/// <summary>Returns a relative Date, e.g.: 5 minutes ago.</summary>
 		public string relativeDate(DateTime date) {
-			var ts = new TimeSpan(DateTime.UtcNow.Ticks - date.Ticks);
+			var ts = new TimeSpan(DateTime.Now.Ticks - date.Ticks);
 			double delta = Math.Abs(ts.TotalSeconds);
-
-			if (delta < 60) {
-				return ts.Seconds == 1 ? "vor einer Sekunde" : string.Format("vor {0} Sekunden", ts.Seconds);
-			}
-			if (delta < 120) {
-				return "vor einer Minute";
-			}
+			const string localizationRoot = "prettyDate.";
+			if (delta < 60)
+				return ts.Seconds == 1
+				       	? localizeMessage(localizationRoot + "Second")
+				       	: string.Format(localizeMessage(localizationRoot + "Seconds"), ts.Seconds);
+			if (delta < 120)
+				return localizeMessage(localizationRoot + "Minute");
 			if (delta < 2700) // 45 * 60
-			{
-				return string.Format("vor {0} Minuten", ts.Minutes);
-			}
+				return string.Format(localizeMessage(localizationRoot + "Minutes"), ts.Minutes);
 			if (delta < 5400) // 90 * 60
-			{
-				return "vor einer Stunde";
-			}
+				return localizeMessage(localizationRoot + "Hour");
 			if (delta < 86400) // 24 * 60 * 60
-			{
-				return string.Format("vor {0} Stunden", ts.Hours);
-			}
+				return string.Format(localizeMessage(localizationRoot + "Hours"), ts.Hours);
 			if (delta < 172800) // 48 * 60 * 60
-			{
-				return "Gestern";
-			}
+				return localizeMessage(localizationRoot + "Day");
 			if (delta < 2592000) // 30 * 24 * 60 * 60
-			{
-				return string.Format("vor {0} Tagen", ts.Days);
-			}
-			if (delta < 31104000) // 12 * 30 * 24 * 60 * 60
-			{
+				return string.Format(localizeMessage(localizationRoot + "Days"), ts.Days);
+			if (delta < 31104000) { // 12 * 30 * 24 * 60 * 60
 				int months = Convert.ToInt32(Math.Floor((double) ts.Days/30));
-				return months <= 1 ? "vor einem Monat" : string.Format("vor {0} Monaten", months);
+				return months <= 1
+				       	? localizeMessage(localizationRoot + "Month")
+				       	: string.Format(localizeMessage(localizationRoot + "Months"), months);
 			}
 			int years = Convert.ToInt32(Math.Floor((double) ts.Days/365));
-			return years <= 1 ? "vor einem Jahr" : string.Format("vor {0} Jahren", years);
+			return years <= 1
+			       	? localizeMessage(localizationRoot + "Year")
+			       	: string.Format(localizeMessage(localizationRoot + "Years"), years);
 		}
 
-		/// <summary>Gibt einen vorkonfigurierten WebClient zurück.</summary>
+		/// <summary>Creates a WebClient which is already set up for Proxyuse and other stuff.</summary>
 		public WebClient createWebClient() {
 			var client = new WebClient {
 				CachePolicy = new RequestCachePolicy(RequestCacheLevel.NoCacheNoStore)

@@ -78,6 +78,15 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.statisticSubPages {
 			_tsBtnRemoveUser.Click += _tsBtnRemoveUser_Click;
 		}
 
+		public override void initializeLocalization() {
+			base.initializeLocalization();
+			lvwUser.Columns[0].Text = localizeListViewColumn(lvwUser, "clmName");
+			lvwUser.Columns[1].Text = localizeListViewColumn(lvwUser, "clmMaxProjects");
+			lvwUser.Columns[2].Text = localizeListViewColumn(lvwUser, "clmActive");
+			lvwUser.Groups[0].Header = localizeListViewColumn(lvwUser, "grpAdmins");
+			lvwUser.Groups[1].Header = localizeListViewColumn(lvwUser, "grpUser");
+		}
+
 		void _tsBtnRemoveUser_Click(object sender, EventArgs e) {
 			if (isBusy) return;
 			
@@ -134,13 +143,14 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.statisticSubPages {
 			foreach(var user in _userCache) {
 				var lviUser = new ListViewItem(user.Username);
 				lviUser.SubItems.Add(user.userIsAdmin ? "n/a" : user.maxProjects.ToString());
-				lviUser.SubItems.Add(user.userIsActive ? "Ja" : "Nein");
+				lviUser.SubItems.Add(user.userIsActive ? Session.localizeMessage("Yes") : Session.localizeMessage("No"));
 				lviUser.Group = user.userIsAdmin ? lvwUser.Groups[0] : lvwUser.Groups[1];
 				lviUser.Tag = user;
 				if (user.Username == Session.currentProject.updateLogUser.Username)
 					lviUser.Font = new Font(lviUser.Font, FontStyle.Bold);
 				lvwUser.Items.Add(lviUser);
 			}
+			
 		}
 
 		private void bgwRefreshUser_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) {
