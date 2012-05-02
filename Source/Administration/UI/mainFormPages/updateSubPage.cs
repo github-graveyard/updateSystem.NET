@@ -27,7 +27,7 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 	internal sealed partial class updateSubPage : baseSubPage {
 
 		private updatePackage _package;
-		private const string lblLastPublishedBase = "Zuletzt Veröffentlicht: ";
+		private string lblLastPublishedBase = "Zuletzt Veröffentlicht: ";
 
 		private ToolStripButton _tsBtnEditPackage;
 		private ToolStripButton _tsBtnRemovePackage;
@@ -40,18 +40,8 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 		public override void initializeData() {
 			lvwPublishWith.ItemChecked -= lvwPublishWith_ItemChecked;
 			_package = (updatePackage)Argument;
-			lblSize.Text = string.Format("Größe: {0}", updateSystemDotNet.Core.Helper.GetFileSize(_package.packageSize));
-
-			lblLastPublishedDescription.Text = string.Format("{0}{1}", lblLastPublishedBase,
-															 _package.publishDate == DateTime.MinValue
-																? "Noch nie"
-																: string.Format("{0} (am {1} um {2})",
-																				Session.relativeDate(_package.publishDate),
-																				_package.publishDate.ToShortDateString(),
-																				_package.publishDate.ToShortTimeString()));
-
-
-			//Veröffentlichungsschnittstellen
+			
+			//Load Publishinterfaces
 			lvwPublishWith.Items.Clear();
 			foreach(var pbProvider in Session.currentProject.publishProvider) {
 				if(!pbProvider.Settings.isActive)
@@ -72,7 +62,20 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 		public override void initializeLocalization() {
 			base.initializeLocalization();
 			Node.Text = _package.ToString();
-			Title = string.Format("Updatepaket Version {0}", _package);
+			updateValues();
+		}
+
+		private void updateValues() {
+			Title = string.Format(Session.localizeMessage("Title", this), _package);
+			lblSize.Text = string.Format(Session.getLocalizedString(lblSize), updateSystemDotNet.Core.Helper.GetFileSize(_package.packageSize));
+			lblLastPublishedBase = Session.getLocalizedString(lblLastPublishedDescription);
+			lblLastPublishedDescription.Text = string.Format("{0}{1}", lblLastPublishedBase,
+															 _package.publishDate == DateTime.MinValue
+																? Session.localizeMessage("neverPublished", this)
+																: string.Format(Session.localizeMessage("publishFormat", this),
+																				Session.relativeDate(_package.publishDate),
+																				_package.publishDate.ToShortDateString(),
+																				_package.publishDate.ToShortTimeString()));
 		}
 
 		public override void initializeToolStripButtons() {
@@ -107,23 +110,20 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 		}
 
 		private void deletePackage() {
-			if (Session.showMessage(ParentForm, "Sind Sie sicher, dass Sie dieses Updatepaket wirklich löschen möchten?", "Löschen bestätigen", MessageBoxIcon.Exclamation, MessageBoxButtons.YesNo) != DialogResult.Yes)
+			if (Session.showMessage(ParentForm, Session.localizeMessage("confirmDeleteBody", this), Session.localizeMessage("confirmDeleteCaption", this), MessageBoxIcon.Exclamation, MessageBoxButtons.YesNo) != DialogResult.Yes)
 				return;
 
 			Session.updateFactory.removeUpdatePackage(_package);
 
-			//Projekt speichern
 			Session.saveProject();			
 		}
 
 		private void beginEditPackage() {
-			//Updatepaket für das Bearbeiten vorbeiten
+			//Prepare Package for editing (unpack files, etc...)
 			var prepareResult = Session.updateFactory.prepareEditUpdatePackage(_package);
 
-			//Dialog zur Bearbeitung des Updatepaketes anzeigen
+			//show Dialog and wait until it's closed
 			if (Session.showDialog<Dialogs.updatePackageDialog>(ParentForm, prepareResult) == DialogResult.OK) {
-
-				//Den alten Paketverweis aus dem Projekt entfernen
 				Session.currentProject.updatePackages.Remove(_package);
 
 				_package = (updatePackage)Session.dialogResultCache[typeof(Dialogs.updatePackageDialog)];
@@ -132,7 +132,7 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 				Session.saveProject();
 			}
 
-			//Temporär erzeugte Daten verwerfen
+			//Remove cached files
 			Session.updateFactory.cleanupEditUpdatePackage(prepareResult);			
 		}
 
@@ -158,7 +158,7 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 				_package.Published = (bool) e.Result[Popups.updateVersionPopup.DCKEY_PUBLISHED];
 				_package.isServicePack = (bool) e.Result[Popups.updateVersionPopup.DCKEY_SERVICE_PACK];
 				base.Node.Text = _package.ToString();
-				initializeData();
+				updateValues();
 			}
 		}
 	}

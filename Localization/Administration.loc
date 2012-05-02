@@ -108,6 +108,11 @@
 .Messages.Global.Yes	Yes
 .Messages.manageUpdateLogProjectDialog.serverError	The Server returned an error while performing your request
 .Messages.manageUpdateLogUserDialog.serverError	The Server returned an error while performing your request
+.Messages.updateSubPage.confirmDeleteBody	Are you sure that you want to delete this Updatepackage?
+.Messages.updateSubPage.confirmDeleteCaption	Confirm delete
+.Messages.updateSubPage.neverPublished	Never
+.Messages.updateSubPage.publishFormat	{0} (on {1} at {2})
+.Messages.updateSubPage.Title	Updatepackage Version {0}
 .Pages.feedbackPage.btnSendFeedback.Text	Submit Feedback
 .Pages.feedbackPage.lblFeedback.Text	Your Feedback is important to us. Please use this Form in order to Report missing Features or Bugs.
 .Pages.feedbackPage.lblMail.Text	Mailaddress (optional)
@@ -190,8 +195,14 @@
 .Pages.updatePage.lblTitle.Text	Updates
 .Pages.updatePage.nodeName.Text	Updates
 .Pages.updatePage.tsBtnNewUpdatePackage.Text	New Updatepackage
+.Pages.updateSubPage.fbtnVersionPopup.Text	Releaseconfiguration
+.Pages.updateSubPage.grpPublish.Text	Publish with
+.Pages.updateSubPage.lblLastPublishedDescription.Text	Last published: 
+.Pages.updateSubPage.lblSize.Text	Size: {0}
 .Pages.updateSubPage.nodeName	I think this is not used.
 .Pages.updateSubPage.tsBtnEditPackage.Text	Edit Updatepackage
 .Pages.updateSubPage.tsBtnRemovePackage.Text	Remove
 .Pages.updateSubPage.tsBtnRemovePackage.Tooltip	Removes the selected Updatepackage.
 de.Dialogs.Global.btnClose.Text	Schließen
+
+xt	Schließen
