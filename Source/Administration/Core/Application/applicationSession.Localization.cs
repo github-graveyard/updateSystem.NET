@@ -165,8 +165,16 @@ namespace updateSystemDotNet.Administration.Core.Application {
 
 		private Control getParent(Control control) {
 			Control parentContainer = null;
-			for (Control parent = control.Parent; parent != null; parent = parent.Parent)
+			for (Control parent = control.Parent; (parent != null); parent = parent.Parent) {
 				parentContainer = parent;
+
+				/*
+				 This tweak is required when localizing-methods are called after the Control
+				 is added to the mainform because the parent will then always be the mainform not the page.
+				 */
+				if(derivesFrom<UI.mainFormPages.basePage>(parentContainer.GetType()))
+					return parentContainer;
+			}
 			return parentContainer;
 		}
 
