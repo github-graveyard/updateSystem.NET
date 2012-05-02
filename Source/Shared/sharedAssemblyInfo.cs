@@ -27,5 +27,5 @@ using System.Runtime.CompilerServices;
 //[assembly: CLSCompliant(true)]
 
 [assembly: SuppressIldasm]
-[assembly: AssemblyVersion("1.6.0.430")]
-[assembly: AssemblyFileVersion("1.6.0.430")]
+[assembly: AssemblyVersion("1.6.0.502")]
+[assembly: AssemblyFileVersion("1.6.0.502")]

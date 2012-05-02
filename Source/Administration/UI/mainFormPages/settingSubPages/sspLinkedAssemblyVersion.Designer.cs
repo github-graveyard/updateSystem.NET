@@ -26,9 +26,9 @@
 			this.pnlLinkedAssembly = new System.Windows.Forms.Panel();
 			this.btnBrowseAssembly = new System.Windows.Forms.Button();
 			this.txtLinkedAssemblyPath = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
+			this.lblLinkPath = new System.Windows.Forms.Label();
 			this.rbLinked = new System.Windows.Forms.RadioButton();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblLinkDescription = new System.Windows.Forms.Label();
 			this.rbNotLinked = new System.Windows.Forms.RadioButton();
 			this.flpControls = new System.Windows.Forms.FlowLayoutPanel();
 			this.pnlLinkedAssembly.SuspendLayout();
@@ -37,11 +37,11 @@
 			// 
 			// pnlLinkedAssembly
 			// 
-			this.pnlLinkedAssembly.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.pnlLinkedAssembly.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.pnlLinkedAssembly.Controls.Add(this.btnBrowseAssembly);
 			this.pnlLinkedAssembly.Controls.Add(this.txtLinkedAssemblyPath);
-			this.pnlLinkedAssembly.Controls.Add(this.label2);
+			this.pnlLinkedAssembly.Controls.Add(this.lblLinkPath);
 			this.pnlLinkedAssembly.Enabled = false;
 			this.pnlLinkedAssembly.Location = new System.Drawing.Point(3, 85);
 			this.pnlLinkedAssembly.Name = "pnlLinkedAssembly";
@@ -62,22 +62,22 @@
 			// 
 			// txtLinkedAssemblyPath
 			// 
-			this.txtLinkedAssemblyPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.txtLinkedAssemblyPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtLinkedAssemblyPath.Location = new System.Drawing.Point(55, 3);
 			this.txtLinkedAssemblyPath.Name = "txtLinkedAssemblyPath";
 			this.txtLinkedAssemblyPath.ReadOnly = true;
 			this.txtLinkedAssemblyPath.Size = new System.Drawing.Size(344, 23);
 			this.txtLinkedAssemblyPath.TabIndex = 1;
 			// 
-			// label2
+			// lblLinkPath
 			// 
-			this.label2.Location = new System.Drawing.Point(0, 3);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(49, 22);
-			this.label2.TabIndex = 0;
-			this.label2.Text = "Pfad:";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblLinkPath.Location = new System.Drawing.Point(0, 3);
+			this.lblLinkPath.Name = "lblLinkPath";
+			this.lblLinkPath.Size = new System.Drawing.Size(49, 22);
+			this.lblLinkPath.TabIndex = 0;
+			this.lblLinkPath.Text = "Pfad:";
+			this.lblLinkPath.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// rbLinked
 			// 
@@ -93,16 +93,16 @@
 			this.rbLinked.UseVisualStyleBackColor = true;
 			this.rbLinked.CheckedChanged += new System.EventHandler(this.rbLinked_CheckedChanged);
 			// 
-			// label1
+			// lblLinkDescription
 			// 
-			this.label1.AutoSize = true;
-			this.flpControls.SetFlowBreak(this.label1, true);
-			this.label1.Location = new System.Drawing.Point(3, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(467, 30);
-			this.label1.TabIndex = 5;
-			this.label1.Text = "Legen Sie hier fest, ob bei neuen Updatepaketen die Versionsnummer automatisch vo" +
-				"n einer Anwendung ermittelt werden soll.";
+			this.lblLinkDescription.AutoSize = true;
+			this.flpControls.SetFlowBreak(this.lblLinkDescription, true);
+			this.lblLinkDescription.Location = new System.Drawing.Point(3, 0);
+			this.lblLinkDescription.Name = "lblLinkDescription";
+			this.lblLinkDescription.Size = new System.Drawing.Size(467, 30);
+			this.lblLinkDescription.TabIndex = 5;
+			this.lblLinkDescription.Text = "Legen Sie hier fest, ob bei neuen Updatepaketen die Versionsnummer automatisch vo" +
+    "n einer Anwendung ermittelt werden soll.";
 			// 
 			// rbNotLinked
 			// 
@@ -119,10 +119,10 @@
 			// 
 			// flpControls
 			// 
-			this.flpControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
-			this.flpControls.Controls.Add(this.label1);
+			this.flpControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.flpControls.Controls.Add(this.lblLinkDescription);
 			this.flpControls.Controls.Add(this.rbNotLinked);
 			this.flpControls.Controls.Add(this.rbLinked);
 			this.flpControls.Controls.Add(this.pnlLinkedAssembly);
@@ -154,9 +154,9 @@
 		private System.Windows.Forms.Panel pnlLinkedAssembly;
 		private System.Windows.Forms.Button btnBrowseAssembly;
 		private System.Windows.Forms.TextBox txtLinkedAssemblyPath;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label lblLinkPath;
 		private System.Windows.Forms.RadioButton rbLinked;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblLinkDescription;
 		private System.Windows.Forms.RadioButton rbNotLinked;
 		private System.Windows.Forms.FlowLayoutPanel flpControls;
 	}

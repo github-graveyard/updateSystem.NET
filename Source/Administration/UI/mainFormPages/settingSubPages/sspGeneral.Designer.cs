@@ -43,10 +43,13 @@
 			// lnkGoToMsdn
 			// 
 			this.lnkGoToMsdn.ActiveLinkColor = System.Drawing.SystemColors.Highlight;
+			this.lnkGoToMsdn.autoOpenLinks = true;
 			this.lnkGoToMsdn.Font = new System.Drawing.Font("Segoe UI", 9F);
+			this.lnkGoToMsdn.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
 			this.lnkGoToMsdn.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
 			this.lnkGoToMsdn.LinkColor = System.Drawing.SystemColors.HotTrack;
-			this.lnkGoToMsdn.Location = new System.Drawing.Point(211, 0);
+			this.lnkGoToMsdn.linkText = null;
+			this.lnkGoToMsdn.Location = new System.Drawing.Point(250, 0);
 			this.lnkGoToMsdn.Name = "lnkGoToMsdn";
 			this.lnkGoToMsdn.Size = new System.Drawing.Size(137, 20);
 			this.lnkGoToMsdn.TabIndex = 1;

@@ -23,48 +23,48 @@
 		/// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
 		/// </summary>
 		private void InitializeComponent() {
-			this.label5 = new System.Windows.Forms.Label();
+			this.lblArgsDescription = new System.Windows.Forms.Label();
 			this.txtArgumentFailure = new System.Windows.Forms.TextBox();
-			this.label4 = new System.Windows.Forms.Label();
+			this.lblArgsDescFailed = new System.Windows.Forms.Label();
 			this.txtArgumentSuccess = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
+			this.lblArgsDescSuccess = new System.Windows.Forms.Label();
 			this.flpControls = new System.Windows.Forms.FlowLayoutPanel();
 			this.flpControls.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// label5
+			// lblArgsDescription
 			// 
-			this.label5.AutoSize = true;
-			this.flpControls.SetFlowBreak(this.label5, true);
-			this.label5.Location = new System.Drawing.Point(3, 0);
-			this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 6);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(397, 30);
-			this.label5.TabIndex = 24;
-			this.label5.Text = "Hier können Sie Parameter angeben, welche bei einem erfolgreichen oder fehlgeschl" +
-				"agenem Update an die Anwendung übergeben werden sollen.";
+			this.lblArgsDescription.AutoSize = true;
+			this.flpControls.SetFlowBreak(this.lblArgsDescription, true);
+			this.lblArgsDescription.Location = new System.Drawing.Point(3, 0);
+			this.lblArgsDescription.Margin = new System.Windows.Forms.Padding(3, 0, 3, 6);
+			this.lblArgsDescription.Name = "lblArgsDescription";
+			this.lblArgsDescription.Size = new System.Drawing.Size(397, 30);
+			this.lblArgsDescription.TabIndex = 24;
+			this.lblArgsDescription.Text = "Hier können Sie Parameter angeben, welche bei einem erfolgreichen oder fehlgeschl" +
+    "agenem Update an die Anwendung übergeben werden sollen.";
 			// 
 			// txtArgumentFailure
 			// 
-			this.txtArgumentFailure.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.txtArgumentFailure.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtArgumentFailure.Location = new System.Drawing.Point(3, 107);
 			this.txtArgumentFailure.Name = "txtArgumentFailure";
 			this.txtArgumentFailure.Size = new System.Drawing.Size(436, 23);
 			this.txtArgumentFailure.TabIndex = 23;
 			this.txtArgumentFailure.TextChanged += new System.EventHandler(this.txtArgumentFailure_TextChanged);
 			// 
-			// label4
+			// lblArgsDescFailed
 			// 
-			this.label4.AutoSize = true;
-			this.flpControls.SetFlowBreak(this.label4, true);
-			this.label4.Location = new System.Drawing.Point(3, 86);
-			this.label4.Margin = new System.Windows.Forms.Padding(3);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(256, 15);
-			this.label4.TabIndex = 22;
-			this.label4.Text = "Parameter bei einem fehlgeschlagenen Update:";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblArgsDescFailed.AutoSize = true;
+			this.flpControls.SetFlowBreak(this.lblArgsDescFailed, true);
+			this.lblArgsDescFailed.Location = new System.Drawing.Point(3, 86);
+			this.lblArgsDescFailed.Margin = new System.Windows.Forms.Padding(3);
+			this.lblArgsDescFailed.Name = "lblArgsDescFailed";
+			this.lblArgsDescFailed.Size = new System.Drawing.Size(256, 15);
+			this.lblArgsDescFailed.TabIndex = 22;
+			this.lblArgsDescFailed.Text = "Parameter bei einem fehlgeschlagenen Update:";
+			this.lblArgsDescFailed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// txtArgumentSuccess
 			// 
@@ -75,23 +75,23 @@
 			this.txtArgumentSuccess.TabIndex = 21;
 			this.txtArgumentSuccess.TextChanged += new System.EventHandler(this.txtArgumentSuccess_TextChanged);
 			// 
-			// label3
+			// lblArgsDescSuccess
 			// 
-			this.label3.AutoSize = true;
-			this.flpControls.SetFlowBreak(this.label3, true);
-			this.label3.Location = new System.Drawing.Point(3, 36);
-			this.label3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(233, 15);
-			this.label3.TabIndex = 20;
-			this.label3.Text = "Parameter bei einem erfolgreichen Update:";
+			this.lblArgsDescSuccess.AutoSize = true;
+			this.flpControls.SetFlowBreak(this.lblArgsDescSuccess, true);
+			this.lblArgsDescSuccess.Location = new System.Drawing.Point(3, 36);
+			this.lblArgsDescSuccess.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+			this.lblArgsDescSuccess.Name = "lblArgsDescSuccess";
+			this.lblArgsDescSuccess.Size = new System.Drawing.Size(233, 15);
+			this.lblArgsDescSuccess.TabIndex = 20;
+			this.lblArgsDescSuccess.Text = "Parameter bei einem erfolgreichen Update:";
 			// 
 			// flpControls
 			// 
-			this.flpControls.Controls.Add(this.label5);
-			this.flpControls.Controls.Add(this.label3);
+			this.flpControls.Controls.Add(this.lblArgsDescription);
+			this.flpControls.Controls.Add(this.lblArgsDescSuccess);
 			this.flpControls.Controls.Add(this.txtArgumentSuccess);
-			this.flpControls.Controls.Add(this.label4);
+			this.flpControls.Controls.Add(this.lblArgsDescFailed);
 			this.flpControls.Controls.Add(this.txtArgumentFailure);
 			this.flpControls.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.flpControls.Location = new System.Drawing.Point(0, 0);
@@ -117,11 +117,11 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label lblArgsDescription;
 		private System.Windows.Forms.TextBox txtArgumentFailure;
-		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label lblArgsDescFailed;
 		private System.Windows.Forms.TextBox txtArgumentSuccess;
-		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label lblArgsDescSuccess;
 		private System.Windows.Forms.FlowLayoutPanel flpControls;
 	}
 }

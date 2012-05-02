@@ -97,7 +97,7 @@
 .Messages.Global.prettyDate.Days	{0} days ago
 .Messages.Global.prettyDate.Hour	One hour ago
 .Messages.Global.prettyDate.Hours	{0} hours ago
-.Messages.Global.prettyDate.Minute	one Minute ago
+.Messages.Global.prettyDate.Minute	one minute ago
 .Messages.Global.prettyDate.Minutes	{0} minutes ago
 .Messages.Global.prettyDate.Month	One month ago
 .Messages.Global.prettyDate.Months	{0} months ago
@@ -126,11 +126,26 @@
 .Pages.publishPage.tsBtnEditProvider.Tooltip	Opens an Dialog for editing the selected Publishprovider.
 .Pages.publishPage.tsBtnRemoveProvider.Text	Remove
 .Pages.publishPage.tsBtnRemoveProvider.Tooltip	Removes the selected Publishprovider.
+.Pages.settingPage.btnBrowseAssembly.Text	...
 .Pages.settingPage.chkNativeImage.Text	Generate native Images of .NET Assemblies
 .Pages.settingPage.chkServicePackIsDefault.Text	Create Service Packs by Default.
+.Pages.settingPage.lblArgsDescFailed.Text	Argument(s) if the Update failed:
+.Pages.settingPage.lblArgsDescription.Text	You can pass specific Arguments to your Application if the Update is completed.
+.Pages.settingPage.lblArgsDescSuccess.Text	Argument(s) if the Update was successfull:
+.Pages.settingPage.lblImproveApp.Text	If you think a Feature is missing, then go to the Feedbackpanel and tell me! Thanks!
+.Pages.settingPage.lblLinkDescription.Text	This Setting specifies if the Versionnumber for new Updatepackages should typed manually or retrieved from an Application.
+.Pages.settingPage.lblLinkPath.Text	Path:
+.Pages.settingPage.lblSetupId.Text	Setup-ID:
+.Pages.settingPage.lblSetupIdDescription.Text	During the Updateprocess the Software can automatically update the Versionnumber in the Registry set by your Installer.
 .Pages.settingPage.lblTitle.Text	Updatesettings
+.Pages.settingPage.lnkGoToMsdn.Text	[url=http://msdn.microsoft.com/en-us/library/6t9t5wcf(v=vs.80).aspx]More Information[/url]
 .Pages.settingPage.nodeName.Text	Settings
+.Pages.settingPage.rbLinked.Text	Retrieve Version from Assembly:
+.Pages.settingPage.rbNotLinked.Text	Set Version manual
+.Pages.settingPage.sspArguments.Text	Arguments
 .Pages.settingPage.sspGeneral.Text	General
+.Pages.settingPage.sspImproveApp.Text	Improve this Application
+.Pages.settingPage.sspLinkedAssemblyVersion.Text	Linked Assemblyversion
 .Pages.settingPage.sspSetupId.Text	Update Setup-Id
 .Pages.startPage.lblProjectId.Text	Project-Id:
 .Pages.startPage.lblProjectName.Text	Projectname:
