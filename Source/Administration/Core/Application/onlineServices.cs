@@ -19,6 +19,7 @@
  */
 using System;
 using System.Collections.Specialized;
+using System.Globalization;
 using System.Net;
 using System.Net.Security;
 using System.Reflection;
@@ -40,7 +41,7 @@ namespace updateSystemDotNet.Administration.Core.Application {
 		}
 
 
-		/// <summary>Überprüft die Anmeldedaten eines EAP-Benutzers.</summary>
+		/// <summary>Checks the Login for Early Access Programm.</summary>
 		public bool eapLogin(string email, string password) {
 			var client = _session.createWebClient();
 			var colLogin = new NameValueCollection { { "email", email }, { "password", password } };
@@ -48,16 +49,13 @@ namespace updateSystemDotNet.Administration.Core.Application {
 			return (Encoding.UTF8.GetString(response) == _positiveEapResponse);
 		}
 
-		/// <summary>Versendet das vom Benutzer eingegebene Feedback.</summary>
+		/// <summary>Sends the Userprovided Feedback to moi :)</summary>
 		public void sendFeedback(string name, string mail, string message) {
 			var client = _session.createWebClient();
 			var postData = new NameValueCollection {
 			                                       	{"Name", name},
-			                                       	{
-			                                       		"E-Mail",
-			                                       		!string.IsNullOrEmpty(mail) ? mail : "<Keine Mailadresse angegeben>"
-			                                       		},
-			                                       	{"Nachricht", message}
+			                                       	{"E-Mail", !string.IsNullOrEmpty(mail) ? mail : "<No Mail specified>"},
+			                                       	{"Message", message}
 			                                       };
 			string response =
 				Encoding.Default.GetString(
@@ -69,28 +67,28 @@ namespace updateSystemDotNet.Administration.Core.Application {
 			}
 		}
 
-		/// <summary>Versendet einen Fehlerreport.</summary>
+		/// <summary>Sends an Errorreport.</summary>
 		public void sendExceptionReport(Exception exception, string userData) {
 			var client = _session.createWebClient();
 			var values = new NameValueCollection();
 
 			var mainAssembly = Assembly.GetExecutingAssembly();
-			values.Add("Anwendung", mainAssembly.GetName().Name);
+			values.Add("Application", mainAssembly.GetName().Name);
 			values.Add("Version", mainAssembly.GetName().Version.ToString());
-			values.Add("Betriebssystem", Environment.OSVersion.VersionString);
+			values.Add("Operating System", Environment.OSVersion.VersionString);
 			var environmentVariable = Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE");
 			values.Add("Plattform",
 			           (environmentVariable != null && environmentVariable.Contains("64") ? "64-Bit" : "32-Bit"));
-			values.Add("Anzahl Kerne", Environment.ProcessorCount.ToString());
-			values.Add("Anwendungspfad", AppDomain.CurrentDomain.BaseDirectory);
-			values.Add("Umgebungssprache", Thread.CurrentThread.CurrentUICulture.ToString());
+			values.Add("ProcessorCount", Environment.ProcessorCount.ToString(CultureInfo.InvariantCulture));
+			values.Add("Applicationpath", AppDomain.CurrentDomain.BaseDirectory);
+			values.Add("Environmentlanguage", Thread.CurrentThread.CurrentUICulture.ToString());
 			values.Add("CLR Version", Environment.Version.ToString());
 
 			if (!string.IsNullOrEmpty(userData))
 				values.Add("E-Mail", userData);
 
 
-			//Kompletten Exceptionstring zusammenbauen
+			//Build complete StackTrace
 			var sbException = new StringBuilder();
 			for (Exception exc = exception; exc != null; exc = exc.InnerException)
 				sbException.AppendLine(exc.ToString());
