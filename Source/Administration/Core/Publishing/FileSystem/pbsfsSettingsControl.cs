@@ -33,10 +33,17 @@ namespace updateSystemDotNet.Administration.Core.Publishing.FileSystem {
 
 		private void btnBrowseDirectory_Click(object sender, System.EventArgs e) {
 			using(var dialog = new FolderBrowserDialog()) {
-				dialog.Description = "Wählen Sie ein Verzeichnis aus, in welchen Sie die Updates veröffentlichen möchten:";
+				dialog.Description = Session.getLocalizedString(string.Format(localizationPath, "folderBrowser"));
 				if (dialog.ShowDialog() == DialogResult.OK)
 					txtPublishDirectory.Text = dialog.SelectedPath;
 			}
 		}
+
+		public override void localizeControl() {
+			base.localizeControl();
+			lblPublishTarget.Text = Session.getLocalizedString(string.Format(localizationPath, lblPublishTarget.Name));
+			btnBrowseDirectory.Text = Session.getLocalizedString(string.Format(localizationPath, btnBrowseDirectory.Name));
+		}
+
 	}
 }

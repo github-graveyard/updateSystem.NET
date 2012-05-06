@@ -27,7 +27,7 @@ namespace updateSystemDotNet.Administration.Core.Application {
 
 		private const string LOCALIZATION_FILE_PATH = "updateSystemDotNet.Administration.Administration";
 		private const string LOCALIZATION_NOT_FOUND = "TRANSLATION FOR {0} NOT FOUND!";
-		private const string SECTION_NAME_DIALOGS = "Dialogs";
+		internal const string SECTION_NAME_DIALOGS = "Dialogs";
 		internal const string SECTION_NAME_PAGES = "Pages";
 		private const string SECTION_NAME_MENUS = "Menus";
 		private const string SECTION_NAME_MESSAGES = "Messages";

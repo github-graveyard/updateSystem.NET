@@ -64,7 +64,7 @@ namespace updateSystemDotNet.Administration.Core.Publishing {
 			instance.Settings = new publishSettings {
 			                                        	Id = Guid.NewGuid().ToString(),
 			                                        	parentId = instance.Id,
-			                                        	Name = "Neue Veröffentlichungsschnittstelle"
+			                                        	Name = "New Publishinterface"
 			                                        };
 			return instance;
 		}
@@ -80,9 +80,13 @@ namespace updateSystemDotNet.Administration.Core.Publishing {
 				if (descriptionAttributes.Length == 0)
 					continue;
 
+				var providerDescription = (descriptionAttributes[0] as publishProviderDescriptionAttribute);
+				providerDescription.Name = _session.getLocalizedString(providerDescription.Name);
+				providerDescription.Description = _session.getLocalizedString(providerDescription.Description);
+
 				_availableProvider.Add(
 					type,
-					(publishProviderDescriptionAttribute) descriptionAttributes[0]);
+					providerDescription);
 			}
 		}
 

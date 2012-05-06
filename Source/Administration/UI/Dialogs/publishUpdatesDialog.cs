@@ -39,7 +39,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 		void bgwPublish_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e) {
 			var currentProvider = (e.UserState as IPublishProvider);
 			prgPublish.Value = e.ProgressPercentage;
-			lblCurrentPublishInformation.Text = string.Format("Veröffentliche Updates für \"{0}\" via {1}.",
+			lblCurrentPublishInformation.Text = string.Format(Session.getLocalizedString(lblCurrentPublishInformation),
 			                                                  currentProvider.Settings.Name,
 			                                                  Session.publishFactory.availableProvider[currentProvider.GetType()]
 			                                                  	.Name);
@@ -69,7 +69,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			try {
 				var resultCache = new publishResultList();
 				
-				//Alle übergebenen Veröffentlichungsschnittstellen ausführen
+				//Excute all Provider which were passed as Argument:
 				foreach (var provider in _provider) {
 					try {
 						provider.publishUpdateProgressChanged += provider_publishUpdateProgressChanged;

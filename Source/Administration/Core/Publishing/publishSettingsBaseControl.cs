@@ -35,12 +35,18 @@ namespace updateSystemDotNet.Administration.Core.Publishing {
 
 		public IPublishProvider Provider { get; set; }
 
+		protected string localizationPath {
+			get { return string.Format("publishProvider.{0}.Control.{1}.Text", Provider.GetType().Name, "{0}"); }
+		}
+
 		public virtual void loadSettings() {
 		}
 		public virtual void saveSettings() {
 		}
 		public virtual bool validateSettings() {
 			return true;
+		}
+		public virtual void localizeControl() {
 		}
 
 		protected void addOrUpdateSetting(string key, string setting) {

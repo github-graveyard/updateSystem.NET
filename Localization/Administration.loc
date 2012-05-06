@@ -24,6 +24,8 @@
 .Dialogs.authorizeUpdateLogDialog.lblTitle.Text	Connect with a updateLog-Account
 .Dialogs.authorizeUpdateLogDialog.lblUsername.Text	Username:
 .Dialogs.authorizeUpdateLogDialog.Title	updateLog
+.Dialogs.chooseNewPublishProviderDialog.lblNewProvider.Text	Choose a new Provider for Publishing Updates from the List below:
+.Dialogs.chooseNewPublishProviderDialog.Title	Choose a new Publishprovider
 .Dialogs.Global.btnBrowse.Text	Browse...
 .Dialogs.Global.btnCancel.Text	Cancel
 .Dialogs.Global.btnClose.Text	Close
@@ -56,6 +58,21 @@
 .Dialogs.proxySettingsDialog.rbSystemProxy.Text	Use Defaultproxy
 .Dialogs.proxySettingsDialog.rbWinAuth.Text	Use Windowsauthentication
 .Dialogs.proxySettingsDialog.Title	Proxyconfiguration
+.Dialogs.publishProviderSettingsDialog.btnOk.Text	Save
+.Dialogs.publishProviderSettingsDialog.lblActive.Text	Active:
+.Dialogs.publishProviderSettingsDialog.lblName.Text	Name:
+.Dialogs.publishProviderSettingsDialog.Title	Publishprovidersettings
+.Dialogs.publishUpdatesDialog.lblCurrentPublishInformation.Text	Publishing Updates for "{0}" via {1}.
+.Dialogs.publishUpdatesDialog.lblTitle.Text	Publishing Updates
+.Dialogs.publishUpdatesDialog.Title	Publishing
+.Dialogs.publishUpdatesResultDialog.chkHidePublishResult.Text	Skip this Dialog next time if no errors occurred
+.Dialogs.publishUpdatesResultDialog.lvwResult.Columns.clmErrorMessage	Errormessage
+.Dialogs.publishUpdatesResultDialog.lvwResult.Columns.clmInterface	Interface
+.Dialogs.publishUpdatesResultDialog.lvwResult.Columns.clmName	Name
+.Dialogs.publishUpdatesResultDialog.lvwResult.Columns.grpFailed	Failed
+.Dialogs.publishUpdatesResultDialog.lvwResult.Columns.grpSuccess	Successfull
+.Dialogs.publishUpdatesResultDialog.mnuExportCSV.Text	Export as CSV-File
+.Dialogs.publishUpdatesResultDialog.Title	Publishing completed
 .Dialogs.saveProjectDialog.btnOk.Text	Save Project
 .Dialogs.saveProjectDialog.lblDestination.Text	Destination:
 .Dialogs.saveProjectDialog.lblProjectName.Text	Projectname:
@@ -92,6 +109,7 @@
 .Menus.tosMain.tsBtnPublish.Text	Publish
 .Menus.tosMain.tsBtnSaveProject.Text	Save
 .Messages.feedbackPage.feedbackSent	Thanks! Your Feedback has been successfully sent.
+.Messages.Global.Never	Never
 .Messages.Global.No	No
 .Messages.Global.prettyDate.Day	Yesterday
 .Messages.Global.prettyDate.Days	{0} days ago
@@ -105,9 +123,24 @@
 .Messages.Global.prettyDate.Seconds	{0} seconds ago
 .Messages.Global.prettyDate.Year	One year ago
 .Messages.Global.prettyDate.Years	{0} years ago
+.Messages.Global.Unknown	Unknown
 .Messages.Global.Yes	Yes
 .Messages.manageUpdateLogProjectDialog.serverError	The Server returned an error while performing your request
 .Messages.manageUpdateLogUserDialog.serverError	The Server returned an error while performing your request
+.Messages.statisticSettingsSubPage.Adding	Adding...
+.Messages.statisticSettingsSubPage.cleanupSuccessfull	The Request has been successfully completed and removed {0} Entries from the Server.
+.Messages.statisticSettingsSubPage.confirmCleanupBody	Are you sure that you want to delete all Entries which are older than {0}?
+.Messages.statisticSettingsSubPage.confirmCleanupCaption	Confirm Cleanup
+.Messages.statisticSettingsSubPage.confirmDeleteBody	Are you sure that you want to delete this Project from the Server?
+.Messages.statisticSettingsSubPage.confirmDeleteCaption	Confirm deletion
+.Messages.statisticSettingsSubPage.Deleting	Deleting...
+.Messages.statisticSettingsSubPage.notPresent	Not Present
+.Messages.statisticSettingsSubPage.notPresentDescription	The Project doesn't exists on the Server. Click "Add Project" to Enable the Statisticfeature for this Project.
+.Messages.statisticSettingsSubPage.Present	Present
+.Messages.statisticSettingsSubPage.presentDescription	This Project exists on the Server and Statistics are being collected. To remove all collected data and the Project itself press the "Remove Project" Button.
+.Messages.statisticSettingsSubPage.projectStateTemplate	Projectstatus: {0}
+.Messages.statisticSettingsSubPage.unknownProjectState	The Status of the Project has not been determined yet. Hit "Refresh Status" to refresh the Projectstatus (captain obvious said)
+.Messages.statisticSettingsSubPage.Updating	Updating...
 .Messages.updateSubPage.confirmDeleteBody	Are you sure that you want to delete this Updatepackage?
 .Messages.updateSubPage.confirmDeleteCaption	Confirm delete
 .Messages.updateSubPage.neverPublished	Never
@@ -173,6 +206,13 @@
 .Pages.statisticProjectsSubPage.tsBtnEditProject.Text	Edit Project
 .Pages.statisticProjectsSubPage.tsBtnRefresh.Text	Refresh
 .Pages.statisticProjectsSubPage.tsBtnRemoveProject.Text	Remove
+.Pages.statisticSettingsSubPage.btnAddProject.Text	Add Project
+.Pages.statisticSettingsSubPage.btnCleanup.Text	Cleanup
+.Pages.statisticSettingsSubPage.btnRemoveProject.Text	Remove Project
+.Pages.statisticSettingsSubPage.btnUpdateState.Text	Refresh status
+.Pages.statisticSettingsSubPage.grpMaintenance.Text	Maintenance
+.Pages.statisticSettingsSubPage.grpState.Text	Status
+.Pages.statisticSettingsSubPage.lblMaintenance.Text	You can remove Statisticentries from this Project which are older as the Date set below:
 .Pages.statisticSettingsSubPage.nodeName.Text	Configuration
 .Pages.statisticUsersSubPage.lblTitle.Text	Usermanagement
 .Pages.statisticUsersSubPage.lvwUser.Columns.clmActive	Active
@@ -203,6 +243,20 @@
 .Pages.updateSubPage.tsBtnEditPackage.Text	Edit Updatepackage
 .Pages.updateSubPage.tsBtnRemovePackage.Text	Remove
 .Pages.updateSubPage.tsBtnRemovePackage.Tooltip	Removes the selected Updatepackage.
+.publishProvider.pbsFileSystem.Control.btnBrowseDirectory.Text	Browse...
+.publishProvider.pbsFileSystem.Control.folderBrowser.Text	Choose an Targetdirectory in which the Updates should be published:
+.publishProvider.pbsFileSystem.Control.lblPublishTarget.Text	Publishdirectory:
+.publishProvider.pbsFileSystem.Description	Publishes Updates to the Windows Filesystem or a Networkshare.
+.publishProvider.pbsFileSystem.Name	Filesystem
+.publishProvider.pbsFtp.Control.cboConnectionType.Text	Passive (Recommended);Active
+.publishProvider.pbsFtp.Control.cboProtocol.Text	FTP;FTP/SSL (Explicit);FTP/SSL (Implicit)
+.publishProvider.pbsFtp.Control.lblConnection.Text	Connection:
+.publishProvider.pbsFtp.Control.lblDirectory.Text	Directory
+.publishProvider.pbsFtp.Control.lblPassword.Text	Password:
+.publishProvider.pbsFtp.Control.lblPort.Text	Port
+.publishProvider.pbsFtp.Control.lblProtocol.Text	Protocol:
+.publishProvider.pbsFtp.Control.lblServerAddress.Text	Server:
+.publishProvider.pbsFtp.Control.lblUsername.Text	Username:
+.publishProvider.pbsFtp.Description	Publishes Updates over FTP or FTPS (SSL Implicit or Explicit). This Interface does not support Proxyserver.
+.publishProvider.pbsFtp.Name	FTP
 de.Dialogs.Global.btnClose.Text	Schließen
-
-xt	Schließen

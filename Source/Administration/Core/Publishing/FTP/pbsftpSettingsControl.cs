@@ -17,6 +17,10 @@
  * YOU MUST PASS THIS DISCLAIMER ON WHENEVER YOU DISTRIBUTE THE WORK OR
  * DERIVATIVE WORKS.
  */
+
+using System;
+using System.Globalization;
+
 namespace updateSystemDotNet.Administration.Core.Publishing.FTP {
 	internal partial class pbsftpSettingsControl : publishSettingsBaseControl {
 
@@ -30,7 +34,7 @@ namespace updateSystemDotNet.Administration.Core.Publishing.FTP {
 			int port;
 			if (!int.TryParse(getSetting(pbsFtp.pbsFtpSetting_Port, "21"), out port))
 				port = 21;
-			txtPort.Text = port.ToString();
+			txtPort.Text = port.ToString(CultureInfo.InvariantCulture);
 
 			int protocol;
 			if (!int.TryParse(getSetting(pbsFtp.pbsFtpSetting_Protocol, "0"), out protocol))
@@ -51,12 +55,32 @@ namespace updateSystemDotNet.Administration.Core.Publishing.FTP {
 			
 			addOrUpdateSetting(pbsFtp.pbsFtpSetting_Host, txtHost.Text);
 			addOrUpdateSetting(pbsFtp.pbsFtpSetting_Port, txtPort.Text);
-			addOrUpdateSetting(pbsFtp.pbsFtpSetting_Protocol, cboProtocol.SelectedIndex.ToString());
-			addOrUpdateSetting(pbsFtp.pbsFtpSetting_ConnectionType, cboConnectionType.SelectedIndex.ToString());
+			addOrUpdateSetting(pbsFtp.pbsFtpSetting_Protocol, cboProtocol.SelectedIndex.ToString(CultureInfo.InvariantCulture));
+			addOrUpdateSetting(pbsFtp.pbsFtpSetting_ConnectionType, cboConnectionType.SelectedIndex.ToString(CultureInfo.InvariantCulture));
 			addOrUpdateSetting(pbsFtp.pbsFtpSetting_Username, txtUsername.Text);
 			addOrUpdateSetting(pbsFtp.pbsFtpSetting_Password, txtPassword.Text);
 			addOrUpdateSetting(pbsFtp.pbsFtpSetting_Directory, txtDirectory.Text);
 
 		}
+
+		public override void localizeControl() {
+			base.localizeControl();
+			lblServerAddress.Text = Session.getLocalizedString(string.Format(localizationPath, lblServerAddress.Name));
+			lblPort.Text = Session.getLocalizedString(string.Format(localizationPath, lblPort.Name));
+			lblProtocol.Text = Session.getLocalizedString(string.Format(localizationPath, lblProtocol.Name));
+			lblConnection.Text = Session.getLocalizedString(string.Format(localizationPath, lblConnection.Name));
+			lblUsername.Text = Session.getLocalizedString(string.Format(localizationPath, lblUsername.Name));
+			lblPassword.Text = Session.getLocalizedString(string.Format(localizationPath, lblPassword.Name));
+			lblDirectory.Text = Session.getLocalizedString(string.Format(localizationPath, lblDirectory.Name));
+
+			cboProtocol.Items.Clear();
+			cboProtocol.Items.AddRange(
+				(string[])Session.getLocalizedString(string.Format(localizationPath, cboProtocol.Name)).Split(new[] {";"}, StringSplitOptions. RemoveEmptyEntries));
+
+			cboConnectionType.Items.Clear();
+			cboConnectionType.Items.AddRange(
+				(string[])Session.getLocalizedString(string.Format(localizationPath, cboConnectionType.Name)).Split(new[] {";"}, StringSplitOptions.RemoveEmptyEntries));
+		}
+
 	}
 }

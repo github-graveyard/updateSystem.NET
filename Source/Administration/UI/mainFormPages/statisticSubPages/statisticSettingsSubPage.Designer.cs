@@ -27,13 +27,13 @@
 			this.aclCleanup = new updateSystemDotNet.Administration.UI.Controls.actionLabel();
 			this.btnCleanup = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.dtpCleanup = new System.Windows.Forms.DateTimePicker();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblMaintenance = new System.Windows.Forms.Label();
 			this.grpState = new updateSystemDotNet.Administration.UI.Controls.groupBoxEx();
 			this.lblStateDescription = new System.Windows.Forms.Label();
 			this.aclState = new updateSystemDotNet.Administration.UI.Controls.actionLabel();
 			this.flpStatusControls = new System.Windows.Forms.FlowLayoutPanel();
 			this.btnAddProject = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
-			this.btnRemoveProjekt = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
+			this.btnRemoveProject = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.btnUpdateState = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.bgwUpdateState = new System.ComponentModel.BackgroundWorker();
 			this.bgwAddProject = new System.ComponentModel.BackgroundWorker();
@@ -46,12 +46,12 @@
 			// 
 			// grpMaintenance
 			// 
-			this.grpMaintenance.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.grpMaintenance.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.grpMaintenance.Controls.Add(this.aclCleanup);
 			this.grpMaintenance.Controls.Add(this.btnCleanup);
 			this.grpMaintenance.Controls.Add(this.dtpCleanup);
-			this.grpMaintenance.Controls.Add(this.label1);
+			this.grpMaintenance.Controls.Add(this.lblMaintenance);
 			this.grpMaintenance.Enabled = false;
 			this.grpMaintenance.Location = new System.Drawing.Point(4, 191);
 			this.grpMaintenance.Name = "grpMaintenance";
@@ -62,8 +62,8 @@
 			// 
 			// aclCleanup
 			// 
-			this.aclCleanup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.aclCleanup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.aclCleanup.BackColor = System.Drawing.Color.Transparent;
 			this.aclCleanup.Location = new System.Drawing.Point(244, 61);
 			this.aclCleanup.Name = "aclCleanup";
@@ -81,7 +81,7 @@
 			this.btnCleanup.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.btnCleanup.Location = new System.Drawing.Point(142, 60);
 			this.btnCleanup.Name = "btnCleanup";
-			this.btnCleanup.Size = new System.Drawing.Size(96, 24);
+			this.btnCleanup.Size = new System.Drawing.Size(90, 22);
 			this.btnCleanup.TabIndex = 2;
 			this.btnCleanup.Text = "Daten löschen";
 			this.btnCleanup.UseVisualStyleBackColor = true;
@@ -95,21 +95,21 @@
 			this.dtpCleanup.Size = new System.Drawing.Size(117, 23);
 			this.dtpCleanup.TabIndex = 1;
 			// 
-			// label1
+			// lblMaintenance
 			// 
-			this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.label1.Location = new System.Drawing.Point(12, 22);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(450, 32);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Hier können Sie Statistikeinträge von diesem Projekt löschen, die älter als das e" +
-				"ingestellte Datum sind.";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblMaintenance.Dock = System.Windows.Forms.DockStyle.Top;
+			this.lblMaintenance.Location = new System.Drawing.Point(12, 19);
+			this.lblMaintenance.Name = "lblMaintenance";
+			this.lblMaintenance.Size = new System.Drawing.Size(450, 32);
+			this.lblMaintenance.TabIndex = 0;
+			this.lblMaintenance.Text = "Hier können Sie Statistikeinträge von diesem Projekt löschen, die älter als das e" +
+    "ingestellte Datum sind.";
+			this.lblMaintenance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// grpState
 			// 
-			this.grpState.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.grpState.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.grpState.Controls.Add(this.lblStateDescription);
 			this.grpState.Controls.Add(this.aclState);
 			this.grpState.Controls.Add(this.flpStatusControls);
@@ -142,7 +142,7 @@
 			// flpStatusControls
 			// 
 			this.flpStatusControls.Controls.Add(this.btnAddProject);
-			this.flpStatusControls.Controls.Add(this.btnRemoveProjekt);
+			this.flpStatusControls.Controls.Add(this.btnRemoveProject);
 			this.flpStatusControls.Controls.Add(this.btnUpdateState);
 			this.flpStatusControls.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.flpStatusControls.Location = new System.Drawing.Point(12, 118);
@@ -164,19 +164,19 @@
 			this.btnAddProject.Visible = false;
 			this.btnAddProject.Click += new System.EventHandler(this.btnAddProject_Click);
 			// 
-			// btnRemoveProjekt
+			// btnRemoveProject
 			// 
-			this.btnRemoveProjekt.AutoSize = true;
-			this.btnRemoveProjekt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.btnRemoveProjekt.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this.btnRemoveProjekt.Location = new System.Drawing.Point(130, 3);
-			this.btnRemoveProjekt.Name = "btnRemoveProjekt";
-			this.btnRemoveProjekt.Size = new System.Drawing.Size(112, 24);
-			this.btnRemoveProjekt.TabIndex = 1;
-			this.btnRemoveProjekt.Text = "Projekt entfernen";
-			this.btnRemoveProjekt.UseVisualStyleBackColor = true;
-			this.btnRemoveProjekt.Visible = false;
-			this.btnRemoveProjekt.Click += new System.EventHandler(this.btnRemoveProjekt_Click);
+			this.btnRemoveProject.AutoSize = true;
+			this.btnRemoveProject.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.btnRemoveProject.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this.btnRemoveProject.Location = new System.Drawing.Point(130, 3);
+			this.btnRemoveProject.Name = "btnRemoveProject";
+			this.btnRemoveProject.Size = new System.Drawing.Size(112, 24);
+			this.btnRemoveProject.TabIndex = 1;
+			this.btnRemoveProject.Text = "Projekt entfernen";
+			this.btnRemoveProject.UseVisualStyleBackColor = true;
+			this.btnRemoveProject.Visible = false;
+			this.btnRemoveProject.Click += new System.EventHandler(this.btnRemoveProjekt_Click);
 			// 
 			// btnUpdateState
 			// 
@@ -237,14 +237,14 @@
 		private updateSystemDotNet.Administration.UI.Controls.groupBoxEx grpState;
 		private System.Windows.Forms.FlowLayoutPanel flpStatusControls;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnAddProject;
-		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnRemoveProjekt;
+		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnRemoveProject;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnUpdateState;
 		private updateSystemDotNet.Administration.UI.Controls.actionLabel aclState;
 		private System.Windows.Forms.Label lblStateDescription;
 		private System.ComponentModel.BackgroundWorker bgwUpdateState;
 		private System.ComponentModel.BackgroundWorker bgwAddProject;
 		private System.Windows.Forms.DateTimePicker dtpCleanup;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblMaintenance;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnCleanup;
 		private System.ComponentModel.BackgroundWorker bgwDeleteProject;
 		private System.ComponentModel.BackgroundWorker bgwCleanup;

@@ -21,6 +21,7 @@ using System;
 using updateSystemDotNet.Administration.Core.Publishing;
 using System.Windows.Forms;
 using System.Drawing;
+using updateSystemDotNet.Administration.Core.Application;
 
 namespace updateSystemDotNet.Administration.UI.Dialogs {
 	internal partial class publishUpdatesResultDialog : dialogBase {
@@ -62,13 +63,24 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			chkHidePublishResult.Checked = Session.currentProject.hidePublishResult;
 		}
 
+		public override void localizeDialog() {
+			base.localizeDialog();
+			lvwResult.Columns[0].Text = localizeListViewColumn(lvwResult, "clmName");
+			lvwResult.Columns[1].Text = localizeListViewColumn(lvwResult, "clmInterface");
+			lvwResult.Columns[2].Text = localizeListViewColumn(lvwResult, "clmErrorMessage");
+			lvwResult.Groups["grpSuccess"].Header = localizeListViewColumn(lvwResult, "grpSuccess");
+			lvwResult.Groups["grpFailed"].Header = localizeListViewColumn(lvwResult, "grpFailed");
+			mnuExportCSV.Text =
+				Session.getLocalizedString(string.Format("{0}.{1}.{2}.Text", applicationSession.SECTION_NAME_DIALOGS, Name, mnuExportCSV.Name));
+		}
+
 		private void btnClose_Click(object sender, EventArgs e) {
 			Close();
 		}
 
 		private void mnuExportCSV_Click(object sender, EventArgs e) {
 			using(var dialog = new SaveFileDialog()) {
-				dialog.Filter = "CSV-Dateien|*.csv";
+				dialog.Filter = "CSV-Files|*.csv";
 				if (dialog.ShowDialog(this) == DialogResult.OK)
 					lvwResult.exportAsCSV(dialog.FileName);
 			}

@@ -42,7 +42,13 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 				optWidth -= (SystemInformation.VerticalScrollBarWidth + 5);
 
 			_extendedSettings.Size = new Size(optWidth, _extendedSettings.Height);
+			_extendedSettings.localizeControl();
 			_extendedSettings.loadSettings();
+		}
+
+		public override void localizeDialog() {
+			base.localizeDialog();
+			chkActive.Text = string.Empty; //This one has an external description
 		}
 
 		private void btnOk_Click(object sender, System.EventArgs e) {

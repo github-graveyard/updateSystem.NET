@@ -85,7 +85,7 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages {
 				};
 
 				item.SubItems.Add(
-					provider.Settings.lastPublished == DateTime.MinValue ? "<Noch nie>" : Session.relativeDate(provider.Settings.lastPublished));
+					provider.Settings.lastPublished == DateTime.MinValue ? Session.localizeMessage("Never") : Session.relativeDate(provider.Settings.lastPublished));
 				lvwPublish.Items.Add(item);
 			}
 

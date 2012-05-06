@@ -26,7 +26,7 @@
 			this.buttonArea1 = new updateSystemDotNet.Administration.UI.Controls.buttonArea();
 			this.btnCancel = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.prgPublish = new System.Windows.Forms.ProgressBar();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblTitle = new System.Windows.Forms.Label();
 			this.lblCurrentPublishInformation = new System.Windows.Forms.Label();
 			this.bgwPublish = new System.ComponentModel.BackgroundWorker();
 			this.buttonArea1.SuspendLayout();
@@ -57,28 +57,28 @@
 			// 
 			// prgPublish
 			// 
-			this.prgPublish.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.prgPublish.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.prgPublish.Location = new System.Drawing.Point(12, 99);
 			this.prgPublish.Name = "prgPublish";
 			this.prgPublish.Size = new System.Drawing.Size(407, 20);
 			this.prgPublish.TabIndex = 1;
 			// 
-			// label1
+			// lblTitle
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(153)))));
-			this.label1.Location = new System.Drawing.Point(12, 12);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(168, 21);
-			this.label1.TabIndex = 2;
-			this.label1.Text = "Veröffentliche Updates";
+			this.lblTitle.AutoSize = true;
+			this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(153)))));
+			this.lblTitle.Location = new System.Drawing.Point(12, 12);
+			this.lblTitle.Name = "lblTitle";
+			this.lblTitle.Size = new System.Drawing.Size(168, 21);
+			this.lblTitle.TabIndex = 2;
+			this.lblTitle.Text = "Veröffentliche Updates";
 			// 
 			// lblCurrentPublishInformation
 			// 
-			this.lblCurrentPublishInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.lblCurrentPublishInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblCurrentPublishInformation.Location = new System.Drawing.Point(12, 49);
 			this.lblCurrentPublishInformation.Name = "lblCurrentPublishInformation";
 			this.lblCurrentPublishInformation.Size = new System.Drawing.Size(407, 37);
@@ -97,7 +97,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(434, 187);
 			this.Controls.Add(this.lblCurrentPublishInformation);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.prgPublish);
 			this.Controls.Add(this.buttonArea1);
 			this.Name = "publishUpdatesDialog";
@@ -114,7 +114,7 @@
 		private updateSystemDotNet.Administration.UI.Controls.buttonArea buttonArea1;
 		private updateSystemDotNet.Administration.UI.Controls.buttonEx btnCancel;
 		private System.Windows.Forms.ProgressBar prgPublish;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblTitle;
 		private System.Windows.Forms.Label lblCurrentPublishInformation;
 		private System.ComponentModel.BackgroundWorker bgwPublish;
 	}

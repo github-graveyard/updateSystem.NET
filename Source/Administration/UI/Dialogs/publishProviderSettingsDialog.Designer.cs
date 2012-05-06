@@ -26,10 +26,10 @@
 			this.buttonArea1 = new updateSystemDotNet.Administration.UI.Controls.buttonArea();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.btnOk = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblName = new System.Windows.Forms.Label();
 			this.txtProviderName = new System.Windows.Forms.TextBox();
 			this.chkActive = new System.Windows.Forms.CheckBox();
-			this.label2 = new System.Windows.Forms.Label();
+			this.lblActive = new System.Windows.Forms.Label();
 			this.pnlProviderSettings = new System.Windows.Forms.Panel();
 			this.buttonArea1.SuspendLayout();
 			this.SuspendLayout();
@@ -70,19 +70,19 @@
 			this.btnOk.UseVisualStyleBackColor = true;
 			this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
 			// 
-			// label1
+			// lblName
 			// 
-			this.label1.Location = new System.Drawing.Point(12, 12);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(119, 23);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "Name:";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblName.Location = new System.Drawing.Point(12, 12);
+			this.lblName.Name = "lblName";
+			this.lblName.Size = new System.Drawing.Size(119, 23);
+			this.lblName.TabIndex = 1;
+			this.lblName.Text = "Name:";
+			this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// txtProviderName
 			// 
-			this.txtProviderName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.txtProviderName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtProviderName.Location = new System.Drawing.Point(137, 12);
 			this.txtProviderName.Name = "txtProviderName";
 			this.txtProviderName.Size = new System.Drawing.Size(334, 23);
@@ -90,8 +90,8 @@
 			// 
 			// chkActive
 			// 
-			this.chkActive.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.chkActive.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.chkActive.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.chkActive.Location = new System.Drawing.Point(137, 41);
 			this.chkActive.Name = "chkActive";
@@ -99,20 +99,20 @@
 			this.chkActive.TabIndex = 3;
 			this.chkActive.UseVisualStyleBackColor = true;
 			// 
-			// label2
+			// lblActive
 			// 
-			this.label2.Location = new System.Drawing.Point(12, 41);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(119, 23);
-			this.label2.TabIndex = 4;
-			this.label2.Text = "Aktiviert:";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblActive.Location = new System.Drawing.Point(12, 41);
+			this.lblActive.Name = "lblActive";
+			this.lblActive.Size = new System.Drawing.Size(119, 23);
+			this.lblActive.TabIndex = 4;
+			this.lblActive.Text = "Aktiviert:";
+			this.lblActive.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// pnlProviderSettings
 			// 
-			this.pnlProviderSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.pnlProviderSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.pnlProviderSettings.AutoScroll = true;
 			this.pnlProviderSettings.Location = new System.Drawing.Point(12, 70);
 			this.pnlProviderSettings.Name = "pnlProviderSettings";
@@ -125,10 +125,10 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(486, 283);
 			this.Controls.Add(this.pnlProviderSettings);
-			this.Controls.Add(this.label2);
+			this.Controls.Add(this.lblActive);
 			this.Controls.Add(this.chkActive);
 			this.Controls.Add(this.txtProviderName);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.lblName);
 			this.Controls.Add(this.buttonArea1);
 			this.Name = "publishProviderSettingsDialog";
 			this.Text = "publishProviderSettingsDialog";
@@ -144,10 +144,10 @@
 		private updateSystemDotNet.Administration.UI.Controls.buttonArea buttonArea1;
 		private System.Windows.Forms.Button btnCancel;
 		private System.Windows.Forms.Button btnOk;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblName;
 		private System.Windows.Forms.TextBox txtProviderName;
 		private System.Windows.Forms.CheckBox chkActive;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label lblActive;
 		private System.Windows.Forms.Panel pnlProviderSettings;
 	}
 }

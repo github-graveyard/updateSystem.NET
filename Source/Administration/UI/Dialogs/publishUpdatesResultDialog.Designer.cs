@@ -30,9 +30,9 @@
 			this.btnClose = new updateSystemDotNet.Administration.UI.Controls.buttonEx();
 			this.chkHidePublishResult = new System.Windows.Forms.CheckBox();
 			this.lvwResult = new updateSystemDotNet.Administration.UI.Controls.extendedListView();
-			this.clmName = new System.Windows.Forms.ColumnHeader();
-			this.clmPublishInterface = new System.Windows.Forms.ColumnHeader();
-			this.clmError = new System.Windows.Forms.ColumnHeader();
+			this.clmName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.clmPublishInterface = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.clmError = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.ctxResult = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.mnuExportCSV = new System.Windows.Forms.ToolStripMenuItem();
 			this.buttonArea1.SuspendLayout();
@@ -79,9 +79,9 @@
 			// 
 			// lvwResult
 			// 
-			this.lvwResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.lvwResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.lvwResult.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clmName,
             this.clmPublishInterface,

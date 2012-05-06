@@ -27,75 +27,81 @@ using updateSystemDotNet.Administration.Core.updateLog.Responses;
 namespace updateSystemDotNet.Administration.UI.mainFormPages.statisticSubPages {
 	internal partial class statisticSettingsSubPage : statisticSubBasePage {
 
-		private const string projectStateTemplate = "Projektstatus: {0}";
-		private const string unknownProjectState = "Der Status für dieses Projekt wurde noch nicht ermittelt. Klicken Sie auf 'Status aktualisieren' um den Projektstatus zu erneuern.";
+		private string projectStateTemplate = string.Empty;
+		private string unknownProjectState = string.Empty;
 
 		public statisticSettingsSubPage() {
 			InitializeComponent();
-			aclState.Text = string.Format(projectStateTemplate, "Unbekannt");
-			lblStateDescription.Text = unknownProjectState;
 			pageSymbol = resourceHelper.getImage("projectEdit.png");
 			Id = "7cd67d4c-667c-457f-8089-51464c5bea56";
 			dtpCleanup.Value = DateTime.Now.AddMonths(-3);
 			dtpCleanup.MaxDate = DateTime.Now;
 		}
 
+		public override void initializeLocalization() {
+			base.initializeLocalization();
+			projectStateTemplate = Session.localizeMessage("projectStateTemplate", this);
+			unknownProjectState = Session.localizeMessage("unknownProjectState", this);
+			aclState.Text = string.Format(projectStateTemplate, Session.localizeMessage("Unknown"));
+			lblStateDescription.Text = unknownProjectState;
+		}
+
 		private void btnUpdateState_Click(object sender, EventArgs e) {
 			beginUpdateState();
 		}
 
-		/// <summary>Beginnt mit der Aktualisierung des Projektstatusses.</summary>
+		/// <summary>Starts the Serverrequest for determining the Projectstate.</summary>
 		private void beginUpdateState() {
 			
-			//Controls anpassen
+			//Update controls
 			flpStatusControls.Enabled = false;
 			aclState.State = actionLabelStates.Progress;
-			aclState.Text = string.Format(projectStateTemplate, "Wird aktualisiert...");
+			aclState.Text = string.Format(projectStateTemplate, Session.localizeMessage("Updating", this));
 
-			//Serveranfrage starten
+			//Send Request
 			bgwUpdateState.RunWorkerAsync();
 
 		}
 
-		/// <summary>Setzt den Projektstatus anhand des Resultobjektes das vom Backgroundworker übergeben wurde.</summary>
+		/// <summary>Sets the Projectstate based on the Object returned by the BackgroundWorker.</summary>
 		private void endUpdateState(object result) {
 			
-			//Statuscontrols anpassen
+			//Update statuscontrols
 			aclState.State = actionLabelStates.Waiting;
 			flpStatusControls.Enabled = true;
 
-			//Überprüfen ob die Anfrage erfolgreich war
-			string stateText = string.Format(projectStateTemplate, "Unbekannt");
+			//Check if the Request was successfull
+			string stateText = string.Format(projectStateTemplate, Session.localizeMessage("Unknown"));
 			string stateDescription = unknownProjectState;
 			if(result is updateLogProject || result == null) {
 
-				//Controls zurücksetzen
+				//Reset Controls
 				btnAddProject.Hide();
-				btnRemoveProjekt.Hide();
+				btnRemoveProject.Hide();
 				grpMaintenance.Enabled = false;
 
 				var project = result as updateLogProject;
-				if(project != null) { //Das Projekt ist bereits auf dem Server vorhanden
+				if(project != null) { //The Project exists on the Server
 					
-					//Button zum löschen anzeigen
-					btnRemoveProjekt.Show();
+					//Show the Button for deleting the Project
+					btnRemoveProject.Show();
 
-					//Wartungsaufgaben anzeigen
+					//Show Maintenancetasks
 					grpMaintenance.Enabled = true;
 
-					stateText = string.Format(projectStateTemplate, "Vorhanden");
+					stateText = string.Format(projectStateTemplate, Session.localizeMessage("Present", this));
 					Session.currentProject.updateLogEnabled = true;
-					stateDescription = "Dieses Projekt ist auf dem Server vorhanden und es werden Statistikdaten erfasst. Um alle gesammelten Daten sowie das Projekt als solches zu löschen, klicken Sie auf 'Projekt entfernen'.";
+					stateDescription = Session.localizeMessage("presentDescription", this);
 					aclState.State = actionLabelStates.Success;
 				}
-				else { //Das Projekt ist noch nicht auf dem Server vorhanden
+				else { //The Project doesn't exists yet
 					btnAddProject.Show();
 					Session.currentProject.updateLogEnabled = false;
-					stateText = string.Format(projectStateTemplate, "Nicht vorhanden");
-					stateDescription = "Dieses Projekt ist noch nicht auf dem Server vorhanden. Klicken Sie auf 'Projekt hinzufügen' um für dieses Projekt Statistikdaten erfassen zu können.";
+					stateText = string.Format(projectStateTemplate, Session.localizeMessage("notPresent", this));
+					stateDescription = Session.localizeMessage("notPresent", this);
 				}
 			}
-			else { //Fehler
+			else { //Error
 				showServerError(result as Exception);
 			}
 			aclState.Text = stateText;
@@ -116,26 +122,26 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.statisticSubPages {
 		}
 
 		private void beginAddProject() {
-			//Control anpassen
+			//Update Controls
 			flpStatusControls.Enabled = false;
 			aclState.State = actionLabelStates.Progress;
-			aclState.Text = string.Format(projectStateTemplate, "Wird hinzugefügt...");
+			aclState.Text = string.Format(projectStateTemplate, Session.localizeMessage("Adding",this));
 
-			//Server anfrage abschicken
+			//Send Request
 			bgwAddProject.RunWorkerAsync();
 		}
 
 		private void endAddProject(object result) {
 			
-			if(result == null) { //Kein Fehler beim hinzufügen
-				//Status aktualisieren
+			if(result == null) { // No error while adding the Project
+				//Update status
 				beginUpdateState();
 			}
 			else {
-				//Controls wieder freischalten
+				//enable Controls
 				flpStatusControls.Enabled = true;
 				aclState.State = actionLabelStates.Waiting;
-				aclState.Text = string.Format(projectStateTemplate, "Unbekannt");
+				aclState.Text = string.Format(projectStateTemplate, Session.localizeMessage("Unknown"));
 
 				showServerError(result as Exception);
 			}
@@ -164,26 +170,25 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.statisticSubPages {
 
 		private void beginDeleteProject() {
 		
-			//Controls anpassen
+			//Update Controls
 			flpStatusControls.Enabled = false;
 			aclState.State = actionLabelStates.Progress;
-			aclState.Text = string.Format(projectStateTemplate, "Wird entfernt...");
+			aclState.Text = string.Format(projectStateTemplate, Session.localizeMessage("Deleting", this));
 
-			//Serveranfrage abschicken
+			//Send request
 			bgwDeleteProject.RunWorkerAsync();
-
 		}
 
 		private void endDeleteProject(object result) {
-			if (result == null) { //Kein Fehler beim hinzufügen
-				//Status aktualisieren
+			if (result == null) { //No error while deleting
+				//Update status
 				beginUpdateState();
 			}
 			else {
-				//Controls wieder freischalten
+				//enable Controls
 				flpStatusControls.Enabled = true;
 				aclState.State = actionLabelStates.Waiting;
-				aclState.Text = string.Format(projectStateTemplate, "Unbekannt");
+				aclState.Text = string.Format(projectStateTemplate, Session.localizeMessage("Unknown"));
 
 				showServerError( result as Exception );
 			}
@@ -203,7 +208,7 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.statisticSubPages {
 		}
 
 		private void btnRemoveProjekt_Click(object sender, EventArgs e) {
-			if (Session.showMessage(ParentForm, "Sind Sie sicher, dass Sie das Projekt wirklich löschen möchten?", "Löschvorgang bestätigen", MessageBoxIcon.Exclamation, MessageBoxButtons.YesNo) != DialogResult.Yes)
+			if (Session.showMessage(ParentForm, Session.localizeMessage("confirmDeleteBody", this), Session.localizeMessage("confirmDeleteCaption", this), MessageBoxIcon.Exclamation, MessageBoxButtons.YesNo) != DialogResult.Yes)
 				return;
 
 			beginDeleteProject();
@@ -212,25 +217,27 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.statisticSubPages {
 		#region Cleanup
 
 		private void btnCleanup_Click(object sender, EventArgs e) {
-			beginCleanup();
+			if (!beginCleanup())
+				return;
 
-			//UI deaktivieren
+			//disable UI
 			grpState.Enabled = false;
 			btnCleanup.Enabled = false;
 			dtpCleanup.Enabled = false;
 
-			//Status anzeigen
+			//show Status
 			aclCleanup.Show();
 			aclCleanup.State = actionLabelStates.Progress;
 			
-			//Backgroundworker starten
+			//Execute Request
 			bgwCleanup.RunWorkerAsync(dtpCleanup.Value);
 
 		}
-		private void beginCleanup() {
-			if (Session.showMessage(this, string.Format("Möchten Sie wirklich alle Logeinträge löschen, die vor dem {0} angelegt wurden?", dtpCleanup.Value.ToShortDateString()), "Löschen bestätigen", MessageBoxIcon.Exclamation, MessageBoxButtons.YesNo) != DialogResult.Yes)
-				return;
+		private bool beginCleanup() {
+			return Session.showMessage(this, string.Format(Session.localizeMessage("confirmCleanupBody", this), dtpCleanup.Value.ToShortDateString()), Session.localizeMessage("confirmCleanupCaption", this), MessageBoxIcon.Exclamation,
+				                    MessageBoxButtons.YesNo) == DialogResult.Yes;
 		}
+
 		private void bgwCleanup_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) {
 			try {
 				e.Result = Session.updateLogFactory.cleanupLog(Session.currentProject.projectId, (DateTime) e.Argument);
@@ -244,17 +251,17 @@ namespace updateSystemDotNet.Administration.UI.mainFormPages.statisticSubPages {
 		}
 		private void endCleanup(object result) {
 			
-			//Status verbergen
+			//Hide status
 			aclCleanup.State = actionLabelStates.Waiting;
 			aclCleanup.Hide();
 
-			//UI wieder aktivieren
+			//enable UI
 			grpState.Enabled = true;
 			btnCleanup.Enabled = true;
 			dtpCleanup.Enabled = true;
 
 			if (result != null && result is cleanupLogResponse) {
-				Session.showMessage(string.Format("Der Befehl wurde erfolgreich ausgeführt. Es wurden {0} Einträge vom Server gelöscht.", (result as cleanupLogResponse).removedEntries),
+				Session.showMessage(string.Format(Session.localizeMessage("cleanupSuccessfull", this), (result as cleanupLogResponse).removedEntries),
 									MessageBoxIcon.Information, MessageBoxButtons.OK);
 			}
 			else {

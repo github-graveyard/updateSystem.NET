@@ -25,7 +25,7 @@ using updateSystemDotNet.Administration.Core.Application;
 
 namespace updateSystemDotNet.Administration.Core.Publishing.FTP {
 
-	[publishProviderDescription(Description = "Veröffentlicht Ihre Aktualisierungen wahlweise über FTP oder FTPS (SSL Implizit oder Explizit). Diese Schnittstelle unterstützt keine Proxyserver.", Name = "FTP")]
+	[publishProviderDescription(Description = "publishProvider.pbsFtp.Description", Name = "publishProvider.pbsFtp.Name")]
 	internal sealed class pbsFtp : publishBase {
 
 		#region Konstanten für die Einstellungen
@@ -173,7 +173,7 @@ namespace updateSystemDotNet.Administration.Core.Publishing.FTP {
 							client.RemoveFile(remoteFile.Name);
 						}
 
-					Settings.lastPublished = DateTime.UtcNow;
+					Settings.lastPublished = DateTime.Now;
 				}
 				finally { // In jedem Fall immer dafür sorgen, dass die Verbindung korrekt geschlossen wird.
 					if (client.Connected)

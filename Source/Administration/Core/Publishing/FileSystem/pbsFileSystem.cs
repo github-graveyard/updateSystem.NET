@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using updateSystemDotNet.Administration.Core.Application;
 namespace updateSystemDotNet.Administration.Core.Publishing.FileSystem {
 	
-	[publishProviderDescription(Description = "Veröffentlicht Ihre Aktualisierungen an einem Ort im Windowsdateisystem oder einer Netzwerkfreigabe.", Name = "Dateisystem")]
+	[publishProviderDescription(Description = "publishProvider.pbsFileSystem.Description", Name = "publishProvider.pbsFileSystem.Name")]
 	internal sealed class pbsFileSystem : publishBase {
 		
 		public override publishResult publishUpdates() {
@@ -39,7 +39,7 @@ namespace updateSystemDotNet.Administration.Core.Publishing.FileSystem {
 
 				//Eine Liste mit allen Dateien die Veröffentlicht wurden, alle Dateien im Updateverzeichnis
 				//die nicht auf dieser Liste stehen, werden gelöscht.
-                var publishedFiles = new List<string>();
+				var publishedFiles = new List<string>();
 
 
 				//Updates übertragen               
@@ -48,10 +48,10 @@ namespace updateSystemDotNet.Administration.Core.Publishing.FileSystem {
 					
 					//Status mitteilen
 					onPublishUpdateProgressChanged(new publishUpdateProgressChangedEventArgs {
-					                                                                           	currentFile = currentFileCount,
-					                                                                           	currentFilename = package.getFilename(),
-					                                                                           	maxFileCount = maxFileCount
-					                                                                           });
+																								currentFile = currentFileCount,
+																								currentFilename = package.getFilename(),
+																								maxFileCount = maxFileCount
+																							   });
 
 					publishedFiles.Add(package.getFilename());
 					publishedFiles.Add(package.getChangelogFilename());
@@ -74,7 +74,7 @@ namespace updateSystemDotNet.Administration.Core.Publishing.FileSystem {
 					//Changelog kopieren
 					string localChangelogFilename = Path.Combine(localUpdateDirectory, package.getChangelogFilename());
 					string remoteChangelogFilename = Path.Combine(Path.Combine(targetDirectory, "updates"),
-					                                              package.getChangelogFilename());
+																  package.getChangelogFilename());
 
 					writeLogEntry(logLevel.Info, string.Format("FileCopy {0} -> {1}", localChangelogFilename, remoteChangelogFilename));
 					File.Copy(localChangelogFilename, remoteChangelogFilename, true);
@@ -88,10 +88,10 @@ namespace updateSystemDotNet.Administration.Core.Publishing.FileSystem {
 					//Status mitteilen
 					currentFileCount++;
 					onPublishUpdateProgressChanged(new publishUpdateProgressChangedEventArgs {
-					                                                                           	currentFile = currentFileCount,
-					                                                                           	currentFilename = configurationFilename,
-					                                                                           	maxFileCount = maxFileCount
-					                                                                           });
+																								currentFile = currentFileCount,
+																								currentFilename = configurationFilename,
+																								maxFileCount = maxFileCount
+																							   });
 
 					//Updatekonfiguration erstellen
 					byte[] configuration = buildConfiguration();
@@ -102,10 +102,10 @@ namespace updateSystemDotNet.Administration.Core.Publishing.FileSystem {
 				//updateInstaller aktualisieren
 				currentFileCount++;
 				onPublishUpdateProgressChanged(new publishUpdateProgressChangedEventArgs {
-				                                                                         	currentFile = currentFileCount,
-				                                                                         	currentFilename = configurationFilename,
-				                                                                         	maxFileCount = maxFileCount
-				                                                                         });
+																							currentFile = currentFileCount,
+																							currentFilename = configurationFilename,
+																							maxFileCount = maxFileCount
+																						 });
 				bool updateInstallerUpdateRequired = true;
 				if(File.Exists(Path.Combine(targetDirectory, updateInstallerRemoteFilename))) {
 					var fiLocalUpdateInstaller = new FileInfo(localUpdateInstallerPath);
@@ -132,7 +132,7 @@ namespace updateSystemDotNet.Administration.Core.Publishing.FileSystem {
 					}
 
 				//Datum der letzten Veröffentlichung setzen
-				Settings.lastPublished = DateTime.UtcNow;
+				Settings.lastPublished = DateTime.Now;
 
 			}
 			catch(Exception exc) {

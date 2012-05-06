@@ -94,6 +94,11 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			return string.Format("{0}_{1}", listView.Name, header.Text);
 		}
 
+		protected string localizeListViewColumn(ListView listview, string columnName) {
+			return Session.getLocalizedString(string.Format("{0}.{1}.{2}.Columns.{3}",
+														 new object[] { applicationSession.SECTION_NAME_DIALOGS, Name, listview.Name, columnName }));
+		}
+
 		/// <summary>Deaktiviert permenent ein Control auf dem Dialog ohne das dieses bei lockUi wieder aktiviert wird.</summary>
 		protected void permanentlyDisableControl(Control control) {
 			if (!_protectedControls.Contains(control))
