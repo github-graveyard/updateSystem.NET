@@ -2,27 +2,27 @@
 .Dialogs.updateDownloadDialog.aclDownload.Text	Downloading updates ({0}% completed)
 .Dialogs.updateDownloadDialog.btnCancel.Text	Cancel
 .Dialogs.updateDownloadDialog.btnCancel_close.Text	Close
-.Dialogs.updateDownloadDialog.lblInfo.Text	Please wait while the Updates are being downloaded.
-.Dialogs.updateDownloadDialog.lblTop.Text	Download Updates
+.Dialogs.updateDownloadDialog.lblInfo.Text	Please wait while the updates are being downloaded.
+.Dialogs.updateDownloadDialog.lblTop.Text	Download updates
 .Dialogs.updatePreviewDialog.btnCancel.Text	Cancel
-.Dialogs.updatePreviewDialog.btnStartUpdate.Text	Update Application
-.Dialogs.updatePreviewDialog.lblCurrentVersion.Text	Current Version: {0}
-.Dialogs.updatePreviewDialog.lblNewestVersion.Text	Latest Version: {0}
+.Dialogs.updatePreviewDialog.btnStartUpdate.Text	Update application
+.Dialogs.updatePreviewDialog.lblCurrentVersion.Text	Current version: {0}
+.Dialogs.updatePreviewDialog.lblNewestVersion.Text	Latest version: {0}
 .Dialogs.updatePreviewDialog.lblSize.Text	Size: {0}
-.Dialogs.updatePreviewDialog.lblStatus.Text	There are Updates available
-.Dialogs.updatePreviewDialog.txtDetails.Text	Changes in Version {0} (Released on: {1})
-.Dialogs.updateSearchDialog.aclSearch_noNewUpdates.Text	No Updates available
-.Dialogs.updateSearchDialog.aclSearch_search.Text	Searching for Updates
+.Dialogs.updatePreviewDialog.lblStatus.Text	There are updates available
+.Dialogs.updatePreviewDialog.txtDetails.Text	Changes in version {0} (Released on: {1})
+.Dialogs.updateSearchDialog.aclSearch_noNewUpdates.Text	No updates available
+.Dialogs.updateSearchDialog.aclSearch_search.Text	Searching for updates
 .Dialogs.updateSearchDialog.btnCancel.Text	Cancel
-.Dialogs.updateSearchDialog.lblCurrentVersion.Text	Latest Version: {0}
-.Dialogs.updateSearchDialog.lblStatus_noNewUpdates.Text	No Updates available
-.Dialogs.updateSearchDialog.lblStatus_search.Text	Searching for Updates
-.Exceptions.checkForUpdatesFirst	You have to check for Updates first before you can use this Method.
-.Exceptions.corruptUpdateInstaller	The Update can't be  applied. The updateInstaller is damaged.
-.Exceptions.downloadDirectoryNotFound	The Downloaddirectory does not exists.
-.Exceptions.noUpdatesAvailable	There are no Updates available to display.
-.Exceptions.updateDownloadBusy	There is another Updatedownload active
-.Exceptions.updateDownloadFailed	An Error occourred while downloading the Updates: {0}
+.Dialogs.updateSearchDialog.lblCurrentVersion.Text	Latest version: {0}
+.Dialogs.updateSearchDialog.lblStatus_noNewUpdates.Text	No updates available
+.Dialogs.updateSearchDialog.lblStatus_search.Text	Searching for updates
+.Exceptions.checkForUpdatesFirst	You need to check for updates first before you can use this method.
+.Exceptions.corruptUpdateInstaller	The update can't be applied. The updateInstaller is corrupted.
+.Exceptions.downloadDirectoryNotFound	The download directory does not exist.
+.Exceptions.noUpdatesAvailable	There are no updates available for display.
+.Exceptions.updateDownloadBusy	There is another download active.
+.Exceptions.updateDownloadFailed	An error occurred while downloading the updates: {0}
 .Exceptions.updateInstallerNotFound	The updateInstaller does not exists.
-.Exceptions.updatePackageNotFound	One ore more Updatepackages does not exists.
-.Exceptions.updateSearchFailed	An Error occoured while searching for Updates: {0}
+.Exceptions.updatePackageNotFound	Some update packages could not be found.
+.Exceptions.updateSearchFailed	An error occurred while searching for updates: {0}

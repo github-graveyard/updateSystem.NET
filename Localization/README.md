@@ -1,8 +1,8 @@
 Localization
 =====
 
-In this Folder you'll find the Localizationfiles used by the updateSystem.NET.<br />
-Do not edit these Files manually. Use the "Localization Editor" instead which you can download for free from here: http://locedit.devs-on.net/
+This folder contains localization files used by updateSystem.NET.<br />
+Do not edit these files manually. Use the Localization Editor available here: http://locedit.devs-on.net/
 
 
 ##Translations
@@ -23,10 +23,10 @@ Do not edit these Files manually. Use the "Localization Editor" instead which yo
  * German (pending, needs translation)
 
 
-**"Needs development"** means, that the Localizationlogic isn't implemented yet. 
+**"Needs development"** means the localization code isn't implemented yet. 
 
 ##Structure
-All Localizationfiles should use the same Structure for their Strings:
+All localization files should use the same structure for their strings:
 
 Projectname.loc <br />
  -> Dialogs <br />
@@ -35,9 +35,9 @@ Projectname.loc <br />
  ----> Text: "OK" <br/>
  --> aboutDialog <br />
  ---> lnkHomepage <br />
- ----> Text: "Link to my awesome Homepage" <br />
+ ----> Text: "Link to my awesome homepage" <br />
  -> Messages <br />
  --> Global <br />
  ---> msgHello: "Hello there!"<br />
  --> aboutDialog <br />
- ----> msgNoHomepage: "Sorry, no Homepage available"<br />
+ ----> msgNoHomepage: "Sorry, no homepage available"<br />
