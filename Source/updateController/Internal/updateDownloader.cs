@@ -55,7 +55,7 @@ namespace updateSystemDotNet.Internal {
 
 			//Proxyeinstellungen setzen
 			if (instance.proxyEnabled) {
-				_wclDownload.Proxy = new WebProxy(new Uri(instance.proxyUrl + ":" + instance.proxyPort));
+				_wclDownload.Proxy = new WebProxy(instance.proxyUrl, instance.proxyPort);
 				if (!string.IsNullOrEmpty(instance.proxyUsername))
 					_wclDownload.Proxy.Credentials = new NetworkCredential(instance.proxyUsername, instance.proxyPassword);
 				else if (instance.proxyUseDefaultCredentials)
