@@ -1,262 +1,262 @@
-﻿.Dialogs.aboutDialog.lblCopyright.Text  Copyright (c) {0} Maximilian Krauss <coffeeInjection.com>
-.Dialogs.aboutDialog.lblDescriptionCompression.Text Compression:
-.Dialogs.aboutDialog.lblDescriptionIcons.Text   Icons:
-.Dialogs.aboutDialog.lblVersion.Text    Version: {0} Codename "{1}"
-.Dialogs.aboutDialog.lnkForkMe.Text This project is on GitHub. [url=https://github.com/maximilian-krauss/updateSystem.NET]Get the source here.[/url] Contribution is highly appreciated.
-.Dialogs.aboutDialog.lnkIcons.Text  Fugue Icons Package by [url=http://p.yusukekamiyamane.com/]Yusuke Kamiyamane[/url]
-.Dialogs.aboutDialog.lnkZipCredits.Text #ziplib by [url=http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx]ic#code[/url].
-.Dialogs.aboutDialog.Title  About this application
-.Dialogs.applicationSettingsDialog.btnOpenLogDirectory.Text Open log directory
-.Dialogs.applicationSettingsDialog.btnProxySettings.Text    Open proxy configuration
-.Dialogs.applicationSettingsDialog.chkCheckForUpdates.Text  Check for updates at startup
-.Dialogs.applicationSettingsDialog.chkEnableApplicationLog.Text Write application events into a log file
-.Dialogs.applicationSettingsDialog.chkLogFtp.Text   Log FTP responses (may contain sensitive information)
-.Dialogs.applicationSettingsDialog.chkLogUpdateLog.Text Log statistics requests and responses
-.Dialogs.applicationSettingsDialog.grpLog.Text  Application log
-.Dialogs.applicationSettingsDialog.grpProxy.Text    Proxy
-.Dialogs.applicationSettingsDialog.grpUpdates.Text  Updates
-.Dialogs.applicationSettingsDialog.lblTitle.Text    Settings
-.Dialogs.applicationSettingsDialog.lblUpdateChannel.Text    Updatechannel:
-.Dialogs.applicationSettingsDialog.Title    Application settings
-.Dialogs.authorizeUpdateLogDialog.btnLogin.Text Authorize
-.Dialogs.authorizeUpdateLogDialog.lblPassword.Text  Password:
-.Dialogs.authorizeUpdateLogDialog.lblServerAddress.Text Server address:
-.Dialogs.authorizeUpdateLogDialog.lblTitle.Text Connect with an updateLog-Account
-.Dialogs.authorizeUpdateLogDialog.lblUsername.Text  Username:
-.Dialogs.authorizeUpdateLogDialog.Title updateLog
-.Dialogs.chooseNewPublishProviderDialog.lblNewProvider.Text Choose a new provider for publishing updates from the list below:
-.Dialogs.chooseNewPublishProviderDialog.Title   Choose a new publishing provider
-.Dialogs.Global.btnBrowse.Text  Browse...
-.Dialogs.Global.btnCancel.Text  Cancel
-.Dialogs.Global.btnClose.Text   Close
-.Dialogs.Global.btnOk.Text  OK
-.Dialogs.Global.btnSave.Text    Save
-.Dialogs.manageUpdateLogProjectDialog.chkIsActive.Text  Active (when inactive, no data will be collected)
-.Dialogs.manageUpdateLogProjectDialog.lblDisplayName.Text   Display name:
-.Dialogs.manageUpdateLogProjectDialog.lblProjectId.Text Project ID:
-.Dialogs.manageUpdateLogProjectDialog.lblTitle.Text Edit project
-.Dialogs.manageUpdateLogProjectDialog.Title Project management
-.Dialogs.manageUpdateLogUserDialog.btnOk.Text   Save
-.Dialogs.manageUpdateLogUserDialog.chkIsActive.Text User is active
-.Dialogs.manageUpdateLogUserDialog.chkIsAdmin.Text  User is administrator
-.Dialogs.manageUpdateLogUserDialog.lblMaxProjects.Text  Max. projects:
-.Dialogs.manageUpdateLogUserDialog.lblPassword.Text Password:
-.Dialogs.manageUpdateLogUserDialog.lblRetypePassword.Text   Repeat:
-.Dialogs.manageUpdateLogUserDialog.lblTitle.Text    Add/Edit user
-.Dialogs.manageUpdateLogUserDialog.lblUsername.Text Username:
-.Dialogs.manageUpdateLogUserDialog.Title    User management
-.Dialogs.proxySettingsDialog.btnSaveSettings.Text   Save settings
-.Dialogs.proxySettingsDialog.grpCustomProxy.Text    Custom proxy configuration
-.Dialogs.proxySettingsDialog.lblPassword.Text   Password:
-.Dialogs.proxySettingsDialog.lblProxyPort.Text  Port:
-.Dialogs.proxySettingsDialog.lblProxyServer.Text    Server:
-.Dialogs.proxySettingsDialog.lblTitle.Text  Proxy configuration
-.Dialogs.proxySettingsDialog.lblUsername.Text   Username
-.Dialogs.proxySettingsDialog.rbCustomAuth.Text  Use own credentials:
-.Dialogs.proxySettingsDialog.rbCustomProxy.Text Use custom proxy configuration
-.Dialogs.proxySettingsDialog.rbNoAuth.Text  The server doesn't require authorization
-.Dialogs.proxySettingsDialog.rbSystemProxy.Text Use default proxy
-.Dialogs.proxySettingsDialog.rbWinAuth.Text Use Windows authentication
-.Dialogs.proxySettingsDialog.Title  Proxy configuration
-.Dialogs.publishProviderSettingsDialog.btnOk.Text   Save
-.Dialogs.publishProviderSettingsDialog.lblActive.Text   Active:
-.Dialogs.publishProviderSettingsDialog.lblName.Text Name:
-.Dialogs.publishProviderSettingsDialog.Title    Publishing provider settings
-.Dialogs.publishUpdatesDialog.lblCurrentPublishInformation.Text Publishing updates for "{0}" via {1}.
-.Dialogs.publishUpdatesDialog.lblTitle.Text Publishing updates
-.Dialogs.publishUpdatesDialog.Title Publishing
-.Dialogs.publishUpdatesResultDialog.chkHidePublishResult.Text   Skip this dialog next time if no errors occurred
-.Dialogs.publishUpdatesResultDialog.lvwResult.Columns.clmErrorMessage   Error message
-.Dialogs.publishUpdatesResultDialog.lvwResult.Columns.clmInterface  Interface
-.Dialogs.publishUpdatesResultDialog.lvwResult.Columns.clmName   Name
-.Dialogs.publishUpdatesResultDialog.lvwResult.Columns.grpFailed Failed
-.Dialogs.publishUpdatesResultDialog.lvwResult.Columns.grpSuccess    Successful
-.Dialogs.publishUpdatesResultDialog.mnuExportCSV.Text   Export as CSV
-.Dialogs.publishUpdatesResultDialog.Title   Publishing completed
-.Dialogs.saveProjectDialog.btnOk.Text   Save project
-.Dialogs.saveProjectDialog.lblDestination.Text  Destination:
-.Dialogs.saveProjectDialog.lblProjectName.Text  Project name:
-.Dialogs.saveProjectDialog.Title    Save project
-.Dialogs.upgradeProjectDialog.btnBrowseProjectFile.Text ...
-.Dialogs.upgradeProjectDialog.btnConvert.Text   Convert project
-.Dialogs.upgradeProjectDialog.grpDestination.Text   New destination
-.Dialogs.upgradeProjectDialog.grpProjectFile.Text   Project information
-.Dialogs.upgradeProjectDialog.lblNewDestinationFolder.Text  New project directory:
-.Dialogs.upgradeProjectDialog.lblProjectFile.Text   Project file:
-.Dialogs.upgradeProjectDialog.lblTitle.Text Project upgrade
-.Dialogs.upgradeProjectDialog.lblUpdateUrl.Text Update URL:
-.Dialogs.upgradeProjectDialog.Title [appname]
-.Menus.mnsMain.mnuAbout.Text    About...
-.Menus.mnsMain.mnuCheckForUpdates.Text  Check for updates...
-.Menus.mnsMain.mnuClose.Text    Exit
-.Menus.mnsMain.mnuFile.Text File
-.Menus.mnsMain.mnuHelp.Text Help
-.Menus.mnsMain.mnuLinkStatisticServer.Text  Connect with statistics server...
-.Menus.mnsMain.mnuNewProject.Text   New project
-.Menus.mnsMain.mnuOpen.Text Open
-.Menus.mnsMain.mnuPublish.Text  Publish project
-.Menus.mnsMain.mnuSave.Text Save
-.Menus.mnsMain.mnuSendFeedback.Text Send feedback...
-.Menus.mnsMain.mnuSettings.Text Options...
-.Menus.mnsMain.mnuShowToolbar.Text  Show toolbar
-.Menus.mnsMain.mnuThrowDebugException.Text  [Debug] Throw exception
-.Menus.mnsMain.mnuTools.Text    Tools
-.Menus.mnsMain.mnuUnlinkStatisticServer.Text    Unlink statistics server
-.Menus.mnsMain.mnuUpgradeProject.Text   Convert old project
-.Menus.mnsMain.mnuView.Text View
-.Menus.tosMain.tsBtnNewProject.Text New project
-.Menus.tosMain.tsBtnOpenProject.Text    Open project
-.Menus.tosMain.tsBtnPublish.Text    Publish
-.Menus.tosMain.tsBtnSaveProject.Text    Save
-.Messages.feedbackPage.feedbackSent Thanks! Your feedback has been sent.
-.Messages.Global.Never  Never
-.Messages.Global.No No
-.Messages.Global.prettyDate.Day Yesterday
-.Messages.Global.prettyDate.Days    {0} days ago
-.Messages.Global.prettyDate.Hour    One hour ago
-.Messages.Global.prettyDate.Hours   {0} hours ago
-.Messages.Global.prettyDate.Minute  one minute ago
-.Messages.Global.prettyDate.Minutes {0} minutes ago
-.Messages.Global.prettyDate.Month   One month ago
-.Messages.Global.prettyDate.Months  {0} months ago
-.Messages.Global.prettyDate.Second  One second ago
-.Messages.Global.prettyDate.Seconds {0} seconds ago
-.Messages.Global.prettyDate.Year    One year ago
-.Messages.Global.prettyDate.Years   {0} years ago
-.Messages.Global.Unknown    Unknown
-.Messages.Global.Yes    Yes
-.Messages.manageUpdateLogProjectDialog.serverError  The server returned an error while executing your query
-.Messages.manageUpdateLogUserDialog.serverError The server returned an error while executing your query
-.Messages.statisticSettingsSubPage.Adding   Adding...
-.Messages.statisticSettingsSubPage.cleanupSuccessfull   The query has executed successfully and {0} entries were removed from the server.
-.Messages.statisticSettingsSubPage.confirmCleanupBody   Are you sure that you want to delete all entries which are older than {0}?
-.Messages.statisticSettingsSubPage.confirmCleanupCaption    Confirm cleanup
-.Messages.statisticSettingsSubPage.confirmDeleteBody    Are you sure that you want to delete this project from the server?
-.Messages.statisticSettingsSubPage.confirmDeleteCaption Confirm deletion
-.Messages.statisticSettingsSubPage.Deleting Deleting...
-.Messages.statisticSettingsSubPage.notPresent   Not present
-.Messages.statisticSettingsSubPage.notPresentDescription    The project doesn't exist on the server. Click "Add project" to enable the statistics for this project.
-.Messages.statisticSettingsSubPage.Present  Present
-.Messages.statisticSettingsSubPage.presentDescription   This project exists on the server and statistics are being collected. To remove the project along with all collected data press the "Remove project" button.
-.Messages.statisticSettingsSubPage.projectStateTemplate Project status: {0}
-.Messages.statisticSettingsSubPage.unknownProjectState  The status of the project has not been fetches yet. Hit "Refresh status" to refresh the Project status.
-.Messages.statisticSettingsSubPage.Updating Updating...
-.Messages.updateSubPage.confirmDeleteBody   Are you sure that you want to delete this update package?
-.Messages.updateSubPage.confirmDeleteCaption    Confirm delete
-.Messages.updateSubPage.neverPublished  Never
-.Messages.updateSubPage.publishFormat   {0} (on {1} at {2})
-.Messages.updateSubPage.Title   Update package version {0}
-.Pages.feedbackPage.btnSendFeedback.Text    Submit feedback
-.Pages.feedbackPage.lblFeedback.Text    Your feedback is important to us. Please use this form in order to report bugs or missing features.
-.Pages.feedbackPage.lblMail.Text    Mail address (optional)
-.Pages.feedbackPage.lblMessage.Text Your message:
-.Pages.feedbackPage.lblName.Text    Your name:
-.Pages.feedbackPage.lblTitle.Text   Send feedback
-.Pages.feedbackPage.nodeName.Text   Feedback
-.Pages.publishPage.btnPublishNow.Text   Publish now
-.Pages.publishPage.lblTitle.Text    Publish updates
-.Pages.publishPage.lvwPublish.Columns.clmLastPublished  Last published
-.Pages.publishPage.lvwPublish.Columns.clmName   Name
-.Pages.publishPage.nodeName.Text    Publishing
-.Pages.publishPage.tsBtnAddProvider.Text    Add publishing provider
-.Pages.publishPage.tsBtnAddProvider.Tooltip Adds a new publishing provider to your project.
-.Pages.publishPage.tsBtnEditProvider.Text   Edit
-.Pages.publishPage.tsBtnEditProvider.Tooltip    Opens a dialog to edit the selected publishing provider.
-.Pages.publishPage.tsBtnRemoveProvider.Text Remove
-.Pages.publishPage.tsBtnRemoveProvider.Tooltip  Removes the selected publishing provider.
-.Pages.settingPage.btnBrowseAssembly.Text   ...
-.Pages.settingPage.chkNativeImage.Text  Generate native images of .NET assemblies
-.Pages.settingPage.chkServicePackIsDefault.Text Create service packs by default.
-.Pages.settingPage.lblArgsDescFailed.Text   Argument(s) if the update failed:
-.Pages.settingPage.lblArgsDescription.Text  You can pass specific arguments to your application if the update is completed.
-.Pages.settingPage.lblArgsDescSuccess.Text  Argument(s) if the update was successful:
-.Pages.settingPage.lblImproveApp.Text   If you think a feature is missing, go to the feedback panel and tell me. :)
-.Pages.settingPage.lblLinkDescription.Text  This setting specifies if the version number for new update packages should typed manually or retrieved from an Application.
-.Pages.settingPage.lblLinkPath.Text Path:
-.Pages.settingPage.lblSetupId.Text  Setup ID:
-.Pages.settingPage.lblSetupIdDescription.Text   During the Updateprocess the Software can automatically update the Versionnumber in the Registry set by your Installer.
-.Pages.settingPage.lblTitle.Text    Update settings
-.Pages.settingPage.lnkGoToMsdn.Text [url=http://msdn.microsoft.com/en-us/library/6t9t5wcf(v=vs.80).aspx]More information[/url]
-.Pages.settingPage.nodeName.Text    Settings
-.Pages.settingPage.rbLinked.Text    Retrieve version from assembly:
-.Pages.settingPage.rbNotLinked.Text Set Version manual
-.Pages.settingPage.sspArguments.Text    Arguments
-.Pages.settingPage.sspGeneral.Text  General
-.Pages.settingPage.sspImproveApp.Text   Improve this application
-.Pages.settingPage.sspLinkedAssemblyVersion.Text    Linked assembly version
-.Pages.settingPage.sspSetupId.Text  Update Setup ID
-.Pages.startPage.lblProjectId.Text  Project ID:
-.Pages.startPage.lblProjectName.Text    Project name:
-.Pages.startPage.lblTitle.Text  General information
-.Pages.startPage.nodeName.Text  General information
-.Pages.startSecuritySubPage.lblTitle.Text   Security
-.Pages.startSecuritySubPage.nodeName.Text   Security
-.Pages.startVSIntegrationSubPage.btnCopyControllerObject.Text   Copy to clipboard
-.Pages.startVSIntegrationSubPage.lblTitle.Text  Visual Studio integration
-.Pages.startVSIntegrationSubPage.nodeName.Text  Visual Studio integration
-.Pages.statisticPage.fbtnRefresh.Text   Refresh
-.Pages.statisticPage.fBtnShowFilter.Text    Filter
-.Pages.statisticPage.lblTitle.Text  Statistics
-.Pages.statisticPage.nodeName.Text  Statistics
-.Pages.statisticProjectsSubPage.lblTitle.Text   Project management
-.Pages.statisticProjectsSubPage.lvwProjects.Columns.clmActive   Active
-.Pages.statisticProjectsSubPage.lvwProjects.Columns.clmName Project name
-.Pages.statisticProjectsSubPage.lvwProjects.Columns.clmProjectId    Project ID
-.Pages.statisticProjectsSubPage.nodeName.Text   Projects
-.Pages.statisticProjectsSubPage.tsBtnEditProject.Text   Edit project
-.Pages.statisticProjectsSubPage.tsBtnRefresh.Text   Refresh
-.Pages.statisticProjectsSubPage.tsBtnRemoveProject.Text Remove
-.Pages.statisticSettingsSubPage.btnAddProject.Text  Add project
-.Pages.statisticSettingsSubPage.btnCleanup.Text Cleanup
-.Pages.statisticSettingsSubPage.btnRemoveProject.Text   Remove project
-.Pages.statisticSettingsSubPage.btnUpdateState.Text Refresh status
-.Pages.statisticSettingsSubPage.grpMaintenance.Text Maintenance
-.Pages.statisticSettingsSubPage.grpState.Text   Status
-.Pages.statisticSettingsSubPage.lblMaintenance.Text You can remove entries older than the set date from this project's statistics:
-.Pages.statisticSettingsSubPage.nodeName.Text   Configuration
-.Pages.statisticUsersSubPage.lblTitle.Text  User management
-.Pages.statisticUsersSubPage.lvwUser.Columns.clmActive  Active
-.Pages.statisticUsersSubPage.lvwUser.Columns.clmMaxProjects Max. projects
-.Pages.statisticUsersSubPage.lvwUser.Columns.clmName    Username
-.Pages.statisticUsersSubPage.lvwUser.Columns.grpAdmins  Administrators
-.Pages.statisticUsersSubPage.lvwUser.Columns.grpUser    Users
-.Pages.statisticUsersSubPage.nodeName.Text  Statistics users
-.Pages.statisticUsersSubPage.tsBtnAddUser.Text  Add User
-.Pages.statisticUsersSubPage.tsBtnAddUser.Tooltip   Adds a new statistics user.
-.Pages.statisticUsersSubPage.tsBtnEditUser.Text Edit
-.Pages.statisticUsersSubPage.tsBtnEditUser.Tooltip  Opens an Dialog for editing the selected User.
-.Pages.statisticUsersSubPage.tsBtnRefresh.Text  Refresh
-.Pages.statisticUsersSubPage.tsBtnRefresh.Tooltip   Refreshes the Userlist.
-.Pages.statisticUsersSubPage.tsBtnRemoveUser.Text   Remove
-.Pages.statisticUsersSubPage.tsBtnRemoveUser.Tooltip    Removes the selected User.
-.Pages.updatePage.chkHideUnpublishedUpdates.Text    Hide unpublished updates
-.Pages.updatePage.chkShowServicePacksOnly.Text  Show Service Packs only
-.Pages.updatePage.grpFilter.Text    Filter update packages
-.Pages.updatePage.lblTitle.Text Updates
-.Pages.updatePage.nodeName.Text Updates
-.Pages.updatePage.tsBtnNewUpdatePackage.Text    New update package
-.Pages.updateSubPage.fbtnVersionPopup.Text  Release configuration
-.Pages.updateSubPage.grpPublish.Text    Publish with
-.Pages.updateSubPage.lblLastPublishedDescription.Text   Last published: 
-.Pages.updateSubPage.lblSize.Text   Size: {0}
-.Pages.updateSubPage.nodeName   I think this is not used.
-.Pages.updateSubPage.tsBtnEditPackage.Text  Edit update package
-.Pages.updateSubPage.tsBtnRemovePackage.Text    Remove
-.Pages.updateSubPage.tsBtnRemovePackage.Tooltip Removes the selected update package.
-.publishProvider.pbsFileSystem.Control.btnBrowseDirectory.Text  Browse...
-.publishProvider.pbsFileSystem.Control.folderBrowser.Text   Choose a target directory to publish the updates in:
-.publishProvider.pbsFileSystem.Control.lblPublishTarget.Text    Publishing directory:
-.publishProvider.pbsFileSystem.Description  Publishes updates to the Windows filesystem or a network share.
-.publishProvider.pbsFileSystem.Name Filesystem
-.publishProvider.pbsFtp.Control.cboConnectionType.Text  Passive (Recommended);Active
-.publishProvider.pbsFtp.Control.cboProtocol.Text    FTP;FTP/SSL (Explicit);FTP/SSL (Implicit)
-.publishProvider.pbsFtp.Control.lblConnection.Text  Connection:
-.publishProvider.pbsFtp.Control.lblDirectory.Text   Directory
-.publishProvider.pbsFtp.Control.lblPassword.Text    Password:
-.publishProvider.pbsFtp.Control.lblPort.Text    Port
-.publishProvider.pbsFtp.Control.lblProtocol.Text    Protocol:
-.publishProvider.pbsFtp.Control.lblServerAddress.Text   Server:
-.publishProvider.pbsFtp.Control.lblUsername.Text    Username:
-.publishProvider.pbsFtp.Description Publishes updates over FTP or FTPS (SSL Implicit or Explicit). This interface does not support proxy servers.
-.publishProvider.pbsFtp.Name    FTP
-de.Dialogs.Global.btnClose.Text Schließen
+﻿.Dialogs.aboutDialog.lblCopyright.Text	Copyright (c) {0} Maximilian Krauss <coffeeInjection.com>
+.Dialogs.aboutDialog.lblDescriptionCompression.Text	Compression:
+.Dialogs.aboutDialog.lblDescriptionIcons.Text	Icons:
+.Dialogs.aboutDialog.lblVersion.Text	Version: {0} Codename "{1}"
+.Dialogs.aboutDialog.lnkForkMe.Text	This project is on GitHub. [url=https://github.com/maximilian-krauss/updateSystem.NET]Get the source here.[/url] Contribution is highly appreciated.
+.Dialogs.aboutDialog.lnkIcons.Text	Fugue Icons Package by [url=http://p.yusukekamiyamane.com/]Yusuke Kamiyamane[/url]
+.Dialogs.aboutDialog.lnkZipCredits.Text	#ziplib by [url=http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx]ic#code[/url].
+.Dialogs.aboutDialog.Title	About this application
+.Dialogs.applicationSettingsDialog.btnOpenLogDirectory.Text	Open log directory
+.Dialogs.applicationSettingsDialog.btnProxySettings.Text	Open proxy configuration
+.Dialogs.applicationSettingsDialog.chkCheckForUpdates.Text	Check for updates at startup
+.Dialogs.applicationSettingsDialog.chkEnableApplicationLog.Text	Write application events into a log file
+.Dialogs.applicationSettingsDialog.chkLogFtp.Text	Log FTP responses (may contain sensitive information)
+.Dialogs.applicationSettingsDialog.chkLogUpdateLog.Text	Log statistics requests and responses
+.Dialogs.applicationSettingsDialog.grpLog.Text	Application log
+.Dialogs.applicationSettingsDialog.grpProxy.Text	Proxy
+.Dialogs.applicationSettingsDialog.grpUpdates.Text	Updates
+.Dialogs.applicationSettingsDialog.lblTitle.Text	Settings
+.Dialogs.applicationSettingsDialog.lblUpdateChannel.Text	Updatechannel:
+.Dialogs.applicationSettingsDialog.Title	Application settings
+.Dialogs.authorizeUpdateLogDialog.btnLogin.Text	Authorize
+.Dialogs.authorizeUpdateLogDialog.lblPassword.Text	Password:
+.Dialogs.authorizeUpdateLogDialog.lblServerAddress.Text	Serveraddress:
+.Dialogs.authorizeUpdateLogDialog.lblTitle.Text	Connect with an updateLog-Account
+.Dialogs.authorizeUpdateLogDialog.lblUsername.Text	Username:
+.Dialogs.authorizeUpdateLogDialog.Title	updateLog
+.Dialogs.chooseNewPublishProviderDialog.lblNewProvider.Text	Choose a new provider for publishing updates from the list below:
+.Dialogs.chooseNewPublishProviderDialog.Title	Choose a new publishing provider
+.Dialogs.Global.btnBrowse.Text	Browse...
+.Dialogs.Global.btnCancel.Text	Cancel
+.Dialogs.Global.btnClose.Text	Close
+.Dialogs.Global.btnOk.Text	OK
+.Dialogs.Global.btnSave.Text	Save
+.Dialogs.manageUpdateLogProjectDialog.chkIsActive.Text	Active (when inactive, no data will be collected)
+.Dialogs.manageUpdateLogProjectDialog.lblDisplayName.Text	Display name:
+.Dialogs.manageUpdateLogProjectDialog.lblProjectId.Text	Project ID:
+.Dialogs.manageUpdateLogProjectDialog.lblTitle.Text	Edit project
+.Dialogs.manageUpdateLogProjectDialog.Title	Project management
+.Dialogs.manageUpdateLogUserDialog.btnOk.Text	Save
+.Dialogs.manageUpdateLogUserDialog.chkIsActive.Text	User is active
+.Dialogs.manageUpdateLogUserDialog.chkIsAdmin.Text	User is administrator
+.Dialogs.manageUpdateLogUserDialog.lblMaxProjects.Text	Max. projects:
+.Dialogs.manageUpdateLogUserDialog.lblPassword.Text	Password:
+.Dialogs.manageUpdateLogUserDialog.lblRetypePassword.Text	Repeat:
+.Dialogs.manageUpdateLogUserDialog.lblTitle.Text	Add/Edit user
+.Dialogs.manageUpdateLogUserDialog.lblUsername.Text	Username:
+.Dialogs.manageUpdateLogUserDialog.Title	User management
+.Dialogs.proxySettingsDialog.btnSaveSettings.Text	Save settings
+.Dialogs.proxySettingsDialog.grpCustomProxy.Text	Custom proxy configuration
+.Dialogs.proxySettingsDialog.lblPassword.Text	Password:
+.Dialogs.proxySettingsDialog.lblProxyPort.Text	Port:
+.Dialogs.proxySettingsDialog.lblProxyServer.Text	Server:
+.Dialogs.proxySettingsDialog.lblTitle.Text	Proxy configuration
+.Dialogs.proxySettingsDialog.lblUsername.Text	Username
+.Dialogs.proxySettingsDialog.rbCustomAuth.Text	Use own credentials:
+.Dialogs.proxySettingsDialog.rbCustomProxy.Text	Use custom proxy configuration
+.Dialogs.proxySettingsDialog.rbNoAuth.Text	The server doesn't require authorization
+.Dialogs.proxySettingsDialog.rbSystemProxy.Text	Use default proxy
+.Dialogs.proxySettingsDialog.rbWinAuth.Text	Use Windows authentication
+.Dialogs.proxySettingsDialog.Title	Proxy configuration
+.Dialogs.publishProviderSettingsDialog.btnOk.Text	Save
+.Dialogs.publishProviderSettingsDialog.lblActive.Text	Active:
+.Dialogs.publishProviderSettingsDialog.lblName.Text	Name:
+.Dialogs.publishProviderSettingsDialog.Title	Publishing provider settings
+.Dialogs.publishUpdatesDialog.lblCurrentPublishInformation.Text	Publishing updates for "{0}" via {1}.
+.Dialogs.publishUpdatesDialog.lblTitle.Text	Publishing updates
+.Dialogs.publishUpdatesDialog.Title	Publishing
+.Dialogs.publishUpdatesResultDialog.chkHidePublishResult.Text	Skip this dialog next time if no errors occurred
+.Dialogs.publishUpdatesResultDialog.lvwResult.Columns.clmErrorMessage	Error message
+.Dialogs.publishUpdatesResultDialog.lvwResult.Columns.clmInterface	Interface
+.Dialogs.publishUpdatesResultDialog.lvwResult.Columns.clmName	Name
+.Dialogs.publishUpdatesResultDialog.lvwResult.Columns.grpFailed	Failed
+.Dialogs.publishUpdatesResultDialog.lvwResult.Columns.grpSuccess	Successful
+.Dialogs.publishUpdatesResultDialog.mnuExportCSV.Text	Export as CSV
+.Dialogs.publishUpdatesResultDialog.Title	Publishing completed
+.Dialogs.saveProjectDialog.btnOk.Text	Save project
+.Dialogs.saveProjectDialog.lblDestination.Text	Destination:
+.Dialogs.saveProjectDialog.lblProjectName.Text	Project name:
+.Dialogs.saveProjectDialog.Title	Save project
+.Dialogs.upgradeProjectDialog.btnBrowseProjectFile.Text	...
+.Dialogs.upgradeProjectDialog.btnConvert.Text	Convert project
+.Dialogs.upgradeProjectDialog.grpDestination.Text	New destination
+.Dialogs.upgradeProjectDialog.grpProjectFile.Text	Project information
+.Dialogs.upgradeProjectDialog.lblNewDestinationFolder.Text	New project directory:
+.Dialogs.upgradeProjectDialog.lblProjectFile.Text	Project file:
+.Dialogs.upgradeProjectDialog.lblTitle.Text	Project upgrade
+.Dialogs.upgradeProjectDialog.lblUpdateUrl.Text	Update URL:
+.Dialogs.upgradeProjectDialog.Title	[appname]
+.Menus.mnsMain.mnuAbout.Text	About...
+.Menus.mnsMain.mnuCheckForUpdates.Text	Check for updates...
+.Menus.mnsMain.mnuClose.Text	Exit
+.Menus.mnsMain.mnuFile.Text	File
+.Menus.mnsMain.mnuHelp.Text	Help
+.Menus.mnsMain.mnuLinkStatisticServer.Text	Connect with statistics server...
+.Menus.mnsMain.mnuNewProject.Text	New project
+.Menus.mnsMain.mnuOpen.Text	Open
+.Menus.mnsMain.mnuPublish.Text	Publish project
+.Menus.mnsMain.mnuSave.Text	Save
+.Menus.mnsMain.mnuSendFeedback.Text	Send feedback...
+.Menus.mnsMain.mnuSettings.Text	Options...
+.Menus.mnsMain.mnuShowToolbar.Text	Show toolbar
+.Menus.mnsMain.mnuThrowDebugException.Text	[Debug] Throw exception
+.Menus.mnsMain.mnuTools.Text	Tools
+.Menus.mnsMain.mnuUnlinkStatisticServer.Text	Unlink statistics server
+.Menus.mnsMain.mnuUpgradeProject.Text	Convert old project
+.Menus.mnsMain.mnuView.Text	View
+.Menus.tosMain.tsBtnNewProject.Text	New project
+.Menus.tosMain.tsBtnOpenProject.Text	Open project
+.Menus.tosMain.tsBtnPublish.Text	Publish
+.Menus.tosMain.tsBtnSaveProject.Text	Save
+.Messages.feedbackPage.feedbackSent	Thanks! Your feedback has been sent.
+.Messages.Global.Never	Never
+.Messages.Global.No	No
+.Messages.Global.prettyDate.Day	Yesterday
+.Messages.Global.prettyDate.Days	{0} days ago
+.Messages.Global.prettyDate.Hour	One hour ago
+.Messages.Global.prettyDate.Hours	{0} hours ago
+.Messages.Global.prettyDate.Minute	one minute ago
+.Messages.Global.prettyDate.Minutes	{0} minutes ago
+.Messages.Global.prettyDate.Month	One month ago
+.Messages.Global.prettyDate.Months	{0} months ago
+.Messages.Global.prettyDate.Second	One second ago
+.Messages.Global.prettyDate.Seconds	{0} seconds ago
+.Messages.Global.prettyDate.Year	One year ago
+.Messages.Global.prettyDate.Years	{0} years ago
+.Messages.Global.Unknown	Unknown
+.Messages.Global.Yes	Yes
+.Messages.manageUpdateLogProjectDialog.serverError	The server returned an error while executing your query
+.Messages.manageUpdateLogUserDialog.serverError	The server returned an error while executing your query
+.Messages.statisticSettingsSubPage.Adding	Adding...
+.Messages.statisticSettingsSubPage.cleanupSuccessfull	The query has executed successfully and {0} entries were removed from the server.
+.Messages.statisticSettingsSubPage.confirmCleanupBody	Are you sure that you want to delete all entries which are older than {0}?
+.Messages.statisticSettingsSubPage.confirmCleanupCaption	Confirm cleanup
+.Messages.statisticSettingsSubPage.confirmDeleteBody	Are you sure that you want to delete this project from the server?
+.Messages.statisticSettingsSubPage.confirmDeleteCaption	Confirm deletion
+.Messages.statisticSettingsSubPage.Deleting	Deleting...
+.Messages.statisticSettingsSubPage.notPresent	Not present
+.Messages.statisticSettingsSubPage.notPresentDescription	The project doesn't exist on the server. Click "Add project" to enable the statistics for this project.
+.Messages.statisticSettingsSubPage.Present	Present
+.Messages.statisticSettingsSubPage.presentDescription	This project exists on the server and statistics are being collected. To remove the project along with all collected data press the "Remove project" button.
+.Messages.statisticSettingsSubPage.projectStateTemplate	Project status: {0}
+.Messages.statisticSettingsSubPage.unknownProjectState	The status of the project has not been fetches yet. Hit "Refresh status" to refresh the Project status.
+.Messages.statisticSettingsSubPage.Updating	Updating...
+.Messages.updateSubPage.confirmDeleteBody	Are you sure that you want to delete this update package?
+.Messages.updateSubPage.confirmDeleteCaption	Confirm delete
+.Messages.updateSubPage.neverPublished	Never
+.Messages.updateSubPage.publishFormat	{0} (on {1} at {2})
+.Messages.updateSubPage.Title	Update package version {0}
+.Pages.feedbackPage.btnSendFeedback.Text	Submit feedback
+.Pages.feedbackPage.lblFeedback.Text	Your feedback is important to us. Please use this form in order to report bugs or missing features.
+.Pages.feedbackPage.lblMail.Text	Mail address (optional)
+.Pages.feedbackPage.lblMessage.Text	Your message:
+.Pages.feedbackPage.lblName.Text	Your name:
+.Pages.feedbackPage.lblTitle.Text	Send feedback
+.Pages.feedbackPage.nodeName.Text	Feedback
+.Pages.publishPage.btnPublishNow.Text	Publish now
+.Pages.publishPage.lblTitle.Text	Publish updates
+.Pages.publishPage.lvwPublish.Columns.clmLastPublished	Last published
+.Pages.publishPage.lvwPublish.Columns.clmName	Name
+.Pages.publishPage.nodeName.Text	Publishing
+.Pages.publishPage.tsBtnAddProvider.Text	Add publishing provider
+.Pages.publishPage.tsBtnAddProvider.Tooltip	Adds a new publishing provider to your project.
+.Pages.publishPage.tsBtnEditProvider.Text	Edit
+.Pages.publishPage.tsBtnEditProvider.Tooltip	Opens a dialog to edit the selected publishing provider.
+.Pages.publishPage.tsBtnRemoveProvider.Text	Remove
+.Pages.publishPage.tsBtnRemoveProvider.Tooltip	Removes the selected publishing provider.
+.Pages.settingPage.btnBrowseAssembly.Text	...
+.Pages.settingPage.chkNativeImage.Text	Generate native images of .NET assemblies
+.Pages.settingPage.chkServicePackIsDefault.Text	Create service packs by default.
+.Pages.settingPage.lblArgsDescFailed.Text	Argument(s) if the update failed:
+.Pages.settingPage.lblArgsDescription.Text	You can pass specific arguments to your application if the update is completed.
+.Pages.settingPage.lblArgsDescSuccess.Text	Argument(s) if the update was successful:
+.Pages.settingPage.lblImproveApp.Text	If you think a feature is missing, go to the feedback panel and tell me. :)
+.Pages.settingPage.lblLinkDescription.Text	This setting specifies if the version number for new update packages should typed manually or retrieved from an Application.
+.Pages.settingPage.lblLinkPath.Text	Path:
+.Pages.settingPage.lblSetupId.Text	Setup ID:
+.Pages.settingPage.lblSetupIdDescription.Text	During the Updateprocess the Software can automatically update the Versionnumber in the Registry set by your Installer.
+.Pages.settingPage.lblTitle.Text	Update settings
+.Pages.settingPage.lnkGoToMsdn.Text	[url=http://msdn.microsoft.com/en-us/library/6t9t5wcf(v=vs.80).aspx]More information[/url]
+.Pages.settingPage.nodeName.Text	Settings
+.Pages.settingPage.rbLinked.Text	Retrieve version from assembly:
+.Pages.settingPage.rbNotLinked.Text	Set Version manual
+.Pages.settingPage.sspArguments.Text	Arguments
+.Pages.settingPage.sspGeneral.Text	General
+.Pages.settingPage.sspImproveApp.Text	Improve this application
+.Pages.settingPage.sspLinkedAssemblyVersion.Text	Linked assembly version
+.Pages.settingPage.sspSetupId.Text	Update Setup ID
+.Pages.startPage.lblProjectId.Text	Project ID:
+.Pages.startPage.lblProjectName.Text	Project name:
+.Pages.startPage.lblTitle.Text	General information
+.Pages.startPage.nodeName.Text	General information
+.Pages.startSecuritySubPage.lblTitle.Text	Security
+.Pages.startSecuritySubPage.nodeName.Text	Security
+.Pages.startVSIntegrationSubPage.btnCopyControllerObject.Text	Copy to clipboard
+.Pages.startVSIntegrationSubPage.lblTitle.Text	Visual Studio integration
+.Pages.startVSIntegrationSubPage.nodeName.Text	Visual Studio integration
+.Pages.statisticPage.fbtnRefresh.Text	Refresh
+.Pages.statisticPage.fBtnShowFilter.Text	Filter
+.Pages.statisticPage.lblTitle.Text	Statistics
+.Pages.statisticPage.nodeName.Text	Statistics
+.Pages.statisticProjectsSubPage.lblTitle.Text	Project management
+.Pages.statisticProjectsSubPage.lvwProjects.Columns.clmActive	Active
+.Pages.statisticProjectsSubPage.lvwProjects.Columns.clmName	Project name
+.Pages.statisticProjectsSubPage.lvwProjects.Columns.clmProjectId	Project ID
+.Pages.statisticProjectsSubPage.nodeName.Text	Projects
+.Pages.statisticProjectsSubPage.tsBtnEditProject.Text	Edit project
+.Pages.statisticProjectsSubPage.tsBtnRefresh.Text	Refresh
+.Pages.statisticProjectsSubPage.tsBtnRemoveProject.Text	Remove
+.Pages.statisticSettingsSubPage.btnAddProject.Text	Add project
+.Pages.statisticSettingsSubPage.btnCleanup.Text	Cleanup
+.Pages.statisticSettingsSubPage.btnRemoveProject.Text	Remove project
+.Pages.statisticSettingsSubPage.btnUpdateState.Text	Refresh status
+.Pages.statisticSettingsSubPage.grpMaintenance.Text	Maintenance
+.Pages.statisticSettingsSubPage.grpState.Text	Status
+.Pages.statisticSettingsSubPage.lblMaintenance.Text	You can remove entries older than the set date from this project's statistics:
+.Pages.statisticSettingsSubPage.nodeName.Text	Configuration
+.Pages.statisticUsersSubPage.lblTitle.Text User	management
+.Pages.statisticUsersSubPage.lvwUser.Columns.clmActive	Active
+.Pages.statisticUsersSubPage.lvwUser.Columns.clmMaxProjects	Max. projects
+.Pages.statisticUsersSubPage.lvwUser.Columns.clmName	Username
+.Pages.statisticUsersSubPage.lvwUser.Columns.grpAdmins	Administrators
+.Pages.statisticUsersSubPage.lvwUser.Columns.grpUser	Users
+.Pages.statisticUsersSubPage.nodeName.Text	Statistics users
+.Pages.statisticUsersSubPage.tsBtnAddUser.Text	Add User
+.Pages.statisticUsersSubPage.tsBtnAddUser.Tooltip	Adds a new statistics user.
+.Pages.statisticUsersSubPage.tsBtnEditUser.Text	Edit
+.Pages.statisticUsersSubPage.tsBtnEditUser.Tooltip	Opens an Dialog for editing the selected User.
+.Pages.statisticUsersSubPage.tsBtnRefresh.Text	Refresh
+.Pages.statisticUsersSubPage.tsBtnRefresh.Tooltip	Refreshes the Userlist.
+.Pages.statisticUsersSubPage.tsBtnRemoveUser.Text	Remove
+.Pages.statisticUsersSubPage.tsBtnRemoveUser.Tooltip	Removes the selected User.
+.Pages.updatePage.chkHideUnpublishedUpdates.Text	Hide unpublished updates
+.Pages.updatePage.chkShowServicePacksOnly.Text	Show Service Packs only
+.Pages.updatePage.grpFilter.Text	Filter update packages
+.Pages.updatePage.lblTitle.Text	Updates
+.Pages.updatePage.nodeName.Text	Updates
+.Pages.updatePage.tsBtnNewUpdatePackage.Text	New update package
+.Pages.updateSubPage.fbtnVersionPopup.Text	Release configuration
+.Pages.updateSubPage.grpPublish.Text	Publish with
+.Pages.updateSubPage.lblLastPublishedDescription.Text	Last published: 
+.Pages.updateSubPage.lblSize.Text	Size: {0}
+.Pages.updateSubPage.nodeName	I think this is not used.
+.Pages.updateSubPage.tsBtnEditPackage.Text	Edit update package
+.Pages.updateSubPage.tsBtnRemovePackage.Text	Remove
+.Pages.updateSubPage.tsBtnRemovePackage.Tooltip	Removes the selected update package.
+.publishProvider.pbsFileSystem.Control.btnBrowseDirectory.Text	Browse...
+.publishProvider.pbsFileSystem.Control.folderBrowser.Text	Choose a target directory to publish the updates in:
+.publishProvider.pbsFileSystem.Control.lblPublishTarget.Text	Publishing directory:
+.publishProvider.pbsFileSystem.Description	Publishes updates to the Windows filesystem or a network share.
+.publishProvider.pbsFileSystem.Name	Filesystem
+.publishProvider.pbsFtp.Control.cboConnectionType.Text	Passive (Recommended);Active
+.publishProvider.pbsFtp.Control.cboProtocol.Text	FTP;FTP/SSL (Explicit);FTP/SSL (Implicit)
+.publishProvider.pbsFtp.Control.lblConnection.Text	Connection:
+.publishProvider.pbsFtp.Control.lblDirectory.Text	Directory
+.publishProvider.pbsFtp.Control.lblPassword.Text	Password:
+.publishProvider.pbsFtp.Control.lblPort.Text	Port
+.publishProvider.pbsFtp.Control.lblProtocol.Text	Protocol:
+.publishProvider.pbsFtp.Control.lblServerAddress.Text	Server:
+.publishProvider.pbsFtp.Control.lblUsername.Text	Username:
+.publishProvider.pbsFtp.Description	Publishes updates over FTP or FTPS (SSL Implicit or Explicit). This interface does not support proxy servers.
+.publishProvider.pbsFtp.Name	FTP
+de.Dialogs.Global.btnClose.Text	Schließen
