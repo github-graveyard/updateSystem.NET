@@ -77,6 +77,32 @@
 .Dialogs.saveProjectDialog.lblDestination.Text	Destination:
 .Dialogs.saveProjectDialog.lblProjectName.Text	Project name:
 .Dialogs.saveProjectDialog.Title	Save project
+.Dialogs.updatePackageDialog.btnAddOrUpdateCustomField.Text	Add
+.Dialogs.updatePackageDialog.btnImportChangeFromFile.Text	Load from file...
+.Dialogs.updatePackageDialog.btnOk.Text	Build updatepackage
+.Dialogs.updatePackageDialog.btnRemoveCustomField.Text	Remove
+.Dialogs.updatePackageDialog.chkPublished.Text	Published
+.Dialogs.updatePackageDialog.chkServicePack.Text	Service Pack
+.Dialogs.updatePackageDialog.lblCFDescription.Text	Add custom fields to this updatepackage. Use the customFields-Dictionary inside the updatePackage-Class to access this list.
+.Dialogs.updatePackageDialog.lblCFKey.Text	Name:
+.Dialogs.updatePackageDialog.lblCFValue.Text	Value:
+.Dialogs.updatePackageDialog.lblGeneralArchitecture.Text	Architecture:
+.Dialogs.updatePackageDialog.lblGeneralBuild.Text	Build:
+.Dialogs.updatePackageDialog.lblGeneralDescription.Text	Description:
+.Dialogs.updatePackageDialog.lblGeneralMajor.Text	Major:
+.Dialogs.updatePackageDialog.lblGeneralMinor.Text	Minor:
+.Dialogs.updatePackageDialog.lblGeneralReleaseState.Text	Releasestate:
+.Dialogs.updatePackageDialog.lblGeneralRevision.Text	Revision:
+.Dialogs.updatePackageDialog.lblGeneralVersion.Text	Version:
+.Dialogs.updatePackageDialog.lblLanguage.Text	Language:
+.Dialogs.updatePackageDialog.lblPublishDescription.Text	Flag the update as published if all clients should be able to download this updatepackage.
+.Dialogs.updatePackageDialog.lblServicePackDescription.Text	Flag as service pack when all updates with a lower versionnumber should be ignored.
+.Dialogs.updatePackageDialog.lvwCustomFields.Columns.clmKey	Name
+.Dialogs.updatePackageDialog.lvwCustomFields.Columns.clmValue	Value
+.Dialogs.updatePackageDialog.Title	Updatepackage
+.Dialogs.updatePackageDialog.tvwContent.nodeChanges.Text	Changelog
+.Dialogs.updatePackageDialog.tvwContent.nodeCustomFields.Text	Custom fields
+.Dialogs.updatePackageDialog.tvwContent.nodeGeneral.Text	General
 .Dialogs.upgradeProjectDialog.btnBrowseProjectFile.Text	...
 .Dialogs.upgradeProjectDialog.btnConvert.Text	Convert project
 .Dialogs.upgradeProjectDialog.grpDestination.Text	New destination

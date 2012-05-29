@@ -14,6 +14,7 @@
 .Dialogs.updateSearchDialog.aclSearch_noNewUpdates.Text	No updates available
 .Dialogs.updateSearchDialog.aclSearch_search.Text	Searching for updates
 .Dialogs.updateSearchDialog.btnCancel.Text	Cancel
+.Dialogs.updateSearchDialog.btnCancel_close.Text	Close
 .Dialogs.updateSearchDialog.lblCurrentVersion.Text	Latest version: {0}
 .Dialogs.updateSearchDialog.lblStatus_noNewUpdates.Text	No updates available
 .Dialogs.updateSearchDialog.lblStatus_search.Text	Searching for updates

@@ -34,6 +34,7 @@ using updateSystemDotNet.Core.Types;
 using updateSystemDotNet.Core.updateActions;
 using System.Diagnostics;
 using updateSystemDotNet.Administration.Core.Publishing;
+using updateSystemDotNet.Administration.Core.Application;
 
 namespace updateSystemDotNet.Administration.UI.Dialogs {
 	internal sealed partial class updatePackageDialog : dialogBase {
@@ -47,12 +48,11 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			InitializeComponent();
 			tvwContent.AfterSelect += tvwContent_AfterSelect;
 			tvwContent.SelectedNode = tvwContent.Nodes[0];
-			Text = string.Format("{0} - Neues Updatepaket", Strings.applicationName);
 			Shown += updatePackageForm_Shown;
 
 			imglMain.Images.Add("defaultActionImage", Resources.defaultUpdateAction);
 			imglMain.Images.Add("general", Resources.general);
-			imglMain.Images.Add("availability", Resources.availability);
+			//imglMain.Images.Add("availability", Resources.availability);
 			imglMain.Images.Add("changes", Resources.changes);
 			imglMain.Images.Add("actions", Resources.actions);
 			imglMain.Images.Add("customFields", resourceHelper.getImage("customFields.png"));
@@ -60,8 +60,8 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 
 			tvwContent.Nodes["nodeGeneral"].ImageKey = "general";
 			tvwContent.Nodes["nodeGeneral"].SelectedImageKey = "general";
-			tvwContent.Nodes["nodeAvailability"].ImageKey = "availability";
-			tvwContent.Nodes["nodeAvailability"].SelectedImageKey = "availability";
+			//tvwContent.Nodes["nodeAvailability"].ImageKey = "availability";
+			//tvwContent.Nodes["nodeAvailability"].SelectedImageKey = "availability";
 			tvwContent.Nodes["nodeChanges"].ImageKey = "changes";
 			tvwContent.Nodes["nodeChanges"].SelectedImageKey = "changes";
 			tvwContent.Nodes["nodeCustomFields"].ImageKey = "customFields";
@@ -670,6 +670,31 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 				e.Effect = DragDropEffects.Copy;
 			else
 				e.Effect = DragDropEffects.None;
+		}
+
+		#endregion
+
+		#region Localization
+
+		public override void localizeDialog() {
+			base.localizeDialog();
+
+			localizeTreeView();
+
+			//Custom fields ListView
+			lvwCustomFields.Columns[0].Text = localizeListViewColumn(lvwCustomFields, "clmKey");
+			lvwCustomFields.Columns[1].Text = localizeListViewColumn(lvwCustomFields, "clmValue");
+		}
+
+		private void localizeTreeView() {
+			string treeViewLocalizationRoot = string.Format("{0}.{1}.{2}.{3}.Text", applicationSession.SECTION_NAME_DIALOGS, Name,
+			                                                tvwContent.Name, "{0}");
+			tvwContent.Nodes["nodeGeneral"].Text =
+				Session.getLocalizedString(string.Format(treeViewLocalizationRoot, "nodeGeneral"));
+			tvwContent.Nodes["nodeChanges"].Text =
+				Session.getLocalizedString(string.Format(treeViewLocalizationRoot, "nodeChanges"));
+			tvwContent.Nodes["nodeCustomFields"].Text =
+				Session.getLocalizedString(string.Format(treeViewLocalizationRoot, "nodeCustomFields"));
 		}
 
 		#endregion
