@@ -695,6 +695,10 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 				Session.getLocalizedString(string.Format(treeViewLocalizationRoot, "nodeChanges"));
 			tvwContent.Nodes["nodeCustomFields"].Text =
 				Session.getLocalizedString(string.Format(treeViewLocalizationRoot, "nodeCustomFields"));
+			tvwContent.Nodes["nodePublish"].Text =
+				Session.getLocalizedString(string.Format(treeViewLocalizationRoot, "nodePublish"));
+			tvwContent.Nodes["nodeActions"].Text =
+				Session.getLocalizedString(string.Format(treeViewLocalizationRoot, "nodeActions"));
 		}
 
 		#endregion

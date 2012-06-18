@@ -83,9 +83,11 @@
 .Dialogs.updatePackageDialog.btnRemoveCustomField.Text	Remove
 .Dialogs.updatePackageDialog.chkPublished.Text	Published
 .Dialogs.updatePackageDialog.chkServicePack.Text	Service Pack
+.Dialogs.updatePackageDialog.lblActionsDescription.Text	Drag any action via Drag&Drop into the leftside navigation. Remove actions by pressing [DEL] and move them up and down with [CTRL]+[UP] and [CTRL]+[DOWN].
 .Dialogs.updatePackageDialog.lblCFDescription.Text	Add custom fields to this updatepackage. Use the customFields-Dictionary inside the updatePackage-Class to access this list.
 .Dialogs.updatePackageDialog.lblCFKey.Text	Name:
 .Dialogs.updatePackageDialog.lblCFValue.Text	Value:
+.Dialogs.updatePackageDialog.lblChoosePublishSource.Text	Deploy this update with the following publishsources:
 .Dialogs.updatePackageDialog.lblGeneralArchitecture.Text	Architecture:
 .Dialogs.updatePackageDialog.lblGeneralBuild.Text	Build:
 .Dialogs.updatePackageDialog.lblGeneralDescription.Text	Description:
@@ -100,9 +102,11 @@
 .Dialogs.updatePackageDialog.lvwCustomFields.Columns.clmKey	Name
 .Dialogs.updatePackageDialog.lvwCustomFields.Columns.clmValue	Value
 .Dialogs.updatePackageDialog.Title	Updatepackage
+.Dialogs.updatePackageDialog.tvwContent.nodeActions.Text	Actions
 .Dialogs.updatePackageDialog.tvwContent.nodeChanges.Text	Changelog
 .Dialogs.updatePackageDialog.tvwContent.nodeCustomFields.Text	Custom fields
 .Dialogs.updatePackageDialog.tvwContent.nodeGeneral.Text	General
+.Dialogs.updatePackageDialog.tvwContent.nodePublish.Text	Publish with
 .Dialogs.upgradeProjectDialog.btnBrowseProjectFile.Text	...
 .Dialogs.upgradeProjectDialog.btnConvert.Text	Convert project
 .Dialogs.upgradeProjectDialog.grpDestination.Text	New destination

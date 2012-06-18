@@ -82,7 +82,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs
 			this.lvwActions = new updateSystemDotNet.Administration.UI.Controls.extendedListView();
 			this.clmName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.clmDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.label15 = new System.Windows.Forms.Label();
+			this.lblActionsDescription = new System.Windows.Forms.Label();
 			this.pnlBuildPackage = new System.Windows.Forms.Panel();
 			this.lblErrorText = new System.Windows.Forms.Label();
 			this.seperatorLabel1 = new updateSystemDotNet.Administration.UI.Controls.seperatorLabel();
@@ -103,7 +103,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs
 			this.pnlPublish = new System.Windows.Forms.Panel();
 			this.lvwPublishWith = new updateSystemDotNet.Administration.UI.Controls.extendedListView();
 			this.clmDummy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.label19 = new System.Windows.Forms.Label();
+			this.lblChoosePublishSource = new System.Windows.Forms.Label();
 			this.pnlGeneral.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nmPreviewState)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nmRevision)).BeginInit();
@@ -394,9 +394,9 @@ namespace updateSystemDotNet.Administration.UI.Dialogs
 			this.cboTargetArchitecture.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.cboTargetArchitecture.FormattingEnabled = true;
 			this.cboTargetArchitecture.Items.AddRange(new object[] {
-            "Unabhängig",
-            "x86 (32 Bit Betriebssystem)",
-            "x64 (64 Bit Betriebssystem)"});
+            "Any Cpu",
+            "x86 (32 Bit Operating system)",
+            "x64 (64 Bit Operating system)"});
 			this.cboTargetArchitecture.Location = new System.Drawing.Point(107, 86);
 			this.cboTargetArchitecture.Name = "cboTargetArchitecture";
 			this.cboTargetArchitecture.Size = new System.Drawing.Size(176, 23);
@@ -624,7 +624,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs
 			// pnlActions
 			// 
 			this.pnlActions.Controls.Add(this.lvwActions);
-			this.pnlActions.Controls.Add(this.label15);
+			this.pnlActions.Controls.Add(this.lblActionsDescription);
 			this.pnlActions.Location = new System.Drawing.Point(196, 12);
 			this.pnlActions.Name = "pnlActions";
 			this.pnlActions.Size = new System.Drawing.Size(429, 311);
@@ -658,15 +658,15 @@ namespace updateSystemDotNet.Administration.UI.Dialogs
 			// 
 			this.clmDescription.Width = 300;
 			// 
-			// label15
+			// lblActionsDescription
 			// 
-			this.label15.Dock = System.Windows.Forms.DockStyle.Top;
-			this.label15.Location = new System.Drawing.Point(0, 0);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(429, 66);
-			this.label15.TabIndex = 1;
-			this.label15.Text = resources.GetString("label15.Text");
-			this.label15.UseMnemonic = false;
+			this.lblActionsDescription.Dock = System.Windows.Forms.DockStyle.Top;
+			this.lblActionsDescription.Location = new System.Drawing.Point(0, 0);
+			this.lblActionsDescription.Name = "lblActionsDescription";
+			this.lblActionsDescription.Size = new System.Drawing.Size(429, 66);
+			this.lblActionsDescription.TabIndex = 1;
+			this.lblActionsDescription.Text = resources.GetString("lblActionsDescription.Text");
+			this.lblActionsDescription.UseMnemonic = false;
 			// 
 			// pnlBuildPackage
 			// 
@@ -845,7 +845,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs
 			// pnlPublish
 			// 
 			this.pnlPublish.Controls.Add(this.lvwPublishWith);
-			this.pnlPublish.Controls.Add(this.label19);
+			this.pnlPublish.Controls.Add(this.lblChoosePublishSource);
 			this.pnlPublish.Location = new System.Drawing.Point(196, 12);
 			this.pnlPublish.Name = "pnlPublish";
 			this.pnlPublish.Size = new System.Drawing.Size(429, 311);
@@ -873,15 +873,15 @@ namespace updateSystemDotNet.Administration.UI.Dialogs
 			// 
 			this.clmDummy.Text = "Dummy";
 			// 
-			// label19
+			// lblChoosePublishSource
 			// 
-			this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.lblChoosePublishSource.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.label19.Location = new System.Drawing.Point(3, 3);
-			this.label19.Name = "label19";
-			this.label19.Size = new System.Drawing.Size(423, 37);
-			this.label19.TabIndex = 0;
-			this.label19.Text = "Wählen Sie hier die Quellen aus, über diese Sie dieses Updatepaket verteilen möch" +
+			this.lblChoosePublishSource.Location = new System.Drawing.Point(3, 3);
+			this.lblChoosePublishSource.Name = "lblChoosePublishSource";
+			this.lblChoosePublishSource.Size = new System.Drawing.Size(423, 37);
+			this.lblChoosePublishSource.TabIndex = 0;
+			this.lblChoosePublishSource.Text = "Wählen Sie hier die Quellen aus, über diese Sie dieses Updatepaket verteilen möch" +
     "ten:";
 			// 
 			// updatePackageDialog
@@ -890,16 +890,16 @@ namespace updateSystemDotNet.Administration.UI.Dialogs
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.CancelButton = this.btnCancel;
 			this.ClientSize = new System.Drawing.Size(637, 384);
-			this.Controls.Add(this.pnlCustomFields);
+			this.Controls.Add(this.pnlActions);
+			this.Controls.Add(this.pnlPublish);
 			this.Controls.Add(this.pnlChanges);
 			this.Controls.Add(this.pnlGeneral);
 			this.Controls.Add(this.buttonArea1);
 			this.Controls.Add(this.tvwContent);
-			this.Controls.Add(this.pnlActions);
 			this.Controls.Add(this.pnlBuildPackage);
 			this.Controls.Add(this.pnlContent);
 			this.Controls.Add(this.pnlAvailability);
-			this.Controls.Add(this.pnlPublish);
+			this.Controls.Add(this.pnlCustomFields);
 			this.KeyPreview = true;
 			this.Name = "updatePackageDialog";
 			this.Text = "updatePackageForm";
@@ -978,7 +978,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs
 		private System.Windows.Forms.ColumnHeader clmName;
 		private System.Windows.Forms.ColumnHeader clmDescription;
 		private System.Windows.Forms.ImageList imglMain;
-		private System.Windows.Forms.Label label15;
+		private System.Windows.Forms.Label lblActionsDescription;
 		private System.Windows.Forms.Panel pnlBuildPackage;
 		private Controls.actionLabel aclBuildPackage;
 		private Controls.seperatorLabel seperatorLabel1;
@@ -997,7 +997,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs
 		private System.ComponentModel.BackgroundWorker bgwBuildPackage;
 		private System.Windows.Forms.Label lblErrorText;
 		private System.Windows.Forms.Panel pnlPublish;
-		private System.Windows.Forms.Label label19;
+		private System.Windows.Forms.Label lblChoosePublishSource;
 		private extendedListView lvwPublishWith;
 		private System.Windows.Forms.ColumnHeader clmDummy;
 	}

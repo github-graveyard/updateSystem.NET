@@ -397,11 +397,11 @@ namespace updateSystemDotNet.Administration.Core.Application {
 		/// <summary>Factory zur Verwaltung der Updatestatistiken.</summary>
 		public updateLogFactory updateLogFactory { get; private set; }
 
-		/// <summary>Gibt den Standardspeicherpfad für neue Projekte zurück.</summary>
+		/// <summary>Returns the default path for new projects.</summary>
 		public string defaultProjectLocation {
 			get {
 				return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-									string.Format("updateSystem.NET{0}Projekte", Path.DirectorySeparatorChar));
+									string.Format("updateSystem.NET{0}Projects", Path.DirectorySeparatorChar));
 			}
 		}
 

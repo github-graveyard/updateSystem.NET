@@ -123,7 +123,7 @@
   <data name="lblServicePackDescription.Text" xml:space="preserve">
     <value>Mit dieser Option markieren Sie das Updatepaket als Service Pack. Dies hat zur Auswirkung, dass alle Updates, welche einen niedrigeren Releasestatus als dieses Update haben, bei der Updatesuche nicht berücksichtigt werden.</value>
   </data>
-  <data name="label15.Text" xml:space="preserve">
+  <data name="lblActionsDescription.Text" xml:space="preserve">
     <value>Ziehen Sie die gewünschte Updateaktion via Drag&amp;Drop in die Navigation links. Sie können dort platzierte Aktionen mit [ENTF] löschen und mit [STRG]+[HOCH] bzw. [STRG]+[RUNTER] nach oben respektive unten verschieben.</value>
   </data>
   <metadata name="bgwBuildPackage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
