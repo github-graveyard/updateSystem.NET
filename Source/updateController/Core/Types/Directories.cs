@@ -1,6 +1,6 @@
 ﻿/*
  * updateSystem.NET
- * Copyright (c) 2008-2012 Maximilian Krauss <http://kraussz.com> eMail: max@kraussz.com
+ * Copyright (c) 2008-2012 Maximilian Krauss <http://coffeeInjection.com> eMail: max@coffeeInjection.com
  *
  * This library is licened under The Code Project Open License (CPOL) 1.02
  * which can be found online at <http://www.codeproject.com/info/cpol10.aspx>
