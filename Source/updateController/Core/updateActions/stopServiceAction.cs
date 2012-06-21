@@ -24,7 +24,7 @@ namespace updateSystemDotNet.Core.updateActions {
 	/// Updateaction zum stoppen eines Dienstes.
 	/// </summary>
 	[Serializable]
-	[administrationEditor("Dienste", "stop_service", "Stoppt einen Dienst auf dem Zielcomputer.",
+	[administrationEditor("catServices", "stop_service", "Stoppt einen Dienst auf dem Zielcomputer.",
 		"updateSystemDotNet.Administration.UI.updateActionEditor.stopServiceActionEditor")]
 	public sealed class stopServiceAction : actionBase {
 		private string m_serviceName = string.Empty;

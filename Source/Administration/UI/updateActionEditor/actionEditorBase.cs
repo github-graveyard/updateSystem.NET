@@ -34,13 +34,18 @@ namespace updateSystemDotNet.Administration.UI.updateActionEditor {
 
 		#region " Updateaktion "
 
-		/// <summary>Gibt die Instanz der selektierten updateAction zurück oder legt diese fest.</summary>
+		/// <summary>Returns the instance from the current action.</summary>
 		public actionBase updateAction { get; set; }
 
 		public applicationSession Session { get; set; }
 
-		/// <summary>Initialisiert den Inhalt des Actioneditors.</summary>
+		/// <summary>Initializes the content of the actioneditor.</summary>
 		public virtual void initializeActionContent() {
+		}
+
+		/// <summary>Performs basic localization of ui-elements.</summary>
+		public virtual void initializeLocalization() {
+			Session.localizeControl(this);
 		}
 
 		#endregion

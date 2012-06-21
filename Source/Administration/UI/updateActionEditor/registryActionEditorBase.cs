@@ -35,6 +35,10 @@ namespace updateSystemDotNet.Administration.UI.updateActionEditor {
 			txtRegistryPath.TextChanged += txtRegistryPath_TextChanged;
 		}
 
+		public override void initializeLocalization() {
+			base.initializeLocalization();
+		}
+
 		private void txtRegistryPath_TextChanged(object sender, EventArgs e) {
 			_action.Path = txtRegistryPath.Text;
 		}

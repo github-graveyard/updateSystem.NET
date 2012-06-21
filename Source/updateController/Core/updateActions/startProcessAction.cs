@@ -24,7 +24,7 @@ namespace updateSystemDotNet.Core.updateActions {
 	/// Updateaction welche zum Starten eines Prozesses verwendet wird.
 	/// </summary>
 	[Serializable]
-	[administrationEditor("Prozesse", "start_process", "Führt einen Prozess aus.",
+	[administrationEditor("catProcesses", "start_process", "Führt einen Prozess aus.",
 		"updateSystemDotNet.Administration.UI.updateActionEditor.startProcessActionEditor")]
 	public sealed class startProcessAction : actionBase {
 		private string m_arguments = string.Empty;

@@ -24,7 +24,7 @@ namespace updateSystemDotNet.Core.updateActions {
 	/// Updateaction zum erstellen eines Registryschlüssels.
 	/// </summary>
 	[Serializable]
-	[administrationEditor("Registry", "key_add", "Erstellt einen neuen Schlüssel in der Registry des Zielcomputers.",
+	[administrationEditor("catRegistry", "key_add", "",
 		"updateSystemDotNet.Administration.UI.updateActionEditor.addRegistryKeyActionEditor")]
 	public sealed class addRegistryKeyAction : registryActionBase {
 		/// <summary>

@@ -25,7 +25,7 @@ namespace updateSystemDotNet.Core.updateActions {
 	/// Updateaktion zum löschen einer oder mehrerer Dateien auf dem Zielsystem.
 	/// </summary>
 	[Serializable]
-	[administrationEditor("Dateien und Verzeichnisse", "file_delete", "Löscht Dateien auf dem Zielcomputer",
+	[administrationEditor("catFilesAndFolders", "file_delete", "Löscht Dateien auf dem Zielcomputer",
 		"updateSystemDotNet.Administration.UI.updateActionEditor.deleteFilesActionEditor")]
 	public sealed class deleteFilesAction : actionBase {
 		private List<string> m_filesToRemove = new List<string>();

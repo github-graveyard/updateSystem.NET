@@ -27,7 +27,7 @@ namespace updateSystemDotNet.Core.updateActions {
 	/// updateAction welche zum Kopieren von Dateien verwendet wird.
 	/// </summary>
 	[Serializable]
-	[administrationEditorAttribute("Dateien und Verzeichnisse", "file_add",
+	[administrationEditorAttribute("catFilesAndFolders", "file_add",
 		"Kopiert oder ersetzt Dateien auf dem Zielcomputer.",
 		"updateSystemDotNet.Administration.UI.updateActionEditor.fileCopyActionEditor")]
 	public sealed class fileCopyAction : actionBase {

@@ -24,7 +24,7 @@ namespace updateSystemDotNet.Core.updateActions {
 	/// Updateaktion zum entfernen eines Registryschlüssels.
 	/// </summary>
 	[Serializable]
-	[administrationEditor("Registry", "key_delete", "Entfernen einen Schlüssel in der Registry des Zielcomputers.",
+	[administrationEditor("catRegistry", "key_delete", "Entfernen einen Schlüssel in der Registry des Zielcomputers.",
 		"updateSystemDotNet.Administration.UI.updateActionEditor.removeRegistryKeyActionEditor")]
 	public sealed class removeRegistryKeyAction : registryActionBase {
 		/// <summary>

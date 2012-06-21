@@ -24,7 +24,7 @@ namespace updateSystemDotNet.Core.updateActions {
 	/// Updateaction zum umbennen einer Datei.
 	/// </summary>
 	[Serializable]
-	[administrationEditor("Dateien und Verzeichnisse", "file_rename", "Benennt eine Datei auf dem Zielcomputer um.",
+	[administrationEditor("catFilesAndFolders", "file_rename", "Benennt eine Datei auf dem Zielcomputer um.",
 		"updateSystemDotNet.Administration.UI.updateActionEditor.renameFileActionEditor")]
 	public sealed class renameFileAction : actionBase {
 		private string m_newFilename = string.Empty;

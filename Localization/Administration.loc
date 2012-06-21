@@ -289,4 +289,30 @@
 .publishProvider.pbsFtp.Control.lblUsername.Text	Username:
 .publishProvider.pbsFtp.Description	Publishes updates over FTP or FTPS (SSL Implicit or Explicit). This interface does not support proxy servers.
 .publishProvider.pbsFtp.Name	FTP
+.updateActions.Actions.addRegistryKeyAction.Description	Adds a new registry key on the clientsystem.
+.updateActions.Actions.addRegistryKeyAction.Name	Add registry key
+.updateActions.Actions.addRegistryValueAction.Description	Creates or updates one or more Registryvalues on the client.
+.updateActions.Actions.addRegistryValueAction.Name	Add Registry values
+.updateActions.Actions.closeProcessAction.Description	Terminates one or more processes on the client.
+.updateActions.Actions.closeProcessAction.Name	Close processes
+.updateActions.Actions.deleteFilesAction.Description	Removes one ore more files from the client.
+.updateActions.Actions.deleteFilesAction.Name	Delete files
+.updateActions.Actions.fileCopyAction.Description	Copies or replaces files on the clientsystem.
+.updateActions.Actions.fileCopyAction.Name	Copy and replace files
+.updateActions.Actions.removeRegistryKeyAction.Description	Removes registry keys from the clientsystem.
+.updateActions.Actions.removeRegistryKeyAction.Name	Remove registry keys
+.updateActions.Actions.removeRegistryValuesAction.Description	Removes registry values from the client.
+.updateActions.Actions.removeRegistryValuesAction.Name	Remove registry values
+.updateActions.Actions.renameFileAction.Description	Renames a file on the target machine.
+.updateActions.Actions.renameFileAction.Name	Rename file
+.updateActions.Actions.startProcessAction.Description	Executes an process on the clientsystem with specified arguments.
+.updateActions.Actions.startProcessAction.Name	Start process
+.updateActions.Actions.startServiceAction.Description	Starts or restarts an service on the clientsystem.
+.updateActions.Actions.startServiceAction.Name	Start service
+.updateActions.Actions.stopServiceAction.Description	Stops a service on the clientsystem.
+.updateActions.Actions.stopServiceAction.Name	Stop service
+.updateActions.Categories.catFilesAndFolders	Files and Folders
+.updateActions.Categories.catProcesses	Processes
+.updateActions.Categories.catRegistry	Registry
+.updateActions.Categories.catServices	Services
 de.Dialogs.Global.btnClose.Text	Schließen

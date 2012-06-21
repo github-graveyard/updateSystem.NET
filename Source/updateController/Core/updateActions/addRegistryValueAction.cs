@@ -25,7 +25,7 @@ namespace updateSystemDotNet.Core.updateActions {
 	/// Updateaktionen zum hinzufügen von einem oder mehreren Registrywerten.
 	/// </summary>
 	[Serializable]
-	[administrationEditor("Registry", "value_add",
+	[administrationEditor("catRegistry", "value_add",
 		"Erstellt einen oder mehrere neue Werte in der Registry des Zielcomputers oder ersetzt bereits existierende.",
 		"updateSystemDotNet.Administration.UI.updateActionEditor.addRegistryValueActionEditor")]
 	public sealed class addRegistryValueAction : registryActionBase {

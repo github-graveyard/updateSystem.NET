@@ -24,7 +24,7 @@ namespace updateSystemDotNet.Core.updateActions {
 	/// Updateaction zum starten eines Windowsdienstes.
 	/// </summary>
 	[Serializable]
-	[administrationEditor("Dienste", "start_service", "Startet einen Dienst auf dem Zielcomputer",
+	[administrationEditor("catServices", "start_service", "Startet einen Dienst auf dem Zielcomputer",
 		"updateSystemDotNet.Administration.UI.updateActionEditor.startServiceActionEditor")]
 	public sealed class startServiceAction : actionBase {
 		private string m_arguments = string.Empty;

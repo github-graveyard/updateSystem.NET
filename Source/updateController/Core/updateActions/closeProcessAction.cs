@@ -25,7 +25,7 @@ namespace updateSystemDotNet.Core.updateActions {
 	/// Updateaktion zum beenden von Prozessen.
 	/// </summary>
 	[Serializable]
-	[administrationEditor("Prozesse", "stop_process", "Beendet einen oder mehrere Prozesse.",
+	[administrationEditor("catProcesses", "stop_process", "Beendet einen oder mehrere Prozesse.",
 		"updateSystemDotNet.Administration.UI.updateActionEditor.closeProcessActionEditor")]
 	public sealed class closeProcessAction : actionBase {
 		private List<string> m_processList = new List<string>();

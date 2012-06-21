@@ -314,12 +314,11 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 		}
 
 		private void addAction(KeyValuePair<actionBase, administrationEditorAttribute> action, bool newInstance) {
-			var nodeAction = new TreeNode(action.Key.ToString()) {
-			                                                     	ImageKey = action.Key.ToString(),
-			                                                     	SelectedImageKey = action.Key.ToString(),
+			var nodeAction = new TreeNode(localizeActionName(action.Key)) {
+			                                                     	ImageKey = action.Key.ID,
+			                                                     	SelectedImageKey = action.Key.ID,
 			                                                     	Tag = (newInstance
-			                                                     	       	? Session.updateFactory.createNewInstance(
-			                                                     	       		action.Key.GetType())
+			                                                     	       	? Session.updateFactory.createNewInstance(action.Key.GetType())
 			                                                     	       	: action)
 			                                                     };
 
@@ -335,20 +334,20 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 
 		private void loadUpdateActions() {
 			foreach (var action in Session.updateFactory.availableUpdateActions()) {
-				if (!imglMain.Images.ContainsKey(action.Key.ToString())) {
+				if (!imglMain.Images.ContainsKey(action.Key.ID)) {
 					Image actionImage = Session.updateFactory.toolboxImage(action.Value.imageName) ??
 					                    imglMain.Images["defaultActionImage"];
-					imglMain.Images.Add(action.Key.ToString(), actionImage);
+					imglMain.Images.Add(action.Key.ID, actionImage);
 				}
+				
+				if (!lvwActions.Groups.Contains(new ListViewGroup(localizeActionCategory(action.Value), localizeActionCategory(action.Value))))
+					lvwActions.Groups.Add(new ListViewGroup(localizeActionCategory(action.Value), localizeActionCategory(action.Value)));
 
-				if (!lvwActions.Groups.Contains(new ListViewGroup(action.Value.Category, action.Value.Category)))
-					lvwActions.Groups.Add(new ListViewGroup(action.Value.Category, action.Value.Category));
-
-				var lviAction = new ListViewItem(action.Key.ToString());
-				lviAction.SubItems.Add(string.IsNullOrEmpty(action.Value.Description) ? "n/a" : action.Value.Description);
-				lviAction.ImageKey = action.Key.ToString();
+				var lviAction = new ListViewItem(localizeActionName(action.Key));
+				lviAction.SubItems.Add(localizeActionDescription(action.Key));
+				lviAction.ImageKey = action.Key.ID;
 				lviAction.Tag = action;
-				lviAction.Group = lvwActions.Groups[action.Value.Category];
+				lviAction.Group = lvwActions.Groups[localizeActionCategory(action.Value)];
 
 				lvwActions.Items.Add(lviAction);
 			}
@@ -429,6 +428,7 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 				actionEditorBase editor = Session.updateFactory.getActionEditor(action.Value.editorTypeName);
 				editor.updateAction = action.Key;
 				editor.initializeActionContent();
+				editor.initializeLocalization();
 				editor.Size = pnlContent.ClientSize;
 				pnlContent.Controls.Add(editor);
 
@@ -700,6 +700,17 @@ namespace updateSystemDotNet.Administration.UI.Dialogs {
 			tvwContent.Nodes["nodeActions"].Text =
 				Session.getLocalizedString(string.Format(treeViewLocalizationRoot, "nodeActions"));
 		}
+
+		private string localizeActionName(actionBase action) {
+			return Session.getLocalizedString(string.Format("updateActions.Actions.{0}.Name",action.GetType().Name));
+		}
+		private string localizeActionDescription(actionBase action) {
+			return Session.getLocalizedString(string.Format("updateActions.Actions.{0}.Description", action.GetType().Name));
+		}
+		private string localizeActionCategory(administrationEditorAttribute atrb) {
+			return Session.getLocalizedString(string.Format("updateActions.Categories.{0}", atrb.Category ));
+		}
+
 
 		#endregion
 

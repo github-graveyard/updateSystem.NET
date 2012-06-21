@@ -25,7 +25,7 @@ namespace updateSystemDotNet.Core.updateActions {
 	/// Updateaction zum entfernen eines oder mehreren Registrywerten.
 	/// </summary>
 	[Serializable]
-	[administrationEditor("Registry", "value_delete",
+	[administrationEditor("catRegistry", "value_delete",
 		"Entfernt einen oder mehrere Werte aus der Registry des Zielcomputers.",
 		"updateSystemDotNet.Administration.UI.updateActionEditor.removeRegistryValuesActionEditor")]
 	public sealed class removeRegistryValuesAction : registryActionBase {
