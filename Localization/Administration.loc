@@ -315,4 +315,24 @@
 .updateActions.Categories.catProcesses	Processes
 .updateActions.Categories.catRegistry	Registry
 .updateActions.Categories.catServices	Services
-de.Dialogs.Global.btnClose.Text	Schließen
+de.Dialogs.aboutDialog.lblCopyright.Text	Copyright (c) {0} Maximilian Krauss <coffeeInjection.com>
+de.Dialogs.aboutDialog.lblDescriptionCompression.Text	Kompression:
+de.Dialogs.aboutDialog.lblDescriptionIcons.Text	Icons:
+de.Dialogs.aboutDialog.lblVersion.Text	Version: {0} Codename "{1}"
+de.Dialogs.aboutDialog.lnkForkMe.Text	Dieses Projekt ist auf GitHub. [url=https://github.com/maximilian-krauss/updateSystem.NET]Quellcode herunterladen.[/url] Eine Mitwirkung ist gerne gesehen.
+de.Dialogs.aboutDialog.lnkIcons.Text	Fugue Icons Package von [url=http://p.yusukekamiyamane.com/]Yusuke Kamiyamane[/url]
+de.Dialogs.aboutDialog.lnkZipCredits.Text	#ziplib von[url=http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx]ic#code[/url].
+de.Dialogs.aboutDialog.Title	Über diese Anwendung
+de.Dialogs.applicationSettingsDialog.btnOpenLogDirectory.Text	Log-Verzeichnis öffnen
+de.Dialogs.applicationSettingsDialog.btnProxySettings.Text	Proxy-Einstellungen öffnen
+de.Dialogs.applicationSettingsDialog.chkCheckForUpdates.Text	Beim Starten auf Updates prüfen
+de.Dialogs.applicationSettingsDialog.chkEnableApplicationLog.Text	Ereignisse der Anwendung protokollieren
+de.Dialogs.applicationSettingsDialog.chkLogFtp.Text	FTP Verbindung protokollieren (Kann sensible Informationen beinhalten)
+de.Dialogs.applicationSettingsDialog.chkLogUpdateLog.Text	Verbindungstatistiken protokollieren
+de.Dialogs.applicationSettingsDialog.grpLog.Text	Anwendungslog
+de.Dialogs.applicationSettingsDialog.grpProxy.Text	Proxy
+de.Dialogs.applicationSettingsDialog.grpUpdates.Text	Aktualisierungen
+de.Dialogs.applicationSettingsDialog.lblTitle.Text	Einstellungen
+de.Dialogs.applicationSettingsDialog.lblUpdateChannel.Text	Aktualisierungskanal:
+de.Dialogs.applicationSettingsDialog.Title	Anwendungseinstellungen
+de.Dialogs.Global.btnClose.Text	Schlie�en
